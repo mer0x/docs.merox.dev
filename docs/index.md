@@ -1,6 +1,6 @@
 ---
 title: Home
-template: assets/home.html
+template: home.html
 hide: navigation.footer
 ---
 
