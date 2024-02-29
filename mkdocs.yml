@@ -71,7 +71,7 @@ nav:
     - Operating Systems: 
       - Linux: 
         - Webservers: 
-          - NGINX: Fundamentals/Operating-Systems/Webservers/index.md
+          - NGINX: fundamentals/operating-systems/linux/webservers/index.md
           - Apache2: Fundamentals/Operating-Systems/Webservers/index.md
       - Windows: 
         - Active Directory: Fundamentals/Operating-Systems/Webservers/index.md
@@ -130,8 +130,8 @@ nav:
 plugins:
   - search:
       lang: en
-  - git-revision-date-localized:
-      enable_creation_date: true
+#  - git-revision-date-localized:
+#      enable_creation_date: true
 
 
 extra:
