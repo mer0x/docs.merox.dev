@@ -4,6 +4,7 @@ repo_url: https://github.com/mer0x/merox.cloud
 repo_name: mer0x/merox.cloud
 theme:
   custom_dir: assets
+  favicon: images/favicon.ico
   logo: images/disguise.png
   name: material
   features:
