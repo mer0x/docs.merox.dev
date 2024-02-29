@@ -74,3 +74,23 @@ To add an exception for this directory, call:
 To add an exception for this directory, call:
 
 	git config --global --add safe.directory /home/merox
+2024-02-29 12:26:00.551 [info] > git rev-parse --show-toplevel [1ms]
+2024-02-29 12:26:00.551 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:26:09.550 [info] > git rev-parse --show-toplevel [2ms]
+2024-02-29 12:26:09.551 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:26:22.350 [info] > git rev-parse --show-toplevel [2ms]
+2024-02-29 12:26:22.350 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:31:34.262 [info] > git rev-parse --show-toplevel [3ms]
+2024-02-29 12:31:34.262 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox

@@ -1,5 +1,5 @@
 site_name: MEROX.CLOUD
-site_url: http://10.57.57.117:8000/
+site_url: https://merox.cloud
 repo_url: https://github.com/mer0x/merox.cloud
 repo_name: mer0x/merox.cloud
 theme:
@@ -128,9 +128,9 @@ nav:
 
 
 plugins:
-#  - git-revision-date-localized:
-#      enable_creation_date: false
-#  - git-authors
+  - git-revision-date-localized:
+      enable_creation_date: false
+  - git-authors
   - social
   - search:
       lang: en

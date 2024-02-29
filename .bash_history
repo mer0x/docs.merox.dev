@@ -35,3 +35,7 @@ ls
 rm -rf source_meroxcloud.tar.gz 
 clear
 ls
+pip install --upgrade --force-reinstall mkdocs-material
+sudo su
+pip install "mkdocs-material[imaging]"
+exit
