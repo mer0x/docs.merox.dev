@@ -264,23 +264,23 @@
     
       <!-- Custom Image -->
       <div class="tx-hero__image">
-  <img src="{{ config.home_cover_image }}"  style="border-radius: 15px;" draggable="false">
+  <img src="{{ config.extra.home_cover_image }}"  style="border-radius: 15px;" draggable="false">
       </div>
 
 <!-- Main Tagline -->
       <div class="tx-hero__content">
         <h1>{{ config.extra.home_tagline }}</h1>
-        <p>{{ config.home_description }}</p>
+        <p>{{ config.extra.home_description }}</p>
   
   <!-- Added Buttons (up to 3) -->
         {%- if config.home_button1_name -%}
-        <a href="{{ config.home_button1_url }}" title="Material | MkDocs" class="{{ config.home_button1_theme }}">
-          {{ config.home_button1_name }}
+        <a href="{{ config.extra.home_button1_url }}" title="Material | MkDocs" class="{{ config.home_button1_theme }}">
+          {{ config.extra.home_button1_name }}
         </a>
   {%- endif -%}
   
         {%- if config.home_button2_name -%}
-        <a href="{{ config.home_button2_url }}" title="Material | MkDocs" class="{{ config.home_button2_theme }}">
+        <a href="{{ config.extra.home_button2_url }}" title="Material | MkDocs" class="{{ config.home_button2_theme }}">
           {{ config.home_button2_name }}
         </a>
   {%- endif -%}
