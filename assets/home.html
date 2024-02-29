@@ -273,15 +273,15 @@
         <p>{{ config.extra.home_description }}</p>
   
   <!-- Added Buttons (up to 3) -->
-        {%- if config.home_button1_name -%}
-        <a href="{{ config.extra.home_button1_url }}" title="Material | MkDocs" class="{{ config.extra.ome_button1_theme }}">
+        {%- if config.extra.home_button1_name -%}
+        <a href="{{ config.extra.home_button1_url }}" title="Material | MkDocs" class="{{ config.extra.home_button1_theme }}">
           {{ config.extra.home_button1_name }}
         </a>
   {%- endif -%}
   
-        {%- if config.home_button2_name -%}
+        {%- if config.extra.home_button2_name -%}
         <a href="{{ config.extra.home_button2_url }}" title="Material | MkDocs" class="{{ config.extra.home_button2_theme }}">
-          {{ config.home_button2_name }}
+          {{ config.extra.home_button2_name }}
         </a>
   {%- endif -%}
   
