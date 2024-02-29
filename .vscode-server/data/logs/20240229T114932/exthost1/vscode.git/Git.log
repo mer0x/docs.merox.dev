@@ -29,3 +29,48 @@ To add an exception for this directory, call:
 To add an exception for this directory, call:
 
 	git config --global --add safe.directory /home/merox
+2024-02-29 12:19:35.409 [info] > git rev-parse --show-toplevel [2ms]
+2024-02-29 12:19:35.409 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:20:08.596 [info] > git rev-parse --show-toplevel [9ms]
+2024-02-29 12:20:08.596 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:20:31.582 [info] > git rev-parse --show-toplevel [2ms]
+2024-02-29 12:20:31.582 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:20:38.146 [info] > git rev-parse --show-toplevel [2ms]
+2024-02-29 12:20:38.147 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:24:14.011 [info] > git rev-parse --show-toplevel [2ms]
+2024-02-29 12:24:14.011 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:25:39.426 [info] > git rev-parse --show-toplevel [2ms]
+2024-02-29 12:25:39.426 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:25:49.932 [info] > git rev-parse --show-toplevel [2ms]
+2024-02-29 12:25:49.932 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:25:50.474 [info] > git rev-parse --show-toplevel [1ms]
+2024-02-29 12:25:50.474 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
+2024-02-29 12:25:53.789 [info] > git rev-parse --show-toplevel [2ms]
+2024-02-29 12:25:53.789 [info] fatal: detected dubious ownership in repository at '/home/merox'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/merox
