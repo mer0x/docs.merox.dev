@@ -128,13 +128,10 @@ nav:
 
 
 plugins:
-#  - git-revision-date-localized:
-#      enable_creation_date: false
-#  - git-authors
-#  - social
   - search:
       lang: en
-  - social
+  - git-revision-date-localized:
+      enable_creation_date: true
 
 
 extra:
