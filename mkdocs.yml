@@ -134,6 +134,8 @@ plugins:
 #  - social
   - search:
       lang: en
+  - social
+
 
 extra:
   consent:
