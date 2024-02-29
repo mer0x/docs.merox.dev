@@ -1,0 +1,214 @@
+site_name: MEROX.CLOUD
+site_url: http://10.57.57.117:8000/
+repo_url: https://github.com/mer0x/merox.cloud
+repo_name: mer0x/merox.cloud
+theme:
+  custom_dir: docs/assets
+  logo: images/disguise.png
+  name: material
+  features:
+    - header.autohide
+    - navigation.path
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+   # - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - announce.dismiss
+    - content.code.copy
+  language: en
+  palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+
+
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+
+
+nav:
+  - Home: index.md
+  - Homelab:
+    - Infrastructure: homelab/infrastructure.md
+    - Connectivity: homelab/connectivity.md
+    - Hypervisors: homelab/hypervisors.md
+    - Virtual Machines: homelab/virtual-machines.md
+    - Docker: homelab/docker.md
+    - Kubernetes: homelab/kubernetes.md
+    - Ansible: homelab/ansible.md
+    - Protection: homelab/security.md
+    - System Monitoring: homelab/monitoring.md
+  - Fundamentals : 
+    - Intro: fundamentals/intro.md
+    - Networking: 
+      - Configs: 
+        - DNS: fundamentals/networking/configs/DNS.md
+        - DHCP: fundamentals/networking/configs/DHCP.md
+    - Operating Systems: 
+      - Linux: 
+        - Webservers: 
+          - NGINX: Fundamentals/Operating-Systems/Webservers/index.md
+          - Apache2: Fundamentals/Operating-Systems/Webservers/index.md
+      - Windows: 
+        - Active Directory: Fundamentals/Operating-Systems/Webservers/index.md
+        - GPOs: Fundamentals/Operating-Systems/Webservers/index.md
+
+  - Operations : 
+    - Intro: operations/intro.md
+    - Virtualization: 
+      - VMs: 
+        - Proxmox: operations/virtualization/VMs/proxmox.md
+
+    - Containerization: 
+      - Kubernetes/K3S: operations/containerization/kubernetes.md
+      - K3S:
+        - Installation: operations/containerization/k3s/installation.md
+        - Upgrade: operations/containerization/k3s/upgrade.md
+        - Manifests:
+          - Traefik: operations/containerization/k3s/manifests/traefik.md
+          - Expose Service: operations/containerization/k3s/manifests/expose-service.md
+          - Cert Manager: operations/containerization/k3s/manifests/expose-service.md
+        - Guides:
+          - Traefik: operations/containerization/k3s/ingress/traefik.md
+      - LXC:
+        - Proxmox: operations/containerization/LXCs/proxmox.md
+      - Docker:
+        - Docker-Compose:
+          - Monitoring Stack: operations/containerization/docker/docker-compose/monitoring-stack.md
+          - Media Stack: operations/containerization/docker/docker-compose/media-stack.md
+          - WordPress: operations/containerization/docker/docker-compose/wordpress.md
+          - Uptime KUMA: operations/containerization/docker/docker-compose/uptime-kuma.md
+          - InfluxDB: operations/containerization/docker/docker-compose/influxdb.md
+          - Cloudflare: operations/containerization/docker/docker-compose/cloudflare.md
+    - Cybersecurity:
+      - Passwords: Fundamentals/Operating-Systems/Webservers/index.md
+    - DevOps:
+      - Ansible: Fundamentals/Operating-Systems/Webservers/index.md
+    - Monitoring:
+      - Grafana: Fundamentals/Operating-Systems/Webservers/index.md
+  - About: about.md
+  - Blog: https://robertmelcher.ro
+
+
+
+plugins:
+#  - git-revision-date-localized:
+#      enable_creation_date: false
+#  - git-authors
+  - social
+  - search:
+      lang: en
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/mer0x
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/robert-melcher-92a1a9157
+    - icon: fontawesome/brands/wordpress
+      link: https://www.robertmelcher.ro
+
+markdown_extensions:
+  - footnotes
+  - md_in_html 
+  - toc:
+      permalink: false
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+       kwds:
+         case: lower
+      alternate_style: true
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+
+
+
+### Example Configuration ###
+
+# Custom Homepage Elements
+home_cover_image: images/meroxindc.jpeg # This path starts at your root mkdocs directory.
+home_tagline: MEROX.cloud
+home_description: |
+      MEROX.cloud is your go-to for homelab setup guidance and curated insights. Explore a range of topics, from homelab configurations to general tech advice, all gathered from my experiences and research.
+
+# Gradient Color
+home_gradient_hsla: hsla(231, 48%, 48%, 1) 17%, hsla(231, 48%, 48%, 1) 23%, hsla(166, 73%, 45%, 1) 92%);
+
+
+ # Default Green: hsla(160deg,47%,55%,1)
+
+# Custom Homepage Button(s)
+home_button1_name: Homelab                   # Comment this parameter out to remove the button.
+home_button1_url: homelab/infrastructure/                      # This path starts at your root mkdocs directory.
+home_button1_theme: md-button md-button--primary # Options: "md-button", "md-button md-button--primary"
+home_button1_icon: people                        # Options: "people", "gear", "image"
+home_button1_blurb: |                            # Short description of this button / section.
+  This joker navigates to the shadow wizard armory located in "/Folder1/index.md"
+
+home_button2_name: Resources   # Comment this parameter out to remove the button.
+home_button2_url: /operations/intro/    # This path starts at your root mkdocs directory.
+home_button2_theme: md-button # Options: "md-button", "md-button md-button--primary"
+home_button2_icon: gear       # Options: "people", "gear", "image"
+home_button2_blurb: |         # Short description of this button / section.
+  This goober navigates to some important thingies located in "/Folder2/index.md"
+
+home_button3_name: About   # Comment this parameter out to remove the button.
+home_button3_url: Folder3/    # This path starts at your root mkdocs directory.
+home_button3_theme: md-button # Options: "md-button", "md-button md-button--primary"
+home_button3_icon: image      # Options: "people", "gear", "image"
+home_button3_blurb: |         # Short description of this button / section.
+  This psycho navigates to an interesting table of stuff located in "/Folder3/index.md"
+
+# Homepage Code Execution
+home_execute_js: | # Javascript to execute when accessing the homepage
+  console.log("created by Robert Melcher");
+
+
+
+
+
+copyright: |
+  deployed with ❤️ on kubernetes &copy; 2023 <a href="#"  target="_blank" rel="noopener">Merox Cloud</a>

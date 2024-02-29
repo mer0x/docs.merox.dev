@@ -1,0 +1,16 @@
+2024-02-26 17:05:00.198 [info] Extension host with pid 767 started
+2024-02-26 17:05:00.264 [info] Lock '/home/merox/.vscode-server/data/User/workspaceStorage/c913e9ec7072292e0f5f9f0f2bd2b3b9/vscode.lock': Lock acquired.
+2024-02-26 17:05:00.373 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-02-26 17:05:00.374 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2024-02-26 17:05:00.387 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+2024-02-26 17:05:00.388 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+2024-02-26 17:05:01.390 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-02-26 17:05:01.399 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-02-26 17:05:01.400 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-02-26 17:05:01.971 [info] Eager extensions activated
+2024-02-26 17:05:01.971 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-02-26 17:05:01.972 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-02-26 17:42:09.399 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: vscode.markdown-language-features
+2024-02-26 21:08:16.642 [info] Extension host terminating: renderer disconnected for too long (1)
+2024-02-26 21:08:16.643 [info] Lock '/home/merox/.vscode-server/data/User/workspaceStorage/c913e9ec7072292e0f5f9f0f2bd2b3b9/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2024-02-26 21:08:16.676 [info] Extension host with pid 767 exiting with code 0

@@ -1,0 +1,16 @@
+2024-02-26 21:42:01.547 [info] Extension host with pid 3811 started
+2024-02-26 21:42:01.559 [info] Lock '/home/merox/.vscode-server/data/User/workspaceStorage/c913e9ec7072292e0f5f9f0f2bd2b3b9/vscode.lock': Lock acquired.
+2024-02-26 21:42:01.826 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-02-26 21:42:01.827 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+2024-02-26 21:42:01.827 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+2024-02-26 21:42:02.863 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-02-26 21:42:02.882 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-02-26 21:42:02.882 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-02-26 21:42:03.244 [info] Eager extensions activated
+2024-02-26 21:42:03.245 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-02-26 21:42:03.245 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-02-26 21:47:05.790 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: vscode.markdown-language-features
+2024-02-26 21:47:07.169 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2024-02-26 23:07:59.926 [info] Extension host terminating: received terminate message from renderer
+2024-02-26 23:07:59.927 [info] Lock '/home/merox/.vscode-server/data/User/workspaceStorage/c913e9ec7072292e0f5f9f0f2bd2b3b9/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2024-02-26 23:07:59.962 [info] Extension host with pid 3811 exiting with code 0

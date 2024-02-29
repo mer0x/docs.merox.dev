@@ -1,0 +1,13 @@
+{
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "remoteHub.commitDirectlyWarning": "off",
+    "remote.SSH.enableRemoteCommand": true,
+    "remote.SSH.configFile": "C:\\Users\\merox\\.ssh\\config",
+    "remote.SSH.remotePlatform": {
+        "offline": "linux",
+        "citadel": "linux",
+        "10.57.57.117": "linux"
+    },
+    "security.workspace.trust.untrustedFiles": "open"
+}
