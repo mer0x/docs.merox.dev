@@ -134,7 +134,7 @@ plugins:
       enable_creation_date: true
   - git-committers:
       repository: mer0x/merox.cloud
-      branch: gh-pages
+      branch: main
 
 
 extra:
