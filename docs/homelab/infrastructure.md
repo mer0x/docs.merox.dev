@@ -9,7 +9,7 @@
 
 ## Topology overview
 
-![Image title](/images/content/infrastracture_homelab.drawio.test.png)
+![Image title](/images/content/infrastracture_homelab.drawio.png)
 
 
 ## Network
