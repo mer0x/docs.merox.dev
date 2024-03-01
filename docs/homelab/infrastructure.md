@@ -65,7 +65,7 @@ igb2: flags=8863<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
         -    RAID: RAID1 for data safety
         -    Function: Backup storage and NFS host for the homelab network.
 
-        ```bash
+        ```bash linenums="1"
         admin@storage:~$ df -hTP
         Filesystem        Type      Size  Used Avail Use% Mounted on
         /dev/md0          ext4      7.9G  1.3G  6.5G  16% /
@@ -106,7 +106,7 @@ igb2: flags=8863<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
         - Cluster Composition: Three units operating in a Proxmox cluster for high availability and using ZFS replication for scalable storage.
         ###### Roles & VMs
         -    **citadel.merox.cloud**: k3s-master-01, k3s-worker-01
-        ```bash
+        ```bash linenums="1"
         root@citadel:/home/merox# qm list
               VMID NAME                 STATUS     MEM(MB)    BOOTDISK(GB) PID
                103 kasm                 stopped    6144              64.00 0
@@ -117,7 +117,7 @@ igb2: flags=8863<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
         301        running                 k3s-master-01
         ```
         -    **helix.merox.cloud**: k3s-master-02, k3s-worker-02, docker on alto.merox.cloud, Ansible LXC
-        ```bash
+        ```bash linenums="1"
         root@helix:~# qm list
               VMID NAME                 STATUS     MEM(MB)    BOOTDISK(GB) PID
                305 k3s-02               running    16384            125.20 376169
@@ -132,7 +132,7 @@ igb2: flags=8863<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
         2000       stopped                 rke2-admin-template
         ```
         -    **nexus.merox.cloud**: k3s-master-03, k3s-worker-03, Windows Server 2019
-        ```bash
+        ```bash linenums="1"
         root@nexus:~# qm list
               VMID NAME                 STATUS     MEM(MB)    BOOTDISK(GB) PID
                105 winserver            running    4096              32.00 1218
