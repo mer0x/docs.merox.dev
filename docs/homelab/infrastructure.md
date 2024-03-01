@@ -22,7 +22,7 @@
 -    RAM: 8GB, ensuring smooth operation of network services and applications
 -    Storage: 120GB ZFS, offering reliable and resilient data storage capabilities
 -    **Network Interfaces**:
-```bash 
+```bash linenums="1"
 igb0: flags=8963<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 1500
         description: WAN
         options=4e120bb<RXCSUM,TXCSUM,VLAN_MTU,VLAN_HWTAGGING,JUMBO_MTU,VLAN_HWCSUM,WOL_MAGIC,VLAN_HWFILTER,RXCSUM_IPV6,TXCSUM_IPV6,NOMAP>
