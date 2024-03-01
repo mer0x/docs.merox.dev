@@ -131,11 +131,11 @@ nav:
 plugins:
   - search:
       lang: en
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - git-committers:
-      repository: mer0x/merox.cloud
-      branch: gh-pages
+#  - git-revision-date-localized:
+#      enable_creation_date: true
+#  - git-committers:
+#      repository: mer0x/merox.cloud
+#      branch: gh-pages
 
 
 extra:
