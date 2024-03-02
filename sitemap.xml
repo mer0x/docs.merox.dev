@@ -21,6 +21,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://merox.cloud/fundamentals/database/influxdb/basics/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/database/mysql/basics/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://merox.cloud/fundamentals/networking/readme/</loc>
          <lastmod>2024-03-02</lastmod>
          <changefreq>daily</changefreq>
