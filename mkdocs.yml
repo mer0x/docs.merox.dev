@@ -82,7 +82,7 @@ nav:
          - Config:
            - UFW: fundamentals/operating-systems/linux/config/ufw.md
          - T-shoot:
-           - GRUB: fundamentals/operating-systems/linux/tshoot/grub.md 
+           - GRUB recovery: fundamentals/operating-systems/linux/tshoot/grub.md 
            - Root password recovery: fundamentals/operating-systems/linux/tshoot/root-password-recovery.md
       - Windows: 
          - Install:
@@ -91,6 +91,11 @@ nav:
            - Active Directory: fundamentals/operating-systems/windows/config/active-directory.md
          - T-shoot:
            - DNS: fundamentals/operating-systems/windows/tshoot/dns.md
+    - Database:
+      - MySQL:
+        - Basics: fundamentals/database/mysql/basics.md
+      - InfluxDB:
+        - Basics: fundamentals/database/influxdb/basics.md
 
   - Operations : 
     - Intro: operations/intro.md

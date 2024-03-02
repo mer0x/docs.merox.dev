@@ -15,7 +15,7 @@ The GRUB (Grand Unified Bootloader) provides a way to regain access by booting i
 
  6. Reboot the System: Ensure changes are written and reboot with sync followed by reboot -f.
 
-## sing a Live CD/USB
+## Using a Live CD/USB
 
 If the GRUB method is not an option, a Live CD/USB provides an alternative approach.
 
