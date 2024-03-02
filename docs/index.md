@@ -1,6 +1,8 @@
 ---
 title: Home
 template: home.html
-hide: navigation.footer
+hide: 
+   - navigation.footer
+   - announce
 ---
 
