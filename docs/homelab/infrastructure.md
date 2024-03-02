@@ -7,10 +7,18 @@
     Aimed at supporting the project's unique requirements, this infrastructure is crafted to facilitate optimal performance, reliability, and adaptability, reflecting a commitment to leveraging advanced technologies and methodologies for achieving project objectives.
 
 
-## Topology overview
 
-![Image title](/images/content/infrastracture_homelab.drawio.png)
+## Topology
+- Below, you can see both a diagram of my homelab and a photo of it.
 
+
+    === "Diagram"
+
+        ![Image title](/images/content/infrastracture_homelab.drawio.png)
+
+    === "Photo"
+
+        ![](/images/content/homelab.jpeg)
 
 ## Network
  - Description: The pfSense stands as a pivotal security gateway in the homelab setup, providing robust network protection, traffic management, and connectivity options. Tailored for efficient performance and reliability, this device is essential for maintaining a secure and efficient network environment.
