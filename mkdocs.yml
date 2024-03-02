@@ -1,4 +1,4 @@
-site_name: MEROX.CLOUD
+site_name: MEROX.dev
 site_url: https://merox.cloud
 repo_url: https://github.com
 repo_name: mer0x/merox.cloud
@@ -192,7 +192,7 @@ extra:
   home_cover_image: images/meroxindc.jpeg
   home_tagline: MEROX.cloud
   home_description: |
-    MEROX.cloud is your go-to for homelab setup guidance and curated insights. Explore a range of topics, from homelab configurations to general tech advice, all gathered from my experiences and research.
+    MEROX.dev is your go-to for homelab setup guidance and curated insights. Explore a range of topics, from homelab configurations to general tech advice, all gathered from my experiences and research.
 
   # Gradient Color
   home_gradient_hsla: hsla(231, 48%, 48%, 1) 17%, hsla(231, 48%, 48%, 1) 23%, hsla(166, 73%, 45%, 1) 92%);
@@ -265,4 +265,4 @@ markdown_extensions:
 
 
 copyright: |
-  deployed with ❤️ on kubernetes &copy; 2023 <a href="#"  target="_blank" rel="noopener">Merox Cloud</a>
+  deployed with ❤️ on kubernetes &copy; 2023 <a href="#"  target="_blank" rel="noopener">MEROX.dev</a>
