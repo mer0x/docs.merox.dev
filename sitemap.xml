@@ -56,31 +56,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://merox.cloud/fundamentals/operating-systems/2.Windows%20Server/</loc>
-         <lastmod>2024-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://merox.cloud/fundamentals/operating-systems/2.Windows%20Server/readme/</loc>
-         <lastmod>2024-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://merox.cloud/fundamentals/operating-systems/2.Windows%20Server/AD/ad/</loc>
-         <lastmod>2024-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://merox.cloud/fundamentals/operating-systems/2.Windows%20Server/GPO/gpo/</loc>
-         <lastmod>2024-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://merox.cloud/fundamentals/operating-systems/linux/</loc>
-         <lastmod>2024-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://merox.cloud/fundamentals/operating-systems/linux/readme/</loc>
          <lastmod>2024-03-02</lastmod>
          <changefreq>daily</changefreq>
@@ -102,11 +77,6 @@
     </url>
     <url>
          <loc>https://merox.cloud/fundamentals/operating-systems/linux/tshoot/root-password-recovery/</loc>
-         <lastmod>2024-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://merox.cloud/fundamentals/operating-systems/linux/webservers/</loc>
          <lastmod>2024-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
