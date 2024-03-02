@@ -145,11 +145,11 @@ nav:
 plugins:
   - search:
       lang: en
-#  - git-revision-date-localized:
-#      enable_creation_date: true
-#  - git-committers:
-#      repository: mer0x/merox.cloud
-#      branch: master
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-committers:
+      repository: mer0x/merox.cloud
+      branch: master
 
 
 extra:
