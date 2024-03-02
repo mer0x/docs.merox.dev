@@ -26,12 +26,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://merox.cloud/fundamentals/networking/ccna/cheatsheet/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://merox.cloud/fundamentals/networking/configs/DHCP/</loc>
          <lastmod>2024-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.cloud/fundamentals/networking/configs/DNS/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/networking/install/firewall/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/networking/install/router/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/networking/install/switch/</loc>
          <lastmod>2024-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -66,7 +86,47 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://merox.cloud/fundamentals/operating-systems/linux/config/ufw/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/operating-systems/linux/install/ubuntu-cloud-init/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/operating-systems/linux/tshoot/grub/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/operating-systems/linux/tshoot/root-password-recovery/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://merox.cloud/fundamentals/operating-systems/linux/webservers/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/operating-systems/windows/readme/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/operating-systems/windows/config/active-directory/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/operating-systems/windows/install/wserver2019/</loc>
+         <lastmod>2024-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.cloud/fundamentals/operating-systems/windows/tshoot/dns/</loc>
          <lastmod>2024-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
