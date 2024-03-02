@@ -190,7 +190,7 @@ extra:
 
   # Custom Homepage Elements
   home_cover_image: images/meroxindc.jpeg
-  home_tagline: MEROX.cloud
+  home_tagline: MEROX.dev
   home_description: |
     MEROX.dev is your go-to for homelab setup guidance and curated insights. Explore a range of topics, from homelab configurations to general tech advice, all gathered from my experiences and research.
 
