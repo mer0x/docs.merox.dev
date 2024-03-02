@@ -66,17 +66,31 @@ nav:
   - Fundamentals : 
     - Intro: fundamentals/intro.md
     - Networking: 
+      - Install:
+        - Firewall: fundamentals/networking/install/firewall.md
+        - Router: fundamentals/networking/install/router.md
+        - Switch: fundamentals/networking/install/switch.md
       - Configs: 
         - DNS: fundamentals/networking/configs/DNS.md
         - DHCP: fundamentals/networking/configs/DHCP.md
+      - CCNA:
+        - Cheatsheet: fundamentals/networking/ccna/cheatsheet.md
     - Operating Systems: 
       - Linux: 
-        - Webservers: 
-          - NGINX: fundamentals/operating-systems/linux/webservers/index.md
-          - Apache2: Fundamentals/Operating-Systems/Webservers/index.md
+         - Install:
+           - Ubuntu cloud-init: fundamentals/operating-systems/linux/install/ubuntu-cloud-init.md
+         - Config:
+           - UFW: fundamentals/operating-systems/linux/config/ufw.md
+         - T-shoot:
+           - GRUB: fundamentals/operating-systems/linux/tshoot/grub.md 
+           - Root password recovery: fundamentals/operating-systems/linux/tshoot/root-password-recovery.md
       - Windows: 
-        - Active Directory: Fundamentals/Operating-Systems/Webservers/index.md
-        - GPOs: Fundamentals/Operating-Systems/Webservers/index.md
+         - Install:
+           - Windows Server 2019: fundamentals/operating-systems/windows/install/wserver2019.md
+         - Config:
+           - Active Directory: fundamentals/operating-systems/windows/config/active-directory.md
+         - T-shoot:
+           - DNS: fundamentals/operating-systems/windows/tshoot/dns.md
 
   - Operations : 
     - Intro: operations/intro.md
@@ -131,11 +145,11 @@ nav:
 plugins:
   - search:
       lang: en
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - git-committers:
-      repository: mer0x/merox.cloud
-      branch: master
+#  - git-revision-date-localized:
+#      enable_creation_date: true
+#  - git-committers:
+#      repository: mer0x/merox.cloud
+#      branch: master
 
 
 extra:
