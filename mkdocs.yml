@@ -66,13 +66,18 @@ nav:
   - Fundamentals : 
     - Intro: fundamentals/intro.md
     - Networking: 
-      - Install:
-        - Firewall: fundamentals/networking/install/firewall.md
-        - Router: fundamentals/networking/install/router.md
-        - Switch: fundamentals/networking/install/switch.md
       - Configs: 
         - DNS: fundamentals/networking/configs/DNS.md
         - DHCP: fundamentals/networking/configs/DHCP.md
+      - pfSense: fundamentals/networking/pfsense/info.md
+      - Cisco: 
+        - Install:
+          - ASA: fundamentals/networking/cisco/install/firewall.md
+          - Router: fundamentals/networking/cisco/install/router.md
+          - Switch: fundamentals/networking/cisco/install/switch.md
+          - VPN:
+            - IPsec over GRE: fundamentals/networking/cisco/install/ipsecgre.md
+
       - CCNA:
         - Cheatsheet: fundamentals/networking/ccna/cheatsheet.md
     - Operating Systems: 
@@ -139,7 +144,13 @@ nav:
           - Windows upgrades: operations/DevOps/ansible/playbooks/windows-upgrade.md
           - Proxmox VM: operations/DevOps/ansible/playbooks/proxmox-vm.md
     - Monitoring:
-      - Grafana: Fundamentals/Operating-Systems/Webservers/index.md
+      - Grafana: 
+        - Basics: operations/monitoring/grafana/basics.md
+        - Prometheus w/ Alertmanager: operations/monitoring/grafana/prometheus-alertmanager.md
+#      - Prometheus:
+#        - Basics: operations/monitoring/prometheus/basics.md
+#      - Alertmanager:
+#        - Basics: operations/monitoring/alertmanager/basics.md
   - About: about.md
   - Blog: https://robertmelcher.ro
 
@@ -148,11 +159,11 @@ nav:
 plugins:
   - search:
       lang: en
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - git-committers:
-      repository: mer0x/merox.cloud
-      branch: master
+#  - git-revision-date-localized:
+#      enable_creation_date: true
+#  - git-committers:
+#      repository: mer0x/merox.cloud
+#      branch: master
 
 
 extra:
@@ -255,14 +266,5 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
-
-
-
-
-
-
-
-
-
 copyright: |
-  deployed with ❤️ on kubernetes &copy; 2023 <a href="#"  target="_blank" rel="noopener">MEROX.dev</a>
+  deployed with ❤️ on kubernetes &copy; 2024 <a href="#"  target="_blank" rel="noopener">MEROX.dev</a>
