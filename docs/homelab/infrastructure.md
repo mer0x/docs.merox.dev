@@ -24,7 +24,7 @@
 ## Network
  - Description: The pfSense stands as a pivotal security gateway in the homelab setup, providing robust network protection, traffic management, and connectivity options. Tailored for efficient performance and reliability, this device is essential for maintaining a secure and efficient network environment.
 ### Network flow diagram
-Below you can see how a internet request for this website it's done in my homelab:
+- Below you can see how a internet request for this website it's done in my homelab:
 
 ![](/images/content/network_flow.png)
 
