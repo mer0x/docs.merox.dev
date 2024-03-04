@@ -206,7 +206,7 @@ extra:
     MEROX.dev is your go-to for homelab setup guidance and curated insights. Explore a range of topics, from homelab configurations to general tech advice, all gathered from my experiences and research.
 
   # Gradient Color
-  home_gradient_hsla: hsla(231, 48%, 48%, 1) 17%, hsla(231, 48%, 48%, 1) 23%, hsla(275, 60%, 40%, 1) 92%);
+  home_gradient_hsla: hsla(231, 48%, 48%, 1) 17%, hsla(231, 48%, 48%, 1) 23%, hsla(0, 84.4%, 67.3%) 92%);
 
   # Custom Homepage Button(s)
   home_button1_name: Homelab
