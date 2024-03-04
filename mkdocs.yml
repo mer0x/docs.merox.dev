@@ -200,7 +200,7 @@ extra:
       link: https://www.robertmelcher.ro
 
   # Custom Homepage Elements
-  home_cover_image: images/meroxdc.jpeg
+  home_cover_image: images/meroxdc.webp
   home_tagline: MEROX.dev
   home_description: |
     MEROX.dev is your go-to for homelab setup guidance and curated insights. Explore a range of topics, from homelab configurations to general tech advice, all gathered from my experiences and research.
