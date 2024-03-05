@@ -306,6 +306,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://merox.dev/operations/containerization/k3s/manifests/media-stack/</loc>
+         <lastmod>2024-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/monitor-stack/</loc>
          <lastmod>2024-03-05</lastmod>
          <changefreq>daily</changefreq>
