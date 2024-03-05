@@ -124,6 +124,7 @@ nav:
           - Expose Service: operations/containerization/k3s/manifests/expose-service.md
           - Cert Manager: operations/containerization/k3s/manifests/cert-manager.md
           - Monitor Stack: operations/containerization/k3s/manifests/monitor-stack.md
+          - NFS Share: operations/containerization/k3s/manifests/nfs-share.md
       - LXC:
         - Proxmox: operations/containerization/LXCs/proxmox.md
       - Docker:
