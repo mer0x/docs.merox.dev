@@ -19,15 +19,22 @@ Create a Persistent Volume (PV) that references your NFS server and the path to 
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: nfs-pv
+  name: pv-nfs-kubedata-nginx-1  # < Name of the persistent volume
+  namespace: default    
 spec:
+  storageClassName: ""
   capacity:
-    storage: 1Gi
+    storage: 1Gi # < Maximum storage size you want to reserve
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  mountOptions:
+    - hard
+    - nfsvers=4.1
   nfs:
-    server: nfs-server.your-domain.com
-    path: "/var/nfs/general"
+    server: xxx.xxx.xxx.xxx  # < The ip adress of your NAS (NFS Server)
+    path: "/volume1/kubedata/nginx-1"  # < The NFS volumename 
+    readOnly: false
 ```
 Replace nfs-server.your-domain.com with the IP or domain name of your NFS server and /var/nfs/general with the path to your shared directory.
 Step 3: Creating a Storage Class for NFS
