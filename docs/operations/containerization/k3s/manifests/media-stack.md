@@ -42,8 +42,8 @@ spec:
   accessModes:
     - ReadWriteOnce
   nfs:
-    path: /volume1/Server/Data/alto/media_nas
-    server: 10.57.57.201
+    path: /path/to/media/files/
+    server: X.X.X.X
   persistentVolumeReclaimPolicy: Retain
   mountOptions:
     - hard
