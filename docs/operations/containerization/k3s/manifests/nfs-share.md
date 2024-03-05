@@ -15,7 +15,7 @@ Ensure your NFS server is correctly set up and that the directory you wish to sh
 
 Create a Persistent Volume (PV) that references your NFS server and the path to the shared directory. Here is an example YAML configuration:
 
-```yaml
+```yaml linenums="1"
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -37,7 +37,7 @@ Step 4: Creating a Persistent Volume Claim
 
 Applications will use a Persistent Volume Claim (PVC) to request storage. Below is an example PVC configuration:
 
-```yaml
+```yaml linenums="1"
 
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -55,7 +55,7 @@ Step 5: Using the PVC in Kubernetes Pods
 
 You can now reference the PVC in your pod definitions to mount the NFS volume. Here's how:
 
-```yaml
+```yaml linenums="1"
 
 apiVersion: v1
 kind: Pod
