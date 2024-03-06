@@ -21,7 +21,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://merox.dev/blog/2024/03/06/jellyfin-with-arr-stack-on-kubernetes-with-longhorn-and-nfs/</loc>
+         <loc>https://merox.dev/blog/2024/03/06/building-a-high-availability-media-server-on-kubernetes-with-longhorn-and-synology-nas/</loc>
          <lastmod>2024-03-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
