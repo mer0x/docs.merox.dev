@@ -16,6 +16,8 @@ Leveraging Kubernetes for your home media server not only brings scalability and
 Why Kubernetes with Longhorn and Synology NAS?
 Kubernetes offers a robust foundation for deploying containerized applications with high availability and scalability. Longhorn, as a cloud-native distributed storage system, provides a resilient and scalable storage solution, perfectly suited for dynamic Kubernetes environments. It simplifies managing volumes, backups, and snapshots, offering a seamless experience for our media applications' configuration data.
 
+<!-- more -->
+
 Synology NAS with NFS (Network File System) shines in its role as a centralized media storage solution. It's reliable, easy to set up, and supports high-capacity storage solutions—ideal for an ever-growing media library.
 
 Setting Up the Stage
