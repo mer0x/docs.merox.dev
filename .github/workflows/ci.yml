@@ -29,5 +29,6 @@ jobs:
             mkdocs-material-
       - run: pip install mkdocs-material \
              mkdocs-git-revision-date-localized-plugin \
-             mkdocs-git-committers-plugin-2
+             mkdocs-git-committers-plugin-2 \
+             mkdocs-rss-plugin
       - run: mkdocs gh-deploy --force

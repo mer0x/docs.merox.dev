@@ -154,7 +154,7 @@ nav:
 #      - Alertmanager:
 #        - Basics: operations/monitoring/alertmanager/basics.md
   - About: about.md
-  - Blog: https://robertmelcher.ro
+  - Blog: /blog
 
 
 
@@ -166,7 +166,7 @@ plugins:
   - git-committers:
       repository: mer0x/merox.cloud
       branch: master
-
+  - blog
 
 extra:
   consent:
