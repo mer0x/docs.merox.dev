@@ -3410,7 +3410,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2024-01-31 00:00:00">January 31, 2024</time></li>
+          <time datetime="2024-03-06 00:00:00">March 6, 2024</time></li>
         
           <li class="md-meta__item">
             in
@@ -3431,7 +3431,7 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="argocd-installation-on-kubernetes"><a class="toclink" href="../../2024/01/31/argocd-installation-on-kubernetes/">ArgoCD installation on kubernetes</a></h2>
+    <h2 id="argocd-installation-on-kubernetes"><a class="toclink" href="../../2024/03/06/argocd-installation-on-kubernetes/">ArgoCD installation on kubernetes</a></h2>
 <p><strong>Install and configure ArgoCD</strong></p>
 <ol>
 <li>Create a new namespace argocd and deploy ArgoCD with the web UI included.
@@ -3444,6 +3444,47 @@
 <p>Log in to the ArgoCD web interface https://<strong>[your-dns-record/]</strong> by using the default username admin and the password, collected by the following command.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>argocd-initial-admin-secret<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.password}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 </code></pre></div></td></tr></table></div>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-03-06 00:00:00">March 6, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../kubernetes/" class="md-meta__link">kubernetes</a>, 
+              <a href="./" class="md-meta__link">installation</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="jellyfin-with-arr-stack-on-kubernetes-with-longhorn-and-nfs"><a class="toclink" href="../../2024/03/06/jellyfin-with-arr-stack-on-kubernetes-with-longhorn-and-nfs/">Jellyfin with *arr stack on kubernetes with longhorn and NFS</a></h2>
+<p>To be updated</p>
     
   </div>
 </article>

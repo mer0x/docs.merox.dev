@@ -16,7 +16,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://merox.dev/blog/2024/01/31/argocd-installation-on-kubernetes/</loc>
+         <loc>https://merox.dev/blog/2024/03/06/argocd-installation-on-kubernetes/</loc>
+         <lastmod>2024-03-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://merox.dev/blog/2024/03/06/jellyfin-with-arr-stack-on-kubernetes-with-longhorn-and-nfs/</loc>
          <lastmod>2024-03-06</lastmod>
          <changefreq>daily</changefreq>
     </url>

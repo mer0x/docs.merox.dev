@@ -10,24 +10,26 @@
       
       
       
-        <link rel="canonical" href="https://merox.dev/blog/">
+        <link rel="canonical" href="https://merox.dev/blog/2024/03/06/jellyfin-with-arr-stack-on-kubernetes-with-longhorn-and-nfs/">
       
       
       
+        <link rel="next" href="../argocd-installation-on-kubernetes/">
       
-      <link rel="icon" href="../images/disguise.png">
+      
+      <link rel="icon" href="../../../../../images/disguise.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
-        <title>Blog - MEROX.DEV</title>
+        <title>Jellyfin with *arr stack on kubernetes with longhorn and NFS - MEROX.DEV</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -85,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blog" class="md-skip">
+        <a href="#jellyfin-with-arr-stack-on-kubernetes-with-longhorn-and-nfs" class="md-skip">
           Skip to content
         </a>
       
@@ -99,9 +101,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="MEROX.DEV" class="md-header__button md-logo" aria-label="MEROX.DEV" data-md-component="logo">
+    <a href="../../../../.." title="MEROX.DEV" class="md-header__button md-logo" aria-label="MEROX.DEV" data-md-component="logo">
       
-  <img src="../images/disguise.png" alt="logo">
+  <img src="../../../../../images/disguise.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blog
+              Jellyfin with *arr stack on kubernetes with longhorn and NFS
             
           </span>
         </div>
@@ -237,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../../../.." class="md-tabs__link">
         
   
     
@@ -256,7 +258,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../homelab/infrastructure/" class="md-tabs__link">
+        <a href="../../../../../homelab/infrastructure/" class="md-tabs__link">
           
   
   Homelab
@@ -274,7 +276,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../fundamentals/intro/" class="md-tabs__link">
+        <a href="../../../../../fundamentals/intro/" class="md-tabs__link">
           
   
   Fundamentals
@@ -292,7 +294,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../operations/intro/" class="md-tabs__link">
+        <a href="../../../../../operations/intro/" class="md-tabs__link">
           
   
   Operations
@@ -308,7 +310,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../about/" class="md-tabs__link">
+      <a href="../../../../../about/" class="md-tabs__link">
         
   
     
@@ -348,7 +350,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -359,9 +363,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="MEROX.DEV" class="md-nav__button md-logo" aria-label="MEROX.DEV" data-md-component="logo">
+    <a href="../../../../.." title="MEROX.DEV" class="md-nav__button md-logo" aria-label="MEROX.DEV" data-md-component="logo">
       
-  <img src="../images/disguise.png" alt="logo">
+  <img src="../../../../../images/disguise.png" alt="logo">
 
     </a>
     MEROX.DEV
@@ -388,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -448,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/infrastructure/" class="md-nav__link">
+      <a href="../../../../../homelab/infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -469,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/connectivity/" class="md-nav__link">
+      <a href="../../../../../homelab/connectivity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -490,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/hypervisors/" class="md-nav__link">
+      <a href="../../../../../homelab/hypervisors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/virtual-machines/" class="md-nav__link">
+      <a href="../../../../../homelab/virtual-machines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/docker/" class="md-nav__link">
+      <a href="../../../../../homelab/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/kubernetes/" class="md-nav__link">
+      <a href="../../../../../homelab/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -574,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/ansible/" class="md-nav__link">
+      <a href="../../../../../homelab/ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -595,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/security/" class="md-nav__link">
+      <a href="../../../../../homelab/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -616,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/monitoring/" class="md-nav__link">
+      <a href="../../../../../homelab/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -684,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/intro/" class="md-nav__link">
+      <a href="../../../../../fundamentals/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -785,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/configs/DNS/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/configs/DNS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -806,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/configs/DHCP/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/configs/DHCP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -835,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/pfsense/info.md" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/pfsense/info.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -936,7 +940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/firewall/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/cisco/install/firewall/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -957,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/router/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/cisco/install/router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -978,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/switch/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/cisco/install/switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1039,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/ipsecgre/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/cisco/install/ipsecgre/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1124,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/ccna/cheatsheet/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/ccna/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1281,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1350,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/config/ufw/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/linux/config/ufw/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1419,7 +1423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/tshoot/grub/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/linux/tshoot/grub/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1440,7 +1444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1557,7 +1561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/windows/install/wserver2019/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/windows/install/wserver2019/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1626,7 +1630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/windows/config/active-directory/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/windows/config/active-directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1695,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/windows/tshoot/dns/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/windows/tshoot/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1820,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/database/mysql/basics/" class="md-nav__link">
+      <a href="../../../../../fundamentals/database/mysql/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1889,7 +1893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/database/influxdb/basics/" class="md-nav__link">
+      <a href="../../../../../fundamentals/database/influxdb/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1973,7 +1977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/intro/" class="md-nav__link">
+      <a href="../../../../../operations/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2074,7 +2078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/virtualization/VMs/proxmox/" class="md-nav__link">
+      <a href="../../../../../operations/virtualization/VMs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2151,7 +2155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/kubernetes/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2212,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/installation/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2233,7 +2237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/upgrade/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2294,7 +2298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2315,7 +2319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2336,7 +2340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2357,7 +2361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2378,7 +2382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2399,7 +2403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2420,7 +2424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2441,7 +2445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2462,7 +2466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2483,7 +2487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2504,7 +2508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2525,7 +2529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2602,7 +2606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/LXCs/proxmox/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/LXCs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2711,7 +2715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2732,7 +2736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2753,7 +2757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2774,7 +2778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2795,7 +2799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2816,7 +2820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2941,7 +2945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
+      <a href="../../../../../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3098,7 +3102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
+      <a href="../../../../../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3119,7 +3123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
+      <a href="../../../../../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3140,7 +3144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
+      <a href="../../../../../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3265,7 +3269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/monitoring/grafana/basics/" class="md-nav__link">
+      <a href="../../../../../operations/monitoring/grafana/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3286,7 +3290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
+      <a href="../../../../../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3330,7 +3334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../../../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3371,6 +3375,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -3390,117 +3396,243 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="blog">Blog</h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-03-06 00:00:00">March 6, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="category/kubernetes/" class="md-meta__link">kubernetes</a>, 
-              <a href="category/installation/" class="md-meta__link">installation</a></li>
-        
-        
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Robert Melcher
+                        
+                      </strong>
+                      <br>
+                      Creator
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2024-03-06 00:00:00" class="md-ellipsis">March 6, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/kubernetes/">kubernetes</a>, 
+                              <a href="../../../../category/installation/">installation</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              1 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
           
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="argocd-installation-on-kubernetes"><a class="toclink" href="2024/03/06/argocd-installation-on-kubernetes/">ArgoCD installation on kubernetes</a></h2>
-<p><strong>Install and configure ArgoCD</strong></p>
-<ol>
-<li>Create a new namespace argocd and deploy ArgoCD with the web UI included.
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>argocd
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-</code></pre></div></td></tr></table></div></li>
-<li>Log in to the ArgoCD web interface</li>
-</ol>
-<p>Log in to the ArgoCD web interface https://<strong>[your-dns-record/]</strong> by using the default username admin and the password, collected by the following command.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>argocd-initial-admin-secret<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.password}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
-</code></pre></div></td></tr></table></div>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-03-06 00:00:00">March 6, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/kubernetes/" class="md-meta__link">kubernetes</a>, 
-              <a href="category/installation/" class="md-meta__link">installation</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="jellyfin-with-arr-stack-on-kubernetes-with-longhorn-and-nfs"><a class="toclink" href="2024/03/06/jellyfin-with-arr-stack-on-kubernetes-with-longhorn-and-nfs/">Jellyfin with *arr stack on kubernetes with longhorn and NFS</a></h2>
-<p>To be updated</p>
-    
-  </div>
-</article>
-      
+    <article class="md-content__inner md-typeset">
       
         
-          
 
-
-
-<nav class="md-pagination">
   
-</nav>
-        
+  
+
+
+<h1 id="jellyfin-with-arr-stack-on-kubernetes-with-longhorn-and-nfs">Jellyfin with *arr stack on kubernetes with longhorn and NFS</h1>
+<p>To be updated</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
       
-    </div>
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2024</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2024</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our feedback form.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+  <h2 id="__comments">Comments</h2>
+  <script src="https://giscus.app/client.js"
+  data-repo="mer0x/merox.cloud"
+  data-repo-id="R_kgDOLY5RTg"
+  data-category="General"
+  data-category-id="DIC_kwDOLY5RTs4Cdwo2"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  crossorigin="anonymous"
+  async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+      
+    </article>
   </div>
 
           
@@ -3519,6 +3651,30 @@
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="../argocd-installation-on-kubernetes/" class="md-footer__link md-footer__link--next" aria-label="Next: ArgoCD installation on kubernetes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                ArgoCD installation on kubernetes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -3659,10 +3815,10 @@
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>
