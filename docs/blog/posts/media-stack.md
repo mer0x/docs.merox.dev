@@ -11,7 +11,12 @@ comments: true
 
 # Deploying a Kubernetes-Based Media Server: A Comprehensive Guide
 
-![header-media](/images/content/media-header.png)
+
+
+<figure markdown="span">
+  ![header-media](/images/content/media-header.png){ width="300" }
+  <figcaption>Image caption</figcaption>
+</figure>
 
 For a long time, I've been on the hunt for a comprehensive and well-crafted tutorial to deploy a media server on my Kubernetes cluster. This media server stack includes Jellyfin, Radarr, Sonarr, Jackett, and qBittorrent. Let's briefly dive into what each component brings to our setup
 
