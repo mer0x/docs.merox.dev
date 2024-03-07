@@ -194,6 +194,8 @@ extra:
             Thanks for your feedback! Help us improve this page by
             using our feedback form.
   social:
+    - icon: fontawesome/brands/reddit
+      link: https://www.reddit.com/u/merox57/s/9OgwH5Q6Rq
     - icon: fontawesome/brands/github-alt
       link: https://github.com/mer0x
     - icon: fontawesome/brands/linkedin
