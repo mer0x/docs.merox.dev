@@ -559,8 +559,3 @@ spec:
   selector:
     app: qbittorrent
 ```
-
-
-### Conclusion
-This comprehensive guide walked you through deploying Jellyfin on a Kubernetes cluster, configuring Longhorn for configuration storage, setting up NFS for media storage, deploying Jellyfin, and exposing it externally using Traefik. 
-With Jellyfin now deployed, you can enjoy your personal media server with robust and flexible storage solutions provided by Kubernetes
