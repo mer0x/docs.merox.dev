@@ -44,7 +44,6 @@ Let's start step by step.
 Create nfs-media-pv-and-pvc.yaml:
 
 ```yaml linenums="1"
-Copy code
 apiVersion: v1
 kind: PersistentVolume
 metadata:
