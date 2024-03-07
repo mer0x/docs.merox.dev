@@ -48,6 +48,19 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: jellyfin-videos
+spec:
+  capacity:
+    storage: 400Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    path: /volume1/server/k3s/media
+    server: storage.merox.cloud
+  persistentVolumeReclaimPolicy: Retain
+  mountOptions:
+    - hard
+    - nfsvers=3
+  storageClassName: ""
 # Persistent Volume spec including capacity, access modes, NFS path, and server details follow
 ---
 apiVersion: v1
@@ -55,6 +68,14 @@ kind: PersistentVolumeClaim
 metadata:
   name: jellyfin-videos
   namespace: media
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 400Gi
+  volumeName: jellyfin-videos
+  storageClassName: ""
 # Persistent Volume Claim spec including access modes, resources requests, and storage class name follow
 ```
 Apply with:
@@ -71,6 +92,19 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: qbitt-download
+spec:
+  capacity:
+    storage: 400Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    path: /volume1/server/k3s/media/download
+    server: storage.merox.cloud
+  persistentVolumeReclaimPolicy: Retain
+  mountOptions:
+    - hard
+    - nfsvers=3
+  storageClassName: ""
 # Persistent Volume spec including capacity, access modes, NFS path, and server details follow
 ---
 apiVersion: v1
@@ -78,6 +112,14 @@ kind: PersistentVolumeClaim
 metadata:
   name: qbitt-download
   namespace: media
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 400Gi
+  volumeName: qbitt-download
+  storageClassName: ""
 # Persistent Volume Claim spec including access modes, resources requests, and storage class name follow
 ```
 
@@ -93,8 +135,15 @@ Create app-config-pvc.yaml:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: app # For example, radarr
+  name: app # radarr for example
   namespace: media
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 5Gi
 # Persistent Volume Claim spec including access modes, storage class name, and resources requests follow
 ```
 Apply with:
