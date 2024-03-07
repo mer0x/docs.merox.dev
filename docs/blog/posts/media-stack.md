@@ -11,7 +11,7 @@ comments: true
 
 # Deploying a Kubernetes-Based Media Server: A Comprehensive Guide
 
-For a long time, I've been on the hunt for a comprehensive and well-crafted tutorial to deploy a media server on my Kubernetes cluster. This media server stack includes Jellyfin, Radarr, Sonarr, Jackett, and qBittorrent. Let's briefly dive into what each component brings to our setup:
+For a long time, I've been on the hunt for a comprehensive and well-crafted tutorial to deploy a media server on my Kubernetes cluster. This media server stack includes Jellyfin, Radarr, Sonarr, Jackett, and qBittorrent. Let's briefly dive into what each component brings to our setup
 
 !!! example
     Jellyfin: An open-source media system that provides a way to manage and stream your media library across various devices.<br>
@@ -20,12 +20,12 @@ For a long time, I've been on the hunt for a comprehensive and well-crafted tuto
     Jackett: Acts as a proxy server, translating queries from other apps (like Sonarr or Radarr) into queries that can be understood by a wide array of torrent search engines.<br>
     qBittorrent: A powerful BitTorrent client that handles your downloads. Paired with Jackett, it streamlines finding and downloading media content.
 
-
+<!-- more -->
 The configuration for these applications is hosted on Longhorn storage, ensuring resilience and ease of management, while the media (movies, shows, books, etc.) is stored on a Synology NAS DS223. The NAS location is utilized as a Persistent Volume (PV) through NFS 4.1 by Kubernetes.
 
 In this tutorial, you'll find the Kubernetes configuration for each necessary component to set up, install, and secure each service used by the media server.
 
-<!-- more -->
+
 
 Let's start step by step.
 
