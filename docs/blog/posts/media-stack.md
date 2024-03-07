@@ -74,7 +74,7 @@ metadata:
 ```
 
 Apply with:
-```bash
+```bash linenums="1"
 kubectl apply -f nfs-download-pv-and-pvc.yaml
 ```
 
@@ -90,7 +90,7 @@ metadata:
 # Persistent Volume Claim spec including access modes, storage class name, and resources requests follow
 ```
 Apply with:
-```bash
+```bash linenums="1"
 kubectl apply -f app-config-pvc.yaml
 ```
 !!! warning
@@ -105,7 +105,9 @@ Jellyfin serves as our media streaming platform, providing access to movies, TV 
 Create specific yaml for each file, for example:
 radarr-deployment.yaml 
 Apply with
+```bash linenums="1"
 kubectl apply -f radarr-deployment.yaml
+```
 
 ``` yaml linenums="1"
 apiVersion: apps/v1
@@ -342,7 +344,7 @@ spec:
   selector:
     app: app #radarr for example 
 ```
-```bash
+```bash linenums="1"
 kubectl apply -f app-service.yaml
 ```
 
@@ -377,7 +379,7 @@ spec:
 ```
 
 Apply with:
-```bash 
+```bash linenums="1"
 kubectl apply -f default-headers-media.yaml
 ```
 
@@ -421,7 +423,7 @@ spec:
 ```
 
 Apply with:
-```bash 
+```bash linenums="1"
 kubectl apply -f app-ingress-route.yaml
 ```
 
@@ -431,9 +433,9 @@ kubectl apply -f app-ingress-route.yaml
 
 !!! question
     Q: Why use a ClusterIP service?
-!!! note
+!!! note "Answer"
     A: Because we will be using Traefik as an ingress controller to expose it to the local network/internet with SSL/TLS certificates.
 
 This concludes the necessary steps and configurations to deploy a resilient media server in a Kubernetes cluster successfully. For more technical details or configurations that could assist, refer to the Operations -> K3S section on my website.
 
-Quick link: Merox's Media Stack on K3S
+Quick link: [Operations->K3S](https://merox.dev/operations/containerization/k3s/manifests/media-stack/)
