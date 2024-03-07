@@ -3587,7 +3587,7 @@ qBittorrent: A powerful BitTorrent client that handles your downloads. Paired wi
 <p>The configuration for these applications is hosted on Longhorn storage, ensuring resilience and ease of management, while the media (movies, shows, books, etc.) is stored on a Synology NAS DS223. The NAS location is utilized as a Persistent Volume (PV) through NFS 4.1 by Kubernetes.</p>
 <p>In this tutorial, you'll find the Kubernetes configuration for each necessary component to set up, install, and secure each service used by the media server.</p>
 <h2 id="0-if-you-use-synology-nas-this-is-the-rule-i-created-for-my-nfs-share-which-will-be-mounted-on-kubernetes-side">0. If you use Synology NAS, this is the rule I created for my NFS share which will be mounted on kubernetes side.</h2>
-<p><img alt="NFS_RULE" src="/home/merox/github/merox.cloud/docs/images/content/nfs_rule_nas.png" /></p>
+<p><img alt="NFS_RULE" src="/images/content/nfs_rule_nas.png" /></p>
 <p>Let's start step by step.</p>
 <h2 id="1configuring-pvc-and-pv-for-nfs-share">1.Configuring PVC and PV for NFS Share</h2>
 <p>1.1) Media
@@ -4261,6 +4261,29 @@ To set this up, we create a app-service.yaml for each application (taking Radarr
 
     
     
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/mer0x" class="md-author" title="@mer0x">
+          
+          <img src="https://avatars.githubusercontent.com/u/35839230?v=4&size=72" alt="mer0x">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
