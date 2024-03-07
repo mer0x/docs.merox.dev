@@ -34,7 +34,7 @@ In this tutorial, you'll find the Kubernetes configuration for each necessary co
 
 ## 0. If you use Synology NAS, this is the rule I created for my NFS share which will be mounted on kubernetes side.
 
-![NFS_RULE](/home/merox/github/merox.cloud/docs/images/content/nfs_rule_nas.png)
+![NFS_RULE](/images/content/nfs_rule_nas.png)
 
 Let's start step by step.
 
