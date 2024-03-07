@@ -3422,7 +3422,7 @@
           
           <li class="md-meta__item">
             
-              2 min read
+              7 min read
             
           </li>
         
@@ -3431,14 +3431,22 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="building-a-high-availability-media-server-on-kubernetes-with-longhorn-and-synology-nas"><a class="toclink" href="../../2024/03/06/building-a-high-availability-media-server-on-kubernetes-with-longhorn-and-synology-nas/">Building a High-Availability Media Server on Kubernetes with Longhorn and Synology NAS</a></h2>
-<p>Leveraging Kubernetes for your home media server not only brings scalability and resilience but also introduces a level of sophistication and control unmatched by traditional setups. In this guide, we'll walk through setting up a media server ecosystem, highlighting the integration of Longhorn for application configurations and a Synology NAS with NFS for our media storage needs—films and TV series. Our stack includes Jellyfin for media streaming, Radarr for movie management, and Sonarr for TV series management.</p>
-<p>Why Kubernetes with Longhorn and Synology NAS?
-Kubernetes offers a robust foundation for deploying containerized applications with high availability and scalability. Longhorn, as a cloud-native distributed storage system, provides a resilient and scalable storage solution, perfectly suited for dynamic Kubernetes environments. It simplifies managing volumes, backups, and snapshots, offering a seamless experience for our media applications' configuration data.</p>
+    <h2 id="deploying-a-kubernetes-based-media-server-a-comprehensive-guide"><a class="toclink" href="../../2024/03/06/deploying-a-kubernetes-based-media-server-a-comprehensive-guide/">Deploying a Kubernetes-Based Media Server: A Comprehensive Guide</a></h2>
+<p>For a long time, I've been on the hunt for a comprehensive and well-crafted tutorial to deploy a media server on my Kubernetes cluster. This media server stack includes Jellyfin, Radarr, Sonarr, Jackett, and qBittorrent. Let's briefly dive into what each component brings to our setup:</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Jellyfin: An open-source media system that provides a way to manage and stream your media library across various devices.
+Radarr: A movie collection manager for Usenet and BitTorrent users. It automates the process of searching for movies, downloading, and managing your movie library.
+Sonarr: Similar to Radarr but for TV shows. It keeps track of your series, downloads new episodes, and manages your collection with ease.
+Jackett: Acts as a proxy server, translating queries from other apps (like Sonarr or Radarr) into queries that can be understood by a wide array of torrent search engines.
+qBittorrent: A powerful BitTorrent client that handles your downloads. Paired with Jackett, it streamlines finding and downloading media content.</p>
+</div>
+<p>The configuration for these applications is hosted on Longhorn storage, ensuring resilience and ease of management, while the media (movies, shows, books, etc.) is stored on a Synology NAS DS223. The NAS location is utilized as a Persistent Volume (PV) through NFS 4.1 by Kubernetes.</p>
+<p>In this tutorial, you'll find the Kubernetes configuration for each necessary component to set up, install, and secure each service used by the media server.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2024/03/06/building-a-high-availability-media-server-on-kubernetes-with-longhorn-and-synology-nas/">
+        <a href="../../2024/03/06/deploying-a-kubernetes-based-media-server-a-comprehensive-guide/">
           Continue reading
         </a>
       </nav>

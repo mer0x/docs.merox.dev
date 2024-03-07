@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://merox.dev/blog/2024/03/06/building-a-high-availability-media-server-on-kubernetes-with-longhorn-and-synology-nas/">
+        <link rel="canonical" href="https://merox.dev/blog/2024/03/06/deploying-a-kubernetes-based-media-server-a-comprehensive-guide/">
       
       
         <link rel="prev" href="../../01/argocd-installation-on-kubernetes/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Building a High-Availability Media Server on Kubernetes with Longhorn and Synology NAS - MEROX.DEV</title>
+        <title>Deploying a Kubernetes-Based Media Server: A Comprehensive Guide - MEROX.DEV</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-a-high-availability-media-server-on-kubernetes-with-longhorn-and-synology-nas" class="md-skip">
+        <a href="#deploying-a-kubernetes-based-media-server-a-comprehensive-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building a High-Availability Media Server on Kubernetes with Longhorn and Synology NAS
+              Deploying a Kubernetes-Based Media Server: A Comprehensive Guide
             
           </span>
         </div>
@@ -3389,6 +3389,77 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1configuring-pvc-and-pv-for-nfs-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Configuring PVC and PV for NFS Share
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2configuring-longhorn-pvc-for-each-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Configuring Longhorn PVC for Each Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3deploying-each-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Deploying each application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4creating-clusterip-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.Creating ClusterIP Services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5creating-middleware-for-traefik-in-the-media-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.Creating middleware for Traefik in the media namespace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6creating-ingress-route-for-each-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.Creating Ingress Route for Each Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3466,7 +3537,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              7 min read
                             
                           </span>
                         </div>
@@ -3489,30 +3560,647 @@
   
 
 
-<h1 id="building-a-high-availability-media-server-on-kubernetes-with-longhorn-and-synology-nas">Building a High-Availability Media Server on Kubernetes with Longhorn and Synology NAS</h1>
-<p>Leveraging Kubernetes for your home media server not only brings scalability and resilience but also introduces a level of sophistication and control unmatched by traditional setups. In this guide, we'll walk through setting up a media server ecosystem, highlighting the integration of Longhorn for application configurations and a Synology NAS with NFS for our media storage needs—films and TV series. Our stack includes Jellyfin for media streaming, Radarr for movie management, and Sonarr for TV series management.</p>
-<p>Why Kubernetes with Longhorn and Synology NAS?
-Kubernetes offers a robust foundation for deploying containerized applications with high availability and scalability. Longhorn, as a cloud-native distributed storage system, provides a resilient and scalable storage solution, perfectly suited for dynamic Kubernetes environments. It simplifies managing volumes, backups, and snapshots, offering a seamless experience for our media applications' configuration data.</p>
+<h1 id="deploying-a-kubernetes-based-media-server-a-comprehensive-guide">Deploying a Kubernetes-Based Media Server: A Comprehensive Guide</h1>
+<p>For a long time, I've been on the hunt for a comprehensive and well-crafted tutorial to deploy a media server on my Kubernetes cluster. This media server stack includes Jellyfin, Radarr, Sonarr, Jackett, and qBittorrent. Let's briefly dive into what each component brings to our setup:</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Jellyfin: An open-source media system that provides a way to manage and stream your media library across various devices.
+Radarr: A movie collection manager for Usenet and BitTorrent users. It automates the process of searching for movies, downloading, and managing your movie library.
+Sonarr: Similar to Radarr but for TV shows. It keeps track of your series, downloads new episodes, and manages your collection with ease.
+Jackett: Acts as a proxy server, translating queries from other apps (like Sonarr or Radarr) into queries that can be understood by a wide array of torrent search engines.
+qBittorrent: A powerful BitTorrent client that handles your downloads. Paired with Jackett, it streamlines finding and downloading media content.</p>
+</div>
+<p>The configuration for these applications is hosted on Longhorn storage, ensuring resilience and ease of management, while the media (movies, shows, books, etc.) is stored on a Synology NAS DS223. The NAS location is utilized as a Persistent Volume (PV) through NFS 4.1 by Kubernetes.</p>
+<p>In this tutorial, you'll find the Kubernetes configuration for each necessary component to set up, install, and secure each service used by the media server.</p>
 <!-- more -->
 
-<p>Synology NAS with NFS (Network File System) shines in its role as a centralized media storage solution. It's reliable, easy to set up, and supports high-capacity storage solutions—ideal for an ever-growing media library.</p>
-<p>Setting Up the Stage
-Longhorn for Application Configurations
-Our journey begins with deploying Longhorn in our Kubernetes cluster. Longhorn's primary role is to manage the persistent storage for our applications' configurations. This ensures that our media server's state is preserved across pod restarts and redeployments, maintaining settings, preferences, and stateful data intact.</p>
-<p>Synology NAS with NFS: A Vault for Our Media
-Synology NAS, renowned for its reliability and user-friendly interface, serves as our central repository for films and TV series. By configuring NFS shares on Synology, we create a network-accessible storage space, easily integrated into our Kubernetes setup. Each application—Jellyfin, Radarr, and Sonarr—mounts this NFS share to access and manage the media files seamlessly.</p>
-<p>Integrating Jellyfin, Radarr, and Sonarr
-Jellyfin: Streaming in Style
-Jellyfin, our open-source media system, offers a polished interface to stream our content. Deployed within Kubernetes and using Longhorn for its configuration storage, Jellyfin accesses our media library stored on Synology NAS via NFS, providing a centralized streaming hub for all our devices.</p>
-<p>Radarr &amp; Sonarr: Automating Media Management
-Radarr and Sonarr automate downloading and organizing movies and TV shows, respectively. Both applications leverage Longhorn for storing their configurations and Synology NAS for accessing the actual media files. This setup automates the tedious task of media management, ensuring our library is always up to date with the latest releases and neatly organized.</p>
-<p>Conclusion
-Embracing Kubernetes with Longhorn and Synology NAS transforms the media server experience, offering a scalable, resilient, and automated ecosystem. This guide outlines the foundation of a sophisticated home media server setup, promising an enjoyable streaming experience backed by the power of modern technologies.</p>
-<p>Explore more, configure wisely, and enjoy your personal media empire with ease and elegance!</p>
-<p>Further Reading and Resources</p>
+<p>Let's start step by step.</p>
+<h2 id="1configuring-pvc-and-pv-for-nfs-share">1.Configuring PVC and PV for NFS Share</h2>
+<p>1.1) Media
+Create nfs-media-pv-and-pvc.yaml:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">Copy code</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolume</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin-videos</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1"># Persistent Volume spec including capacity, access modes, NFS path, and server details follow</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nn">---</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolumeClaim</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin-videos</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="c1"># Persistent Volume Claim spec including access modes, resources requests, and storage class name follow</span>
+</code></pre></div></td></tr></table></div>
+Apply with:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>nfs-media-pv-and-pvc.yaml
+</code></pre></div></td></tr></table></div>
+<p>1.2) Download
+Create nfs-download-pv-and-pvc.yaml:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolume</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbitt-download</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1"># Persistent Volume spec including capacity, access modes, NFS path, and server details follow</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nn">---</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolumeClaim</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbitt-download</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1"># Persistent Volume Claim spec including access modes, resources requests, and storage class name follow</span>
+</code></pre></div></td></tr></table></div>
+<p>Apply with:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>nfs-download-pv-and-pvc.yaml
+</code></pre></div></p>
+<h2 id="2configuring-longhorn-pvc-for-each-application">2.Configuring Longhorn PVC for Each Application</h2>
+<p>Create app-config-pvc.yaml:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolumeClaim</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="w"> </span><span class="c1"># For example, radarr</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1"># Persistent Volume Claim spec including access modes, storage class name, and resources requests follow</span>
+</code></pre></div></td></tr></table></div>
+Apply with:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>app-config-pvc.yaml
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This type of configuration needs to be generated for each application: Jellyfin, Sonarr, Radarr, Jackett, qBittorrent.</p>
+</div>
+<h2 id="3deploying-each-application">3.Deploying each application</h2>
+<p>3.1) Jellyfin:
+Jellyfin serves as our media streaming platform, providing access to movies, TV shows, and other media across various devices. Here's how to deploy it</p>
+<p>Create specific yaml for each file, for example:
+radarr-deployment.yaml 
+Apply with
+kubectl apply -f radarr-deployment.yaml</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span>
+<span class="normal"><a href="#__codelineno-6-26">26</a></span>
+<span class="normal"><a href="#__codelineno-6-27">27</a></span>
+<span class="normal"><a href="#__codelineno-6-28">28</a></span>
+<span class="normal"><a href="#__codelineno-6-29">29</a></span>
+<span class="normal"><a href="#__codelineno-6-30">30</a></span>
+<span class="normal"><a href="#__codelineno-6-31">31</a></span>
+<span class="normal"><a href="#__codelineno-6-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin/jellyfin</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">        </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/config</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">videos</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/data/videos</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8096</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin-config</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">videos</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin-videos</span>
+</code></pre></div></td></tr></table></div>
+<p>3.2) Sonarr:
+Sonarr automates TV show downloads, managing our series collection efficiently.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span>
+<span class="normal"><a href="#__codelineno-7-26">26</a></span>
+<span class="normal"><a href="#__codelineno-7-27">27</a></span>
+<span class="normal"><a href="#__codelineno-7-28">28</a></span>
+<span class="normal"><a href="#__codelineno-7-29">29</a></span>
+<span class="normal"><a href="#__codelineno-7-30">30</a></span>
+<span class="normal"><a href="#__codelineno-7-31">31</a></span>
+<span class="normal"><a href="#__codelineno-7-32">32</a></span>
+<span class="normal"><a href="#__codelineno-7-33">33</a></span>
+<span class="normal"><a href="#__codelineno-7-34">34</a></span>
+<span class="normal"><a href="#__codelineno-7-35">35</a></span>
+<span class="normal"><a href="#__codelineno-7-36">36</a></span>
+<span class="normal"><a href="#__codelineno-7-37">37</a></span>
+<span class="normal"><a href="#__codelineno-7-38">38</a></span>
+<span class="normal"><a href="#__codelineno-7-39">39</a></span>
+<span class="normal"><a href="#__codelineno-7-40">40</a></span>
+<span class="normal"><a href="#__codelineno-7-41">41</a></span>
+<span class="normal"><a href="#__codelineno-7-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sonarr</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sonarr</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sonarr</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sonarr</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linuxserver/sonarr</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1057&quot;</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1056&quot;</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">        </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/config</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">videos</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tv</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">downloads</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/downloads</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8989</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sonarr-config</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">videos</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin-videos</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">downloads</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbitt-download</span><span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>3.3) Radarr:
+Radarr works like Sonarr but focuses on movies, keeping our film library organized and up-to-date.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span>
+<span class="normal"><a href="#__codelineno-8-21">21</a></span>
+<span class="normal"><a href="#__codelineno-8-22">22</a></span>
+<span class="normal"><a href="#__codelineno-8-23">23</a></span>
+<span class="normal"><a href="#__codelineno-8-24">24</a></span>
+<span class="normal"><a href="#__codelineno-8-25">25</a></span>
+<span class="normal"><a href="#__codelineno-8-26">26</a></span>
+<span class="normal"><a href="#__codelineno-8-27">27</a></span>
+<span class="normal"><a href="#__codelineno-8-28">28</a></span>
+<span class="normal"><a href="#__codelineno-8-29">29</a></span>
+<span class="normal"><a href="#__codelineno-8-30">30</a></span>
+<span class="normal"><a href="#__codelineno-8-31">31</a></span>
+<span class="normal"><a href="#__codelineno-8-32">32</a></span>
+<span class="normal"><a href="#__codelineno-8-33">33</a></span>
+<span class="normal"><a href="#__codelineno-8-34">34</a></span>
+<span class="normal"><a href="#__codelineno-8-35">35</a></span>
+<span class="normal"><a href="#__codelineno-8-36">36</a></span>
+<span class="normal"><a href="#__codelineno-8-37">37</a></span>
+<span class="normal"><a href="#__codelineno-8-38">38</a></span>
+<span class="normal"><a href="#__codelineno-8-39">39</a></span>
+<span class="normal"><a href="#__codelineno-8-40">40</a></span>
+<span class="normal"><a href="#__codelineno-8-41">41</a></span>
+<span class="normal"><a href="#__codelineno-8-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">radarr</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">radarr</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">radarr</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">radarr</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linuxserver/radarr</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1057&quot;</span><span class="w">  </span>
+<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1056&quot;</span><span class="w">  </span>
+<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="w">        </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/config</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">videos</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/movies</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">downloads</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/downloads</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7878</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-8-34" name="__codelineno-8-34"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-8-35" name="__codelineno-8-35"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-8-36" name="__codelineno-8-36"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">radarr-config</span>
+<a id="__codelineno-8-37" name="__codelineno-8-37"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">videos</span>
+<a id="__codelineno-8-38" name="__codelineno-8-38"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-8-39" name="__codelineno-8-39"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin-videos</span>
+<a id="__codelineno-8-40" name="__codelineno-8-40"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">downloads</span>
+<a id="__codelineno-8-41" name="__codelineno-8-41"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-8-42" name="__codelineno-8-42"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbitt-download</span><span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+3.4) Jackett:
+Jackett acts as a bridge between torrent search engines and our media management tools, enhancing their capabilities.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span>
+<span class="normal"><a href="#__codelineno-9-19">19</a></span>
+<span class="normal"><a href="#__codelineno-9-20">20</a></span>
+<span class="normal"><a href="#__codelineno-9-21">21</a></span>
+<span class="normal"><a href="#__codelineno-9-22">22</a></span>
+<span class="normal"><a href="#__codelineno-9-23">23</a></span>
+<span class="normal"><a href="#__codelineno-9-24">24</a></span>
+<span class="normal"><a href="#__codelineno-9-25">25</a></span>
+<span class="normal"><a href="#__codelineno-9-26">26</a></span>
+<span class="normal"><a href="#__codelineno-9-27">27</a></span>
+<span class="normal"><a href="#__codelineno-9-28">28</a></span>
+<span class="normal"><a href="#__codelineno-9-29">29</a></span>
+<span class="normal"><a href="#__codelineno-9-30">30</a></span>
+<span class="normal"><a href="#__codelineno-9-31">31</a></span>
+<span class="normal"><a href="#__codelineno-9-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jackett</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jackett</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jackett</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jackett</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linuxserver/jackett</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1057&quot;</span><span class="w"> </span>
+<a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1056&quot;</span><span class="w"> </span>
+<a id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="w">        </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/config</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9117</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jackett-config</span>
+</code></pre></div></td></tr></table></div>
+3.5) qbittorrent
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span>
+<span class="normal"><a href="#__codelineno-10-20">20</a></span>
+<span class="normal"><a href="#__codelineno-10-21">21</a></span>
+<span class="normal"><a href="#__codelineno-10-22">22</a></span>
+<span class="normal"><a href="#__codelineno-10-23">23</a></span>
+<span class="normal"><a href="#__codelineno-10-24">24</a></span>
+<span class="normal"><a href="#__codelineno-10-25">25</a></span>
+<span class="normal"><a href="#__codelineno-10-26">26</a></span>
+<span class="normal"><a href="#__codelineno-10-27">27</a></span>
+<span class="normal"><a href="#__codelineno-10-28">28</a></span>
+<span class="normal"><a href="#__codelineno-10-29">29</a></span>
+<span class="normal"><a href="#__codelineno-10-30">30</a></span>
+<span class="normal"><a href="#__codelineno-10-31">31</a></span>
+<span class="normal"><a href="#__codelineno-10-32">32</a></span>
+<span class="normal"><a href="#__codelineno-10-33">33</a></span>
+<span class="normal"><a href="#__codelineno-10-34">34</a></span>
+<span class="normal"><a href="#__codelineno-10-35">35</a></span>
+<span class="normal"><a href="#__codelineno-10-36">36</a></span>
+<span class="normal"><a href="#__codelineno-10-37">37</a></span>
+<span class="normal"><a href="#__codelineno-10-38">38</a></span>
+<span class="normal"><a href="#__codelineno-10-39">39</a></span>
+<span class="normal"><a href="#__codelineno-10-40">40</a></span>
+<span class="normal"><a href="#__codelineno-10-41">41</a></span>
+<span class="normal"><a href="#__codelineno-10-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbittorrent</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbittorrent</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbittorrent</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbittorrent</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linuxserver/qbittorrent</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">        </span><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">          </span><span class="nt">limits</span><span class="p">:</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">            </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2Gi&quot;</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">          </span><span class="nt">requests</span><span class="p">:</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">            </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;512Mi&quot;</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1057&quot;</span><span class="w"> </span>
+<a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1056&quot;</span><span class="w">  </span>
+<a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="w">        </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/config</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">downloads</span>
+<a id="__codelineno-10-33" name="__codelineno-10-33"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/downloads</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34"></a><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-10-35" name="__codelineno-10-35"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+<a id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-10-37" name="__codelineno-10-37"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-10-38" name="__codelineno-10-38"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-10-39" name="__codelineno-10-39"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbitt-config</span>
+<a id="__codelineno-10-40" name="__codelineno-10-40"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">downloads</span>
+<a id="__codelineno-10-41" name="__codelineno-10-41"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-10-42" name="__codelineno-10-42"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbitt-download</span><span class="w">  </span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="4creating-clusterip-services">4.Creating ClusterIP Services</h2>
+<p>For our media server applications to communicate efficiently within the Kubernetes cluster without exposing them directly to the external network, we utilize ClusterIP services.</p>
+<p>4.1)
+To set this up, we create a app-service.yaml for each application (taking Radarr as an example here):</p>
+<p>create app-service.yaml
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="w"> </span><span class="c1">#radarr for example </span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterIP</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7878</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="w"> </span><span class="c1">#radarr for example </span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>app-service.yaml
+</code></pre></div></p>
+<h2 id="5creating-middleware-for-traefik-in-the-media-namespace">5.Creating middleware for Traefik in the media namespace</h2>
+<p>For enhanced security and to ensure smooth functioning with Traefik, we define middleware:</p>
 <ul>
-<li>Manifest files: <a href="https://merox.dev/operations/containerization/k3s/manifests/media-stack/">here</a></li>
+<li>The middleware, named <code>default-headers-media</code>, is configured in the <code>media</code> namespace.</li>
+<li>It sets various security headers, including XSS protection and options to prevent MIME sniffing, among others.</li>
 </ul>
+<p>Create default-headers-media.yaml</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.containo.us/v1alpha1</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Middleware</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default-headers-media</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">  </span><span class="nt">headers</span><span class="p">:</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="nt">browserXssFilter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">    </span><span class="nt">contentTypeNosniff</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">    </span><span class="nt">forceSTSHeader</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">    </span><span class="nt">stsIncludeSubdomains</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">    </span><span class="nt">stsPreload</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">    </span><span class="nt">stsSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15552000</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="w">    </span><span class="nt">customFrameOptionsValue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SAMEORIGIN</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">    </span><span class="nt">customRequestHeaders</span><span class="p">:</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="w">      </span><span class="nt">X-Forwarded-Proto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https</span>
+</code></pre></div></td></tr></table></div>
+<p>Apply with:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>default-headers-media.yaml
+</code></pre></div></p>
+<h2 id="6creating-ingress-route-for-each-application">6.Creating Ingress Route for Each Application</h2>
+<p>To expose each application securely, we create IngressRoutes using Traefik:</p>
+<ul>
+<li>An IngressRoute for the application (such as Radarr) is defined, which uses the <code>traefik-external</code> ingress class.</li>
+<li>It listens on the <code>websecure</code> entry point and routes traffic based on the host (<code>movies.merox.cloud</code> in this example, replace with your domain).</li>
+<li>The middleware <code>default-headers-media</code> is applied to enhance security.</li>
+<li>TLS configuration is included, referencing a secret that contains the SSL/TLS certificate.</li>
+</ul>
+<p>Create app-ingress-route.yaml</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span>
+<span class="normal"><a href="#__codelineno-15-13">13</a></span>
+<span class="normal"><a href="#__codelineno-15-14">14</a></span>
+<span class="normal"><a href="#__codelineno-15-15">15</a></span>
+<span class="normal"><a href="#__codelineno-15-16">16</a></span>
+<span class="normal"><a href="#__codelineno-15-17">17</a></span>
+<span class="normal"><a href="#__codelineno-15-18">18</a></span>
+<span class="normal"><a href="#__codelineno-15-19">19</a></span>
+<span class="normal"><a href="#__codelineno-15-20">20</a></span>
+<span class="normal"><a href="#__codelineno-15-21">21</a></span>
+<span class="normal"><a href="#__codelineno-15-22">22</a></span>
+<span class="normal"><a href="#__codelineno-15-23">23</a></span>
+<span class="normal"><a href="#__codelineno-15-24">24</a></span>
+<span class="normal"><a href="#__codelineno-15-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.containo.us/v1alpha1</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IngressRoute</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="w"> </span><span class="c1">#radarr for example </span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span><span class="nt">kubernetes.io/ingress.class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik-external</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">  </span><span class="nt">entryPoints</span><span class="p">:</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">websecure</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">  </span><span class="nt">routes</span><span class="p">:</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">match</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Host(`movies.merox.cloud`)</span><span class="w"> </span><span class="c1"># change to your domain</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14"></a><span class="w">      </span><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="w"> </span><span class="c1">#radarr for example </span>
+<a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="w">          </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">match</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Host(`movies.merox.cloud`)</span><span class="w"> </span><span class="c1"># change to your domain</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18"></a><span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19"></a><span class="w">      </span><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="w"> </span><span class="c1">#radarr for example </span>
+<a id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="w">          </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22"></a><span class="w">      </span><span class="nt">middlewares</span><span class="p">:</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default-headers-media</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25"></a><span class="w">    </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mycert-tls</span><span class="w"> </span><span class="c1"># change to your cert name</span>
+</code></pre></div></td></tr></table></div>
+<p>Apply with:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>app-ingress-route.yaml
+</code></pre></div></p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Don't forget</strong>: You must create the host declared in your IngressRoute in your DNS server(s).</p>
+</div>
+<h2 id="qa">Q&amp;A</h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Q: Why use a ClusterIP service?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A: Because we will be using Traefik as an ingress controller to expose it to the local network/internet with SSL/TLS certificates.</p>
+</div>
+<p>This concludes the necessary steps and configurations to deploy a resilient media server in a Kubernetes cluster successfully. For more technical details or configurations that could assist, refer to the Operations -&gt; K3S section on my website.</p>
+<p>Quick link: Merox's Media Stack on K3S</p>
 
 
 
@@ -3535,7 +4223,7 @@ Embracing Kubernetes with Longhorn and Synology NAS transforms the media server 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2024</span>
   </span>
 
     
