@@ -32,7 +32,9 @@ The configuration for these applications is hosted on Longhorn storage, ensuring
 
 In this tutorial, you'll find the Kubernetes configuration for each necessary component to set up, install, and secure each service used by the media server.
 
+## 0. If you use Synology NAS, this is the rule I created for my NFS share which will be mounted on kubernetes side.
 
+![NFS_RULE](/home/merox/github/merox.cloud/docs/images/content/nfs_rule_nas.png)
 
 Let's start step by step.
 
