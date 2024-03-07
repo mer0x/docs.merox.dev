@@ -3396,6 +3396,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#0-if-you-use-synology-nas-this-is-the-rule-i-created-for-my-nfs-share-which-will-be-mounted-on-kubernetes-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      0. If you use Synology NAS, this is the rule I created for my NFS share which will be mounted on kubernetes side.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1configuring-pvc-and-pv-for-nfs-share" class="md-nav__link">
     <span class="md-ellipsis">
       1.Configuring PVC and PV for NFS Share
@@ -3577,6 +3586,8 @@ qBittorrent: A powerful BitTorrent client that handles your downloads. Paired wi
 <!-- more -->
 <p>The configuration for these applications is hosted on Longhorn storage, ensuring resilience and ease of management, while the media (movies, shows, books, etc.) is stored on a Synology NAS DS223. The NAS location is utilized as a Persistent Volume (PV) through NFS 4.1 by Kubernetes.</p>
 <p>In this tutorial, you'll find the Kubernetes configuration for each necessary component to set up, install, and secure each service used by the media server.</p>
+<h2 id="0-if-you-use-synology-nas-this-is-the-rule-i-created-for-my-nfs-share-which-will-be-mounted-on-kubernetes-side">0. If you use Synology NAS, this is the rule I created for my NFS share which will be mounted on kubernetes side.</h2>
+<p><img alt="NFS_RULE" src="/home/merox/github/merox.cloud/docs/images/content/nfs_rule_nas.png" /></p>
 <p>Let's start step by step.</p>
 <h2 id="1configuring-pvc-and-pv-for-nfs-share">1.Configuring PVC and PV for NFS Share</h2>
 <p>1.1) Media
