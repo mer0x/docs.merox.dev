@@ -498,6 +498,6 @@ kubectl apply -f app-ingress-route.yaml
 !!! note "Answer"
     A: SURE! The link is at the end of this page :)
 
-This concludes the necessary steps and configurations to deploy a resilient media server in a Kubernetes cluster successfully. For more technical details or configurations that could assist, refer to the Operations -> K3S section on my website.
+This concludes the necessary steps and configurations to deploy a resilient media server in a Kubernetes cluster successfully.
 
 Quick link: [All manifest files](/operations/containerization/k3s/manifests/media-stack/)
