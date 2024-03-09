@@ -2,397 +2,397 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://merox.dev/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/about/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/blog/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/blog/2024/03/01/argocd-installation-on-kubernetes/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/blog/2024/03/06/deploying-a-kubernetes-based-media-server-a-comprehensive-guide/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/intro/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/database/influxdb/basics/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/database/mysql/basics/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/readme/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/ccna/cheatsheet/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/cisco/install/firewall/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/cisco/install/ipsecgre/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/cisco/install/router/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/cisco/install/switch/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/configs/DHCP/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/configs/DNS/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/install/firewall/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/install/router/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/networking/install/switch/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/operating-systems/linux/readme/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/operating-systems/linux/config/ufw/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/operating-systems/linux/install/ubuntu-cloud-init/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/operating-systems/linux/tshoot/grub/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/operating-systems/linux/tshoot/root-password-recovery/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/operating-systems/windows/readme/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/operating-systems/windows/config/active-directory/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/operating-systems/windows/install/wserver2019/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/fundamentals/operating-systems/windows/tshoot/dns/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/homelab/ansible/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/homelab/connectivity/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/homelab/docker/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/homelab/hypervisors/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/homelab/infrastructure/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/homelab/kubernetes/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/homelab/monitoring/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/homelab/security/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/homelab/virtual-machines/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/intro/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/Cybersecurity/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/Cybersecurity/pentesting/tools/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/DevOps/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/DevOps/ansible/playbooks/linux-upgrade/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/DevOps/ansible/playbooks/proxmox-vm/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/DevOps/ansible/playbooks/windows-upgrade/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/Monitoring/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/kubernetes/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/LXCs/proxmox/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/docker/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/docker/docker-compose/cloudflare/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/docker/docker-compose/docker-compose-options/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/docker/docker-compose/influxdb/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/docker/docker-compose/media-stack/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/docker/docker-compose/monitoring-stack/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/docker/docker-compose/uptime-kuma/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/docker/docker-compose/wordpress/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/installation/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/upgrade/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/Manifests/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/argocd/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/cert-manager/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/dashboard/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/expose-service/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/loki/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/media-stack/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/monitor-stack/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/netdata/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/nfs-share/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/traefik/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/wikijs/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/containerization/k3s/manifests/wordpress/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/monitoring/alertmanager/basics/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/monitoring/grafana/basics/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/monitoring/grafana/prometheus-alertmanager/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/monitoring/prometheus/basics/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/virtualization/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/operations/virtualization/VMs/proxmox/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/blog/archive/2024/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/blog/category/kubernetes/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://merox.dev/blog/category/installation/</loc>
-         <lastmod>2024-03-08</lastmod>
+         <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
