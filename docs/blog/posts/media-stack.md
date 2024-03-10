@@ -21,11 +21,12 @@ comments: true
 For a long time, I've been on the hunt for a comprehensive and well-crafted tutorial to deploy a media server on my Kubernetes cluster. This media server stack includes Jellyfin, Radarr, Sonarr, Jackett, and qBittorrent. Let's briefly dive into what each component brings to our setup
 
 !!! example
-    Jellyfin: An open-source media system that provides a way to manage and stream your media library across various devices.<br>
-    Radarr: A movie collection manager for Usenet and BitTorrent users. It automates the process of searching for movies, downloading, and managing your movie library.<br>
-    Sonarr: Similar to Radarr but for TV shows. It keeps track of your series, downloads new episodes, and manages your collection with ease.<br>
-    Jackett: Acts as a proxy server, translating queries from other apps (like Sonarr or Radarr) into queries that can be understood by a wide array of torrent search engines.<br>
-    qBittorrent: A powerful BitTorrent client that handles your downloads. Paired with Jackett, it streamlines finding and downloading media content.
+    **Jellyfin**: An open-source media system that provides a way to manage and stream your media library across various devices.<br>
+    **Radarr**: A movie collection manager for Usenet and BitTorrent users. It automates the process of searching for movies, downloading, and managing your movie library.<br>
+    **Sonarr**: Similar to Radarr but for TV shows. It keeps track of your series, downloads new episodes, and manages your collection with ease.<br>
+    **Jackett**: Acts as a proxy server, translating queries from other apps (like Sonarr or Radarr) into queries that can be understood by a wide array of torrent search engines.<br>
+    **qBittorrent**: A powerful BitTorrent client that handles your downloads. Paired with Jackett, it streamlines finding and downloading media content. <br>
+    **Gluetun**: A lightweight, open-source VPN client for Docker environments, supporting multiple VPN providers to secure and manage internet connections across containerized applications. It ensures privacy and seamless network security with easy configuration and integration.
 
 <!-- more -->
 The configuration for these applications is hosted on Longhorn storage, ensuring resilience and ease of management, while the media (movies, shows, books, etc.) is stored on a Synology NAS DS223. The NAS location is utilized as a Persistent Volume (PV) through NFS 4.1 by Kubernetes.
@@ -40,7 +41,7 @@ Let's start step by step.
 
 ## 1.Configuring PVC and PV for NFS Share
 
-1.1) Media
+1.1) Media <br>
 Create nfs-media-pv-and-pvc.yaml:
 
 ```yaml linenums="1"
@@ -84,7 +85,7 @@ Apply with:
 kubectl apply -f nfs-media-pv-and-pvc.yaml
 ```
 
-1.2) Download
+1.2) Download <br>
 Create nfs-download-pv-and-pvc.yaml:
 
 ```yaml linenums="1"
@@ -156,7 +157,7 @@ kubectl apply -f app-config-pvc.yaml
 
 ## 3.Deploying each application
 
-3.1) Jellyfin:
+3.1) Jellyfin: <br>
 Jellyfin serves as our media streaming platform, providing access to movies, TV shows, and other media across various devices. Here's how to deploy it
 
 Create specific yaml for each file, for example:
@@ -203,7 +204,7 @@ spec:
 ```
 
 
-3.2) Sonarr:
+3.2) Sonarr: <br>
 Sonarr automates TV show downloads, managing our series collection efficiently.
 
 ``` yaml linenums="1"
@@ -251,7 +252,7 @@ spec:
           claimName: qbitt-download 
 ```
 
-3.3) Radarr:
+3.3) Radarr: <br>
 Radarr works like Sonarr but focuses on movies, keeping our film library organized and up-to-date.
 
 ``` yaml linenums="1"
@@ -298,7 +299,7 @@ spec:
         persistentVolumeClaim:
           claimName: qbitt-download 
 ```
-3.4) Jackett:
+3.4) Jackett: <br>
 Jackett acts as a bridge between torrent search engines and our media management tools, enhancing their capabilities.
 ``` yaml linenums="1"
 apiVersion: apps/v1
@@ -334,7 +335,7 @@ spec:
         persistentVolumeClaim:
           claimName: jackett-config
 ```
-3.5) qbittorrent
+3.5) qBittorrent
 ``` yaml linenums="1"
 apiVersion: apps/v1
 kind: Deployment
@@ -379,6 +380,84 @@ spec:
         persistentVolumeClaim:
           claimName: qbitt-download  
 ```
+
+3.6) qBittorrent with Gluetun
+``` yaml linenums="1" hl_lines="37-60"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qbittorrent
+  namespace: media
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qbittorrent
+  template:
+    metadata:
+      labels:
+        app: qbittorrent
+    spec:
+      containers:
+        - name: qbittorrent
+          image: linuxserver/qbittorrent
+          resources:
+            limits:
+              memory: "2Gi"
+            requests:
+              memory: "512Mi"
+          env:
+           - name: PUID
+             value: "1057"
+           - name: PGID
+             value: "1056"
+          volumeMounts:
+            - name: config
+              mountPath: /config
+            - name: downloads
+              mountPath: /downloads
+          ports:
+            - containerPort: 8080
+
+        - name: gluetun
+          image: qmcgaw/gluetun
+          env:
+            - name: VPNSP
+              value: "protonvpn"
+            - name: OPENVPN_USER
+              valueFrom:
+                secretKeyRef:
+                  name: protonvpn-secrets
+                  key: PROTONVPN_USER
+            - name: OPENVPN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: protonvpn-secrets
+                  key: PROTONVPN_PASSWORD
+            - name: COUNTRY
+              value: "Germany" 
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
+          volumeMounts:
+            - name: gluetun-config
+              mountPath: /gluetun
+
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: qbitt-config
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: qbitt-download
+        - name: gluetun-config
+          persistentVolumeClaim:
+            claimName: gluetun-config
+
+```
+!!! example
+    I've chosen to use ProtonVPN due to their security policy and because they do not collect/store data, but also because of the speeds and diverse settings, all at a very good price
 
 ## 4.Creating ClusterIP Services
 For our media server applications to communicate efficiently within the Kubernetes cluster without exposing them directly to the external network, we utilize ClusterIP services.
