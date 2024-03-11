@@ -1,4 +1,4 @@
-# Clonezilla Backup Guide: NFS Share & Local Storage for Proxmox Cluster
+# Clonezilla: Backup Guide
 
 ## Overview
 
