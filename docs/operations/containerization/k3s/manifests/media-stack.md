@@ -559,3 +559,82 @@ spec:
   selector:
     app: qbittorrent
 ```
+
+### qBittorrent with Gluetun
+
+``` yaml linenums="1" hl_lines="37-60"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qbittorrent
+  namespace: media
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qbittorrent
+  template:
+    metadata:
+      labels:
+        app: qbittorrent
+    spec:
+      containers:
+        - name: qbittorrent
+          image: linuxserver/qbittorrent
+          resources:
+            limits:
+              memory: "2Gi"
+            requests:
+              memory: "512Mi"
+          env:
+           - name: PUID
+             value: "1057"
+           - name: PGID
+             value: "1056"
+          volumeMounts:
+            - name: config
+              mountPath: /config
+            - name: downloads
+              mountPath: /downloads
+          ports:
+            - containerPort: 8080
+
+        - name: gluetun
+          image: qmcgaw/gluetun
+          env:
+            - name: VPNSP
+              value: "protonvpn"
+            - name: OPENVPN_USER
+              valueFrom:
+                secretKeyRef:
+                  name: protonvpn-secrets
+                  key: PROTONVPN_USER
+            - name: OPENVPN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: protonvpn-secrets
+                  key: PROTONVPN_PASSWORD
+            - name: COUNTRY
+              value: "Germany" 
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
+          volumeMounts:
+            - name: gluetun-config
+              mountPath: /gluetun
+
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: qbitt-config
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: qbitt-download
+        - name: gluetun-config
+          persistentVolumeClaim:
+            claimName: gluetun-config
+
+```
+!!! example
+    I've chosen to use ProtonVPN due to their security policy and because they do not collect/store data, but also because of the speeds and diverse settings, all at a very good price
