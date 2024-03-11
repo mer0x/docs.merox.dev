@@ -178,7 +178,7 @@ extra:
       make our documentation better.
   analytics:
     provider: google
-    property: G-Q56HMQT8T4
+    property: G-RXSCNFY5WZ
     feedback:
       title: Was this page helpful?
       ratings:
