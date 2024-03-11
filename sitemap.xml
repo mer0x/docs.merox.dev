@@ -101,6 +101,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://merox.dev/fundamentals/operating-systems/linux/backup/clonezilla/</loc>
+         <lastmod>2024-03-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://merox.dev/fundamentals/operating-systems/linux/config/ufw/</loc>
          <lastmod>2024-03-11</lastmod>
          <changefreq>daily</changefreq>
