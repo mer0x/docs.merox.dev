@@ -6,7 +6,7 @@ Clonezilla is a versatile tool for disk and partition imaging/cloning, perfect f
 
 ## Pre-requisites
 
-- Clonezilla Live on a bootable USB drive
+- Clonezilla Live on a bootable USB drive : [Downlaod link](https://clonezilla.org/downloads.php)
 - Configured and accessible NFS server (for NFS share backups)
 - Sufficient storage space on your backup destination
 
