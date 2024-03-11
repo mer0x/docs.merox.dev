@@ -2,7 +2,7 @@
 
 ## Overview
 
-Clonezilla is a versatile tool for disk and partition imaging/cloning, perfect for backing up your Proxmox cluster disks. This guide covers how to use Clonezilla for backups using both NFS shares and local storage options, ensuring your data's safety and system's rapid recovery in various scenarios.
+Clonezilla is a versatile tool for disk and partition imaging/cloning, perfect for backing up any disks. This guide covers how to use Clonezilla for backups using both NFS shares and local storage options, ensuring your data's safety and system's rapid recovery in various scenarios.For example, I use clonezilla to clone my Proxmox cluster installation disks.
 
 ## Pre-requisites
 
