@@ -2635,6 +2635,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#qbittorrent-with-gluetun" class="md-nav__link">
+    <span class="md-ellipsis">
+      qBittorrent with Gluetun
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3582,6 +3591,15 @@
   <a href="#qbittorrent" class="md-nav__link">
     <span class="md-ellipsis">
       qBittorrent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qbittorrent-with-gluetun" class="md-nav__link">
+    <span class="md-ellipsis">
+      qBittorrent with Gluetun
     </span>
   </a>
   
@@ -4618,6 +4636,153 @@
 <a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
 <a id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbittorrent</span>
 </code></pre></div></td></tr></table></div></p>
+<h3 id="qbittorrent-with-gluetun">qBittorrent with Gluetun</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-20-10">10</a></span>
+<span class="normal"><a href="#__codelineno-20-11">11</a></span>
+<span class="normal"><a href="#__codelineno-20-12">12</a></span>
+<span class="normal"><a href="#__codelineno-20-13">13</a></span>
+<span class="normal"><a href="#__codelineno-20-14">14</a></span>
+<span class="normal"><a href="#__codelineno-20-15">15</a></span>
+<span class="normal"><a href="#__codelineno-20-16">16</a></span>
+<span class="normal"><a href="#__codelineno-20-17">17</a></span>
+<span class="normal"><a href="#__codelineno-20-18">18</a></span>
+<span class="normal"><a href="#__codelineno-20-19">19</a></span>
+<span class="normal"><a href="#__codelineno-20-20">20</a></span>
+<span class="normal"><a href="#__codelineno-20-21">21</a></span>
+<span class="normal"><a href="#__codelineno-20-22">22</a></span>
+<span class="normal"><a href="#__codelineno-20-23">23</a></span>
+<span class="normal"><a href="#__codelineno-20-24">24</a></span>
+<span class="normal"><a href="#__codelineno-20-25">25</a></span>
+<span class="normal"><a href="#__codelineno-20-26">26</a></span>
+<span class="normal"><a href="#__codelineno-20-27">27</a></span>
+<span class="normal"><a href="#__codelineno-20-28">28</a></span>
+<span class="normal"><a href="#__codelineno-20-29">29</a></span>
+<span class="normal"><a href="#__codelineno-20-30">30</a></span>
+<span class="normal"><a href="#__codelineno-20-31">31</a></span>
+<span class="normal"><a href="#__codelineno-20-32">32</a></span>
+<span class="normal"><a href="#__codelineno-20-33">33</a></span>
+<span class="normal"><a href="#__codelineno-20-34">34</a></span>
+<span class="normal"><a href="#__codelineno-20-35">35</a></span>
+<span class="normal"><a href="#__codelineno-20-36">36</a></span>
+<span class="normal"><a href="#__codelineno-20-37">37</a></span>
+<span class="normal"><a href="#__codelineno-20-38">38</a></span>
+<span class="normal"><a href="#__codelineno-20-39">39</a></span>
+<span class="normal"><a href="#__codelineno-20-40">40</a></span>
+<span class="normal"><a href="#__codelineno-20-41">41</a></span>
+<span class="normal"><a href="#__codelineno-20-42">42</a></span>
+<span class="normal"><a href="#__codelineno-20-43">43</a></span>
+<span class="normal"><a href="#__codelineno-20-44">44</a></span>
+<span class="normal"><a href="#__codelineno-20-45">45</a></span>
+<span class="normal"><a href="#__codelineno-20-46">46</a></span>
+<span class="normal"><a href="#__codelineno-20-47">47</a></span>
+<span class="normal"><a href="#__codelineno-20-48">48</a></span>
+<span class="normal"><a href="#__codelineno-20-49">49</a></span>
+<span class="normal"><a href="#__codelineno-20-50">50</a></span>
+<span class="normal"><a href="#__codelineno-20-51">51</a></span>
+<span class="normal"><a href="#__codelineno-20-52">52</a></span>
+<span class="normal"><a href="#__codelineno-20-53">53</a></span>
+<span class="normal"><a href="#__codelineno-20-54">54</a></span>
+<span class="normal"><a href="#__codelineno-20-55">55</a></span>
+<span class="normal"><a href="#__codelineno-20-56">56</a></span>
+<span class="normal"><a href="#__codelineno-20-57">57</a></span>
+<span class="normal"><a href="#__codelineno-20-58">58</a></span>
+<span class="normal"><a href="#__codelineno-20-59">59</a></span>
+<span class="normal"><a href="#__codelineno-20-60">60</a></span>
+<span class="normal"><a href="#__codelineno-20-61">61</a></span>
+<span class="normal"><a href="#__codelineno-20-62">62</a></span>
+<span class="normal"><a href="#__codelineno-20-63">63</a></span>
+<span class="normal"><a href="#__codelineno-20-64">64</a></span>
+<span class="normal"><a href="#__codelineno-20-65">65</a></span>
+<span class="normal"><a href="#__codelineno-20-66">66</a></span>
+<span class="normal"><a href="#__codelineno-20-67">67</a></span>
+<span class="normal"><a href="#__codelineno-20-68">68</a></span>
+<span class="normal"><a href="#__codelineno-20-69">69</a></span>
+<span class="normal"><a href="#__codelineno-20-70">70</a></span>
+<span class="normal"><a href="#__codelineno-20-71">71</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbittorrent</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbittorrent</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbittorrent</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbittorrent</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linuxserver/qbittorrent</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19"></a><span class="w">          </span><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-20-20" name="__codelineno-20-20"></a><span class="w">            </span><span class="nt">limits</span><span class="p">:</span>
+<a id="__codelineno-20-21" name="__codelineno-20-21"></a><span class="w">              </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2Gi&quot;</span>
+<a id="__codelineno-20-22" name="__codelineno-20-22"></a><span class="w">            </span><span class="nt">requests</span><span class="p">:</span>
+<a id="__codelineno-20-23" name="__codelineno-20-23"></a><span class="w">              </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;512Mi&quot;</span>
+<a id="__codelineno-20-24" name="__codelineno-20-24"></a><span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-20-25" name="__codelineno-20-25"></a><span class="w">           </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PUID</span>
+<a id="__codelineno-20-26" name="__codelineno-20-26"></a><span class="w">             </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1057&quot;</span>
+<a id="__codelineno-20-27" name="__codelineno-20-27"></a><span class="w">           </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGID</span>
+<a id="__codelineno-20-28" name="__codelineno-20-28"></a><span class="w">             </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1056&quot;</span>
+<a id="__codelineno-20-29" name="__codelineno-20-29"></a><span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-20-30" name="__codelineno-20-30"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-20-31" name="__codelineno-20-31"></a><span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/config</span>
+<a id="__codelineno-20-32" name="__codelineno-20-32"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">downloads</span>
+<a id="__codelineno-20-33" name="__codelineno-20-33"></a><span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/downloads</span>
+<a id="__codelineno-20-34" name="__codelineno-20-34"></a><span class="w">          </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-20-35" name="__codelineno-20-35"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+<a id="__codelineno-20-36" name="__codelineno-20-36"></a>
+<a id="__codelineno-20-37" name="__codelineno-20-37"></a><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gluetun</span>
+</span><a id="__codelineno-20-38" name="__codelineno-20-38"></a><span class="hll"><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qmcgaw/gluetun</span>
+</span><a id="__codelineno-20-39" name="__codelineno-20-39"></a><span class="hll"><span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+</span><a id="__codelineno-20-40" name="__codelineno-20-40"></a><span class="hll"><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VPNSP</span>
+</span><a id="__codelineno-20-41" name="__codelineno-20-41"></a><span class="hll"><span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;protonvpn&quot;</span>
+</span><a id="__codelineno-20-42" name="__codelineno-20-42"></a><span class="hll"><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPENVPN_USER</span>
+</span><a id="__codelineno-20-43" name="__codelineno-20-43"></a><span class="hll"><span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+</span><a id="__codelineno-20-44" name="__codelineno-20-44"></a><span class="hll"><span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+</span><a id="__codelineno-20-45" name="__codelineno-20-45"></a><span class="hll"><span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">protonvpn-secrets</span>
+</span><a id="__codelineno-20-46" name="__codelineno-20-46"></a><span class="hll"><span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PROTONVPN_USER</span>
+</span><a id="__codelineno-20-47" name="__codelineno-20-47"></a><span class="hll"><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPENVPN_PASSWORD</span>
+</span><a id="__codelineno-20-48" name="__codelineno-20-48"></a><span class="hll"><span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+</span><a id="__codelineno-20-49" name="__codelineno-20-49"></a><span class="hll"><span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+</span><a id="__codelineno-20-50" name="__codelineno-20-50"></a><span class="hll"><span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">protonvpn-secrets</span>
+</span><a id="__codelineno-20-51" name="__codelineno-20-51"></a><span class="hll"><span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PROTONVPN_PASSWORD</span>
+</span><a id="__codelineno-20-52" name="__codelineno-20-52"></a><span class="hll"><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">COUNTRY</span>
+</span><a id="__codelineno-20-53" name="__codelineno-20-53"></a><span class="hll"><span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Germany&quot;</span><span class="w"> </span>
+</span><a id="__codelineno-20-54" name="__codelineno-20-54"></a><span class="hll"><span class="w">          </span><span class="nt">securityContext</span><span class="p">:</span>
+</span><a id="__codelineno-20-55" name="__codelineno-20-55"></a><span class="hll"><span class="w">            </span><span class="nt">capabilities</span><span class="p">:</span>
+</span><a id="__codelineno-20-56" name="__codelineno-20-56"></a><span class="hll"><span class="w">              </span><span class="nt">add</span><span class="p">:</span>
+</span><a id="__codelineno-20-57" name="__codelineno-20-57"></a><span class="hll"><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NET_ADMIN</span>
+</span><a id="__codelineno-20-58" name="__codelineno-20-58"></a><span class="hll"><span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
+</span><a id="__codelineno-20-59" name="__codelineno-20-59"></a><span class="hll"><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gluetun-config</span>
+</span><a id="__codelineno-20-60" name="__codelineno-20-60"></a><span class="hll"><span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/gluetun</span>
+</span><a id="__codelineno-20-61" name="__codelineno-20-61"></a>
+<a id="__codelineno-20-62" name="__codelineno-20-62"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-20-63" name="__codelineno-20-63"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config</span>
+<a id="__codelineno-20-64" name="__codelineno-20-64"></a><span class="w">          </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-20-65" name="__codelineno-20-65"></a><span class="w">            </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbitt-config</span>
+<a id="__codelineno-20-66" name="__codelineno-20-66"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">downloads</span>
+<a id="__codelineno-20-67" name="__codelineno-20-67"></a><span class="w">          </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-20-68" name="__codelineno-20-68"></a><span class="w">            </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qbitt-download</span>
+<a id="__codelineno-20-69" name="__codelineno-20-69"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gluetun-config</span>
+<a id="__codelineno-20-70" name="__codelineno-20-70"></a><span class="w">          </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-20-71" name="__codelineno-20-71"></a><span class="w">            </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gluetun-config</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>I've chosen to use ProtonVPN due to their security policy and because they do not collect/store data, but also because of the speeds and diverse settings, all at a very good price</p>
+</div>
 
 
 
@@ -4640,7 +4805,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2024</span>
   </span>
 
     
