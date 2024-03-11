@@ -89,6 +89,8 @@ nav:
          - T-shoot:
            - GRUB recovery: fundamentals/operating-systems/linux/tshoot/grub.md 
            - Root password recovery: fundamentals/operating-systems/linux/tshoot/root-password-recovery.md
+         - Backup:
+           - Clonezilla: fundamentals/operating-systems/linux/backup/clonezilla.md
       - Windows: 
          - Install:
            - Windows Server 2019: fundamentals/operating-systems/windows/install/wserver2019.md
