@@ -86,6 +86,7 @@ nav:
            - Ubuntu cloud-init: fundamentals/operating-systems/linux/install/ubuntu-cloud-init.md
          - Config:
            - UFW: fundamentals/operating-systems/linux/config/ufw.md
+           - Extend LVM: fundamentals/operating-systems/linux/config/extend-lvm-proxmox.md
          - T-shoot:
            - GRUB recovery: fundamentals/operating-systems/linux/tshoot/grub.md 
            - Root password recovery: fundamentals/operating-systems/linux/tshoot/root-password-recovery.md
