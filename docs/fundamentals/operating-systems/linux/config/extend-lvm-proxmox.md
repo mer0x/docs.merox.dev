@@ -10,7 +10,7 @@ LVM stands for Logical Volume Management. It is a system of managing logical vol
 Log into the device using LVM, in this example I'll be extending the pbs-root and data volumes in Proxmox Backup Server
 Run the following commands in terminal
 
-``` yaml linenums="1"
+``` bash linenums="1"
 # login as root if needed (not needed for proxmox)
 sudo su
 # list disks and partitions
@@ -40,7 +40,7 @@ t
 # enter the partition number
 3
 # set the type to Linux LVM
-30
+43
 # write the changes
 w
 # list disks and partitions, noting the size increase
@@ -48,13 +48,9 @@ fdisk -l
 # extend the existing physical volume
 pvresize /dev/sda3
 # extend the pbs-root logical volume to 100% available free space
-lvresize -L +8GB /dev/pbs/root
+lvextend -l +100%FREE /dev/pbs/root
 # extend the underlying file system
 resize2fs /dev/mapper/pbs-root
-# list logical volumes, noting root is now 8GB larger
-lvdisplay
-# extend the data to 100% available free space
-lvextend -l +100%FREE pbs/data
-# list logical volumes, noting data is now over 35GB
+# list logical volumes
 lvdisplay
 ```
