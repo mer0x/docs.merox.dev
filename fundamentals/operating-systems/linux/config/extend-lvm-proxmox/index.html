@@ -3661,56 +3661,48 @@ Run the following commands in terminal</p>
 <span class="normal"><a href="#__codelineno-0-39">39</a></span>
 <span class="normal"><a href="#__codelineno-0-40">40</a></span>
 <span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># login as root if needed (not needed for proxmox)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">sudo su</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="l l-Scalar l-Scalar-Plain"># list disks and partitions</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">fdisk -l</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="l l-Scalar l-Scalar-Plain"># list volume groups</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="l l-Scalar l-Scalar-Plain">vgdisplay</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="l l-Scalar l-Scalar-Plain"># list logical volumes</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="l l-Scalar l-Scalar-Plain">lvdisplay</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="l l-Scalar l-Scalar-Plain"># edit partitions with fdisk, change device id as needed</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="l l-Scalar l-Scalar-Plain">fdisk /dev/sda</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="l l-Scalar l-Scalar-Plain"># print the partition table</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="l l-Scalar l-Scalar-Plain">p</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="l l-Scalar l-Scalar-Plain"># delete a partition</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="l l-Scalar l-Scalar-Plain">d</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="l l-Scalar l-Scalar-Plain"># enter the lvm partition number</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="l l-Scalar l-Scalar-Plain">3</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="l l-Scalar l-Scalar-Plain"># create a new partition</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="l l-Scalar l-Scalar-Plain">n</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="l l-Scalar l-Scalar-Plain"># enter the new partition number, same as the number deleted</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="l l-Scalar l-Scalar-Plain">3</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="l l-Scalar l-Scalar-Plain"># press enter to accept the default first sector</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="l l-Scalar l-Scalar-Plain"># press enter to accept the default last sector</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="l l-Scalar l-Scalar-Plain"># when prompted about removing the LVM signature, enter N</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="l l-Scalar l-Scalar-Plain">n</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="l l-Scalar l-Scalar-Plain"># set the partition type</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="l l-Scalar l-Scalar-Plain">t</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="l l-Scalar l-Scalar-Plain"># enter the partition number</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="l l-Scalar l-Scalar-Plain">3</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="l l-Scalar l-Scalar-Plain"># set the type to Linux LVM</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="l l-Scalar l-Scalar-Plain">30</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="l l-Scalar l-Scalar-Plain"># write the changes</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="l l-Scalar l-Scalar-Plain">w</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="l l-Scalar l-Scalar-Plain"># list disks and partitions, noting the size increase</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="l l-Scalar l-Scalar-Plain">fdisk -l</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="l l-Scalar l-Scalar-Plain"># extend the existing physical volume</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="l l-Scalar l-Scalar-Plain">pvresize /dev/sda3</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="l l-Scalar l-Scalar-Plain"># extend the pbs-root logical volume to 100% available free space</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="l l-Scalar l-Scalar-Plain">lvresize -L +8GB /dev/pbs/root</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="l l-Scalar l-Scalar-Plain"># extend the underlying file system</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="l l-Scalar l-Scalar-Plain">resize2fs /dev/mapper/pbs-root</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="l l-Scalar l-Scalar-Plain"># list logical volumes, noting root is now 8GB larger</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="l l-Scalar l-Scalar-Plain">lvdisplay</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="l l-Scalar l-Scalar-Plain"># extend the data to 100% available free space</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="l l-Scalar l-Scalar-Plain">lvextend -l +100%FREE pbs/data</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="l l-Scalar l-Scalar-Plain"># list logical volumes, noting data is now over 35GB</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="l l-Scalar l-Scalar-Plain">lvdisplay</span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># login as root if needed (not needed for proxmox)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>sudo<span class="w"> </span>su
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># list disks and partitions</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>fdisk<span class="w"> </span>-l
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1"># list volume groups</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>vgdisplay
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1"># list logical volumes</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>lvdisplay
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1"># edit partitions with fdisk, change device id as needed</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>fdisk<span class="w"> </span>/dev/sda
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="c1"># print the partition table</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>p
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="c1"># delete a partition</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>d
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="c1"># enter the lvm partition number</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="m">3</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="c1"># create a new partition</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>n
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="c1"># enter the new partition number, same as the number deleted</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="m">3</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="c1"># press enter to accept the default first sector</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="c1"># press enter to accept the default last sector</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="c1"># when prompted about removing the LVM signature, enter N</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>n
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="c1"># set the partition type</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>t
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="c1"># enter the partition number</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="m">3</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="c1"># set the type to Linux LVM</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="m">43</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="c1"># write the changes</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>w
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="c1"># list disks and partitions, noting the size increase</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>fdisk<span class="w"> </span>-l
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="c1"># extend the existing physical volume</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>pvresize<span class="w"> </span>/dev/sda3
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="c1"># extend the pbs-root logical volume to 100% available free space</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>lvextend<span class="w"> </span>-l<span class="w"> </span>+100%FREE<span class="w"> </span>/dev/pbs/root
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="c1"># extend the underlying file system</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>resize2fs<span class="w"> </span>/dev/mapper/pbs-root
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="c1"># list logical volumes</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>lvdisplay
 </code></pre></div></td></tr></table></div>
 
 
