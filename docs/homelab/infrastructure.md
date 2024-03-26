@@ -164,6 +164,7 @@ igb2: flags=8863<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
         -  Storage: 4TB SSD (2 x 2TB), 4TB HDD (2 x 2TB)
         -  GPU: Nvidia Quadro K2000
         -  OS: Windows 11
+        * I will add this one back in the Proxmox Cluster*
 
 
 
