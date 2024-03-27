@@ -13,7 +13,7 @@ comments: true
 
 
 <figure markdown="span">
-  ![header-media](/images/blog-headerimage.png){ width="600" }
+  ![header-media](/images/blog-headerimage.png){ width="400" }
   <figcaption>Tailscale between pfSense and Linux</figcaption>
 </figure>
 
