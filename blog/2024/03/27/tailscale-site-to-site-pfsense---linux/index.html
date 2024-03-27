@@ -3741,11 +3741,13 @@
 <p>This scenario will not work on subnets with overlapping CIDR ranges, nor with 4via6 subnet routing.</p>
 </div>
 <!-- more -->
-<p>In my case, there are two private subnets without any connectivity between them.</p>
-<p>Subnet 1 - Homelab:  10.57.57.0/24
+<p>In my case, there are two private subnets without any connectivity between them.
+<br>
+Subnet 1 - Homelab:  10.57.57.0/24<br>
 Subnet 2 - Cloudlab: 192.168.57.0/24</p>
-<p>IP addresses of the routers for each subnet:</p>
-<p>Subnet 1 -&gt; 10.57.57.1 ( pfSense )
+<p>IP addresses of the routers for each subnet:
+<br>
+Subnet 1 -&gt; 10.57.57.1 ( pfSense )<br>
 Subnet 2 -&gt; 192.168.57.254 ( Linux VM )</p>
 <h2 id="setting-up-tailscale-site-to-site-on-pfsense-subnet-1">Setting up Tailscale site-to-site on pfSense (Subnet 1)</h2>
 <p>Let's dive into the configuration. Due to pfSense being based on FreeBSD and Tailscale not offering as much support for pfSense as for other platforms, this configuration is a bit trickier. But let's see how it looks.</p>
@@ -3758,8 +3760,10 @@ Click on the "Available Packages" tab. Search for tailscale and click "Install".
 <p>Navigate to Tailscale:
 VPN -&gt; Tailscale</p>
 <h4 id="authentication">Authentication:</h4>
-<p>*Copy auth-key from https://login.tailscale.com/admin/settings/keys
-* Generate Auth keys</p>
+<ul>
+<li>Copy auth-key from https://login.tailscale.com/admin/settings/keys</li>
+<li>Generate Auth keys</li>
+</ul>
 <p><img alt="Tailscale pfSense" src="/images/blog-tailscale-pfsense.png" /></p>
 <h4 id="settings">Settings:</h4>
 <ul>
