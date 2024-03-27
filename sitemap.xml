@@ -401,7 +401,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://merox.dev/blog/category/kubernetes/</loc>
+         <loc>https://merox.dev/blog/category/networking/</loc>
          <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -411,7 +411,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://merox.dev/blog/category/networking/</loc>
+         <loc>https://merox.dev/blog/category/kubernetes/</loc>
          <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -3500,68 +3500,6 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2024-03-27 00:00:00">March 27, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="./" class="md-meta__link">kubernetes</a>, 
-              <a href="../installation/" class="md-meta__link">installation</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="tailscale-site-to-site-pfsense-linux"><a class="toclink" href="../../2024/03/27/tailscale-site-to-site-pfsense---linux/">Tailscale site-to-site pfSense - Linux</a></h2>
-<figure>
-  <img alt="header-media" src="/images/blog-headerimage.png" width="400" />
-  <figcaption>Tailscale between pfSense and Linux</figcaption>
-</figure>
-<p>I've decided to implement monitoring for my homelab through a cloud virtual machine (VM) (I've opted for Hetzner, but more on that in a future post).</p>
-<p>To enhance the security of this setup, I've chosen to establish the cloud VM from Hetzner as the single entry point to my infrastructure. For this purpose, I've opted to use Tailscale for tunneling, not only for client-to-site but also for site-to-site connectivity.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Informations provided by tailscale:
-"Use site-to-site layer 3 (L3) networking to connect two subnets on your Tailscale network with each other. The two subnets are each required to provide a subnet router but their devices do not need to install Tailscale. This scenario applies to Linux subnet routers only."</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This scenario will not work on subnets with overlapping CIDR ranges, nor with 4via6 subnet routing.</p>
-</div>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2024/03/27/tailscale-site-to-site-pfsense---linux/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
           <time datetime="2024-03-06 00:00:00">March 6, 2024</time></li>
         
           <li class="md-meta__item">
