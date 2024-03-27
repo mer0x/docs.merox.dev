@@ -36,7 +36,7 @@ Subnet 2 -> 192.168.57.254 ( Linux VM )
 ## Setting up Tailscale site-to-site on pfSense (Subnet 1)
 Let's dive into the configuration. Due to pfSense being based on FreeBSD and Tailscale not offering as much support for pfSense as for other platforms, this configuration is a bit trickier. But let's see how it looks.
 
-### Install tailscale on pfSense:
+### 1) Install tailscale on pfSense:
 
 Navigate to Package Manager:
 Go to System > Package Manager in the pfSense web interface.
@@ -44,20 +44,20 @@ Go to System > Package Manager in the pfSense web interface.
 Install Package: 
 Click on the "Available Packages" tab. Search for tailscale and click "Install".
 
-### Configure tailscale on pfSense:
+### 1.2) Configure tailscale on pfSense:
 
 
 Navigate to Tailscale:
 VPN -> Tailscale
 
-#### Authentication:
+#### 1.2.1) Authentication:
 
 * Copy auth-key from https://login.tailscale.com/admin/settings/keys
 * Generate Auth keys
 
 ![Tailscale pfSense](/images/blog-tailscale-pfsense.png)
 
-#### Settings:
+#### 1.2.2) Settings:
 
 * Check: "Enable tailscale" 
 * Listen port: leave it as it is
@@ -65,13 +65,13 @@ VPN -> Tailscale
 * Optional check: Advertise Exit Node
 * Advertised Routes: 10.57.57.0/24 
 
-#### Tricky part: Outbound NAT Rules
+#### 1.2.3) Tricky part: Outbound NAT Rules
 
 Navigate to Firewall-> NAT-> Outbound
 
 #### Make sure Outbound NAT Mode is configured to be configured as:
 Hybrid Outbound NAT 
-#### Create next manual mapping:
+#### 1.2.4) Create next manual mapping:
 
 * Interface: Tailscale
 * Address Family: IPV4+IPV6
@@ -88,7 +88,7 @@ This is how should look like:
 
 ## Configure tailscale site-to-site on Linux VM (Subnet 2)
 
-### Install tailscale and activate routing:
+### 2) Install tailscale and activate routing:
 
 ``` bash linenums="1"
     curl -sSL https://tailscale.com/install.sh | sh #Install tailscale
@@ -97,7 +97,7 @@ This is how should look like:
     sudo sysctl -p /etc/sysctl.conf # Apply routing configuration at kernel level
 ```
 
-### On the 192.168.57.254 device, advertise routes for 192.168.57.0/24:
+### 2.1) On the 192.168.57.254 device, advertise routes for 192.168.57.0/24:
 
 ``` bash linenums="1"
     tailscale up --advertise-routes=192.168.57.0/24 --snat-subnet-routes=false --accept-routes
@@ -118,7 +118,7 @@ Open the Machines page of the admin console, and locate the devices that you con
     The Tailscale side of the routing is complete.
 
 
-### Credits:
+### Credits
 
 <div class="grid cards" markdown>
 
