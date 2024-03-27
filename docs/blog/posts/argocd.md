@@ -1,8 +1,8 @@
 ---
 draft: false 
-date: 2024-03-01 
+date: 2024-03-27
 categories:
-  - kubernetes
+  - networking
   - installation
 authors:
   - robertmelcher
