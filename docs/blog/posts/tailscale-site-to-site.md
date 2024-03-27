@@ -11,6 +11,12 @@ comments: true
 
 # Tailscale site-to-site pfSense - Linux
 
+
+<figure markdown="span">
+  ![header-media](/images/blog-headerimage.png){ width="300" }
+  <figcaption>MEDIA STACK K8S</figcaption>
+</figure>
+
 I've decided to implement monitoring for my homelab through a cloud virtual machine (VM) (I've opted for Hetzner, but more on that in a future post).
 
 To enhance the security of this setup, I've chosen to establish the cloud VM from Hetzner as the single entry point to my infrastructure. For this purpose, I've opted to use Tailscale for tunneling, not only for client-to-site but also for site-to-site connectivity.
