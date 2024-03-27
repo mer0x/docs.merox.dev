@@ -3496,46 +3496,46 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-tailscale-on-pfsense" class="md-nav__link">
+  <a href="#1-install-tailscale-on-pfsense" class="md-nav__link">
     <span class="md-ellipsis">
-      Install tailscale on pfSense:
+      1) Install tailscale on pfSense:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configure-tailscale-on-pfsense" class="md-nav__link">
+  <a href="#12-configure-tailscale-on-pfsense" class="md-nav__link">
     <span class="md-ellipsis">
-      Configure tailscale on pfSense:
+      1.2) Configure tailscale on pfSense:
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Configure tailscale on pfSense:">
+    <nav class="md-nav" aria-label="1.2) Configure tailscale on pfSense:">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
+  <a href="#121-authentication" class="md-nav__link">
     <span class="md-ellipsis">
-      Authentication:
+      1.2.1) Authentication:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#settings" class="md-nav__link">
+  <a href="#122-settings" class="md-nav__link">
     <span class="md-ellipsis">
-      Settings:
+      1.2.2) Settings:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tricky-part-outbound-nat-rules" class="md-nav__link">
+  <a href="#123-tricky-part-outbound-nat-rules" class="md-nav__link">
     <span class="md-ellipsis">
-      Tricky part: Outbound NAT Rules
+      1.2.3) Tricky part: Outbound NAT Rules
     </span>
   </a>
   
@@ -3551,9 +3551,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-next-manual-mapping" class="md-nav__link">
+  <a href="#124-create-next-manual-mapping" class="md-nav__link">
     <span class="md-ellipsis">
-      Create next manual mapping:
+      1.2.4) Create next manual mapping:
     </span>
   </a>
   
@@ -3580,18 +3580,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-tailscale-and-activate-routing" class="md-nav__link">
+  <a href="#2-install-tailscale-and-activate-routing" class="md-nav__link">
     <span class="md-ellipsis">
-      Install tailscale and activate routing:
+      2) Install tailscale and activate routing:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#on-the-19216857254-device-advertise-routes-for-19216857024" class="md-nav__link">
+  <a href="#21-on-the-19216857254-device-advertise-routes-for-19216857024" class="md-nav__link">
     <span class="md-ellipsis">
-      On the 192.168.57.254 device, advertise routes for 192.168.57.0/24:
+      2.1) On the 192.168.57.254 device, advertise routes for 192.168.57.0/24:
     </span>
   </a>
   
@@ -3615,7 +3615,7 @@
           <li class="md-nav__item">
   <a href="#credits" class="md-nav__link">
     <span class="md-ellipsis">
-      Credits:
+      Credits
     </span>
   </a>
   
@@ -3751,21 +3751,21 @@ Subnet 1 -&gt; 10.57.57.1 ( pfSense )<br>
 Subnet 2 -&gt; 192.168.57.254 ( Linux VM )</p>
 <h2 id="setting-up-tailscale-site-to-site-on-pfsense-subnet-1">Setting up Tailscale site-to-site on pfSense (Subnet 1)</h2>
 <p>Let's dive into the configuration. Due to pfSense being based on FreeBSD and Tailscale not offering as much support for pfSense as for other platforms, this configuration is a bit trickier. But let's see how it looks.</p>
-<h3 id="install-tailscale-on-pfsense">Install tailscale on pfSense:</h3>
+<h3 id="1-install-tailscale-on-pfsense">1) Install tailscale on pfSense:</h3>
 <p>Navigate to Package Manager:
 Go to System &gt; Package Manager in the pfSense web interface.</p>
 <p>Install Package: 
 Click on the "Available Packages" tab. Search for tailscale and click "Install".</p>
-<h3 id="configure-tailscale-on-pfsense">Configure tailscale on pfSense:</h3>
+<h3 id="12-configure-tailscale-on-pfsense">1.2) Configure tailscale on pfSense:</h3>
 <p>Navigate to Tailscale:
 VPN -&gt; Tailscale</p>
-<h4 id="authentication">Authentication:</h4>
+<h4 id="121-authentication">1.2.1) Authentication:</h4>
 <ul>
 <li>Copy auth-key from https://login.tailscale.com/admin/settings/keys</li>
 <li>Generate Auth keys</li>
 </ul>
 <p><img alt="Tailscale pfSense" src="/images/blog-tailscale-pfsense.png" /></p>
-<h4 id="settings">Settings:</h4>
+<h4 id="122-settings">1.2.2) Settings:</h4>
 <ul>
 <li>Check: "Enable tailscale" </li>
 <li>Listen port: leave it as it is</li>
@@ -3773,11 +3773,11 @@ VPN -&gt; Tailscale</p>
 <li>Optional check: Advertise Exit Node</li>
 <li>Advertised Routes: 10.57.57.0/24 </li>
 </ul>
-<h4 id="tricky-part-outbound-nat-rules">Tricky part: Outbound NAT Rules</h4>
+<h4 id="123-tricky-part-outbound-nat-rules">1.2.3) Tricky part: Outbound NAT Rules</h4>
 <p>Navigate to Firewall-&gt; NAT-&gt; Outbound</p>
 <h4 id="make-sure-outbound-nat-mode-is-configured-to-be-configured-as">Make sure Outbound NAT Mode is configured to be configured as:</h4>
 <p>Hybrid Outbound NAT </p>
-<h4 id="create-next-manual-mapping">Create next manual mapping:</h4>
+<h4 id="124-create-next-manual-mapping">1.2.4) Create next manual mapping:</h4>
 <ul>
 <li>Interface: Tailscale</li>
 <li>Address Family: IPV4+IPV6</li>
@@ -3792,7 +3792,7 @@ Workaround ( working as expected ):<br>
 This is how should look like:
 <img alt="Tailscale pfSense2" src="/images/blog-tailscale-pfsense2.png" /></p>
 <h2 id="configure-tailscale-site-to-site-on-linux-vm-subnet-2">Configure tailscale site-to-site on Linux VM (Subnet 2)</h2>
-<h3 id="install-tailscale-and-activate-routing">Install tailscale and activate routing:</h3>
+<h3 id="2-install-tailscale-and-activate-routing">2) Install tailscale and activate routing:</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -3801,7 +3801,7 @@ This is how should look like:
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.ipv6.conf.all.forwarding = 1&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1">#Activate routing for IPv6</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span>sudo<span class="w"> </span>sysctl<span class="w"> </span>-p<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1"># Apply routing configuration at kernel level</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="on-the-19216857254-device-advertise-routes-for-19216857024">On the 192.168.57.254 device, advertise routes for 192.168.57.0/24:</h3>
+<h3 id="21-on-the-19216857254-device-advertise-routes-for-19216857024">2.1) On the 192.168.57.254 device, advertise routes for 192.168.57.0/24:</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">    </span>tailscale<span class="w"> </span>up<span class="w"> </span>--advertise-routes<span class="o">=</span><span class="m">192</span>.168.57.0/24<span class="w"> </span>--snat-subnet-routes<span class="o">=</span><span class="nb">false</span><span class="w"> </span>--accept-routes
 </code></pre></div></td></tr></table></div>
 <p>Command explained:<br>
@@ -3818,7 +3818,7 @@ This is how should look like:
 <p class="admonition-title">Success</p>
 <p>The Tailscale side of the routing is complete.</p>
 </div>
-<h3 id="credits">Credits:</h3>
+<h3 id="credits">Credits</h3>
 <div class="grid cards">
 <ul>
 <li><a href="https://tailscale.com/kb/1214/site-to-site#step-2-enable-subnet-routes-from-the-admin-console"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12Z"/></svg></span> <strong>Tailscale</strong> Seamless networking for secure connections.</a></li>
