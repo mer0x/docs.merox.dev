@@ -79,14 +79,14 @@ Hybrid Outbound NAT
 * Source Network or Alias: 10.57.57.0/24
 * Destination: Any
 
-This part is broken from last update ( 23.09.1 ) so NAT Alias is missing. 
-Workaround ( working as expected ):
-* Translation section:
-    * Address: Network or Alias put the tailscale ip address 100.xx.xx.xx/32
+This part is broken from last update ( 23.09.1 ) so NAT Alias is missing. <br>
+Workaround ( working as expected ):<br>
+* Translation section:<br>
+    * Address: Network or Alias put the tailscale ip address 100.xx.xx.xx/32<br>
 This is how should look like:
 ![Tailscale pfSense2](/images/blog-tailscale-pfsense2.png)
 
-## Configure tailscale site-to-site on Linux VM ( Subnet 2)
+## Configure tailscale site-to-site on Linux VM (Subnet 2)
 
 ### Install tailscale and activate routing:
 
