@@ -9,7 +9,7 @@ authors:
 comments: true
 ---
 
-# Tailscale site-to-site pfSense-Linux
+# Tailscale site-to-site pfSense - Linux
 
 
 <figure markdown="span">
