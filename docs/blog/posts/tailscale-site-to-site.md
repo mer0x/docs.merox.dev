@@ -86,10 +86,11 @@ Hybrid Outbound NAT
 * Source Network or Alias: 10.57.57.0/24
 * Destination: Any
 
-This part is broken from last update ( 23.09.1 ) so NAT Alias is missing. <br>
+This part is broken from last update [ 23.09.1 ] so NAT Alias is missing. <br>
 Workaround:<br>
 * Translation section:<br>
-    * Address: Network or Alias put the tailscale ip address 100.xx.xx.xx/32<br>
+    * Address: Network or Alias 
+    * Put the tailscale ip address 100.xx.xx.xx/32<br>
 This is how should look like:<br>
 ![Tailscale pfSense2](/images/blog-tailscale-pfsense2.png)
 
