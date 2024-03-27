@@ -119,5 +119,10 @@ Open the Machines page of the admin console, and locate the devices that you con
 
 
 ### Credits:
-https://tailscale.com/kb/1214/site-to-site#step-2-enable-subnet-routes-from-the-admin-console <br>
-https://www.youtube.com/watch?v=Fg_jIPVcioY
+
+<div class="grid cards" markdown>
+
+- <a href="https://tailscale.com/kb/1214/site-to-site#step-2-enable-subnet-routes-from-the-admin-console">:material-file-document: __Tailscale__ Seamless networking for secure connections.</a>
+- <a href="https://www.youtube.com/watch?v=Fg_jIPVcioY">:simple-youtube: __Christian McDonald__  YouTube Channel</a>
+
+</div>
