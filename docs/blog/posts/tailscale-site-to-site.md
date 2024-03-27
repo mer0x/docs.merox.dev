@@ -32,6 +32,7 @@ To enhance the security of this setup, I've chosen to establish the cloud VM fro
 <!-- more -->
 In my case, there are two private subnets without any connectivity between them.
 <br>
+<br>
 Subnet 1 - Homelab:  10.57.57.0/24<br>
 Subnet 2 - Cloudlab: 192.168.57.0/24
 
