@@ -24,13 +24,13 @@ To enhance the security of this setup, I've chosen to establish the cloud VM fro
 
 <!-- more -->
 In my case, there are two private subnets without any connectivity between them.
-
-Subnet 1 - Homelab:  10.57.57.0/24
+<br>
+Subnet 1 - Homelab:  10.57.57.0/24<br>
 Subnet 2 - Cloudlab: 192.168.57.0/24
 
 IP addresses of the routers for each subnet:
-
-Subnet 1 -> 10.57.57.1 ( pfSense )
+<br>
+Subnet 1 -> 10.57.57.1 ( pfSense )<br>
 Subnet 2 -> 192.168.57.254 ( Linux VM )
 
 ## Setting up Tailscale site-to-site on pfSense (Subnet 1)
@@ -52,7 +52,7 @@ VPN -> Tailscale
 
 #### Authentication:
 
-*Copy auth-key from https://login.tailscale.com/admin/settings/keys
+* Copy auth-key from https://login.tailscale.com/admin/settings/keys
 * Generate Auth keys
 
 ![Tailscale pfSense](/images/blog-tailscale-pfsense.png)
