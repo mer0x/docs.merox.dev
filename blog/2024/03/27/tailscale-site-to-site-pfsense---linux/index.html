@@ -10,10 +10,10 @@
       
       
       
-        <link rel="canonical" href="https://merox.dev/blog/2024/03/27/argocd-installation-on-kubernetes/">
+        <link rel="canonical" href="https://merox.dev/blog/2024/03/27/tailscale-site-to-site-pfsense---linux/">
       
       
-        <link rel="prev" href="../tailscale-site-to-site/">
+        <link rel="prev" href="../../06/deploying-a-kubernetes-based-media-server-a-comprehensive-guide/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>ArgoCD installation on kubernetes - MEROX.DEV</title>
+        <title>Tailscale site-to-site pfSense - Linux - MEROX.DEV</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#argocd-installation-on-kubernetes" class="md-skip">
+        <a href="#tailscale-site-to-site-pfsense-linux" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ArgoCD installation on kubernetes
+              Tailscale site-to-site pfSense - Linux
             
           </span>
         </div>
@@ -3479,6 +3479,155 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-tailscale-site-to-site-on-pfsense-subnet-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up Tailscale site-to-site on pfSense (Subnet 1)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up Tailscale site-to-site on pfSense (Subnet 1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-tailscale-on-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install tailscale on pfSense:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-tailscale-on-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure tailscale on pfSense:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure tailscale on pfSense:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tricky-part-outbound-nat-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tricky part: Outbound NAT Rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-sure-outbound-nat-mode-is-configured-to-be-configured-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make sure Outbound NAT Mode is configured to be configured as:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-next-manual-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create next manual mapping:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-tailscale-site-to-site-on-linux-vm-subnet-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure tailscale site-to-site on Linux VM ( Subnet 2)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure tailscale site-to-site on Linux VM ( Subnet 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-tailscale-and-activate-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install tailscale and activate routing:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-the-19216857254-device-advertise-routes-for-19216857024" class="md-nav__link">
+    <span class="md-ellipsis">
+      On the 192.168.57.254 device, advertise routes for 192.168.57.0/24:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-subnet-routes-from-the-admin-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable subnet routes from the admin console
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable subnet routes from the admin console">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Credits:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3544,7 +3693,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/networking/">networking</a>, 
+                              <a href="../../../../category/kubernetes/">kubernetes</a>, 
                               <a href="../../../../category/installation/">installation</a></span>
                         </div>
                       </li>
@@ -3556,7 +3705,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -3579,19 +3728,84 @@
   
 
 
-<h1 id="argocd-installation-on-kubernetes">ArgoCD installation on kubernetes</h1>
-<p><strong>Install and configure ArgoCD</strong></p>
-<ol>
-<li>Create a new namespace argocd and deploy ArgoCD with the web UI included.
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>argocd
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-</code></pre></div></td></tr></table></div></li>
-<li>Log in to the ArgoCD web interface</li>
-</ol>
-<p>Log in to the ArgoCD web interface https://<strong>[your-dns-record/]</strong> by using the default username admin and the password, collected by the following command.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>argocd-initial-admin-secret<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.password}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
-</code></pre></div></td></tr></table></div>
+<h1 id="tailscale-site-to-site-pfsense-linux">Tailscale site-to-site pfSense - Linux</h1>
+<p>I've decided to implement monitoring for my homelab through a cloud virtual machine (VM) (I've opted for Hetzner, but more on that in a future post).</p>
+<p>To enhance the security of this setup, I've chosen to establish the cloud VM from Hetzner as the single entry point to my infrastructure. For this purpose, I've opted to use Tailscale for tunneling, not only for client-to-site but also for site-to-site connectivity.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    Informations provided by tailscale:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &quot;Use site-to-site layer 3 (L3) networking to connect two subnets on your Tailscale network with each other. The two subnets are each required to provide a subnet router but their devices do not need to install Tailscale. This scenario applies to Linux subnet routers only.&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    This scenario will not work on subnets with overlapping CIDR ranges, nor with 4via6 subnet routing.
+</code></pre></div></p>
+<!-- more -->
+<p>In my case, there are two private subnets without any connectivity between them.</p>
+<p>Subnet 1 - Homelab:  10.57.57.0/24
+Subnet 2 - Cloudlab: 192.168.57.0/24</p>
+<p>IP addresses of the routers for each subnet:</p>
+<p>Subnet 1 -&gt; 10.57.57.1 ( pfSense )
+Subnet 2 -&gt; 192.168.57.254 ( Linux VM )</p>
+<h2 id="setting-up-tailscale-site-to-site-on-pfsense-subnet-1">Setting up Tailscale site-to-site on pfSense (Subnet 1)</h2>
+<p>Let's dive into the configuration. Due to pfSense being based on FreeBSD and Tailscale not offering as much support for pfSense as for other platforms, this configuration is a bit trickier. But let's see how it looks.</p>
+<h3 id="install-tailscale-on-pfsense">Install tailscale on pfSense:</h3>
+<p>Navigate to Package Manager:
+Go to System &gt; Package Manager in the pfSense web interface.</p>
+<p>Install Package: 
+Click on the "Available Packages" tab. Search for tailscale and click "Install".</p>
+<h3 id="configure-tailscale-on-pfsense">Configure tailscale on pfSense:</h3>
+<p>Navigate to Tailscale:
+VPN -&gt; Tailscale</p>
+<h4 id="authentication">Authentication:</h4>
+<p>*Copy auth-key from https://login.tailscale.com/admin/settings/keys
+* Generate Auth keys
+()[images/blog-tailscale-pfsense.png]</p>
+<h4 id="settings">Settings:</h4>
+<ul>
+<li>Check: "Enable tailscale" </li>
+<li>Listen port: leave it as it is</li>
+<li>Check: Accept Subnet Routes</li>
+<li>Optional check: Advertise Exit Node</li>
+<li>Advertised Routes: 10.57.57.0/24 </li>
+</ul>
+<h4 id="tricky-part-outbound-nat-rules">Tricky part: Outbound NAT Rules</h4>
+<p>Navigate to Firewall-&gt; NAT-&gt; Outbound</p>
+<h4 id="make-sure-outbound-nat-mode-is-configured-to-be-configured-as">Make sure Outbound NAT Mode is configured to be configured as:</h4>
+<p>Hybrid Outbound NAT </p>
+<h4 id="create-next-manual-mapping">Create next manual mapping:</h4>
+<ul>
+<li>Interface: Tailscale</li>
+<li>Address Family: IPV4+IPV6</li>
+<li>Protocol: Any</li>
+<li>Source Network or Alias: 10.57.57.0/24</li>
+<li>Destination: Any</li>
+</ul>
+<p>This part is broken from last update ( 23.09.1 ) so NAT Alias is missing. 
+Workaround ( working as expected ):
+* Translation section:
+    * Address: Network or Alias put the tailscale ip address 100.xx.xx.xx/32
+This is how should look like:
+()[images/blog-tailscale-pfsense2.png]</p>
+<h2 id="configure-tailscale-site-to-site-on-linux-vm-subnet-2">Configure tailscale site-to-site on Linux VM ( Subnet 2)</h2>
+<h3 id="install-tailscale-and-activate-routing">Install tailscale and activate routing:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span>curl<span class="w"> </span>-sSL<span class="w"> </span>https://tailscale.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh<span class="w"> </span><span class="c1">#Install tailscale</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.ipv4.ip_forward = 1&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1">#Activate routing for IPv4</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.ipv6.conf.all.forwarding = 1&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1">#Activate routing for IPv6</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>sudo<span class="w"> </span>sysctl<span class="w"> </span>-p<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1"># Apply routing configuration at kernel level</span>
+</code></pre></div>
+<h3 id="on-the-19216857254-device-advertise-routes-for-19216857024">On the 192.168.57.254 device, advertise routes for 192.168.57.0/24:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span>tailscale<span class="w"> </span>up<span class="w"> </span>--advertise-routes<span class="o">=</span><span class="m">192</span>.168.57.0/24<span class="w"> </span>--snat-subnet-routes<span class="o">=</span><span class="nb">false</span><span class="w"> </span>--accept-routes
+</code></pre></div>
+<p>Command explained:
+<b>--advertise-routes<b>: Exposes the physical subnet routes to your entire Tailscale network.<br>
+<b>--snat-subnet-routes=false</b>: Disables source NAT. In normal operations, a subnet device will see the traffic originating from the subnet router. This simplifies routing, but does not allow traversing multiple networks. By disabling source NAT, the end machine sees the LAN IP address of the originating machine as the source.<br>
+<b>--accept-routes</b>: Accepts the advertised route of the other subnet router, as well as any other nodes that are subnet routers.</p>
+<h2 id="enable-subnet-routes-from-the-admin-console">Enable subnet routes from the admin console</h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    This step is not required if using autoApprovers.
+</code></pre></div>
+Open the Machines page of the admin console, and locate the devices that you configured as subnet routers. You can look for the Subnets badge in the machines list, or use the property:subnet filter to see all devices advertising subnet routes. For each device that you need to approve, click the ellipsis icon menu at the end of the table, and select Edit route settings. In the Edit route settings panel, approve the device.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    The Tailscale side of the routing is complete.
+</code></pre></div>
+<h3 id="credits">Credits:</h3>
+<p>https://tailscale.com/kb/1214/site-to-site#step-2-enable-subnet-routes-from-the-admin-console <br>
+https://www.youtube.com/watch?v=Fg_jIPVcioY</p>
 
 
 
@@ -3624,7 +3838,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2024</span>
   </span>
 
     
@@ -3782,7 +3996,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../tailscale-site-to-site/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tailscale site to site">
+          <a href="../../06/deploying-a-kubernetes-based-media-server-a-comprehensive-guide/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deploying a Kubernetes-Based Media Server: A Comprehensive Guide">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3792,7 +4006,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Tailscale site to site
+                Deploying a Kubernetes-Based Media Server: A Comprehensive Guide
               </div>
             </div>
           </a>
