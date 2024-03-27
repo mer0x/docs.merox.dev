@@ -69,7 +69,6 @@ nav:
       - Configs: 
         - DNS: fundamentals/networking/configs/DNS.md
         - DHCP: fundamentals/networking/configs/DHCP.md
-      - pfSense: fundamentals/networking/pfsense/info.md
       - Cisco: 
         - Install:
           - ASA: fundamentals/networking/cisco/install/firewall.md
