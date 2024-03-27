@@ -9,6 +9,8 @@ authors:
 comments: true
 ---
 
+# Tailscale site-to-site pfSense - Linux
+
 I've decided to implement monitoring for my homelab through a cloud virtual machine (VM) (I've opted for Hetzner, but more on that in a future post).
 
 To enhance the security of this setup, I've chosen to establish the cloud VM from Hetzner as the single entry point to my infrastructure. For this purpose, I've opted to use Tailscale for tunneling, not only for client-to-site but also for site-to-site connectivity.
@@ -18,9 +20,9 @@ To enhance the security of this setup, I've chosen to establish the cloud VM fro
     "Use site-to-site layer 3 (L3) networking to connect two subnets on your Tailscale network with each other. The two subnets are each required to provide a subnet router but their devices do not need to install Tailscale. This scenario applies to Linux subnet routers only."
 ```
 ``` warning
-This scenario will not work on subnets with overlapping CIDR ranges, nor with 4via6 subnet routing.
+    This scenario will not work on subnets with overlapping CIDR ranges, nor with 4via6 subnet routing.
 ```
-
+<!-- more -->
 In my case, there are two private subnets without any connectivity between them.
 
 Subnet 1 - Homelab:  10.57.57.0/24
@@ -116,5 +118,5 @@ Open the Machines page of the admin console, and locate the devices that you con
 ```
 
 ### Credits:
-https://tailscale.com/kb/1214/site-to-site#step-2-enable-subnet-routes-from-the-admin-console
+https://tailscale.com/kb/1214/site-to-site#step-2-enable-subnet-routes-from-the-admin-console <br>
 https://www.youtube.com/watch?v=Fg_jIPVcioY
