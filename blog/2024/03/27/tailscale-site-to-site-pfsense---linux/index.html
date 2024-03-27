@@ -3731,11 +3731,17 @@
 <h1 id="tailscale-site-to-site-pfsense-linux">Tailscale site-to-site pfSense - Linux</h1>
 <p>I've decided to implement monitoring for my homelab through a cloud virtual machine (VM) (I've opted for Hetzner, but more on that in a future post).</p>
 <p>To enhance the security of this setup, I've chosen to establish the cloud VM from Hetzner as the single entry point to my infrastructure. For this purpose, I've opted to use Tailscale for tunneling, not only for client-to-site but also for site-to-site connectivity.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    Informations provided by tailscale:
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &quot;Use site-to-site layer 3 (L3) networking to connect two subnets on your Tailscale network with each other. The two subnets are each required to provide a subnet router but their devices do not need to install Tailscale. This scenario applies to Linux subnet routers only.&quot;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    This scenario will not work on subnets with overlapping CIDR ranges, nor with 4via6 subnet routing.
-</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Informations provided by tailscale:
+"Use site-to-site layer 3 (L3) networking to connect two subnets on your Tailscale network with each other. The two subnets are each required to provide a subnet router but their devices do not need to install Tailscale. This scenario applies to Linux subnet routers only."</p>
+</div>
+<p>!!!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This scenario will not work on subnets with overlapping CIDR ranges, nor with 4via6 subnet routing.</p>
+</div>
+<p>!!!</p>
 <!-- more -->
 <p>In my case, there are two private subnets without any connectivity between them.</p>
 <p>Subnet 1 - Homelab:  10.57.57.0/24
@@ -3785,24 +3791,33 @@ This is how should look like:
 ()[images/blog-tailscale-pfsense2.png]</p>
 <h2 id="configure-tailscale-site-to-site-on-linux-vm-subnet-2">Configure tailscale site-to-site on Linux VM ( Subnet 2)</h2>
 <h3 id="install-tailscale-and-activate-routing">Install tailscale and activate routing:</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span>curl<span class="w"> </span>-sSL<span class="w"> </span>https://tailscale.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh<span class="w"> </span><span class="c1">#Install tailscale</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.ipv4.ip_forward = 1&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1">#Activate routing for IPv4</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.ipv6.conf.all.forwarding = 1&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1">#Activate routing for IPv6</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>sudo<span class="w"> </span>sysctl<span class="w"> </span>-p<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1"># Apply routing configuration at kernel level</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w">    </span>curl<span class="w"> </span>-sSL<span class="w"> </span>https://tailscale.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh<span class="w"> </span><span class="c1">#Install tailscale</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.ipv4.ip_forward = 1&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1">#Activate routing for IPv4</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.ipv6.conf.all.forwarding = 1&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1">#Activate routing for IPv6</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span>sudo<span class="w"> </span>sysctl<span class="w"> </span>-p<span class="w"> </span>/etc/sysctl.conf<span class="w"> </span><span class="c1"># Apply routing configuration at kernel level</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="on-the-19216857254-device-advertise-routes-for-19216857024">On the 192.168.57.254 device, advertise routes for 192.168.57.0/24:</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span>tailscale<span class="w"> </span>up<span class="w"> </span>--advertise-routes<span class="o">=</span><span class="m">192</span>.168.57.0/24<span class="w"> </span>--snat-subnet-routes<span class="o">=</span><span class="nb">false</span><span class="w"> </span>--accept-routes
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">    </span>tailscale<span class="w"> </span>up<span class="w"> </span>--advertise-routes<span class="o">=</span><span class="m">192</span>.168.57.0/24<span class="w"> </span>--snat-subnet-routes<span class="o">=</span><span class="nb">false</span><span class="w"> </span>--accept-routes
+</code></pre></div></td></tr></table></div>
 <p>Command explained:
 <b>--advertise-routes<b>: Exposes the physical subnet routes to your entire Tailscale network.<br>
 <b>--snat-subnet-routes=false</b>: Disables source NAT. In normal operations, a subnet device will see the traffic originating from the subnet router. This simplifies routing, but does not allow traversing multiple networks. By disabling source NAT, the end machine sees the LAN IP address of the originating machine as the source.<br>
 <b>--accept-routes</b>: Accepts the advertised route of the other subnet router, as well as any other nodes that are subnet routers.</p>
 <h2 id="enable-subnet-routes-from-the-admin-console">Enable subnet routes from the admin console</h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    This step is not required if using autoApprovers.
-</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This step is not required if using autoApprovers.</p>
+</div>
+<p>!!!
 Open the Machines page of the admin console, and locate the devices that you configured as subnet routers. You can look for the Subnets badge in the machines list, or use the property:subnet filter to see all devices advertising subnet routes. For each device that you need to approve, click the ellipsis icon menu at the end of the table, and select Edit route settings. In the Edit route settings panel, approve the device.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    The Tailscale side of the routing is complete.
-</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>The Tailscale side of the routing is complete.</p>
+</div>
+<p>!!!</p>
 <h3 id="credits">Credits:</h3>
 <p>https://tailscale.com/kb/1214/site-to-site#step-2-enable-subnet-routes-from-the-admin-console <br>
 https://www.youtube.com/watch?v=Fg_jIPVcioY</p>

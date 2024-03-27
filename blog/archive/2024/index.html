@@ -3524,11 +3524,17 @@
     <h2 id="tailscale-site-to-site-pfsense-linux"><a class="toclink" href="../../2024/03/27/tailscale-site-to-site-pfsense---linux/">Tailscale site-to-site pfSense - Linux</a></h2>
 <p>I've decided to implement monitoring for my homelab through a cloud virtual machine (VM) (I've opted for Hetzner, but more on that in a future post).</p>
 <p>To enhance the security of this setup, I've chosen to establish the cloud VM from Hetzner as the single entry point to my infrastructure. For this purpose, I've opted to use Tailscale for tunneling, not only for client-to-site but also for site-to-site connectivity.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    Informations provided by tailscale:
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    &quot;Use site-to-site layer 3 (L3) networking to connect two subnets on your Tailscale network with each other. The two subnets are each required to provide a subnet router but their devices do not need to install Tailscale. This scenario applies to Linux subnet routers only.&quot;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    This scenario will not work on subnets with overlapping CIDR ranges, nor with 4via6 subnet routing.
-</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Informations provided by tailscale:
+"Use site-to-site layer 3 (L3) networking to connect two subnets on your Tailscale network with each other. The two subnets are each required to provide a subnet router but their devices do not need to install Tailscale. This scenario applies to Linux subnet routers only."</p>
+</div>
+<p>!!!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This scenario will not work on subnets with overlapping CIDR ranges, nor with 4via6 subnet routing.</p>
+</div>
+<p>!!!</p>
 
     
       <nav class="md-post__action">
