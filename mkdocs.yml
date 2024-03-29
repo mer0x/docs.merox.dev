@@ -89,6 +89,7 @@ nav:
          - T-shoot:
            - GRUB recovery: fundamentals/operating-systems/linux/tshoot/grub.md 
            - Root password recovery: fundamentals/operating-systems/linux/tshoot/root-password-recovery.md
+           - Proxmox e1000 driver hang: fundamentals/operating-systems/linux/tshoot/proxmox-e1000.md
       - Windows: 
          - Install:
            - Windows Server 2019: fundamentals/operating-systems/windows/install/wserver2019.md
