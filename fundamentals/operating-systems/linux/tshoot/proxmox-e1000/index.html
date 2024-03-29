@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://merox.dev/fundamentals/networking/configs/DHCP/">
+        <link rel="canonical" href="https://merox.dev/fundamentals/operating-systems/linux/tshoot/proxmox-e1000/">
       
       
-        <link rel="prev" href="../DNS/">
+        <link rel="prev" href="../root-password-recovery/">
       
       
-        <link rel="next" href="../../cisco/install/firewall/">
+        <link rel="next" href="../../../windows/install/wserver2019/">
       
       
-      <link rel="icon" href="../../../../images/disguise.png">
+      <link rel="icon" href="../../../../../images/disguise.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
-        <title>DHCP - MEROX.DEV</title>
+        <title>Proxmox e1000 driver hang - MEROX.DEV</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dhcp" class="md-skip">
+        <a href="#proxmox-e1000-driver-hang" class="md-skip">
           Skip to content
         </a>
       
@@ -103,9 +103,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="MEROX.DEV" class="md-header__button md-logo" aria-label="MEROX.DEV" data-md-component="logo">
+    <a href="../../../../.." title="MEROX.DEV" class="md-header__button md-logo" aria-label="MEROX.DEV" data-md-component="logo">
       
-  <img src="../../../../images/disguise.png" alt="logo">
+  <img src="../../../../../images/disguise.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DHCP
+              Proxmox e1000 driver hang
             
           </span>
         </div>
@@ -241,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../../../.." class="md-tabs__link">
         
   
     
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../homelab/infrastructure/" class="md-tabs__link">
+        <a href="../../../../../homelab/infrastructure/" class="md-tabs__link">
           
   
   Homelab
@@ -280,7 +280,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../intro/" class="md-tabs__link">
+        <a href="../../../../intro/" class="md-tabs__link">
           
   
   Fundamentals
@@ -298,7 +298,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../operations/intro/" class="md-tabs__link">
+        <a href="../../../../../operations/intro/" class="md-tabs__link">
           
   
   Operations
@@ -314,7 +314,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../about/" class="md-tabs__link">
+      <a href="../../../../../about/" class="md-tabs__link">
         
   
     
@@ -365,9 +365,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="MEROX.DEV" class="md-nav__button md-logo" aria-label="MEROX.DEV" data-md-component="logo">
+    <a href="../../../../.." title="MEROX.DEV" class="md-nav__button md-logo" aria-label="MEROX.DEV" data-md-component="logo">
       
-  <img src="../../../../images/disguise.png" alt="logo">
+  <img src="../../../../../images/disguise.png" alt="logo">
 
     </a>
     MEROX.DEV
@@ -394,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -454,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../homelab/infrastructure/" class="md-nav__link">
+      <a href="../../../../../homelab/infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -475,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../homelab/connectivity/" class="md-nav__link">
+      <a href="../../../../../homelab/connectivity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -496,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../homelab/hypervisors/" class="md-nav__link">
+      <a href="../../../../../homelab/hypervisors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -517,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../homelab/virtual-machines/" class="md-nav__link">
+      <a href="../../../../../homelab/virtual-machines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -538,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../homelab/docker/" class="md-nav__link">
+      <a href="../../../../../homelab/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -559,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../homelab/kubernetes/" class="md-nav__link">
+      <a href="../../../../../homelab/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -580,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../homelab/ansible/" class="md-nav__link">
+      <a href="../../../../../homelab/ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -601,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../homelab/security/" class="md-nav__link">
+      <a href="../../../../../homelab/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -622,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../homelab/monitoring/" class="md-nav__link">
+      <a href="../../../../../homelab/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -695,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../intro/" class="md-nav__link">
+      <a href="../../../../intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -713,8 +713,6 @@
                 
   
   
-    
-  
   
   
     
@@ -729,11 +727,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
@@ -747,7 +745,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Networking
@@ -758,8 +756,6 @@
                 
   
   
-    
-  
   
   
     
@@ -771,11 +767,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
         
           
           <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
@@ -789,7 +785,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2_1">
             <span class="md-nav__icon md-icon"></span>
             Configs
@@ -803,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DNS/" class="md-nav__link">
+      <a href="../../../../networking/configs/DNS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,19 +817,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../networking/configs/DHCP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -842,7 +829,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -943,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cisco/install/firewall/" class="md-nav__link">
+      <a href="../../../../networking/cisco/install/firewall/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cisco/install/router/" class="md-nav__link">
+      <a href="../../../../networking/cisco/install/router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -985,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cisco/install/switch/" class="md-nav__link">
+      <a href="../../../../networking/cisco/install/switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1046,7 +1032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cisco/install/ipsecgre/" class="md-nav__link">
+      <a href="../../../../networking/cisco/install/ipsecgre/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1131,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ccna/cheatsheet/" class="md-nav__link">
+      <a href="../../../../networking/ccna/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1165,6 +1151,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1179,11 +1167,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
@@ -1197,7 +1185,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Operating Systems
@@ -1208,8 +1196,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -1219,11 +1209,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
@@ -1237,7 +1227,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3_1">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -1291,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
+      <a href="../../install/ubuntu-cloud-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1360,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/config/ufw/" class="md-nav__link">
+      <a href="../../config/ufw/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1381,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
+      <a href="../../config/extend-lvm-proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1407,8 +1397,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -1418,11 +1410,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3_1_3" id="__nav_3_3_1_3_label" tabindex="0">
@@ -1436,7 +1428,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             T-shoot
@@ -1450,7 +1442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/tshoot/grub/" class="md-nav__link">
+      <a href="../grub/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1471,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
+      <a href="../root-password-recovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1489,10 +1481,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Proxmox e1000 driver hang
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1501,6 +1513,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-go-to-etcnetwork" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Go to /etc/network
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-add-these-2-lines-on-your-physic-and-bridge-interface-related-to-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Add these 2 lines on your physic and bridge interface related to proxmox:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1609,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/windows/install/wserver2019/" class="md-nav__link">
+      <a href="../../../windows/install/wserver2019/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1678,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/windows/config/active-directory/" class="md-nav__link">
+      <a href="../../../windows/config/active-directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1747,7 +1797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/windows/tshoot/dns/" class="md-nav__link">
+      <a href="../../../windows/tshoot/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1875,7 +1925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/mysql/basics/" class="md-nav__link">
+      <a href="../../../../database/mysql/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1944,7 +1994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/influxdb/basics/" class="md-nav__link">
+      <a href="../../../../database/influxdb/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2024,7 +2074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backup/clonezilla/" class="md-nav__link">
+      <a href="../../../../backup/clonezilla/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2100,7 +2150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/intro/" class="md-nav__link">
+      <a href="../../../../../operations/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2201,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/virtualization/VMs/proxmox/" class="md-nav__link">
+      <a href="../../../../../operations/virtualization/VMs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2278,7 +2328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/kubernetes/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2339,7 +2389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/installation/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2360,7 +2410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/upgrade/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2421,7 +2471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2442,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2463,7 +2513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2484,7 +2534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2505,7 +2555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2526,7 +2576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2547,7 +2597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2568,7 +2618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2589,7 +2639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2610,7 +2660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2631,7 +2681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2652,7 +2702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2729,7 +2779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/LXCs/proxmox/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/LXCs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2838,7 +2888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2859,7 +2909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2880,7 +2930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2901,7 +2951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2922,7 +2972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2943,7 +2993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3068,7 +3118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
+      <a href="../../../../../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3225,7 +3275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
+      <a href="../../../../../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3246,7 +3296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
+      <a href="../../../../../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3267,7 +3317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
+      <a href="../../../../../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3392,7 +3442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/monitoring/grafana/basics/" class="md-nav__link">
+      <a href="../../../../../operations/monitoring/grafana/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3413,7 +3463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
+      <a href="../../../../../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3457,7 +3507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../../../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3510,6 +3560,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-go-to-etcnetwork" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Go to /etc/network
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-add-these-2-lines-on-your-physic-and-bridge-interface-related-to-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Add these 2 lines on your physic and bridge interface related to proxmox:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3526,9 +3602,16 @@
   
 
 
-<h1 id="dhcp">DHCP</h1>
-<p>Dynamic Host Configuration Protocol (DHCP), allows a device such as pfSense® software to dynamically allocate IP addresses to clients from a predefined pool of addresses. DHCP also sends configuration information to clients such as a gateway, DNS servers, domain name, and other useful settings.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<h1 id="proxmox-e1000-driver-hang">Proxmox e1000 driver hang</h1>
+<p>Known bug: (git.kernel.org)[https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?h=v5.3.14&amp;id=caff422ea81e144842bc44bab408d85ac449377b]</p>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>This topic is related to this proxmox issue: (link)[https://forum.proxmox.com/threads/e1000-driver-hang.58284/]</p>
+</div>
+<p>And this is what fixed my problem on DELL T7910 Workstation:</p>
+<h3 id="1-go-to-etcnetwork">1) Go to /etc/network</h3>
+<h3 id="2-add-these-2-lines-on-your-physic-and-bridge-interface-related-to-proxmox">2) Add these 2 lines on your physic and bridge interface related to proxmox:</h3>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -3545,135 +3628,29 @@
 <span class="normal"><a href="#__codelineno-0-15">15</a></span>
 <span class="normal"><a href="#__codelineno-0-16">16</a></span>
 <span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span>
-<span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span>
-<span class="normal"><a href="#__codelineno-0-52">52</a></span>
-<span class="normal"><a href="#__codelineno-0-53">53</a></span>
-<span class="normal"><a href="#__codelineno-0-54">54</a></span>
-<span class="normal"><a href="#__codelineno-0-55">55</a></span>
-<span class="normal"><a href="#__codelineno-0-56">56</a></span>
-<span class="normal"><a href="#__codelineno-0-57">57</a></span>
-<span class="normal"><a href="#__codelineno-0-58">58</a></span>
-<span class="normal"><a href="#__codelineno-0-59">59</a></span>
-<span class="normal"><a href="#__codelineno-0-60">60</a></span>
-<span class="normal"><a href="#__codelineno-0-61">61</a></span>
-<span class="normal"><a href="#__codelineno-0-62">62</a></span>
-<span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span>
-<span class="normal"><a href="#__codelineno-0-65">65</a></span>
-<span class="normal"><a href="#__codelineno-0-66">66</a></span>
-<span class="normal"><a href="#__codelineno-0-67">67</a></span>
-<span class="normal"><a href="#__codelineno-0-68">68</a></span>
-<span class="normal"><a href="#__codelineno-0-69">69</a></span>
-<span class="normal"><a href="#__codelineno-0-70">70</a></span>
-<span class="normal"><a href="#__codelineno-0-71">71</a></span>
-<span class="normal"><a href="#__codelineno-0-72">72</a></span>
-<span class="normal"><a href="#__codelineno-0-73">73</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">[</span><span class="m">2</span>.7.0-RELEASE<span class="o">][</span>admin@fw.merox.cloud<span class="o">]</span>/root:<span class="w"> </span>cat<span class="w"> </span>/var/dhcpd/etc/dhcpd.conf<span class="w"> </span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>option<span class="w"> </span>domain-name<span class="w"> </span><span class="s2">&quot;merox.cloud&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>option<span class="w"> </span>ldap-server<span class="w"> </span>code<span class="w"> </span><span class="nv">95</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>text<span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>option<span class="w"> </span>domain-search-list<span class="w"> </span>code<span class="w"> </span><span class="nv">119</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>text<span class="p">;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>option<span class="w"> </span>arch<span class="w"> </span>code<span class="w"> </span><span class="nv">93</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>unsigned<span class="w"> </span>integer<span class="w"> </span><span class="m">16</span><span class="p">;</span><span class="w"> </span><span class="c1"># RFC4578</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>default-lease-time<span class="w"> </span><span class="m">7200</span><span class="p">;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>max-lease-time<span class="w"> </span><span class="m">86400</span><span class="p">;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>log-facility<span class="w"> </span>local7<span class="p">;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>one-lease-per-client<span class="w"> </span>true<span class="p">;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>deny<span class="w"> </span>duplicates<span class="p">;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>update-conflict-detection<span class="w"> </span>false<span class="p">;</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>authoritative<span class="p">;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>class<span class="w"> </span><span class="s2">&quot;s_lan&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span>match<span class="w"> </span>pick-first-value<span class="w"> </span><span class="o">(</span>option<span class="w"> </span>dhcp-client-identifier,<span class="w"> </span>hardware<span class="o">)</span><span class="p">;</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">}</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>subnet<span class="w"> </span>X.X.X.X.0<span class="w"> </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">        </span>pool<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">                </span>option<span class="w"> </span>domain-name-servers<span class="w"> </span>X.X.X.X.188,X.X.X.X.1<span class="p">;</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">                </span>range<span class="w"> </span>X.X.X.X.202<span class="w"> </span>X.X.X.X.254<span class="p">;</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">        </span><span class="o">}</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">        </span>option<span class="w"> </span>routers<span class="w"> </span>X.X.X.X.1<span class="p">;</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">        </span>option<span class="w"> </span>domain-name-servers<span class="w"> </span>X.X.X.X.188,X.X.X.X.1<span class="p">;</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">        </span>ping-check<span class="w"> </span>true<span class="p">;</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="o">}</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>subclass<span class="w"> </span><span class="s2">&quot;s_lan&quot;</span><span class="w"> </span><span class="m">1</span>:bc:24:11:f8:37:bd<span class="p">;</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>host<span class="w"> </span>s_lan_7<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">        </span>hardware<span class="w"> </span>ethernet<span class="w"> </span>bc:24:11:68:c2:c6<span class="p">;</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span>fixed-address<span class="w"> </span>X.X.X.X.80<span class="p">;</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">        </span>option<span class="w"> </span>host-name<span class="w"> </span><span class="s2">&quot;k3s-admin&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="o">}</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>subclass<span class="w"> </span><span class="s2">&quot;s_lan&quot;</span><span class="w"> </span><span class="m">1</span>:bc:24:11:68:c2:c6<span class="p">;</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>host<span class="w"> </span>s_lan_8<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">        </span>hardware<span class="w"> </span>ethernet<span class="w"> </span>bc:24:11:e0:a7:02<span class="p">;</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">        </span>fixed-address<span class="w"> </span>X.X.X.X.81<span class="p">;</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">        </span>option<span class="w"> </span>host-name<span class="w"> </span><span class="s2">&quot;k3s-master-01&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="o">}</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a>subclass<span class="w"> </span><span class="s2">&quot;s_lan&quot;</span><span class="w"> </span><span class="m">1</span>:90:09:d0:50:08:4b<span class="p">;</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a>class<span class="w"> </span><span class="s2">&quot;s_opt1&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="w">        </span>match<span class="w"> </span>pick-first-value<span class="w"> </span><span class="o">(</span>option<span class="w"> </span>dhcp-client-identifier,<span class="w"> </span>hardware<span class="o">)</span><span class="p">;</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="o">}</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a>subnet<span class="w"> </span>X.X.X.Y.0<span class="w"> </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">        </span>pool<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">                </span>option<span class="w"> </span>domain-name-servers<span class="w"> </span>X.X.X.X.1<span class="p">;</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="w">                </span>range<span class="w"> </span>X.X.X.Y.100<span class="w"> </span>X.X.X.Y.200<span class="p">;</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="w">        </span><span class="o">}</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="w">        </span>option<span class="w"> </span>routers<span class="w"> </span>X.X.X.Y.1<span class="p">;</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="w">        </span>option<span class="w"> </span>domain-name-servers<span class="w"> </span>X.X.X.X.1<span class="p">;</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="w">        </span>ping-check<span class="w"> </span>true<span class="p">;</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="o">}</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>host<span class="w"> </span>s_opt1_0<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="w">        </span>hardware<span class="w"> </span>ethernet<span class="w"> </span><span class="m">14</span>:4f:8a:dc:13:ba<span class="p">;</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="w">        </span>option<span class="w"> </span>dhcp-client-identifier<span class="w"> </span><span class="s2">&quot;merox_lenovo_laptop&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="w">        </span>fixed-address<span class="w"> </span>X.X.X.Y.10<span class="p">;</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="o">}</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>subclass<span class="w"> </span><span class="s2">&quot;s_opt1&quot;</span><span class="w"> </span><span class="m">1</span>:14:4f:8a:dc:13:ba<span class="p">;</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>subclass<span class="w"> </span><span class="s2">&quot;s_opt1&quot;</span><span class="w"> </span><span class="s2">&quot;merox_lenovo_laptop&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>subclass<span class="w"> </span><span class="s2">&quot;s_opt1&quot;</span><span class="w"> </span><span class="m">1</span>:c4:c1:7d:a5:13:8e<span class="p">;</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a>subclass<span class="w"> </span><span class="s2">&quot;s_opt1&quot;</span><span class="w"> </span><span class="s2">&quot;iphone_merox&quot;</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>auto<span class="w"> </span>lo
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>iface<span class="w"> </span>lo<span class="w"> </span>inet<span class="w"> </span>loopback
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>iface<span class="w"> </span>enp0s25<span class="w"> </span>inet<span class="w"> </span>manual
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="hll"><span class="w">    </span>post-up<span class="w"> </span>/usr/sbin/ethtool<span class="w"> </span>-K<span class="w"> </span><span class="nv">$IFACE</span><span class="w"> </span>gso<span class="w"> </span>off<span class="w"> </span>tso<span class="w"> </span>off<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+</span><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span>ethernet-wol<span class="w"> </span>g
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>auto<span class="w"> </span>vmbr0
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>iface<span class="w"> </span>vmbr0<span class="w"> </span>inet<span class="w"> </span>static
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span>address<span class="w"> </span><span class="m">10</span>.57.57.200/24
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span>gateway<span class="w"> </span><span class="m">10</span>.57.57.1
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span>bridge-ports<span class="w"> </span>enp0s25
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span>bridge-stp<span class="w"> </span>off
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span>bridge-fd<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="hll"><span class="w">    </span>post-up<span class="w"> </span>/usr/sbin/ethtool<span class="w"> </span>-K<span class="w"> </span><span class="nv">$IFACE</span><span class="w"> </span>gso<span class="w"> </span>off<span class="w"> </span>tso<span class="w"> </span>off<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+</span><a id="__codelineno-0-15" name="__codelineno-0-15"></a>iface<span class="w"> </span>enp9s0<span class="w"> </span>inet<span class="w"> </span>manual
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="nb">source</span><span class="w"> </span>/etc/network/interfaces.d/*
 </code></pre></div></td></tr></table></div>
+!!! question What these lines actually do ? 
+    Disables Generic Segmentation Offload (GSO) and TCP Segmentation Offload (TSO) features for the network interface specified by $IFACE.
+    Redirects any error output (stderr) generated by the ethtool command to /dev/null, effectively suppressing error messages.
+    In summary, this command is used to disable certain offloading features for a specified network interface to potentially address networking issues or optimize network performance.</p>
 
 
 
@@ -3696,7 +3673,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 29, 2024</span>
   </span>
 
     
@@ -3706,7 +3683,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 29, 2024</span>
   </span>
 
     
@@ -3808,7 +3785,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../DNS/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DNS">
+          <a href="../root-password-recovery/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Root password recovery">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3818,20 +3795,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                DNS
+                Root password recovery
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../cisco/install/firewall/" class="md-footer__link md-footer__link--next" aria-label="Next: ASA">
+          <a href="../../../windows/install/wserver2019/" class="md-footer__link md-footer__link--next" aria-label="Next: Windows Server 2019">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                ASA
+                Windows Server 2019
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3992,10 +3969,10 @@
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>
