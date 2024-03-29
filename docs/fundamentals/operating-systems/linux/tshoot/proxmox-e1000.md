@@ -6,8 +6,8 @@ Known bug: <a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux
 
 And this is what fixed my problem on DELL T7910 Workstation:
 
-### 1) Go to /etc/network
-### 2) Add these 2 lines on your physic and bridge interface related to proxmox:
+#### 1) Go to /etc/network
+#### 2) Add these 2 lines on your physic and bridge interface related to proxmox:
 
 
 ``` bash linenums="1" hl_lines="5 14"
