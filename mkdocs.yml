@@ -276,4 +276,4 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 copyright: |
-  deployed with ❤️ on kubernetes &copy; 2024 <a href="mailto:hello@merox.dev">hello@merox.dev</a>
+  deployed with ❤️ on kubernetes &copy; 2024 | <a href="mailto:hello@merox.dev">hello@merox.dev</a>
