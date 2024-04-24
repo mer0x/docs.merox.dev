@@ -30,6 +30,6 @@ My experience spans across esteemed organizations such as **Hella**, **Atos**, a
 For a deeper insight into my professional background and experiences, feel free to connect.
 
 !!! tip
-    You can contact me at <p><a href="mailto:hello@merox.dev">hello@merox.dev</a></p>.
+    You can contact me at <a href="mailto:hello@merox.dev">hello@merox.dev</a>
 
 
