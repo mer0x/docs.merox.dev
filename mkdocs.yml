@@ -212,8 +212,7 @@ extra:
   home_cover_image: images/meroxdc.webp
   home_tagline: MEROX.dev
   home_description: |
-    MEROX.dev is your go-to for homelab setup guidance and curated insights. Explore a range of topics, from homelab configurations to general tech advice, all gathered from my experiences and research.
-<br> You can contact me at <a href="mailto:hello@merox.dev">hello@merox.dev</a>
+    MEROX.dev is your go-to for homelab setup guidance and curated insights. Explore a range of topics, from homelab configurations to general tech advice, all gathered from my experiences and research. <br> You can contact me at <a href="mailto:hello@merox.dev">hello@merox.dev</a>
   # Gradient Color
   home_gradient_hsla: hsla(231, 48%, 48%, 1) 17%, hsla(231, 48%, 48%, 1) 23%, hsl(178, 54%, 43%) 92%);
 
