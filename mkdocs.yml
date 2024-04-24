@@ -205,8 +205,6 @@ extra:
       link: https://www.linkedin.com/in/robert-melcher-92a1a9157
     - icon: fontawesome/brands/wordpress
       link: https://www.robertmelcher.ro
-    - icon: fontawesome/brands/wordpress
-      link: https://www.robertmelcher.ro
 
   # Custom Homepage Elements
   home_cover_image: images/meroxdc.webp
