@@ -213,7 +213,7 @@ extra:
   home_cover_image: images/meroxdc.webp
   home_tagline: MEROX.dev
   home_description: |
-    Salut! Welcome to MEROX.dev, where we delve into the essentials of system administration and cybersecurity. Ready to dive in? Here’s a security tip for enthusiasts: `iptables -A INPUT -p tcp --dport 443 -j ACCEPT`—because the best conversations happen over secure connections. Let's unravel the complexities of IT together! 🍻.
+    Salut! Welcome to MEROX.dev, where we tackle system administration and cybersecurity. Remember, always keep your logs rotating like a good brew. Let's get connected! 🍻
 
   # Gradient Color
   home_gradient_hsla: hsla(231, 48%, 48%, 1) 17%, hsla(231, 48%, 48%, 1) 23%, hsl(178, 54%, 43%) 92%);
