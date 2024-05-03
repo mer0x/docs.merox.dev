@@ -213,7 +213,7 @@ extra:
   home_cover_image: images/meroxdc.webp
   home_tagline: MEROX.dev
   home_description: |
-    Salut! Welcome to MEROX.dev, where we tackle system administration and cybersecurity. Remember, always keep your logs rotating like a good brew. Let's get connected! 🍻
+    Welcome to merox.dev—your IT realm powered by insights from a seasoned HPC System Administrator with a background in cybersecurity. Dive into tutorials, tips, and firsthand experiences designed to elevate your tech expertise. Let’s decode complexity together! 🍻
 
   # Gradient Color
   home_gradient_hsla: hsla(231, 48%, 48%, 1) 17%, hsla(231, 48%, 48%, 1) 23%, hsl(178, 54%, 43%) 92%);
