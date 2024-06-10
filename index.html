@@ -606,17 +606,6 @@
 <meta property="og:url" content="https://merox.dev" />
 <meta property="og:image" content="images/meroxindc.jpeg" />
 <meta name="description" content="Welcome to merox.dev—your IT realm powered by insights from a skilled System Administrator with a background in cybersecurity.">
-// Previne pull-to-refresh pe iOS
-document.addEventListener('touchmove', function(event) {
-    if (event.touches.length > 1) {
-        event.preventDefault();
-    }
-}, { passive: false });
-
-// Previne overscroll pe Android și iOS
-document.body.addEventListener('touchmove', function(event) {
-    event.preventDefault();
-}, { passive: false });
 
 <!-- Main site entry button descriptions -->
 <section class="tx-container">
