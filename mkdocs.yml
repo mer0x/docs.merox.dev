@@ -33,7 +33,6 @@ theme:
       toggle:
         icon: material/link
         name: Switch to light mode
-        primary: teal
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -41,7 +40,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
-        primary: teal
+
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
@@ -49,7 +48,6 @@ theme:
       toggle:
         icon: material/toggle-switch-off
         name: Switch to system preference
-        primary: teal
 
 
 nav:
