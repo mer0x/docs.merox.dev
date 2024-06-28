@@ -25,9 +25,9 @@ theme:
     - content.code.copy
     - announce.dismiss
     - content.code.copy
-  language: en
     - blog:
         archive_date_format: MMMM yyyy
+  language: en
   palette:
 
     # Palette toggle for automatic mode
