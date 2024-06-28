@@ -25,8 +25,6 @@ theme:
     - content.code.copy
     - announce.dismiss
     - content.code.copy
-    - blog:
-        archive_date_format: MMMM yyyy
   language: en
   palette:
 
