@@ -27,6 +27,7 @@ theme:
     - content.code.copy
   language: en
   palette:
+    primary: black
 
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
