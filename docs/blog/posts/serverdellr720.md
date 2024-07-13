@@ -12,11 +12,19 @@ comments: true
 # Setting Up My Dell R720 in the Home Lab
 
 <figure markdown="span">
-  ![header-media](/images/dellr720_1.svg){ width="400" }
+  ![header-media](/images/dellr720_2.svg){ width="400" }
   <figcaption>Dell R720 in my Home Lab</figcaption>
 </figure>
 
-I've recently found an incredible deal on a Dell PowerEdge R720 server, featuring 192GB of RAM, dual 6-core CPUs with Hyper-Threading (24 threads), iDrac7 enterprise and eight 300GB SAS drives at 6Gb/s.
+I recently stumbled upon an incredible deal for the Dell PowerEdge R720 server. This powerhouse boasts impressive specifications:
+
+## Technical Specifications
+
+- **Server Model:** Dell PowerEdge R720
+- **RAM:** 192GB
+- **Processors:** Dual 6-core CPUs with Hyper-Threading (24 threads)
+- **iDRAC Controller:** iDRAC7 Enterprise
+- **Storage:** Eight 300GB SAS drives at 6Gb/s
 
 *This article covers my journey of integrating this powerhouse into my home lab setup.*
 
