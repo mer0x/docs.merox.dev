@@ -171,7 +171,9 @@ plugins:
   - git-committers:
       repository: mer0x/merox.cloud
       branch: master
-  - blog
+  - blog:
+      archive_toc: true
+      categories: true
 
 extra:
   consent:
