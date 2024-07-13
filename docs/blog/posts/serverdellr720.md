@@ -10,7 +10,7 @@ description: "How to initial setup dell r720 server in homelab"
 comments: true
 ---
 
-# Setting Up My Dell R720 in the Home Lab
+# Setting Up Dell R720 Server in the Home Lab
 
 <figure markdown="span">
   ![header-media](/images/dellr720_2.svg){ width="400" }
