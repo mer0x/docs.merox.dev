@@ -4,7 +4,7 @@
      This document outlines the infrastructure framework for a personal IT project, meticulously designed to ensure a blend of efficiency, scalability, and security. It represents the foundational architecture, encompassing network design, data management strategies, computational resources, and security protocols. 
  
 !!! danger "Updates"
-    13.07.2024[Major update]: Workstation DELL T7910 was replaced with DELL R720 Server
+    13.07.2024 [Major update]: Workstation DELL T7910 was replaced with DELL R720 Server
     See more on this [blog article](https://merox.dev/blog/2024/07/13/setting-up-my-dell-r720-in-the-home-lab/)
 
 
@@ -156,15 +156,17 @@ igb2: flags=8863<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
         303        running                 k3s-master-03
         ``` 
     === "Tower"
-        - Description: The **DELL T7910** tower serves as the heart of the homelab, running a Windows 11-based Kubernetes test cluster before deployment to the production cluster on       the mini PCs. It's the powerhouse for virtualization and development.
+        - Description: The **DELL R720** serves as the heart of the homelab. It's the powerhouse for virtualization and development.
 
         ###### *Technical Specs*
-        -  DELL T7910
-        -  CPU: 2 x Intel Xeon E5-2667 v3 @ 3.20GHz
-        -  RAM: 64GB DDR3
-        -  Storage: 4TB SSD (2 x 2TB), 4TB HDD (2 x 2TB)
-        -  GPU: Nvidia Quadro K2000
-        -  OS: Windows 11
+        -  DELL R720
+        -  CPU: 2 x Xeon(R) CPU E5-2620 v2 @ 2.10GHz
+        -  RAM: 192GB 
+        -  Storage: 2 x 2TB SSD & 6 x 300GB SAS drives at 6Gb/s 
+        -  iDRAC Controller: iDRAC7 Enterprise
+        -  OS: PROXMOX
+
+        - **Server Model:** Dell PowerEdge R720
 
 
 
