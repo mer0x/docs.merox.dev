@@ -155,7 +155,7 @@ igb2: flags=8863<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
         300        running                 k3s-admin
         303        running                 k3s-master-03
         ``` 
-    === "Tower"
+    === "Server"
         - Description: The **DELL R720** serves as the heart of the homelab. It's the powerhouse for virtualization and development.
 
         ###### *Technical Specs*

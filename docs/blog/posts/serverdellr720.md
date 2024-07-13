@@ -6,6 +6,7 @@ categories:
   - installation
 authors:
   - robertmelcher
+description: "How to initial setup dell r720 server in homelab"
 comments: true
 ---
 
