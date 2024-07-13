@@ -24,7 +24,7 @@ I recently stumbled upon an incredible deal for the Dell PowerEdge R720 server. 
 - **RAM:** 192GB
 - **Processors:** Dual 6-core CPUs with Hyper-Threading (24 threads)
 - **iDRAC Controller:** iDRAC7 Enterprise
-- **Storage:** Eight 300GB SAS drives at 6Gb/s
+- **Storage:** 2 x 2TB SSD & 6 x 300GB SAS drives at 6Gb/s 
 
 *This article covers my journey of integrating this powerhouse into my home lab setup.*
 
@@ -174,10 +174,10 @@ Keeping firmware up-to-date is essential for security and performance. I upgrade
 Visit [Wikipedia's Dell PowerEdge](https://en.wikipedia.org/wiki/List_of_PowerEdge_servers) page to find your server model and its generation.
 
 ### 2. Configure iDRAC for FTP Update:
-Access the iDRAC web interface.
-Navigate to <b>Maintenance > System Update</b>.
-Select <b>FTP</b> as the update method and use the default Dell FTP site: <b>ftp.dell.com</b>.
-Click <b>Check for Updates</b> and proceed with the upgrade.
+- Access the iDRAC web interface.
+- Navigate to <b>Maintenance > System Update</b>.
+- Select <b>FTP</b> as the update method and use the default Dell FTP site: <b>ftp.dell.com</b>.
+- Click <b>Check for Updates</b> and proceed with the upgrade.
 
 !!! warning
     Updating the firmware ensures that the server runs smoothly and is protected against known vulnerabilities. It can also bring new features and improvements to your system, which is particularly beneficial in a home lab setting where experimentation and learning are key.

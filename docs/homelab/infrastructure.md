@@ -3,8 +3,9 @@
 !!! note "Info 1"
      This document outlines the infrastructure framework for a personal IT project, meticulously designed to ensure a blend of efficiency, scalability, and security. It represents the foundational architecture, encompassing network design, data management strategies, computational resources, and security protocols. 
  
-!!! example "Info 2"
-    Aimed at supporting the project's unique requirements, this infrastructure is crafted to facilitate optimal performance, reliability, and adaptability, reflecting a commitment to leveraging advanced technologies and methodologies for achieving project objectives.
+!!! danger "Updates"
+    13.07.2024[Major update]: Workstation DELL T7910 was replaced with DELL R720 Server
+    See more on this [blog article](https://merox.dev/blog/2024/07/13/setting-up-my-dell-r720-in-the-home-lab/)
 
 
 
@@ -19,7 +20,7 @@
 
     === "Photo"
 
-        ![](/images/content/homelab.jpeg)
+        ![](/images/content/homelab.JPG)
 
 ## Network
  - Description: The pfSense stands as a pivotal security gateway in the homelab setup, providing robust network protection, traffic management, and connectivity options. Tailored for efficient performance and reliability, this device is essential for maintaining a secure and efficient network environment.
