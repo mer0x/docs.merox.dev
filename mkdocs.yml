@@ -160,7 +160,7 @@ nav:
 #      - Alertmanager:
 #        - Basics: operations/monitoring/alertmanager/basics.md
   - About: about.md
-  - Blog: /blog/index.md
+  - Blog: /blog
 
 
 
