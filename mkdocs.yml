@@ -172,7 +172,7 @@ plugins:
       repository: mer0x/merox.cloud
       branch: master
   - blog:
-      archive_toc: true
+      archive: true
       categories: true
 
 extra:
