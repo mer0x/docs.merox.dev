@@ -12,7 +12,7 @@ comments: true
 # Setting Up My Dell R720 in the Home Lab
 
 <figure markdown="span">
-  ![header-media](/images/dellr720.svg){ width="400" }
+  ![header-media](/images/dellr720_1.svg){ width="400" }
   <figcaption>Dell R720 in my Home Lab</figcaption>
 </figure>
 
@@ -56,10 +56,6 @@ ipmitool -I lanplus -H ip_addr -U username -P password raw 0x30 0x30 0x02 0xff 0
 ```
 
 #### 3.1 Consult the table to adapt the speed to your needs
-
-<details>
-  <summary>Vezi tabelul complet</summary>
-
 
 | Procentaj | Hexadecimal | RPM               |
 |-----------|-------------|-------------------|
@@ -155,7 +151,6 @@ ipmitool -I lanplus -H ip_addr -U username -P password raw 0x30 0x30 0x02 0xff 0
 | 99%       | 0x63        |                   |
 | 100%      | 0x64        | 15,000 RPM        |
 
-</details>
 
 ### 4. Monitor fan status
 ```bash
