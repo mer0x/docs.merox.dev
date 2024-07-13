@@ -177,7 +177,11 @@ Visit [Wikipedia's Dell PowerEdge](https://en.wikipedia.org/wiki/List_of_PowerEd
 ### 2. Configure iDRAC for FTP Update:
 - Access the iDRAC web interface.
 - Navigate to <b>Maintenance > System Update</b>.
-- Select <b>FTP</b> as the update method and use the default Dell FTP site: <b>ftp.dell.com</b>.
+- Select <b>FTP</b> as the update method and use next settings:
+  - Address - ftp.updateyodell.net
+  - User Name - dell
+  - Password - calvin
+  - Path - g11, g12(dell r720), g13, or g14
 - Click <b>Check for Updates</b> and proceed with the upgrade.
 
 !!! warning
