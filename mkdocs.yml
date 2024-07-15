@@ -160,7 +160,15 @@ nav:
 #      - Alertmanager:
 #        - Basics: operations/monitoring/alertmanager/basics.md
   - About: about.md
-  - Blog: /blog
+  - Blog:
+      - Overview: blog/
+      - Categories:
+          - Server: blog/category/server
+          - Installation: blog/category/installation
+          - Networking: blog/category/networking
+      - Archives:
+          - 2024: blog/archive/2024
+
 
 
 
