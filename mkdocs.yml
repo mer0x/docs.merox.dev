@@ -186,6 +186,7 @@ plugins:
 extra_css:
   - stylesheets/extra.css
 extra:
+  custom_header_text: "root@merox.dev:~#"
   consent:
     title: Cookie consent
     description: >-
