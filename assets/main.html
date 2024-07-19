@@ -14,14 +14,13 @@
 
 {% block header %}
 <header>
-    <nav class="md-header">
-        <div class="md-header-nav">
-            <a href="{{ base_url }}" title="{{ config.site_name }}">
-                <div class="md-header-title">
-                    <span>{{ custom_header_text }}</span>
-                </div>
-            </a>
-        </div>
-    </nav>
+    <div class="md-header-nav">
+        <a href="{{ base_url }}" title="{{ config.site_name }}">
+            <div class="md-header-title">
+                <span>{{ custom_header_text }}</span>
+            </div>
+        </a>
+
+    </div>
 </header>
 {% endblock %}
