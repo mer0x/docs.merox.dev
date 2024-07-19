@@ -221,7 +221,9 @@ extra:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/mer0x
 
-
+extra_css:
+  - stylesheets/extra.css
+  
   # Custom Homepage Elements
   home_cover_image: images/meroxdc.webp
   home_tagline: MEROX.dev
