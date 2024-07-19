@@ -2,3 +2,22 @@
 .md-header__button.md-logo svg {
     height: 1.7rem;
 }
+
+/* Targeting the logo text */
+.md-header__title {
+    display: none; /* Hide the default title */
+}
+
+.md-header__title::before {
+    content: "Your Custom Text"; /* Your custom text */
+    display: block;
+    font-size: 1.25rem; /* Adjust the size as needed */
+    font-weight: bold; /* Optional styling */
+}
+
+/* If you want to style the entire header differently */
+.md-header {
+    /* Add custom styles for the header */
+    background-color: #your-color;
+    /* Other styles as needed */
+}
