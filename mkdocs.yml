@@ -4,8 +4,8 @@ repo_url: https://github.com
 repo_name: mer0x/merox.cloud
 theme:
   custom_dir: assets
-  favicon: images/disguise.png
-  logo: images/disguise.png
+  favicon: images/logomeroxdev.png
+  logo: images/logomeroxdev.png
   name: material
   features:
     - header.autohide
