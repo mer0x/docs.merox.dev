@@ -8,7 +8,7 @@
     display: inline;
 }
 
-.md-header-title span {
+.md-ellipsis span {
     content: "Textul dorit"; 
     display: inline;
 }
