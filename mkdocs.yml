@@ -5,7 +5,7 @@ repo_name: mer0x/merox.cloud
 theme:
   custom_dir: assets
   favicon: images/logomeroxdev.png
-  logo: images/logomeroxdev128.png
+  logo: images/meroxdev.png
   name: material
   features:
     - header.autohide
