@@ -1,7 +1,7 @@
 site_name: MEROX.DEV
 site_url: https://merox.dev
 repo_url: https://github.com
-repo_name: mer0x/merox.cloud
+repo_name: mer0x/merox.dev
 theme:
   custom_dir: assets
   favicon: images/logomeroxdev.png
