@@ -3,25 +3,6 @@
 {% extends "base.html" %}
 
 
-{% block header %}
-<header class="md-header">
-  <div class="md-header__inner">
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">root@merox.dev:~#</span>
-        </div>
-      </div>
-    </div>
-    {% if config.repo_url %}
-    <a href="{{ config.repo_url }}" class="md-header-nav__button md-logo" title="GitHub">
-      <i class="icon">link</i>
-    </a>
-    {% endif %}
-  </div>
-</header>
-{% endblock %}
-
 {% block extrahead %}
     <!-- main.html | Added "navigation.instant" support -->
     <link rel="canonical" href=".">
