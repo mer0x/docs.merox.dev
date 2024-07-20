@@ -1,4 +1,6 @@
 
+
+
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -21,10 +23,10 @@
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
-  
-    <title>Proxmox - MEROX.DEV</title>
-  
-
+      
+        <title>Proxmox - MEROX.DEV</title>
+      
+    
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.76a95c52.min.css">
       
@@ -69,33 +71,10 @@
     
     <!-- main.html | Added "navigation.instant" support -->
     <link rel="canonical" href=".">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878" crossorigin="anonymous"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878"
+     crossorigin="anonymous"></script>
 
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-
-    <style>
-        body {
-            background-color: #000;
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-            padding: 20px;
-        }
-        .terminal {
-            font-size: 18px;
-            line-height: 1.5;
-        }
-        .terminal .cursor {
-            display: inline-block;
-            width: 10px;
-            background-color: #00ff00;
-            animation: blink 1s infinite step-start;
-        }
-        @keyframes blink {
-            50% {
-                background-color: transparent;
-            }
-        }
-    </style>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 
   </head>
   
@@ -4261,27 +4240,399 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-    <div class="terminal">
-        <span id="text"></span><span class="cursor"></span>
-    </div>
+                  
 
-    <script>
-        const textElement = document.getElementById('text');
-        const textToDisplay = 'Welcome to merox.dev! This is a simulated terminal.';
+  
+  
 
-        let index = 0;
 
-        function typeEffect() {
-            if (index < textToDisplay.length) {
-                textElement.textContent += textToDisplay[index];
-                index++;
-                setTimeout(typeEffect, 100); // Adjust typing speed here
-            }
-        }
+<h1 id="proxmox-lxcs">Proxmox LXCs</h1>
+<p>Containers are a lightweight alternative to fully virtualized machines (VMs). They use the kernel of the host system that they run on, instead of emulating a full operating system (OS). This means that containers can access resources on the host system directly.</p>
+<p>The runtime costs for containers is low, usually negligible. However, there are some drawbacks that need be considered:</p>
+<p>Only Linux distributions can be run in Proxmox Containers. It is not possible to run other operating systems like, for example, FreeBSD or Microsoft Windows inside a container.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>For security reasons, access to host resources needs to be restricted. Therefore, containers run in their own separate namespaces. Additionally some syscalls (user space requests to the Linux kernel) are not allowed within containers.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">LXCs configurations on 3 nodes Proxmox Cluster</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="citadel" name="__tabbed_1" type="radio" /><input id="helix" name="__tabbed_1" type="radio" /><input id="nexus" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="citadel">Citadel</label><label for="helix">Helix</label><label for="nexus">Nexus</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<h6 id="k3s-master-01"><strong>K3S-master-01</strong></h6>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>root@citadel:/home/merox#<span class="w"> </span>cat<span class="w"> </span>/etc/pve/nodes/citadel/lxc/301.conf
+</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>arch:<span class="w"> </span>amd64
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>cores:<span class="w"> </span><span class="m">4</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>features:<span class="w"> </span><span class="nv">fuse</span><span class="o">=</span><span class="m">1</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>hostname:<span class="w"> </span>k3s-master-01
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>memory:<span class="w"> </span><span class="m">4096</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>net0:<span class="w"> </span><span class="nv">name</span><span class="o">=</span>eth0,bridge<span class="o">=</span>vmbr0,firewall<span class="o">=</span><span class="m">1</span>,hwaddr<span class="o">=</span>FC:14:11:E0:A7:02,ip<span class="o">=</span>dhcp,type<span class="o">=</span>veth
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>onboot:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>ostype:<span class="w"> </span>ubuntu
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>rootfs:<span class="w"> </span>Storage:subvol-301-disk-1,size<span class="o">=</span>50G
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>swap:<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>lxc.apparmor.profile:<span class="w"> </span>unconfined
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>lxc.cgroup.devices.allow:<span class="w"> </span>a
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>lxc.cap.drop:<span class="w"> </span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>lxc.mount.auto:<span class="w"> </span><span class="s2">&quot;proc:rw sys:rw&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<h6 id="k3s-master-02">K3S-master-02</h6>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>root@helix:/etc/pve/nodes/helix/lxc#<span class="w"> </span>cat<span class="w"> </span>/etc/pve/nodes/helix/lxc/302.conf<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>arch:<span class="w"> </span>amd64
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>cores:<span class="w"> </span><span class="m">4</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>features:<span class="w"> </span><span class="nv">fuse</span><span class="o">=</span><span class="m">1</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>hostname:<span class="w"> </span>k3s-master-02
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>memory:<span class="w"> </span><span class="m">4096</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>net0:<span class="w"> </span><span class="nv">name</span><span class="o">=</span>eth0,bridge<span class="o">=</span>vmbr0,firewall<span class="o">=</span><span class="m">1</span>,hwaddr<span class="o">=</span>BC:24:11:3A:A1:2A,ip<span class="o">=</span>dhcp,type<span class="o">=</span>veth
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>onboot:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>ostype:<span class="w"> </span>ubuntu
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>rootfs:<span class="w"> </span>Storage:subvol-302-disk-1,size<span class="o">=</span>50G
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>swap:<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>lxc.apparmor.profile:<span class="w"> </span>unconfined
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>lxc.cgroup.devices.allow:<span class="w"> </span>a
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>lxc.cap.drop:<span class="w"> </span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>lxc.mount.auto:<span class="w"> </span><span class="s2">&quot;proc:rw sys:rw&quot;</span>
+</code></pre></div></td></tr></table></div></p>
+<h6 id="ansible">Ansible</h6>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>root@helix:/etc/pve/nodes/helix/lxc#<span class="w"> </span>cat<span class="w"> </span><span class="m">100</span>.conf<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>arch:<span class="w"> </span>amd64
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>cores:<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>features:<span class="w"> </span><span class="nv">nesting</span><span class="o">=</span><span class="m">1</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>hostname:<span class="w"> </span>ansible
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>memory:<span class="w"> </span><span class="m">1024</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>nameserver:<span class="w"> </span><span class="m">10</span>.57.57.1
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>net0:<span class="w"> </span><span class="nv">name</span><span class="o">=</span>eth0,bridge<span class="o">=</span>vmbr0,firewall<span class="o">=</span><span class="m">1</span>,gw<span class="o">=</span><span class="m">10</span>.57.57.1,hwaddr<span class="o">=</span><span class="m">92</span>:9C:BD:89:57:E1,ip<span class="o">=</span><span class="m">10</span>.57.57.113/24,type<span class="o">=</span>veth
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>onboot:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>ostype:<span class="w"> </span>debian
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>rootfs:<span class="w"> </span>Storage:subvol-100-disk-0,size<span class="o">=</span>32G
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>searchdomain:<span class="w"> </span>merox.cloud
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>swap:<span class="w"> </span><span class="m">1024</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>tags:<span class="w"> </span>docker<span class="p">;</span>intern<span class="p">;</span>linux
+</code></pre></div></td></tr></table></div></p>
+<h6 id="alto-docker">Alto ( docker )</h6>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>root@helix:/etc/pve/nodes/helix/lxc#<span class="w"> </span>cat<span class="w"> </span><span class="m">102</span>.conf<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1">#For cloning</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>arch:<span class="w"> </span>amd64
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>cores:<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>features:<span class="w"> </span><span class="nv">mount</span><span class="o">=</span>nfs,nesting<span class="o">=</span><span class="m">1</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>hostname:<span class="w"> </span>alto
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>memory:<span class="w"> </span><span class="m">3072</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>nameserver:<span class="w"> </span><span class="m">10</span>.57.57.1
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>net0:<span class="w"> </span><span class="nv">name</span><span class="o">=</span>eth0,bridge<span class="o">=</span>vmbr0,firewall<span class="o">=</span><span class="m">1</span>,gw<span class="o">=</span><span class="m">10</span>.57.57.1,hwaddr<span class="o">=</span>E6:B3:3E:64:D2:CA,ip<span class="o">=</span><span class="m">10</span>.57.57.56/24,type<span class="o">=</span>veth
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>onboot:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>ostype:<span class="w"> </span>debian
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a>rootfs:<span class="w"> </span>Storage:subvol-102-disk-1,size<span class="o">=</span>50G
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a>swap:<span class="w"> </span><span class="m">512</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a>tags:<span class="w"> </span>container<span class="p">;</span>intern<span class="p">;</span>linux
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a>lxc.cap.drop:<span class="w"> </span>
+</code></pre></div></td></tr></table></div></p>
+</div>
+<div class="tabbed-block">
+<h6 id="k3s-master-03">K3S-master-03</h6>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>root@nexus:~#<span class="w"> </span>cat<span class="w"> </span>/etc/pve/nodes/nexus/lxc/303.conf<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>arch:<span class="w"> </span>amd64
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>cores:<span class="w"> </span><span class="m">4</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>features:<span class="w"> </span><span class="nv">fuse</span><span class="o">=</span><span class="m">1</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>hostname:<span class="w"> </span>k3s-master-03
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>memory:<span class="w"> </span><span class="m">4096</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>net0:<span class="w"> </span><span class="nv">name</span><span class="o">=</span>eth0,bridge<span class="o">=</span>vmbr0,firewall<span class="o">=</span><span class="m">1</span>,hwaddr<span class="o">=</span>FC:14:11:21:50:3B,ip<span class="o">=</span>dhcp,type<span class="o">=</span>veth
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>onboot:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>ostype:<span class="w"> </span>ubuntu
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>rootfs:<span class="w"> </span>Storage:subvol-303-disk-0,size<span class="o">=</span>50G
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a>swap:<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a>lxc.apparmor.profile:<span class="w"> </span>unconfined
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a>lxc.cgroup.devices.allow:<span class="w"> </span>a
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a>lxc.cap.drop:<span class="w"> </span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a>lxc.mount.auto:<span class="w"> </span><span class="s2">&quot;proc:rw sys:rw&quot;</span>
+</code></pre></div></td></tr></table></div></p>
+<h6 id="k3s-admin">K3S-admin</h6>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>root@nexus:~#<span class="w"> </span>cat<span class="w"> </span>/etc/pve/nodes/nexus/lxc/300.conf<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>arch:<span class="w"> </span>amd64
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>cores:<span class="w"> </span><span class="m">4</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>features:<span class="w"> </span><span class="nv">fuse</span><span class="o">=</span><span class="m">1</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>hostname:<span class="w"> </span>k3s-admin
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>memory:<span class="w"> </span><span class="m">4096</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>net0:<span class="w"> </span><span class="nv">name</span><span class="o">=</span>eth0,bridge<span class="o">=</span>vmbr0,firewall<span class="o">=</span><span class="m">1</span>,hwaddr<span class="o">=</span>E4:14:11:68:C2:D6,ip<span class="o">=</span>dhcp,type<span class="o">=</span>veth
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>onboot:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>ostype:<span class="w"> </span>ubuntu
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>rootfs:<span class="w"> </span>Storage:subvol-300-disk-1,size<span class="o">=</span>50G
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>swap:<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>lxc.apparmor.profile:<span class="w"> </span>unconfined
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a>lxc.cgroup.devices.allow:<span class="w"> </span>a
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a>lxc.cap.drop:<span class="w"> </span>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a>lxc.mount.auto:<span class="w"> </span><span class="s2">&quot;proc:rw sys:rw&quot;</span>
+</code></pre></div></td></tr></table></div></p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="configuration-for-k3s">Configuration for K3S</h2>
+<p>I spent many hours grappling with the challenge of getting K3S to work on LXCs, and at this point, I'd like to extend my heartfelt thanks to <a href="https://garrettmills.dev/
+">Garrett Mills</a>. His insights were invaluable. Now, let's dive into how you can successfully run K3S on LXC.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<h6 id="lxc-k3s">LXC K3S</h6>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>arch:<span class="w"> </span>amd64
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>cores:<span class="w"> </span><span class="m">4</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>features:<span class="w"> </span><span class="nv">fuse</span><span class="o">=</span><span class="m">1</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>hostname:<span class="w"> </span>lxc-k3s-ct-ready
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>memory:<span class="w"> </span><span class="m">4096</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>net0:<span class="w"> </span><span class="nv">name</span><span class="o">=</span>eth0,bridge<span class="o">=</span>vmbr0,firewall<span class="o">=</span><span class="m">1</span>,hwaddr<span class="o">=</span>BC:24:11:78:33:4B,ip<span class="o">=</span>dhcp,type<span class="o">=</span>veth
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>ostype:<span class="w"> </span>ubuntu
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>rootfs:<span class="w"> </span>Storage:basevol-210-disk-0,size<span class="o">=</span>50G
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>swap:<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>template:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="hll">lxc.apparmor.profile:<span class="w"> </span>unconfined
+</span><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="hll">lxc.cgroup.devices.allow:<span class="w"> </span>a
+</span><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="hll">lxc.cap.drop:<span class="w"> </span>
+</span><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="hll">lxc.mount.auto:<span class="w"> </span><span class="s2">&quot;proc:rw sys:rw&quot;</span>
+</span></code></pre></div>
+</div>
+<ol>
+<li>Make sure you add above highlighted lines to your LXC config.</li>
+<li><font color="red">Note</font>: It's important that the container is stopped when you try to edit the file, otherwise Proxmox's network filesystem will prevent you from saving it.</li>
+<li>In order, these options <strong>(1) disable AppArmor</strong>, <strong>(2) allow the container's cgroup</strong> to access all devices, <strong>(3) prevent dropping any capabilities</strong> for the container, and <strong>(4) mount /proc and /sys</strong> as read-write in the container.</li>
+<li>Next, we need to publish the kernel boot configuration into the container. Normally, this isn't needed by the container since it runs using the host's kernel, but the Kubelet uses the configuration to determine various settings for the runtime, so we need to copy it into the container. To do this, first start the container using the Proxmox web UI, then run the following command on the Proxmox host:</li>
+<li>Execute:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pct<span class="w"> </span>push<span class="w"> </span>&lt;container<span class="w"> </span>id&gt;<span class="w"> </span>/boot/config-<span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span><span class="w"> </span>/boot/config-<span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span>
+</code></pre></div></li>
+<li>Finally, in each of the containers, we need to make sure that /dev/kmsg exists. Kubelet uses this for some logging functions, and it doesn't exist in the containers by default. For our purposes, we'll just alias it to /dev/console. In each container, create the file /usr/local/bin/conf-kmsg.sh with the following contents:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="ch">#!/bin/sh -e</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-e<span class="w"> </span>/dev/kmsg<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span>ln<span class="w"> </span>-s<span class="w"> </span>/dev/console<span class="w"> </span>/dev/kmsg
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="k">fi</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a>mount<span class="w"> </span>--make-rshared<span class="w"> </span>/
+</code></pre></div></td></tr></table></div>
+<p>7.This script symlinks /dev/console as /dev/kmsg if the latter does not exist. Finally, we will configure it to run when the container starts with a SystemD one-shot service. Create the file /etc/systemd/system/conf-kmsg.service with the following contents:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="o">[</span>Unit<span class="o">]</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="nv">Description</span><span class="o">=</span>Make<span class="w"> </span>sure<span class="w"> </span>/dev/kmsg<span class="w"> </span>exists
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="o">[</span>Service<span class="o">]</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="nv">Type</span><span class="o">=</span>simple
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="nv">RemainAfterExit</span><span class="o">=</span>yes
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/conf-kmsg.sh
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="nv">TimeoutStartSec</span><span class="o">=</span><span class="m">0</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="o">[</span>Install<span class="o">]</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="nv">WantedBy</span><span class="o">=</span>default.target
+</code></pre></div></td></tr></table></div>
+<p>8.Finally, enable the service by running the following:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/bin/conf-kmsg.sh
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a>systemctl<span class="w"> </span>daemon-reload
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>conf-kmsg
+</code></pre></div></td></tr></table></div></p>
 
-        window.onload = typeEffect;
-    </script>
 
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
+  </span>
+
+    
+    
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/mer0x" class="md-author" title="@mer0x">
+          
+          <img src="https://avatars.githubusercontent.com/u/35839230?v=4&size=72" alt="mer0x">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our feedback form.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
               </article>
             </div>
           

@@ -1,4 +1,6 @@
 
+
+
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -21,10 +23,10 @@
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
-  
-    <title>ASA - MEROX.DEV</title>
-  
-
+      
+        <title>ASA - MEROX.DEV</title>
+      
+    
     
       <link rel="stylesheet" href="../../../../../assets/stylesheets/main.76a95c52.min.css">
       
@@ -69,33 +71,10 @@
     
     <!-- main.html | Added "navigation.instant" support -->
     <link rel="canonical" href=".">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878" crossorigin="anonymous"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878"
+     crossorigin="anonymous"></script>
 
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-
-    <style>
-        body {
-            background-color: #000;
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-            padding: 20px;
-        }
-        .terminal {
-            font-size: 18px;
-            line-height: 1.5;
-        }
-        .terminal .cursor {
-            display: inline-block;
-            width: 10px;
-            background-color: #00ff00;
-            animation: blink 1s infinite step-start;
-        }
-        @keyframes blink {
-            50% {
-                background-color: transparent;
-            }
-        }
-    </style>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 
   </head>
   
@@ -4170,27 +4149,181 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-    <div class="terminal">
-        <span id="text"></span><span class="cursor"></span>
-    </div>
+                  
 
-    <script>
-        const textElement = document.getElementById('text');
-        const textToDisplay = 'Welcome to merox.dev! This is a simulated terminal.';
+  
+  
 
-        let index = 0;
 
-        function typeEffect() {
-            if (index < textToDisplay.length) {
-                textElement.textContent += textToDisplay[index];
-                index++;
-                setTimeout(typeEffect, 100); // Adjust typing speed here
-            }
-        }
+<h1 id="basic-cisco-asa-firewall-configuration-guide">Basic Cisco ASA Firewall Configuration Guide</h1>
+<p>This document outlines the steps for a basic configuration of the Cisco ASA firewall, covering initial setup, interface security levels, NAT configurations, and basic access control rules.</p>
+<h2 id="initial-setup">Initial Setup</h2>
+<h3 id="accessing-the-asa">Accessing the ASA</h3>
+<ol>
+<li>Connect to the ASA via console cable and use a terminal emulator to access the ASA's command-line interface (CLI).</li>
+</ol>
+<h3 id="entering-global-configuration-mode">Entering Global Configuration Mode</h3>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>asa&gt;<span class="w"> </span><span class="nb">enable</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>Password:<span class="w"> </span><span class="o">[</span>Enter<span class="w"> </span>password<span class="w"> </span>here<span class="o">]</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>asa#<span class="w"> </span>configure<span class="w"> </span>terminal
+</code></pre></div></td></tr></table></div>
+Setting Hostname</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>asa<span class="o">(</span>config<span class="o">)</span><span class="c1"># hostname ASAfirewall</span>
+</code></pre></div></td></tr></table></div>
+Configuring Console and VTY Passwords</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># aaa authentication serial console LOCAL</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># username admin password PASSWORD privilege 15</span>
+</code></pre></div></td></tr></table></div>
+Setting the Enable Secret Password</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># enable password EN_PASSWORD</span>
+</code></pre></div></td></tr></table></div>
+Configuring Interfaces
+Setting Interface Names and Security Levels</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># interface GigabitEthernet0/0</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>ASAfirewall<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># nameif outside</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>ASAfirewall<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># security-level 0</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>ASAfirewall<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># ip address dhcp setroute</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>ASAfirewall<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># no shutdown</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># interface GigabitEthernet0/1</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>ASAfirewall<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># nameif inside</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>ASAfirewall<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># security-level 100</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>ASAfirewall<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># ip address 192.168.1.1 255.255.255.0</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>ASAfirewall<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># no shutdown</span>
+</code></pre></div></td></tr></table></div>
+Configuring PAT (Port Address Translation)</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># object network obj_any</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>ASAfirewall<span class="o">(</span>config-network-object<span class="o">)</span><span class="c1"># subnet 0.0.0.0 0.0.0.0</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>ASAfirewall<span class="o">(</span>config-network-object<span class="o">)</span><span class="c1"># nat (inside,outside) dynamic interface</span>
+</code></pre></div></td></tr></table></div>
+Configuring Access Rules
+Allowing Internal Users to Access the Internet</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># access-list outside_access_in extended permit ip any any</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># access-group outside_access_in in interface outside</span>
+</code></pre></div></td></tr></table></div>
+Allowing SSH Access to the ASA</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># crypto key generate rsa modulus 2048</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># aaa authentication ssh console LOCAL</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># ssh 192.168.1.0 255.255.255.0 inside</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># ssh timeout 60</span>
+</code></pre></div></td></tr></table></div>
+Saving the Configuration</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>ASAfirewall<span class="o">(</span>config<span class="o">)</span><span class="c1"># write memory</span>
+</code></pre></div></td></tr></table></div>
+Verifying Configuration</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>ASAfirewall#<span class="w"> </span>show<span class="w"> </span>running-config<span class="w"> </span>interface
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>ASAfirewall#<span class="w"> </span>show<span class="w"> </span>running-config<span class="w"> </span>object
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>ASAfirewall#<span class="w"> </span>show<span class="w"> </span>running-config<span class="w"> </span>access-list
+</code></pre></div></td></tr></table></div>
+This guide provides a foundational approach to configuring the Cisco ASA firewall for basic network protection and connectivity. It covers setting up interface names and security levels, configuring PAT to allow internal network access to the internet, and setting up basic access rules. Adjustments might be needed based on your specific network requirements and ASA model.</p>
 
-        window.onload = typeEffect;
-    </script>
 
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2024</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2024</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our feedback form.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
               </article>
             </div>
           
