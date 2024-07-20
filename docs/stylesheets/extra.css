@@ -2,19 +2,3 @@
 .md-header__button.md-logo svg {
     height: 1.7rem;
 }
-
-.blinking-cursor {
-    font-weight: bold;
-    font-size: 24px;
-    color: #2e2e2e;
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    from, to {
-        color: transparent;
-    }
-    50% {
-        color: #2e2e2e;
-    }
-}
