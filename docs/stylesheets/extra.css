@@ -3,3 +3,27 @@
     height: 1.7rem;
 }
 
+
+.md-header__custom-text .md-ellipsis {
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: white; 
+    margin-left: 20px; 
+    display: inline-block;
+    vertical-align: middle; 
+  }
+
+  .md-header__inner {
+    display: flex;
+    align-items: center;
+  }
+  
+  .md-header__button.md-logo {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .md-header__title {
+    flex-grow: 1;
+  }
+  
