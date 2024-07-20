@@ -1,5 +1,3 @@
-<!-- Elements added to "main.html" will be displayed on all pages -->
-
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -23,10 +21,10 @@
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
-      
-        <title>Proxmox - MEROX.DEV</title>
-      
-    
+  
+    <title>Proxmox - MEROX.DEV</title>
+  
+
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.76a95c52.min.css">
       
@@ -71,10 +69,33 @@
     
     <!-- main.html | Added "navigation.instant" support -->
     <link rel="canonical" href=".">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878" crossorigin="anonymous"></script>
 
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+        }
+        .terminal {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .terminal .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: #00ff00;
+            animation: blink 1s infinite step-start;
+        }
+        @keyframes blink {
+            50% {
+                background-color: transparent;
+            }
+        }
+    </style>
 
   </head>
   
@@ -4156,308 +4177,27 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+    <div class="terminal">
+        <span id="text"></span><span class="cursor"></span>
+    </div>
 
-  
-  
+    <script>
+        const textElement = document.getElementById('text');
+        const textToDisplay = 'Welcome to merox.dev! This is a simulated terminal.';
 
+        let index = 0;
 
-<h1 id="proxmox-vms">Proxmox VMs</h1>
-<p>Proxmox Virtual Environment is a complete, open-source server management platform for enterprise virtualization. It tightly integrates the KVM hypervisor and Linux Containers (LXC), software-defined storage and networking functionality, on a single platform. With the integrated web-based user interface you can manage VMs and containers, high availability for clusters, or the integrated disaster recovery tools with ease.</p>
-<div class="admonition info">
-<p class="admonition-title">VMs configurations on 3 nodes Proxmox Cluster</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="citadel" name="__tabbed_1" type="radio" /><input id="helix" name="__tabbed_1" type="radio" /><input id="nexus" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="citadel">Citadel</label><label for="helix">Helix</label><label for="nexus">Nexus</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<h6 id="k3s-01">K3S-01</h6>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>root@citadel:/home/merox#<span class="w"> </span>cat<span class="w"> </span>/etc/pve/nodes/citadel/qemu-server/304.conf
-</code></pre></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>balloon:<span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>boot:<span class="w"> </span>c
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>bootdisk:<span class="w"> </span>scsi0
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>cipassword:<span class="w"> </span><span class="nv">$5$jkhUIiuewfe79877Ebvfeuewffew32dLrj1</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>ciupgrade:<span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>ciuser:<span class="w"> </span>merox
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>cores:<span class="w"> </span><span class="m">2</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>cpu:<span class="w"> </span>host
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>ide2:<span class="w"> </span>Storage:vm-304-cloudinit,media<span class="o">=</span>cdrom,size<span class="o">=</span>4M
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>ipconfig0:<span class="w"> </span><span class="nv">ip</span><span class="o">=</span>dhcp
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>memory:<span class="w"> </span><span class="m">16384</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>meta:<span class="w"> </span>creation-qemu<span class="o">=</span><span class="m">8</span>.1.2,ctime<span class="o">=</span><span class="m">1706184272</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>name:<span class="w"> </span>k3s-01
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>net0:<span class="w"> </span><span class="nv">virtio</span><span class="o">=</span>FB:10:22:1C:2E:0B,bridge<span class="o">=</span>vmbr0
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a>numa:<span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>onboot:<span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>scsi0:<span class="w"> </span>Storage:vm-304-disk-0,size<span class="o">=</span>128204M,ssd<span class="o">=</span><span class="m">1</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a>scsihw:<span class="w"> </span>virtio-scsi-pci
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a>serial0:<span class="w"> </span>socket
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a>smbios1:<span class="w"> </span><span class="nv">uuid</span><span class="o">=</span>2eee58c6-6212-47f4-b7a5-73143cf5a6cf
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a>sockets:<span class="w"> </span><span class="m">2</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a>sshkeys:<span class="w"> </span>ssh-rsa%
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a>vga:<span class="w"> </span>serial0
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a>vmgenid:<span class="w"> </span>b09d281c-3ee0-44dc-bc43-5b1afeba8a83
-</code></pre></div></td></tr></table></div></p>
-</div>
-<div class="tabbed-block">
-<h6 id="k3s-02">K3S-02</h6>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>root@helix:~#<span class="w"> </span>cat<span class="w"> </span>/etc/pve/nodes/helix/qemu-server/305.conf<span class="w"> </span>
-</code></pre></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span>
-<span class="normal"><a href="#__codelineno-3-18">18</a></span>
-<span class="normal"><a href="#__codelineno-3-19">19</a></span>
-<span class="normal"><a href="#__codelineno-3-20">20</a></span>
-<span class="normal"><a href="#__codelineno-3-21">21</a></span>
-<span class="normal"><a href="#__codelineno-3-22">22</a></span>
-<span class="normal"><a href="#__codelineno-3-23">23</a></span>
-<span class="normal"><a href="#__codelineno-3-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>balloon:<span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>boot:<span class="w"> </span>c
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>bootdisk:<span class="w"> </span>scsi0
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>cipassword:<span class="w"> </span><span class="nv">$2</span>ATZCNhUIiuewfe79877Ebvfeuewffew32dLrj14jvg5WdLrj1
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>ciupgrade:<span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>ciuser:<span class="w"> </span>merox
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>cores:<span class="w"> </span><span class="m">2</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>cpu:<span class="w"> </span>host
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>ide2:<span class="w"> </span>Storage:vm-305-cloudinit,media<span class="o">=</span>cdrom,size<span class="o">=</span>4M
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>ipconfig0:<span class="w"> </span><span class="nv">ip</span><span class="o">=</span>dhcp
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>memory:<span class="w"> </span><span class="m">16384</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>meta:<span class="w"> </span>creation-qemu<span class="o">=</span><span class="m">8</span>.1.2,ctime<span class="o">=</span><span class="m">1706184272</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>name:<span class="w"> </span>k3s-02
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>net0:<span class="w"> </span><span class="nv">virtio</span><span class="o">=</span>FE:21:11:35:72:3A,bridge<span class="o">=</span>vmbr0
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>numa:<span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a>onboot:<span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a>scsi0:<span class="w"> </span>Storage:vm-305-disk-0,size<span class="o">=</span>128204M,ssd<span class="o">=</span><span class="m">1</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>scsihw:<span class="w"> </span>virtio-scsi-pci
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a>serial0:<span class="w"> </span>socket
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a>smbios1:<span class="w"> </span><span class="nv">uuid</span><span class="o">=</span>4a38edc1-641d-4c9a-bc50-d1b236fe6de0
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a>sockets:<span class="w"> </span><span class="m">2</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22"></a>sshkeys:<span class="w"> </span>ssh-rsa%
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a>vga:<span class="w"> </span>serial0
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a>vmgenid:<span class="w"> </span>a643e4a7-4d57-4655-b0ab-d151991d724e
-</code></pre></div></td></tr></table></div></p>
-</div>
-<div class="tabbed-block">
-<h6 id="k3s-03">K3S-03</h6>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>root@nexus:~#<span class="w"> </span>cat<span class="w"> </span>/etc/pve/nodes/nexus/qemu-server/306.conf<span class="w"> </span>
-</code></pre></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span>
-<span class="normal"><a href="#__codelineno-5-19">19</a></span>
-<span class="normal"><a href="#__codelineno-5-20">20</a></span>
-<span class="normal"><a href="#__codelineno-5-21">21</a></span>
-<span class="normal"><a href="#__codelineno-5-22">22</a></span>
-<span class="normal"><a href="#__codelineno-5-23">23</a></span>
-<span class="normal"><a href="#__codelineno-5-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>balloon:<span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>boot:<span class="w"> </span>c
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>bootdisk:<span class="w"> </span>scsi0
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>cipassword:<span class="w"> </span><span class="nv">$2$ATjfo389y932hWDbjdwqNSNML8izsrq9I4jvg5WdLrj1</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>ciupgrade:<span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>ciuser:<span class="w"> </span>merox
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>cores:<span class="w"> </span><span class="m">2</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>cpu:<span class="w"> </span>host
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>ide2:<span class="w"> </span>Storage:vm-306-cloudinit,media<span class="o">=</span>cdrom,size<span class="o">=</span>4M
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>ipconfig0:<span class="w"> </span><span class="nv">ip</span><span class="o">=</span>dhcp
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>memory:<span class="w"> </span><span class="m">14336</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>meta:<span class="w"> </span>creation-qemu<span class="o">=</span><span class="m">8</span>.1.2,ctime<span class="o">=</span><span class="m">1706184272</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>name:<span class="w"> </span>k3s-03
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a>net0:<span class="w"> </span><span class="nv">virtio</span><span class="o">=</span>DF:14:12:DF:42:DA,bridge<span class="o">=</span>vmbr0
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a>numa:<span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a>onboot:<span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a>scsi0:<span class="w"> </span>Storage:vm-306-disk-0,size<span class="o">=</span>128204M,ssd<span class="o">=</span><span class="m">1</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a>scsihw:<span class="w"> </span>virtio-scsi-pci
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a>serial0:<span class="w"> </span>socket
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a>smbios1:<span class="w"> </span><span class="nv">uuid</span><span class="o">=</span>1319e437-1cc7-4444-9d14-2444d0953a29
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a>sockets:<span class="w"> </span><span class="m">2</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a>sshkeys:<span class="w"> </span>ssh-rsa%
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a>vga:<span class="w"> </span>serial0
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a>vmgenid:<span class="w"> </span>6551cc5e-630c-40d3-ad9e-c5a622b71711
-</code></pre></div></td></tr></table></div></p>
-<h6 id="windows-server-2019-addns">Windows Server 2019 ( AD/DNS )</h6>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>root@nexus:~#<span class="w"> </span>cat<span class="w"> </span>/etc/pve/nodes/nexus/qemu-server/105.conf<span class="w"> </span>
-</code></pre></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-7-10">10</a></span>
-<span class="normal"><a href="#__codelineno-7-11">11</a></span>
-<span class="normal"><a href="#__codelineno-7-12">12</a></span>
-<span class="normal"><a href="#__codelineno-7-13">13</a></span>
-<span class="normal"><a href="#__codelineno-7-14">14</a></span>
-<span class="normal"><a href="#__codelineno-7-15">15</a></span>
-<span class="normal"><a href="#__codelineno-7-16">16</a></span>
-<span class="normal"><a href="#__codelineno-7-17">17</a></span>
-<span class="normal"><a href="#__codelineno-7-18">18</a></span>
-<span class="normal"><a href="#__codelineno-7-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>boot:<span class="w"> </span><span class="nv">order</span><span class="o">=</span>ide0<span class="p">;</span>net0
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>cores:<span class="w"> </span><span class="m">2</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>cpu:<span class="w"> </span>host
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>ide0:<span class="w"> </span>Storage:vm-105-disk-1,format<span class="o">=</span>raw,size<span class="o">=</span>32G
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>machine:<span class="w"> </span>pc-i440fx-7.2
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a>memory:<span class="w"> </span><span class="m">4096</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a>meta:<span class="w"> </span>creation-qemu<span class="o">=</span><span class="m">7</span>.2.0,ctime<span class="o">=</span><span class="m">1687109663</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a>name:<span class="w"> </span>winserver
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a>net0:<span class="w"> </span><span class="nv">e1000</span><span class="o">=</span>D6:46:16:2C:CD:8C,bridge<span class="o">=</span>vmbr0
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a>numa:<span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11"></a>onboot:<span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12"></a>ostype:<span class="w"> </span>win10
-<a id="__codelineno-7-13" name="__codelineno-7-13"></a>scsihw:<span class="w"> </span>virtio-scsi-single
-<a id="__codelineno-7-14" name="__codelineno-7-14"></a>smbios1:<span class="w"> </span><span class="nv">uuid</span><span class="o">=</span>3a978c5c-e1d0-482a-b12f-8fa3a5e14ce1
-<a id="__codelineno-7-15" name="__codelineno-7-15"></a>sockets:<span class="w"> </span><span class="m">2</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16"></a>startup:<span class="w"> </span><span class="nv">order</span><span class="o">=</span><span class="m">1</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17"></a>tags:<span class="w"> </span>windows
-<a id="__codelineno-7-18" name="__codelineno-7-18"></a>unused0:<span class="w"> </span>Storage:vm-105-disk-0
-<a id="__codelineno-7-19" name="__codelineno-7-19"></a>vmgenid:<span class="w"> </span>14c4f1ad-59fb-4a73-981a-b97e89fab435
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</div>
+        function typeEffect() {
+            if (index < textToDisplay.length) {
+                textElement.textContent += textToDisplay[index];
+                index++;
+                setTimeout(typeEffect, 100); // Adjust typing speed here
+            }
+        }
 
+        window.onload = typeEffect;
+    </script>
 
-
-
-
-
-
-  
-    
-  
-  
-    
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Created">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
-  </span>
-
-    
-    
-    
-  </aside>
-
-
-  
-
-
-
-  <form class="md-feedback" name="feedback" hidden>
-    <fieldset>
-      <legend class="md-feedback__title">
-        Was this page helpful?
-      </legend>
-      <div class="md-feedback__inner">
-        <div class="md-feedback__list">
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
-            </button>
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
-            </button>
-          
-        </div>
-        <div class="md-feedback__note">
-          
-            <div data-md-value="1" hidden>
-              
-              
-                
-              
-              Thanks for your feedback!
-            </div>
-          
-            <div data-md-value="0" hidden>
-              
-              
-                
-              
-              Thanks for your feedback! Help us improve this page by using our feedback form.
-            </div>
-          
-        </div>
-      </div>
-    </fieldset>
-  </form>
-
-
-                
               </article>
             </div>
           

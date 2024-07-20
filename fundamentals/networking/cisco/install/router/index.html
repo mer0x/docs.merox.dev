@@ -1,5 +1,3 @@
-<!-- Elements added to "main.html" will be displayed on all pages -->
-
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -23,10 +21,10 @@
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
-      
-        <title>Router - MEROX.DEV</title>
-      
-    
+  
+    <title>Router - MEROX.DEV</title>
+  
+
     
       <link rel="stylesheet" href="../../../../../assets/stylesheets/main.76a95c52.min.css">
       
@@ -71,10 +69,33 @@
     
     <!-- main.html | Added "navigation.instant" support -->
     <link rel="canonical" href=".">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878" crossorigin="anonymous"></script>
 
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+        }
+        .terminal {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .terminal .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: #00ff00;
+            animation: blink 1s infinite step-start;
+        }
+        @keyframes blink {
+            50% {
+                background-color: transparent;
+            }
+        }
+    </style>
 
   </head>
   
@@ -4155,247 +4176,27 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+    <div class="terminal">
+        <span id="text"></span><span class="cursor"></span>
+    </div>
 
-  
-  
+    <script>
+        const textElement = document.getElementById('text');
+        const textToDisplay = 'Welcome to merox.dev! This is a simulated terminal.';
 
+        let index = 0;
 
-<h1 id="basic-cisco-router-configuration-guide">Basic Cisco Router Configuration Guide</h1>
-<p>This tutorial covers the essentials of configuring a Cisco router for a CCNA-level routing and switching environment. It includes initial setup, interface configuration, and setting up routing protocols.</p>
-<h2 id="accessing-the-router">Accessing the Router</h2>
-<ol>
-<li>
-<p><strong>Connect to the Router</strong>:
-   Use a console cable to connect your computer to the router's console port. Use terminal emulation software (like PuTTY or Tera Term) to access the router's command line interface (CLI).</p>
-</li>
-<li>
-<p><strong>Enter Global Configuration Mode</strong>:
-   After accessing the CLI, enter the global configuration mode to make changes to the router's configuration:</p>
-</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Router&gt;<span class="w"> </span><span class="nb">enable</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>Router#<span class="w"> </span>configure<span class="w"> </span>terminal
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>Router<span class="o">(</span>config<span class="o">)</span><span class="c1">#</span>
-</code></pre></div></td></tr></table></div>
-<h2 id="basic-configuration">Basic Configuration</h2>
-<ol>
-<li><strong>Set Hostname</strong>:
-   Assign a hostname to the router for easy identification:</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Router<span class="o">(</span>config<span class="o">)</span><span class="c1"># hostname MyRouter</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>MyRouter<span class="o">(</span>config<span class="o">)</span><span class="c1">#</span>
-</code></pre></div></td></tr></table></div>
-<ol>
-<li>
-<p><strong>Secure Access</strong>:
-   Configure a secret password to secure privileged EXEC mode access:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>MyRouter<span class="o">(</span>config<span class="o">)</span><span class="c1"># enable secret mySecretPassword</span>
-</code></pre></div></td></tr></table></div>
-</li>
-</ol>
-<p>Optionally, set a password for console access:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>MyRouter<span class="o">(</span>config<span class="o">)</span><span class="c1"># line console 0</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>MyRouter<span class="o">(</span>config-line<span class="o">)</span><span class="c1"># password consolePassword</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>MyRouter<span class="o">(</span>config-line<span class="o">)</span><span class="c1"># login</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>MyRouter<span class="o">(</span>config-line<span class="o">)</span><span class="c1"># exit</span>
-</code></pre></div></td></tr></table></div>
-<ol>
-<li><strong>Configure Interfaces</strong>:
-   Assign IP addresses to the router's interfaces and bring them up:</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>MyRouter<span class="o">(</span>config<span class="o">)</span><span class="c1"># interface GigabitEthernet0/0</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>MyRouter<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># ip address 192.168.1.1 255.255.255.0</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>MyRouter<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># no shutdown</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>MyRouter<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># exit</span>
-</code></pre></div></td></tr></table></div>
-<p>Repeat these steps for other interfaces as needed, adjusting the interface identifiers and IP addresses according to your network design.</p>
-<ol>
-<li><strong>Save Configuration</strong>:
-   To save your configuration to the startup configuration file:</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>MyRouter<span class="o">(</span>config<span class="o">)</span><span class="c1"># exit</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>MyRouter#<span class="w"> </span>copy<span class="w"> </span>running-config<span class="w"> </span>startup-config
-</code></pre></div></td></tr></table></div>
-<h2 id="setting-up-routing">Setting Up Routing</h2>
-<ol>
-<li><strong>Static Routing</strong>:
-   For a simple network, you can set up static routing by specifying a destination network and the next-hop address or exit interface:</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>MyRouter<span class="o">(</span>config<span class="o">)</span><span class="c1"># ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/1</span>
-</code></pre></div></td></tr></table></div>
-<p>This command sets a default route, directing all unknown traffic to the next hop specified by the <code>GigabitEthernet0/1</code> interface.</p>
-<ol>
-<li><strong>Dynamic Routing</strong>:</li>
-</ol>
-<p>EIGRP Configuration</p>
-<div class="highlight"><pre><span></span><code>Enable EIGRP:
+        function typeEffect() {
+            if (index < textToDisplay.length) {
+                textElement.textContent += textToDisplay[index];
+                index++;
+                setTimeout(typeEffect, 100); // Adjust typing speed here
+            }
+        }
 
-Specify the EIGRP autonomous system number. This number must match across all routers in the EIGRP domain.
-</code></pre></div>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>RouterA<span class="o">(</span>config<span class="o">)</span><span class="c1"># router eigrp 1</span>
-</code></pre></div></td></tr></table></div>
-Advertise Networks:</p>
-<p>Use the network command to specify which networks to advertise via EIGRP.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>RouterA<span class="o">(</span>config-router<span class="o">)</span><span class="c1"># network 192.168.1.0 0.0.0.255</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>RouterA<span class="o">(</span>config-router<span class="o">)</span><span class="c1"># network 10.1.1.0 0.0.0.255</span>
-</code></pre></div></td></tr></table></div>
-Optional: Configure EIGRP for IPv6 (if required):</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>RouterA<span class="o">(</span>config<span class="o">)</span><span class="c1"># ipv6 router eigrp 1</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>RouterA<span class="o">(</span>config-rtr<span class="o">)</span><span class="c1"># eigrp router-id 1.1.1.1</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a>RouterA<span class="o">(</span>config-rtr<span class="o">)</span><span class="c1"># no shutdown</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a>RouterA<span class="o">(</span>config<span class="o">)</span><span class="c1"># interface GigabitEthernet0/0</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a>RouterA<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># ipv6 eigrp 1</span>
-</code></pre></div></td></tr></table></div>
-OSPF Configuration</p>
-<ul>
-<li>
-<p>Enable OSPF:</p>
-</li>
-<li>
-<p>Define the OSPF process ID and router ID.</p>
-</li>
-</ul>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>RouterA<span class="o">(</span>config<span class="o">)</span><span class="c1"># router ospf 1</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>RouterA<span class="o">(</span>config-router<span class="o">)</span><span class="c1"># router-id 1.1.1.1</span>
-</code></pre></div></td></tr></table></div>
-Advertise Networks:</p>
-<p>Use the network command to advertise networks, specifying the area.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
-<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>RouterA<span class="o">(</span>config-router<span class="o">)</span><span class="c1"># network 192.168.1.0 0.0.0.255 area 0</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a>RouterA<span class="o">(</span>config-router<span class="o">)</span><span class="c1"># network 10.1.1.0 0.0.0.255 area 0</span>
-</code></pre></div></td></tr></table></div>
-Optional: Configure OSPF for IPv6 (if required):</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>RouterA<span class="o">(</span>config<span class="o">)</span><span class="c1"># ipv6 router ospf 1</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a>RouterA<span class="o">(</span>config-rtr<span class="o">)</span><span class="c1"># router-id 1.1.1.1</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>RouterA<span class="o">(</span>config<span class="o">)</span><span class="c1"># interface GigabitEthernet0/0</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a>RouterA<span class="o">(</span>config-if<span class="o">)</span><span class="c1"># ipv6 ospf 1 area 0</span>
-</code></pre></div></td></tr></table></div>
-Verifying Configuration</p>
-<p>After configuring the router, use various show commands to verify the setup and the operation of the dynamic routing protocols.
-For EIGRP:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
-<span class="normal"><a href="#__codelineno-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>RouterA#<span class="w"> </span>show<span class="w"> </span>ip<span class="w"> </span>eigrp<span class="w"> </span>neighbors
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a>RouterA#<span class="w"> </span>show<span class="w"> </span>ip<span class="w"> </span>eigrp<span class="w"> </span>topology
-</code></pre></div></td></tr></table></div>
-For OSPF:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>RouterA#<span class="w"> </span>show<span class="w"> </span>ip<span class="w"> </span>ospf<span class="w"> </span>neighbor
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a>RouterA#<span class="w"> </span>show<span class="w"> </span>ip<span class="w"> </span>route<span class="w"> </span>ospf
-</code></pre></div></td></tr></table></div>
-<h2 id="best-practices">Best Practices</h2>
-<ul>
-<li><strong>Security</strong>: Always change default passwords and consider implementing additional security features such as ACLs (Access Control Lists).</li>
-<li><strong>Backup Configuration</strong>: Regularly backup your router's configuration to avoid data loss.</li>
-<li><strong>Firmware Updates</strong>: Keep your router's firmware up to date to ensure you have the latest features and security patches.</li>
-</ul>
-<p>This guide provides a foundation for configuring a Cisco router in a CCNA routing and switching context. For more detailed configurations and advanced features, refer to Cisco's official documentation and CCNA study resources.</p>
+        window.onload = typeEffect;
+    </script>
 
-
-
-
-
-
-
-  
-    
-  
-  
-    
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2024</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Created">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2024</span>
-  </span>
-
-    
-    
-    
-  </aside>
-
-
-  
-
-
-
-  <form class="md-feedback" name="feedback" hidden>
-    <fieldset>
-      <legend class="md-feedback__title">
-        Was this page helpful?
-      </legend>
-      <div class="md-feedback__inner">
-        <div class="md-feedback__list">
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
-            </button>
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
-            </button>
-          
-        </div>
-        <div class="md-feedback__note">
-          
-            <div data-md-value="1" hidden>
-              
-              
-                
-              
-              Thanks for your feedback!
-            </div>
-          
-            <div data-md-value="0" hidden>
-              
-              
-                
-              
-              Thanks for your feedback! Help us improve this page by using our feedback form.
-            </div>
-          
-        </div>
-      </div>
-    </fieldset>
-  </form>
-
-
-                
               </article>
             </div>
           

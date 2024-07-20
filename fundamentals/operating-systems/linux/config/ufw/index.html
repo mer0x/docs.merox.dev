@@ -1,5 +1,3 @@
-<!-- Elements added to "main.html" will be displayed on all pages -->
-
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -23,10 +21,10 @@
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
-      
-        <title>UFW - MEROX.DEV</title>
-      
-    
+  
+    <title>UFW - MEROX.DEV</title>
+  
+
     
       <link rel="stylesheet" href="../../../../../assets/stylesheets/main.76a95c52.min.css">
       
@@ -71,10 +69,33 @@
     
     <!-- main.html | Added "navigation.instant" support -->
     <link rel="canonical" href=".">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878" crossorigin="anonymous"></script>
 
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+        }
+        .terminal {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .terminal .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: #00ff00;
+            animation: blink 1s infinite step-start;
+        }
+        @keyframes blink {
+            50% {
+                background-color: transparent;
+            }
+        }
+    </style>
 
   </head>
   
@@ -4036,137 +4057,27 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+    <div class="terminal">
+        <span id="text"></span><span class="cursor"></span>
+    </div>
 
-  
-  
+    <script>
+        const textElement = document.getElementById('text');
+        const textToDisplay = 'Welcome to merox.dev! This is a simulated terminal.';
 
+        let index = 0;
 
-  <h1>UFW</h1>
+        function typeEffect() {
+            if (index < textToDisplay.length) {
+                textElement.textContent += textToDisplay[index];
+                index++;
+                setTimeout(typeEffect, 100); // Adjust typing speed here
+            }
+        }
 
-<p>UFW, or Uncomplicated Firewall, is a user-friendly interface designed to manage netfilter firewall rules on Linux systems. It provides a much simpler way to configure the firewall, making it accessible for users who may not be as experienced with firewall concepts. Here’s a guide to understanding and using UFW, including setting up basic rules and troubleshooting common issues.
-Understanding UFW</p>
-<p>UFW operates by allowing or blocking traffic based on the rules you define. These rules can specify which services are allowed to communicate in and out of your system. For instance, you might allow HTTP traffic on port 80 for a web server or SSH traffic on port 22 for remote administration.
-Setting Up UFW</p>
-<ul>
-<li>
-<p>Installation: UFW is included with most Linux distributions. If it’s not already installed, you can usually add it using your distribution's package manager.</p>
-</li>
-<li>
-<p>Enabling UFW: To activate UFW, use the command sudo ufw enable. This command starts the firewall and ensures it starts automatically at boot.</p>
-</li>
-<li>
-<p>Defining Rules: Rules can be added based on applications or specifically by port number. For example, sudo ufw allow http or sudo ufw allow 22/tcp. The first command allows traffic on the HTTP port (80), and the second allows TCP traffic on port 22 (SSH).</p>
-</li>
-<li>
-<p>Checking the Status: You can view the current rules and status of UFW by typing sudo ufw status. This command lists all active rules and indicates whether the firewall is active.</p>
-</li>
-</ul>
-<p>Advanced UFW Usage</p>
-<ul>
-<li>Denying Traffic: If you wish to block traffic, you can use sudo ufw deny followed by the service or port number.</li>
-<li>Deleting Rules: To remove a rule, you can use sudo ufw delete followed by the rule specification, either by number (after listing rules with sudo ufw status numbered) or by the rule itself (e.g., sudo ufw delete allow http).</li>
-</ul>
-<p>Troubleshooting with UFW</p>
-<ul>
-<li>Firewall Logs: UFW logs activities which can be helpful for troubleshooting. Logs are typically found in /var/log/ufw.log. Viewing these logs can provide insights into which packets were blocked or allowed, and why.</li>
-<li>Resetting UFW: If you encounter issues or wish to start over, you can reset UFW to its default settings with sudo ufw reset. This action clears all active rules and disables the firewall, allowing you to rebuild your rule set from scratch.</li>
-<li>Disabling UFW: If you need to temporarily disable the firewall for troubleshooting or setup purposes, you can do so with sudo ufw disable. Remember to enable it again with sudo ufw enable once you're done.</li>
-</ul>
-<p>Best Practices</p>
-<ul>
-<li>Minimum Necessary Access: Only allow traffic necessary for your applications to function. Limiting access reduces the potential for unauthorized access.</li>
-<li>Regularly Review Rules: Over time, the needs of your system may change. Regularly review and update your firewall rules to ensure they reflect your current requirements.</li>
-<li>Use Application Profiles: UFW supports application profiles which can simplify rule management. These profiles allow you to define rules based on the application rather than specific port numbers.</li>
-</ul>
-<p>By following this guide, you can effectively manage your system’s firewall with UFW, enhancing your Linux system's security through a straightforward and accessible interface. Whether you're running a home server or managing enterprise systems, UFW provides the tools needed to protect your network.</p>
+        window.onload = typeEffect;
+    </script>
 
-
-
-
-
-
-
-  
-    
-  
-  
-    
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2024</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Created">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2024</span>
-  </span>
-
-    
-    
-    
-  </aside>
-
-
-  
-
-
-
-  <form class="md-feedback" name="feedback" hidden>
-    <fieldset>
-      <legend class="md-feedback__title">
-        Was this page helpful?
-      </legend>
-      <div class="md-feedback__inner">
-        <div class="md-feedback__list">
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
-            </button>
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
-            </button>
-          
-        </div>
-        <div class="md-feedback__note">
-          
-            <div data-md-value="1" hidden>
-              
-              
-                
-              
-              Thanks for your feedback!
-            </div>
-          
-            <div data-md-value="0" hidden>
-              
-              
-                
-              
-              Thanks for your feedback! Help us improve this page by using our feedback form.
-            </div>
-          
-        </div>
-      </div>
-    </fieldset>
-  </form>
-
-
-                
               </article>
             </div>
           

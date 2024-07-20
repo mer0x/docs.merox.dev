@@ -1,5 +1,3 @@
-<!-- Elements added to "main.html" will be displayed on all pages -->
-
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -23,10 +21,10 @@
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
-      
-        <title>Kubernetes - MEROX.DEV</title>
-      
-    
+  
+    <title>Kubernetes - MEROX.DEV</title>
+  
+
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.76a95c52.min.css">
       
@@ -71,10 +69,33 @@
     
     <!-- main.html | Added "navigation.instant" support -->
     <link rel="canonical" href=".">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878" crossorigin="anonymous"></script>
 
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+        }
+        .terminal {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .terminal .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: #00ff00;
+            animation: blink 1s infinite step-start;
+        }
+        @keyframes blink {
+            50% {
+                background-color: transparent;
+            }
+        }
+    </style>
 
   </head>
   
@@ -4239,211 +4260,27 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+    <div class="terminal">
+        <span id="text"></span><span class="cursor"></span>
+    </div>
 
-  
-  
+    <script>
+        const textElement = document.getElementById('text');
+        const textToDisplay = 'Welcome to merox.dev! This is a simulated terminal.';
 
+        let index = 0;
 
-<h1 id="kubernetes">Kubernetes</h1>
-<p>In the interconnected ecosystem of PulsarDC, Kubernetes orchestrates the containerized applications, bringing scalability and automation to the forefront of my homelab. Utilizing K3s for its lightweight footprint, I've established a resilient and efficient Kubernetes cluster that seamlessly manages a diverse array of workloads. Dive into the architecture, setup, and the essential role Kubernetes plays in optimizing application deployments and enhancing system resilience in my setup. </p>
-<p><br>Continue reading through this page to learn how to set up your own cluster, storage solutions, and automation with ArgoCD, Ingress controllers, and more, in no time.</p>
-<h2 id="overview">Overview</h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>My cluster is designed with a focus on reliability and performance:<br>
-<strong>3 master nodes</strong> ensure high availability and cluster management, tagged with:<br> node-role.kubernetes.i.o/master=true:NoSchedule.<br>
-<strong>3 worker nodes</strong>, tagged with:<br> longhorn=true worker=true, handle the workload and storage, optimizing the environment for distributed applications.</p>
-</div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>merox@k3s-admin:~$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>wide
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>NAME<span class="w">            </span>STATUS<span class="w">   </span>ROLES<span class="w">                       </span>AGE<span class="w">   </span>VERSION<span class="w">          </span>OS-IMAGE<span class="w">             </span>KERNEL-VERSION<span class="w">    </span>CONTAINER-RUNTIME
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>k3s-01<span class="w">          </span>Ready<span class="w">    </span>&lt;none&gt;<span class="w">                      </span>14d<span class="w">   </span>v1.29.1+k3s2<span class="w">     </span>Ubuntu<span class="w"> </span><span class="m">22</span>.04.3<span class="w"> </span>LTS<span class="w">   </span><span class="m">5</span>.15.0-1049-kvm<span class="w">   </span>containerd://1.7.11-k3s2
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>k3s-02<span class="w">          </span>Ready<span class="w">    </span>&lt;none&gt;<span class="w">                      </span>14d<span class="w">   </span>v1.29.1+k3s2<span class="w">     </span>Ubuntu<span class="w"> </span><span class="m">22</span>.04.3<span class="w"> </span>LTS<span class="w">   </span><span class="m">5</span>.15.0-1049-kvm<span class="w">   </span>containerd://1.7.11-k3s2
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>k3s-03<span class="w">          </span>Ready<span class="w">    </span>&lt;none&gt;<span class="w">                      </span>14d<span class="w">   </span>v1.29.1+k3s2<span class="w">     </span>Ubuntu<span class="w"> </span><span class="m">22</span>.04.3<span class="w"> </span>LTS<span class="w">   </span><span class="m">5</span>.15.0-1049-kvm<span class="w">   </span>containerd://1.7.11-k3s2
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>k3s-master-01<span class="w">   </span>Ready<span class="w">    </span>control-plane,etcd,master<span class="w">   </span>14d<span class="w">   </span>v1.29.1+k3s2<span class="w">     </span>Ubuntu<span class="w"> </span><span class="m">22</span>.04.3<span class="w"> </span>LTS<span class="w">   </span><span class="m">6</span>.5.11-7-pve<span class="w">      </span>containerd://1.7.11-k3s2
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>k3s-master-02<span class="w">   </span>Ready<span class="w">    </span>control-plane,etcd,master<span class="w">   </span>14d<span class="w">   </span>v1.29.1+k3s2<span class="w">     </span>Ubuntu<span class="w"> </span><span class="m">22</span>.04.3<span class="w"> </span>LTS<span class="w">   </span><span class="m">6</span>.5.11-7-pve<span class="w">      </span>containerd://1.7.11-k3s2
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>k3s-master-03<span class="w">   </span>Ready<span class="w">    </span>control-plane,etcd,master<span class="w">   </span>14d<span class="w">   </span>v1.29.1+k3s2<span class="w">     </span>Ubuntu<span class="w"> </span><span class="m">22</span>.04.3<span class="w"> </span>LTS<span class="w">   </span><span class="m">6</span>.5.11-7-pve<span class="w">      </span>containerd://1.7.11-k3s2
-</code></pre></div></td></tr></table></div>
-<details class="info">
-<summary>Rancher NODES screenshot</summary>
-<p><img alt="Rancher nodes" src="/images/content/rancher_k3s_cluster.png" title="Rancher Nodes" /></p>
-</details>
-<h3 id="advanced-tooling-for-an-optimized-experience">Advanced Tooling for an Optimized Experience</h3>
-<p>Leveraging cutting-edge tools enhances my cluster's capabilities:</p>
-<h2 id="metallb-and-kubevip">MetalLB and KubeVIP</h2>
-<ul>
-<li><strong>MetalLB</strong> and <strong>KubeVIP</strong> offer reliable load balancing.
-    Check the footer <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to view config files.</li>
-</ul>
-<h2 id="longhorn">Longhorn</h2>
-<ul>
-<li><strong>Longhorn</strong> provides resilient and scalable storage.</li>
-</ul>
-<details class="example">
-<summary>Longhorn screenshot</summary>
-<p><img alt="Longhorn" src="/images/content/longhorn.png" title="Longhorn" /></p>
-</details>
-<h2 id="rancher">Rancher</h2>
-<ul>
-<li><strong>Rancher</strong> simplifies cluster management with its intuitive UI.</li>
-</ul>
-<details class="example">
-<summary>Rancher screenshot</summary>
-<p><img alt="Rancher" src="/images/content/rancher.png" title="Rancher" /></p>
-</details>
-<h2 id="traefik">Traefik</h2>
-<ul>
-<li><strong>Traefik</strong> serves as the ingress controller, directing traffic efficiently.</li>
-</ul>
-<details class="example" open="open">
-<summary>Traefik screenshott</summary>
-<p><img alt="Traefik" src="/images/content/trefik.png" title="Traefik" /></p>
-</details>
-<h2 id="monitoring">Monitoring</h2>
-<ul>
-<li><strong>Kube-Prometheus</strong> and <strong>Loki</strong> deliver comprehensive monitoring and logging.</li>
-</ul>
-<h2 id="cicd">CI/CD</h2>
-<ul>
-<li><strong>ArgoCD</strong>, integrated with GitHub, automates deployment, keeping my cluster in sync with the latest configurations and applications.</li>
-</ul>
-<details class="example" open="open">
-<summary>ArgoCD screenshot</summary>
-<p><img alt="ArgoCD" src="/images/content/argo.png" title="ArgoCD" /></p>
-</details>
-<h2 id="installationconfigs">Installation/Configs</h2>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-<p>See how to deploy and configure your own K3S cluster in no time:
-<div class="grid cards" markdown>
- <a href="/operations/containerization/k3s/installation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10.204 14.35.007.01-.999 2.413a5.171 5.171 0 0 1-2.075-2.597l2.578-.437.004.005a.44.44 0 0 1 .484.606zm-.833-2.129a.44.44 0 0 0 .173-.756l.002-.011L7.585 9.7a5.143 5.143 0 0 0-.73 3.255l2.514-.725.002-.009zm1.145-1.98a.44.44 0 0 0 .699-.337l.01-.005.15-2.62a5.144 5.144 0 0 0-3.01 1.442l2.147 1.523.004-.002zm.76 2.75.723.349.722-.347.18-.78-.5-.623h-.804l-.5.623.179.779zm1.5-3.095a.44.44 0 0 0 .7.336l.008.003 2.134-1.513a5.188 5.188 0 0 0-2.992-1.442l.148 2.615.002.001zm10.876 5.97-5.773 7.181a1.6 1.6 0 0 1-1.248.594l-9.261.003a1.6 1.6 0 0 1-1.247-.596l-5.776-7.18a1.583 1.583 0 0 1-.307-1.34L2.1 5.573c.108-.47.425-.864.863-1.073L11.305.513a1.606 1.606 0 0 1 1.385 0l8.345 3.985c.438.209.755.604.863 1.073l2.062 8.955c.108.47-.005.963-.308 1.34zm-3.289-2.057c-.042-.01-.103-.026-.145-.034-.174-.033-.315-.025-.479-.038-.35-.037-.638-.067-.895-.148-.105-.04-.18-.165-.216-.216l-.201-.059a6.45 6.45 0 0 0-.105-2.332 6.465 6.465 0 0 0-.936-2.163c.052-.047.15-.133.177-.159.008-.09.001-.183.094-.282.197-.185.444-.338.743-.522.142-.084.273-.137.415-.242.032-.024.076-.062.11-.089.24-.191.295-.52.123-.736-.172-.216-.506-.236-.745-.045-.034.027-.08.062-.111.088-.134.116-.217.23-.33.35-.246.25-.45.458-.673.609-.097.056-.239.037-.303.033l-.19.135a6.545 6.545 0 0 0-4.146-2.003l-.012-.223c-.065-.062-.143-.115-.163-.25-.022-.268.015-.557.057-.905.023-.163.061-.298.068-.475.001-.04-.001-.099-.001-.142 0-.306-.224-.555-.5-.555-.275 0-.499.249-.499.555l.001.014c0 .041-.002.092 0 .128.006.177.044.312.067.475.042.348.078.637.056.906a.545.545 0 0 1-.162.258l-.012.211a6.424 6.424 0 0 0-4.166 2.003 8.373 8.373 0 0 1-.18-.128c-.09.012-.18.04-.297-.029-.223-.15-.427-.358-.673-.608-.113-.12-.195-.234-.329-.349a2.691 2.691 0 0 0-.111-.088.594.594 0 0 0-.348-.132.481.481 0 0 0-.398.176c-.172.216-.117.546.123.737l.007.005.104.083c.142.105.272.159.414.242.299.185.546.338.743.522.076.082.09.226.1.288l.16.143a6.462 6.462 0 0 0-1.02 4.506l-.208.06c-.055.072-.133.184-.215.217-.257.081-.546.11-.895.147-.164.014-.305.006-.48.039-.037.007-.09.02-.133.03l-.004.002-.007.002c-.295.071-.484.342-.423.608.061.267.349.429.645.365l.007-.001.01-.003.129-.029c.17-.046.294-.113.448-.172.33-.118.604-.217.87-.256.112-.009.23.069.288.101l.217-.037a6.5 6.5 0 0 0 2.88 3.596l-.09.218c.033.084.069.199.044.282-.097.252-.263.517-.452.813-.091.136-.185.242-.268.399-.02.037-.045.095-.064.134-.128.275-.034.591.213.71.248.12.556-.007.69-.282v-.002c.02-.039.046-.09.062-.127.07-.162.094-.301.144-.458.132-.332.205-.68.387-.897.05-.06.13-.082.215-.105l.113-.205a6.453 6.453 0 0 0 4.609.012l.106.192c.086.028.18.042.256.155.136.232.229.507.342.84.05.156.074.295.145.457.016.037.043.09.062.129.133.276.442.402.69.282.247-.118.341-.435.213-.71-.02-.039-.045-.096-.065-.134-.083-.156-.177-.261-.268-.398-.19-.296-.346-.541-.443-.793-.04-.13.007-.21.038-.294-.018-.022-.059-.144-.083-.202a6.499 6.499 0 0 0 2.88-3.622c.064.01.176.03.213.038.075-.05.144-.114.28-.104.266.039.54.138.87.256.154.06.277.128.448.173.036.01.088.019.13.028l.009.003.007.001c.297.064.584-.098.645-.365.06-.266-.128-.537-.423-.608zM16.4 9.701l-1.95 1.746v.005a.44.44 0 0 0 .173.757l.003.01 2.526.728a5.199 5.199 0 0 0-.108-1.674A5.208 5.208 0 0 0 16.4 9.7zm-4.013 5.325a.437.437 0 0 0-.404-.232.44.44 0 0 0-.372.233h-.002l-1.268 2.292a5.164 5.164 0 0 0 3.326.003l-1.27-2.296h-.01zm1.888-1.293a.44.44 0 0 0-.27.036.44.44 0 0 0-.214.572l-.003.004 1.01 2.438a5.15 5.15 0 0 0 2.081-2.615l-2.6-.44-.004.005z"/></svg></span> <strong>Check configs</strong> DEPLOY YOUR OWN K3S CLUSTER</a>
-</div></p>
-</div>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>Deploy K3S in no time&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+        function typeEffect() {
+            if (index < textToDisplay.length) {
+                textElement.textContent += textToDisplay[index];
+                index++;
+                setTimeout(typeEffect, 100); // Adjust typing speed here
+            }
+        }
 
+        window.onload = typeEffect;
+    </script>
 
-
-
-
-
-
-  
-    
-  
-  
-    
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Created">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
-  </span>
-
-    
-    
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="Contributors">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/mer0x" class="md-author" title="@mer0x">
-          
-          <img src="https://avatars.githubusercontent.com/u/35839230?v=4&size=72" alt="mer0x">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
-    
-  </aside>
-
-
-  
-
-
-
-  <form class="md-feedback" name="feedback" hidden>
-    <fieldset>
-      <legend class="md-feedback__title">
-        Was this page helpful?
-      </legend>
-      <div class="md-feedback__inner">
-        <div class="md-feedback__list">
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
-            </button>
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
-            </button>
-          
-        </div>
-        <div class="md-feedback__note">
-          
-            <div data-md-value="1" hidden>
-              
-              
-                
-              
-              Thanks for your feedback!
-            </div>
-          
-            <div data-md-value="0" hidden>
-              
-              
-                
-              
-              Thanks for your feedback! Help us improve this page by using our feedback form.
-            </div>
-          
-        </div>
-      </div>
-    </fieldset>
-  </form>
-
-
-                
               </article>
             </div>
           

@@ -1,5 +1,3 @@
-<!-- Elements added to "main.html" will be displayed on all pages -->
-
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -23,10 +21,10 @@
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
-      
-        <title>Installation - MEROX.DEV</title>
-      
-    
+  
+    <title>Installation - MEROX.DEV</title>
+  
+
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.76a95c52.min.css">
       
@@ -71,10 +69,33 @@
     
     <!-- main.html | Added "navigation.instant" support -->
     <link rel="canonical" href=".">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878" crossorigin="anonymous"></script>
 
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+        }
+        .terminal {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .terminal .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: #00ff00;
+            animation: blink 1s infinite step-start;
+        }
+        @keyframes blink {
+            50% {
+                background-color: transparent;
+            }
+        }
+    </style>
 
   </head>
   
@@ -4120,634 +4141,27 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+    <div class="terminal">
+        <span id="text"></span><span class="cursor"></span>
+    </div>
 
-  
-  
+    <script>
+        const textElement = document.getElementById('text');
+        const textToDisplay = 'Welcome to merox.dev! This is a simulated terminal.';
 
+        let index = 0;
 
-<h1 id="kubernetes">Kubernetes</h1>
-<h3 id="deploy-k3s-in-no-time">Deploy K3S in no time</h3>
-<div class="admonition danger">
-<p class="admonition-title">Special thanks to:</p>
-<p><a href="https://www.youtube.com/@Jims-Garage" target=”_blank>@Jims-Garage</a> <br>
-<a href="https://www.youtube.com/@TechnoTim"target=”_blank>@TechnoTim</a></p>
-</div>
-<div class="admonition failure">
-<p class="admonition-title">don't be script kidde</p>
-<p>Please read, check, and adapt the script to your needs!</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>All resources: <a href="https://github.com/mer0x/merox.docs/tree/master/K3S/cluster-deployment">cluster-deployment</a></p>
-</div>
-<h3 id="k3s-deploysh">k3s-deploy.sh</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">  1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">  2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">  3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">  4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">  5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">  6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">  7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">  8</a></span>
-<span class="normal"><a href="#__codelineno-0-9">  9</a></span>
-<span class="normal"><a href="#__codelineno-0-10"> 10</a></span>
-<span class="normal"><a href="#__codelineno-0-11"> 11</a></span>
-<span class="normal"><a href="#__codelineno-0-12"> 12</a></span>
-<span class="normal"><a href="#__codelineno-0-13"> 13</a></span>
-<span class="normal"><a href="#__codelineno-0-14"> 14</a></span>
-<span class="normal"><a href="#__codelineno-0-15"> 15</a></span>
-<span class="normal"><a href="#__codelineno-0-16"> 16</a></span>
-<span class="normal"><a href="#__codelineno-0-17"> 17</a></span>
-<span class="normal"><a href="#__codelineno-0-18"> 18</a></span>
-<span class="normal"><a href="#__codelineno-0-19"> 19</a></span>
-<span class="normal"><a href="#__codelineno-0-20"> 20</a></span>
-<span class="normal"><a href="#__codelineno-0-21"> 21</a></span>
-<span class="normal"><a href="#__codelineno-0-22"> 22</a></span>
-<span class="normal"><a href="#__codelineno-0-23"> 23</a></span>
-<span class="normal"><a href="#__codelineno-0-24"> 24</a></span>
-<span class="normal"><a href="#__codelineno-0-25"> 25</a></span>
-<span class="normal"><a href="#__codelineno-0-26"> 26</a></span>
-<span class="normal"><a href="#__codelineno-0-27"> 27</a></span>
-<span class="normal"><a href="#__codelineno-0-28"> 28</a></span>
-<span class="normal"><a href="#__codelineno-0-29"> 29</a></span>
-<span class="normal"><a href="#__codelineno-0-30"> 30</a></span>
-<span class="normal"><a href="#__codelineno-0-31"> 31</a></span>
-<span class="normal"><a href="#__codelineno-0-32"> 32</a></span>
-<span class="normal"><a href="#__codelineno-0-33"> 33</a></span>
-<span class="normal"><a href="#__codelineno-0-34"> 34</a></span>
-<span class="normal"><a href="#__codelineno-0-35"> 35</a></span>
-<span class="normal"><a href="#__codelineno-0-36"> 36</a></span>
-<span class="normal"><a href="#__codelineno-0-37"> 37</a></span>
-<span class="normal"><a href="#__codelineno-0-38"> 38</a></span>
-<span class="normal"><a href="#__codelineno-0-39"> 39</a></span>
-<span class="normal"><a href="#__codelineno-0-40"> 40</a></span>
-<span class="normal"><a href="#__codelineno-0-41"> 41</a></span>
-<span class="normal"><a href="#__codelineno-0-42"> 42</a></span>
-<span class="normal"><a href="#__codelineno-0-43"> 43</a></span>
-<span class="normal"><a href="#__codelineno-0-44"> 44</a></span>
-<span class="normal"><a href="#__codelineno-0-45"> 45</a></span>
-<span class="normal"><a href="#__codelineno-0-46"> 46</a></span>
-<span class="normal"><a href="#__codelineno-0-47"> 47</a></span>
-<span class="normal"><a href="#__codelineno-0-48"> 48</a></span>
-<span class="normal"><a href="#__codelineno-0-49"> 49</a></span>
-<span class="normal"><a href="#__codelineno-0-50"> 50</a></span>
-<span class="normal"><a href="#__codelineno-0-51"> 51</a></span>
-<span class="normal"><a href="#__codelineno-0-52"> 52</a></span>
-<span class="normal"><a href="#__codelineno-0-53"> 53</a></span>
-<span class="normal"><a href="#__codelineno-0-54"> 54</a></span>
-<span class="normal"><a href="#__codelineno-0-55"> 55</a></span>
-<span class="normal"><a href="#__codelineno-0-56"> 56</a></span>
-<span class="normal"><a href="#__codelineno-0-57"> 57</a></span>
-<span class="normal"><a href="#__codelineno-0-58"> 58</a></span>
-<span class="normal"><a href="#__codelineno-0-59"> 59</a></span>
-<span class="normal"><a href="#__codelineno-0-60"> 60</a></span>
-<span class="normal"><a href="#__codelineno-0-61"> 61</a></span>
-<span class="normal"><a href="#__codelineno-0-62"> 62</a></span>
-<span class="normal"><a href="#__codelineno-0-63"> 63</a></span>
-<span class="normal"><a href="#__codelineno-0-64"> 64</a></span>
-<span class="normal"><a href="#__codelineno-0-65"> 65</a></span>
-<span class="normal"><a href="#__codelineno-0-66"> 66</a></span>
-<span class="normal"><a href="#__codelineno-0-67"> 67</a></span>
-<span class="normal"><a href="#__codelineno-0-68"> 68</a></span>
-<span class="normal"><a href="#__codelineno-0-69"> 69</a></span>
-<span class="normal"><a href="#__codelineno-0-70"> 70</a></span>
-<span class="normal"><a href="#__codelineno-0-71"> 71</a></span>
-<span class="normal"><a href="#__codelineno-0-72"> 72</a></span>
-<span class="normal"><a href="#__codelineno-0-73"> 73</a></span>
-<span class="normal"><a href="#__codelineno-0-74"> 74</a></span>
-<span class="normal"><a href="#__codelineno-0-75"> 75</a></span>
-<span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
-<span class="normal"><a href="#__codelineno-0-77"> 77</a></span>
-<span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
-<span class="normal"><a href="#__codelineno-0-79"> 79</a></span>
-<span class="normal"><a href="#__codelineno-0-80"> 80</a></span>
-<span class="normal"><a href="#__codelineno-0-81"> 81</a></span>
-<span class="normal"><a href="#__codelineno-0-82"> 82</a></span>
-<span class="normal"><a href="#__codelineno-0-83"> 83</a></span>
-<span class="normal"><a href="#__codelineno-0-84"> 84</a></span>
-<span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
-<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
-<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
-<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
-<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
-<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
-<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
-<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
-<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
-<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
-<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
-<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
-<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
-<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
-<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
-<span class="normal"><a href="#__codelineno-0-100">100</a></span>
-<span class="normal"><a href="#__codelineno-0-101">101</a></span>
-<span class="normal"><a href="#__codelineno-0-102">102</a></span>
-<span class="normal"><a href="#__codelineno-0-103">103</a></span>
-<span class="normal"><a href="#__codelineno-0-104">104</a></span>
-<span class="normal"><a href="#__codelineno-0-105">105</a></span>
-<span class="normal"><a href="#__codelineno-0-106">106</a></span>
-<span class="normal"><a href="#__codelineno-0-107">107</a></span>
-<span class="normal"><a href="#__codelineno-0-108">108</a></span>
-<span class="normal"><a href="#__codelineno-0-109">109</a></span>
-<span class="normal"><a href="#__codelineno-0-110">110</a></span>
-<span class="normal"><a href="#__codelineno-0-111">111</a></span>
-<span class="normal"><a href="#__codelineno-0-112">112</a></span>
-<span class="normal"><a href="#__codelineno-0-113">113</a></span>
-<span class="normal"><a href="#__codelineno-0-114">114</a></span>
-<span class="normal"><a href="#__codelineno-0-115">115</a></span>
-<span class="normal"><a href="#__codelineno-0-116">116</a></span>
-<span class="normal"><a href="#__codelineno-0-117">117</a></span>
-<span class="normal"><a href="#__codelineno-0-118">118</a></span>
-<span class="normal"><a href="#__codelineno-0-119">119</a></span>
-<span class="normal"><a href="#__codelineno-0-120">120</a></span>
-<span class="normal"><a href="#__codelineno-0-121">121</a></span>
-<span class="normal"><a href="#__codelineno-0-122">122</a></span>
-<span class="normal"><a href="#__codelineno-0-123">123</a></span>
-<span class="normal"><a href="#__codelineno-0-124">124</a></span>
-<span class="normal"><a href="#__codelineno-0-125">125</a></span>
-<span class="normal"><a href="#__codelineno-0-126">126</a></span>
-<span class="normal"><a href="#__codelineno-0-127">127</a></span>
-<span class="normal"><a href="#__codelineno-0-128">128</a></span>
-<span class="normal"><a href="#__codelineno-0-129">129</a></span>
-<span class="normal"><a href="#__codelineno-0-130">130</a></span>
-<span class="normal"><a href="#__codelineno-0-131">131</a></span>
-<span class="normal"><a href="#__codelineno-0-132">132</a></span>
-<span class="normal"><a href="#__codelineno-0-133">133</a></span>
-<span class="normal"><a href="#__codelineno-0-134">134</a></span>
-<span class="normal"><a href="#__codelineno-0-135">135</a></span>
-<span class="normal"><a href="#__codelineno-0-136">136</a></span>
-<span class="normal"><a href="#__codelineno-0-137">137</a></span>
-<span class="normal"><a href="#__codelineno-0-138">138</a></span>
-<span class="normal"><a href="#__codelineno-0-139">139</a></span>
-<span class="normal"><a href="#__codelineno-0-140">140</a></span>
-<span class="normal"><a href="#__codelineno-0-141">141</a></span>
-<span class="normal"><a href="#__codelineno-0-142">142</a></span>
-<span class="normal"><a href="#__codelineno-0-143">143</a></span>
-<span class="normal"><a href="#__codelineno-0-144">144</a></span>
-<span class="normal"><a href="#__codelineno-0-145">145</a></span>
-<span class="normal"><a href="#__codelineno-0-146">146</a></span>
-<span class="normal"><a href="#__codelineno-0-147">147</a></span>
-<span class="normal"><a href="#__codelineno-0-148">148</a></span>
-<span class="normal"><a href="#__codelineno-0-149">149</a></span>
-<span class="normal"><a href="#__codelineno-0-150">150</a></span>
-<span class="normal"><a href="#__codelineno-0-151">151</a></span>
-<span class="normal"><a href="#__codelineno-0-152">152</a></span>
-<span class="normal"><a href="#__codelineno-0-153">153</a></span>
-<span class="normal"><a href="#__codelineno-0-154">154</a></span>
-<span class="normal"><a href="#__codelineno-0-155">155</a></span>
-<span class="normal"><a href="#__codelineno-0-156">156</a></span>
-<span class="normal"><a href="#__codelineno-0-157">157</a></span>
-<span class="normal"><a href="#__codelineno-0-158">158</a></span>
-<span class="normal"><a href="#__codelineno-0-159">159</a></span>
-<span class="normal"><a href="#__codelineno-0-160">160</a></span>
-<span class="normal"><a href="#__codelineno-0-161">161</a></span>
-<span class="normal"><a href="#__codelineno-0-162">162</a></span>
-<span class="normal"><a href="#__codelineno-0-163">163</a></span>
-<span class="normal"><a href="#__codelineno-0-164">164</a></span>
-<span class="normal"><a href="#__codelineno-0-165">165</a></span>
-<span class="normal"><a href="#__codelineno-0-166">166</a></span>
-<span class="normal"><a href="#__codelineno-0-167">167</a></span>
-<span class="normal"><a href="#__codelineno-0-168">168</a></span>
-<span class="normal"><a href="#__codelineno-0-169">169</a></span>
-<span class="normal"><a href="#__codelineno-0-170">170</a></span>
-<span class="normal"><a href="#__codelineno-0-171">171</a></span>
-<span class="normal"><a href="#__codelineno-0-172">172</a></span>
-<span class="normal"><a href="#__codelineno-0-173">173</a></span>
-<span class="normal"><a href="#__codelineno-0-174">174</a></span>
-<span class="normal"><a href="#__codelineno-0-175">175</a></span>
-<span class="normal"><a href="#__codelineno-0-176">176</a></span>
-<span class="normal"><a href="#__codelineno-0-177">177</a></span>
-<span class="normal"><a href="#__codelineno-0-178">178</a></span>
-<span class="normal"><a href="#__codelineno-0-179">179</a></span>
-<span class="normal"><a href="#__codelineno-0-180">180</a></span>
-<span class="normal"><a href="#__codelineno-0-181">181</a></span>
-<span class="normal"><a href="#__codelineno-0-182">182</a></span>
-<span class="normal"><a href="#__codelineno-0-183">183</a></span>
-<span class="normal"><a href="#__codelineno-0-184">184</a></span>
-<span class="normal"><a href="#__codelineno-0-185">185</a></span>
-<span class="normal"><a href="#__codelineno-0-186">186</a></span>
-<span class="normal"><a href="#__codelineno-0-187">187</a></span>
-<span class="normal"><a href="#__codelineno-0-188">188</a></span>
-<span class="normal"><a href="#__codelineno-0-189">189</a></span>
-<span class="normal"><a href="#__codelineno-0-190">190</a></span>
-<span class="normal"><a href="#__codelineno-0-191">191</a></span>
-<span class="normal"><a href="#__codelineno-0-192">192</a></span>
-<span class="normal"><a href="#__codelineno-0-193">193</a></span>
-<span class="normal"><a href="#__codelineno-0-194">194</a></span>
-<span class="normal"><a href="#__codelineno-0-195">195</a></span>
-<span class="normal"><a href="#__codelineno-0-196">196</a></span>
-<span class="normal"><a href="#__codelineno-0-197">197</a></span>
-<span class="normal"><a href="#__codelineno-0-198">198</a></span>
-<span class="normal"><a href="#__codelineno-0-199">199</a></span>
-<span class="normal"><a href="#__codelineno-0-200">200</a></span>
-<span class="normal"><a href="#__codelineno-0-201">201</a></span>
-<span class="normal"><a href="#__codelineno-0-202">202</a></span>
-<span class="normal"><a href="#__codelineno-0-203">203</a></span>
-<span class="normal"><a href="#__codelineno-0-204">204</a></span>
-<span class="normal"><a href="#__codelineno-0-205">205</a></span>
-<span class="normal"><a href="#__codelineno-0-206">206</a></span>
-<span class="normal"><a href="#__codelineno-0-207">207</a></span>
-<span class="normal"><a href="#__codelineno-0-208">208</a></span>
-<span class="normal"><a href="#__codelineno-0-209">209</a></span>
-<span class="normal"><a href="#__codelineno-0-210">210</a></span>
-<span class="normal"><a href="#__codelineno-0-211">211</a></span>
-<span class="normal"><a href="#__codelineno-0-212">212</a></span>
-<span class="normal"><a href="#__codelineno-0-213">213</a></span>
-<span class="normal"><a href="#__codelineno-0-214">214</a></span>
-<span class="normal"><a href="#__codelineno-0-215">215</a></span>
-<span class="normal"><a href="#__codelineno-0-216">216</a></span>
-<span class="normal"><a href="#__codelineno-0-217">217</a></span>
-<span class="normal"><a href="#__codelineno-0-218">218</a></span>
-<span class="normal"><a href="#__codelineno-0-219">219</a></span>
-<span class="normal"><a href="#__codelineno-0-220">220</a></span>
-<span class="normal"><a href="#__codelineno-0-221">221</a></span>
-<span class="normal"><a href="#__codelineno-0-222">222</a></span>
-<span class="normal"><a href="#__codelineno-0-223">223</a></span>
-<span class="normal"><a href="#__codelineno-0-224">224</a></span>
-<span class="normal"><a href="#__codelineno-0-225">225</a></span>
-<span class="normal"><a href="#__codelineno-0-226">226</a></span>
-<span class="normal"><a href="#__codelineno-0-227">227</a></span>
-<span class="normal"><a href="#__codelineno-0-228">228</a></span>
-<span class="normal"><a href="#__codelineno-0-229">229</a></span>
-<span class="normal"><a href="#__codelineno-0-230">230</a></span>
-<span class="normal"><a href="#__codelineno-0-231">231</a></span>
-<span class="normal"><a href="#__codelineno-0-232">232</a></span>
-<span class="normal"><a href="#__codelineno-0-233">233</a></span>
-<span class="normal"><a href="#__codelineno-0-234">234</a></span>
-<span class="normal"><a href="#__codelineno-0-235">235</a></span>
-<span class="normal"><a href="#__codelineno-0-236">236</a></span>
-<span class="normal"><a href="#__codelineno-0-237">237</a></span>
-<span class="normal"><a href="#__codelineno-0-238">238</a></span>
-<span class="normal"><a href="#__codelineno-0-239">239</a></span>
-<span class="normal"><a href="#__codelineno-0-240">240</a></span>
-<span class="normal"><a href="#__codelineno-0-241">241</a></span>
-<span class="normal"><a href="#__codelineno-0-242">242</a></span>
-<span class="normal"><a href="#__codelineno-0-243">243</a></span>
-<span class="normal"><a href="#__codelineno-0-244">244</a></span>
-<span class="normal"><a href="#__codelineno-0-245">245</a></span>
-<span class="normal"><a href="#__codelineno-0-246">246</a></span>
-<span class="normal"><a href="#__codelineno-0-247">247</a></span>
-<span class="normal"><a href="#__codelineno-0-248">248</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[33;5m  _           _                     _                   _   _       _   __  __                    \033[0m&quot;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[33;5m | |         | |                   | |                 | | | |     (_) |  \/  |                   \033[0m&quot;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[33;5m | |     __ _| |__   ___  _ __ __ _| |_ ___  _ __ _   _| | | |_   _ _  | \  / | ___ _ __ _____  __\033[0m&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[33;5m | |    / _\` | &#39;_ \ / _ \| &#39;__/ _\` | __/ _ \| &#39;__| | | | | | | | | | | | |\/| |/ _ \ &#39;__/ _ \ \/ \033[0m&quot;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[33;5m | |___| (_| | |_) | (_) | | | (_| | || (_) | |  | |_| | | | | |_| | | | |  | |  __/ | | (_) &gt;  &lt; \033[0m&quot;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[33;5m |______\__,_|_.__/ \___/|_|  \__,_|\__\___/|_|   \__,_|_| |_|\__,_|_| |_|  |_|\___|_|  \___/_/\_\033[0m&quot;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;                                                                                                    \033[0m&quot;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;                                                                                                   \033[0m&quot;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="c1">#############################################</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="c1"># Thanks Jims Garage #</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="c1">#############################################</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="c1"># Version of Kube-VIP to deploy</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="nv">KVVERSION</span><span class="o">=</span><span class="s2">&quot;v0.6.3&quot;</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="c1"># K3S Version</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="nv">k3sVersion</span><span class="o">=</span><span class="s2">&quot;v1.26.10+k3s2&quot;</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="c1"># Set the IP addresses of the master and work nodes</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="nv">master1</span><span class="o">=</span>X.X.X.X
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="nv">master2</span><span class="o">=</span>X.X.X.X
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="nv">master3</span><span class="o">=</span>X.X.X.X
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="nv">worker1</span><span class="o">=</span>X.X.X.X
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="nv">worker2</span><span class="o">=</span>X.X.X.X
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="nv">worker3</span><span class="o">=</span>X.X.X.X
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="c1"># User of remote machines</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="nv">user</span><span class="o">=</span>merox
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="c1"># Interface used on remotes</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="nv">interface</span><span class="o">=</span>eth0
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="c1"># Set the virtual IP address (VIP)</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="nv">vip</span><span class="o">=</span>X.X.X.X
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="c1"># Array of master nodes</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="nv">masters</span><span class="o">=(</span><span class="nv">$master2</span><span class="w"> </span><span class="nv">$master3</span><span class="o">)</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="c1"># Array of worker nodes</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="nv">workers</span><span class="o">=(</span><span class="nv">$worker1</span><span class="w"> </span><span class="nv">$worker2</span><span class="w"> </span><span class="nv">$worker3</span><span class="o">)</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="c1"># Array of all</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="nv">all</span><span class="o">=(</span><span class="nv">$master1</span><span class="w"> </span><span class="nv">$master2</span><span class="w"> </span><span class="nv">$master3</span><span class="w"> </span><span class="nv">$worker1</span><span class="w"> </span><span class="nv">$worker2</span><span class="w"> </span><span class="nv">$worker3</span><span class="o">)</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="c1"># Array of all minus master</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="nv">allnomaster1</span><span class="o">=(</span><span class="nv">$master2</span><span class="w"> </span><span class="nv">$master3</span><span class="w"> </span><span class="nv">$worker1</span><span class="w"> </span><span class="nv">$worker2</span><span class="w"> </span><span class="nv">$worker3</span><span class="o">)</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="c1">#Loadbalancer IP range</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="nv">lbrange</span><span class="o">=</span>X.X.X.X-X.X.X.Y
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="c1">#ssh certificate name variable</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="nv">certName</span><span class="o">=</span>id_rsa
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="c1">#############################################</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="c1">#            DO NOT EDIT BELOW              #</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="c1">#############################################</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="c1"># For testing purposes - in case time is wrong due to VM snapshots</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>off
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>on
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="c1"># Move SSH certs to ~/.ssh and change permissions</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>cp<span class="w"> </span>/home/<span class="nv">$user</span>/<span class="o">{</span><span class="nv">$certName</span>,<span class="nv">$certName</span>.pub<span class="o">}</span><span class="w"> </span>/home/<span class="nv">$user</span>/.ssh
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/home/<span class="nv">$user</span>/.ssh/<span class="nv">$certName</span><span class="w"> </span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>/home/<span class="nv">$user</span>/.ssh/<span class="nv">$certName</span>.pub
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="c1"># Install k3sup to local machine if not already present</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>k3sup<span class="w"> </span>version<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>/dev/null
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="k">then</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[31;5mk3sup not found, installing\033[0m&quot;</span>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="w">    </span>curl<span class="w"> </span>-sLS<span class="w"> </span>https://get.k3sup.dev<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="w">    </span>sudo<span class="w"> </span>install<span class="w"> </span>k3sup<span class="w"> </span>/usr/local/bin/
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="k">else</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mk3sup already installed\033[0m&quot;</span>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="k">fi</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="c1"># Install Kubectl if not already present</span>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>kubectl<span class="w"> </span>version<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>/dev/null
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="k">then</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[31;5mKubectl not found, installing\033[0m&quot;</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="w">    </span>curl<span class="w"> </span>-LO<span class="w"> </span><span class="s2">&quot;https://dl.k8s.io/release/</span><span class="k">$(</span>curl<span class="w"> </span>-L<span class="w"> </span>-s<span class="w"> </span>https://dl.k8s.io/release/stable.txt<span class="k">)</span><span class="s2">/bin/linux/amd64/kubectl&quot;</span>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="w">    </span>sudo<span class="w"> </span>install<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>kubectl<span class="w"> </span>/usr/local/bin/kubectl
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="k">else</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mKubectl already installed\033[0m&quot;</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="k">fi</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="c1"># Create SSH Config file to ignore checking (don&#39;t use in production!)</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;StrictHostKeyChecking no&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>~/.ssh/config
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="c1">#add ssh keys for all nodes</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="k">for</span><span class="w"> </span>node<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">all</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="w">  </span>ssh-copy-id<span class="w"> </span><span class="nv">$user</span>@<span class="nv">$node</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="k">done</span>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="c1"># Install policycoreutils for each node</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="k">for</span><span class="w"> </span>newnode<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">all</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="w">  </span>ssh<span class="w"> </span><span class="nv">$user</span>@<span class="nv">$newnode</span><span class="w"> </span>-i<span class="w"> </span>~/.ssh/<span class="nv">$certName</span><span class="w"> </span>sudo<span class="w"> </span>su<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="s">  NEEDRESTART_MODE=a apt install policycoreutils -y</span>
-<a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="s">  exit</span>
-<a id="__codelineno-0-105" name="__codelineno-0-105"></a><span class="s">EOF</span>
-<a id="__codelineno-0-106" name="__codelineno-0-106"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mPolicyCoreUtils installed!\033[0m&quot;</span>
-<a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="k">done</span>
-<a id="__codelineno-0-108" name="__codelineno-0-108"></a>
-<a id="__codelineno-0-109" name="__codelineno-0-109"></a><span class="c1"># Step 1: Bootstrap First k3s Node</span>
-<a id="__codelineno-0-110" name="__codelineno-0-110"></a>mkdir<span class="w"> </span>~/.kube
-<a id="__codelineno-0-111" name="__codelineno-0-111"></a>k3sup<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-112" name="__codelineno-0-112"></a><span class="w">  </span>--ip<span class="w"> </span><span class="nv">$master1</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-113" name="__codelineno-0-113"></a><span class="w">  </span>--user<span class="w"> </span><span class="nv">$user</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-114" name="__codelineno-0-114"></a><span class="w">  </span>--tls-san<span class="w"> </span><span class="nv">$vip</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-115" name="__codelineno-0-115"></a><span class="w">  </span>--cluster<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-116" name="__codelineno-0-116"></a><span class="w">  </span>--k3s-version<span class="w"> </span><span class="nv">$k3sVersion</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-117" name="__codelineno-0-117"></a><span class="w">  </span>--k3s-extra-args<span class="w"> </span><span class="s2">&quot;--disable traefik --disable servicelb --flannel-iface=</span><span class="nv">$interface</span><span class="s2"> --node-ip=</span><span class="nv">$master1</span><span class="s2"> --node-taint node-role.kubernetes.io/master=true:NoSchedule&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-118" name="__codelineno-0-118"></a><span class="w">  </span>--merge<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-119" name="__codelineno-0-119"></a><span class="w">  </span>--sudo<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="w">  </span>--local-path<span class="w"> </span><span class="nv">$HOME</span>/.kube/config<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-121" name="__codelineno-0-121"></a><span class="w">  </span>--ssh-key<span class="w"> </span><span class="nv">$HOME</span>/.ssh/<span class="nv">$certName</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-122" name="__codelineno-0-122"></a><span class="w">  </span>--context<span class="w"> </span>k3s-ha
-<a id="__codelineno-0-123" name="__codelineno-0-123"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mFirst Node bootstrapped successfully!\033[0m&quot;</span>
-<a id="__codelineno-0-124" name="__codelineno-0-124"></a>
-<a id="__codelineno-0-125" name="__codelineno-0-125"></a><span class="c1"># Step 2: Install Kube-VIP for HA</span>
-<a id="__codelineno-0-126" name="__codelineno-0-126"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://kube-vip.io/manifests/rbac.yaml
-<a id="__codelineno-0-127" name="__codelineno-0-127"></a>
-<a id="__codelineno-0-128" name="__codelineno-0-128"></a><span class="c1"># Step 3: Download kube-vip</span>
-<a id="__codelineno-0-129" name="__codelineno-0-129"></a>curl<span class="w"> </span>-sO<span class="w"> </span>https://raw.githubusercontent.com/mer0x/merox.docs/k3s/K3S/cluster-deployment/kube-vip
-<a id="__codelineno-0-130" name="__codelineno-0-130"></a>cat<span class="w"> </span>kube-vip<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/$interface/&#39;</span><span class="nv">$interface</span><span class="s1">&#39;/g; s/$vip/&#39;</span><span class="nv">$vip</span><span class="s1">&#39;/g&#39;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/kube-vip.yaml
-<a id="__codelineno-0-131" name="__codelineno-0-131"></a>
-<a id="__codelineno-0-132" name="__codelineno-0-132"></a><span class="c1"># Step 4: Copy kube-vip.yaml to master1</span>
-<a id="__codelineno-0-133" name="__codelineno-0-133"></a>scp<span class="w"> </span>-i<span class="w"> </span>~/.ssh/<span class="nv">$certName</span><span class="w"> </span><span class="nv">$HOME</span>/kube-vip.yaml<span class="w"> </span><span class="nv">$user</span>@<span class="nv">$master1</span>:~/kube-vip.yaml
-<a id="__codelineno-0-134" name="__codelineno-0-134"></a>
-<a id="__codelineno-0-135" name="__codelineno-0-135"></a>
-<a id="__codelineno-0-136" name="__codelineno-0-136"></a><span class="c1"># Step 5: Connect to Master1 and move kube-vip.yaml</span>
-<a id="__codelineno-0-137" name="__codelineno-0-137"></a>ssh<span class="w"> </span><span class="nv">$user</span>@<span class="nv">$master1</span><span class="w"> </span>-i<span class="w"> </span>~/.ssh/<span class="nv">$certName</span><span class="w"> </span><span class="s">&lt;&lt;- EOF</span>
-<a id="__codelineno-0-138" name="__codelineno-0-138"></a><span class="s">  sudo mkdir -p /var/lib/rancher/k3s/server/manifests</span>
-<a id="__codelineno-0-139" name="__codelineno-0-139"></a><span class="s">  sudo mv kube-vip.yaml /var/lib/rancher/k3s/server/manifests/kube-vip.yaml</span>
-<a id="__codelineno-0-140" name="__codelineno-0-140"></a><span class="s">EOF</span>
-<a id="__codelineno-0-141" name="__codelineno-0-141"></a>
-<a id="__codelineno-0-142" name="__codelineno-0-142"></a><span class="c1"># Step 6: Add new master nodes (servers) &amp; workers</span>
-<a id="__codelineno-0-143" name="__codelineno-0-143"></a><span class="k">for</span><span class="w"> </span>newnode<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">masters</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<a id="__codelineno-0-144" name="__codelineno-0-144"></a><span class="w">  </span>k3sup<span class="w"> </span>join<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="w">    </span>--ip<span class="w"> </span><span class="nv">$newnode</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-146" name="__codelineno-0-146"></a><span class="w">    </span>--user<span class="w"> </span><span class="nv">$user</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-147" name="__codelineno-0-147"></a><span class="w">    </span>--sudo<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="w">    </span>--k3s-version<span class="w"> </span><span class="nv">$k3sVersion</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-149" name="__codelineno-0-149"></a><span class="w">    </span>--server<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-150" name="__codelineno-0-150"></a><span class="w">    </span>--server-ip<span class="w"> </span><span class="nv">$master1</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-151" name="__codelineno-0-151"></a><span class="w">    </span>--ssh-key<span class="w"> </span><span class="nv">$HOME</span>/.ssh/<span class="nv">$certName</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-152" name="__codelineno-0-152"></a><span class="w">    </span>--k3s-extra-args<span class="w"> </span><span class="s2">&quot;--disable traefik --disable servicelb --flannel-iface=</span><span class="nv">$interface</span><span class="s2"> --node-ip=</span><span class="nv">$newnode</span><span class="s2"> --node-taint node-role.kubernetes.io/master=true:NoSchedule&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-153" name="__codelineno-0-153"></a><span class="w">    </span>--server-user<span class="w"> </span><span class="nv">$user</span>
-<a id="__codelineno-0-154" name="__codelineno-0-154"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mMaster node joined successfully!\033[0m&quot;</span>
-<a id="__codelineno-0-155" name="__codelineno-0-155"></a><span class="k">done</span>
-<a id="__codelineno-0-156" name="__codelineno-0-156"></a>
-<a id="__codelineno-0-157" name="__codelineno-0-157"></a><span class="c1"># add workers</span>
-<a id="__codelineno-0-158" name="__codelineno-0-158"></a><span class="k">for</span><span class="w"> </span>newagent<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">workers</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<a id="__codelineno-0-159" name="__codelineno-0-159"></a><span class="w">  </span>k3sup<span class="w"> </span>join<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="w">    </span>--ip<span class="w"> </span><span class="nv">$newagent</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="w">    </span>--user<span class="w"> </span><span class="nv">$user</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="w">    </span>--sudo<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="w">    </span>--k3s-version<span class="w"> </span><span class="nv">$k3sVersion</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="w">    </span>--server-ip<span class="w"> </span><span class="nv">$master1</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="w">    </span>--ssh-key<span class="w"> </span><span class="nv">$HOME</span>/.ssh/<span class="nv">$certName</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-166" name="__codelineno-0-166"></a><span class="w">    </span>--k3s-extra-args<span class="w"> </span><span class="s2">&quot;--node-label \&quot;longhorn=true\&quot; --node-label \&quot;worker=true\&quot;&quot;</span>
-<a id="__codelineno-0-167" name="__codelineno-0-167"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mAgent node joined successfully!\033[0m&quot;</span>
-<a id="__codelineno-0-168" name="__codelineno-0-168"></a><span class="k">done</span>
-<a id="__codelineno-0-169" name="__codelineno-0-169"></a>
-<a id="__codelineno-0-170" name="__codelineno-0-170"></a><span class="c1"># Step 7: Install kube-vip as network LoadBalancer - Install the kube-vip Cloud Provider</span>
-<a id="__codelineno-0-171" name="__codelineno-0-171"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/kube-vip/kube-vip-cloud-provider/main/manifest/kube-vip-cloud-controller.yaml
-<a id="__codelineno-0-172" name="__codelineno-0-172"></a>
-<a id="__codelineno-0-173" name="__codelineno-0-173"></a><span class="c1"># Step 8: Install Metallb</span>
-<a id="__codelineno-0-174" name="__codelineno-0-174"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manifests/namespace.yaml
-<a id="__codelineno-0-175" name="__codelineno-0-175"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests/metallb-native.yaml
-<a id="__codelineno-0-176" name="__codelineno-0-176"></a><span class="c1"># Download ipAddressPool and configure using lbrange above</span>
-<a id="__codelineno-0-177" name="__codelineno-0-177"></a>curl<span class="w"> </span>-sO<span class="w"> </span>https://raw.githubusercontent.com/mer0x/merox.docs/k3s/K3S/cluster-deployment/ipAddressPool
-<a id="__codelineno-0-178" name="__codelineno-0-178"></a>cat<span class="w"> </span>ipAddressPool<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/$lbrange/&#39;</span><span class="nv">$lbrange</span><span class="s1">&#39;/g&#39;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/ipAddressPool.yaml
-<a id="__codelineno-0-179" name="__codelineno-0-179"></a>
-<a id="__codelineno-0-180" name="__codelineno-0-180"></a><span class="c1"># Step 9: Test with Nginx</span>
-<a id="__codelineno-0-181" name="__codelineno-0-181"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/inlets/inlets-operator/master/contrib/nginx-sample-deployment.yaml<span class="w"> </span>-n<span class="w"> </span>default
-<a id="__codelineno-0-182" name="__codelineno-0-182"></a>kubectl<span class="w"> </span>expose<span class="w"> </span>deployment<span class="w"> </span>nginx-1<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span><span class="w"> </span>--type<span class="o">=</span>LoadBalancer<span class="w"> </span>-n<span class="w"> </span>default
-<a id="__codelineno-0-183" name="__codelineno-0-183"></a>
-<a id="__codelineno-0-184" name="__codelineno-0-184"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mWaiting for K3S to sync and LoadBalancer to come online\033[0m&quot;</span>
-<a id="__codelineno-0-185" name="__codelineno-0-185"></a>
-<a id="__codelineno-0-186" name="__codelineno-0-186"></a><span class="k">while</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>nginx<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;jsonpath={..status.conditions[?(@.type==&quot;Ready&quot;)].status}&#39;</span><span class="k">)</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;True&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<a id="__codelineno-0-187" name="__codelineno-0-187"></a><span class="w">   </span>sleep<span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-0-188" name="__codelineno-0-188"></a><span class="k">done</span>
-<a id="__codelineno-0-189" name="__codelineno-0-189"></a>
-<a id="__codelineno-0-190" name="__codelineno-0-190"></a><span class="c1"># Step 10: Deploy IP Pools and l2Advertisement</span>
-<a id="__codelineno-0-191" name="__codelineno-0-191"></a>kubectl<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>--namespace<span class="w"> </span>metallb-system<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-192" name="__codelineno-0-192"></a><span class="w">                </span>--for<span class="o">=</span><span class="nv">condition</span><span class="o">=</span>ready<span class="w"> </span>pod<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-193" name="__codelineno-0-193"></a><span class="w">                </span>--selector<span class="o">=</span><span class="nv">component</span><span class="o">=</span>controller<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-194" name="__codelineno-0-194"></a><span class="w">                </span>--timeout<span class="o">=</span>120s
-<a id="__codelineno-0-195" name="__codelineno-0-195"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>ipAddressPool.yaml
-<a id="__codelineno-0-196" name="__codelineno-0-196"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/mer0x/merox.docs/master/K3S/cluster-deployment/l2Advertisement.yaml
-<a id="__codelineno-0-197" name="__codelineno-0-197"></a>
-<a id="__codelineno-0-198" name="__codelineno-0-198"></a><span class="c1"># Step 11: Install Rancher (Optional - Delete if not required)</span>
-<a id="__codelineno-0-199" name="__codelineno-0-199"></a><span class="c1">#Install Helm</span>
-<a id="__codelineno-0-200" name="__codelineno-0-200"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mInstalling Helm\033[0m&quot;</span>
-<a id="__codelineno-0-201" name="__codelineno-0-201"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>-o<span class="w"> </span>get_helm.sh<span class="w"> </span>https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-<a id="__codelineno-0-202" name="__codelineno-0-202"></a>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>get_helm.sh
-<a id="__codelineno-0-203" name="__codelineno-0-203"></a>./get_helm.sh
-<a id="__codelineno-0-204" name="__codelineno-0-204"></a>
-<a id="__codelineno-0-205" name="__codelineno-0-205"></a><span class="c1"># Add Rancher Helm Repo &amp; create namespace</span>
-<a id="__codelineno-0-206" name="__codelineno-0-206"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>rancher-latest<span class="w"> </span>https://releases.rancher.com/server-charts/latest
-<a id="__codelineno-0-207" name="__codelineno-0-207"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>cattle-system
-<a id="__codelineno-0-208" name="__codelineno-0-208"></a>
-<a id="__codelineno-0-209" name="__codelineno-0-209"></a><span class="c1"># Install Cert-Manager</span>
-<a id="__codelineno-0-210" name="__codelineno-0-210"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mDeploying Cert-Manager\033[0m&quot;</span>
-<a id="__codelineno-0-211" name="__codelineno-0-211"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://github.com/cert-manager/cert-manager/releases/download/v1.13.2/cert-manager.crds.yaml
-<a id="__codelineno-0-212" name="__codelineno-0-212"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>jetstack<span class="w"> </span>https://charts.jetstack.io
-<a id="__codelineno-0-213" name="__codelineno-0-213"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
-<a id="__codelineno-0-214" name="__codelineno-0-214"></a>helm<span class="w"> </span>install<span class="w"> </span>cert-manager<span class="w"> </span>jetstack/cert-manager<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-215" name="__codelineno-0-215"></a>--namespace<span class="w"> </span>cert-manager<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-216" name="__codelineno-0-216"></a>--create-namespace<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-217" name="__codelineno-0-217"></a>--version<span class="w"> </span>v1.13.2
-<a id="__codelineno-0-218" name="__codelineno-0-218"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>--namespace<span class="w"> </span>cert-manager
-<a id="__codelineno-0-219" name="__codelineno-0-219"></a>
-<a id="__codelineno-0-220" name="__codelineno-0-220"></a><span class="c1"># Install Rancher</span>
-<a id="__codelineno-0-221" name="__codelineno-0-221"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mDeploying Rancher\033[0m&quot;</span>
-<a id="__codelineno-0-222" name="__codelineno-0-222"></a>helm<span class="w"> </span>install<span class="w"> </span>rancher<span class="w"> </span>rancher-latest/rancher<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-223" name="__codelineno-0-223"></a><span class="w"> </span>--namespace<span class="w"> </span>cattle-system<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-224" name="__codelineno-0-224"></a><span class="w"> </span>--set<span class="w"> </span><span class="nv">hostname</span><span class="o">=</span>rancher.my.org<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-225" name="__codelineno-0-225"></a><span class="w"> </span>--set<span class="w"> </span><span class="nv">bootstrapPassword</span><span class="o">=</span>admin
-<a id="__codelineno-0-226" name="__codelineno-0-226"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>cattle-system<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deploy/rancher
-<a id="__codelineno-0-227" name="__codelineno-0-227"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>cattle-system<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>rancher
-<a id="__codelineno-0-228" name="__codelineno-0-228"></a>
-<a id="__codelineno-0-229" name="__codelineno-0-229"></a><span class="c1"># Add Rancher LoadBalancer</span>
-<a id="__codelineno-0-230" name="__codelineno-0-230"></a>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>-n<span class="w"> </span>cattle-system
-<a id="__codelineno-0-231" name="__codelineno-0-231"></a>kubectl<span class="w"> </span>expose<span class="w"> </span>deployment<span class="w"> </span>rancher<span class="w"> </span>--name<span class="o">=</span>rancher-lb<span class="w"> </span>--port<span class="o">=</span><span class="m">443</span><span class="w"> </span>--type<span class="o">=</span>LoadBalancer<span class="w"> </span>-n<span class="w"> </span>cattle-system
-<a id="__codelineno-0-232" name="__codelineno-0-232"></a><span class="k">while</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>-n<span class="w"> </span>cattle-system<span class="w"> </span><span class="s1">&#39;jsonpath={..status.conditions[?(@.type==&quot;Pending&quot;)].status}&#39;</span><span class="k">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;True&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<a id="__codelineno-0-233" name="__codelineno-0-233"></a><span class="w">   </span>sleep<span class="w"> </span><span class="m">5</span>
-<a id="__codelineno-0-234" name="__codelineno-0-234"></a><span class="w">   </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mWaiting for LoadBalancer to come online\033[0m&quot;</span><span class="w"> </span>
-<a id="__codelineno-0-235" name="__codelineno-0-235"></a><span class="k">done</span>
-<a id="__codelineno-0-236" name="__codelineno-0-236"></a>
-<a id="__codelineno-0-237" name="__codelineno-0-237"></a>
-<a id="__codelineno-0-238" name="__codelineno-0-238"></a><span class="c1"># Step 12: Install Longhorn (using modified Official to pin to Longhorn Nodes)</span>
-<a id="__codelineno-0-239" name="__codelineno-0-239"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/mer0x/merox.docs/k3s/K3S/cluster-deployment/longhorn.yaml
-<a id="__codelineno-0-240" name="__codelineno-0-240"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-241" name="__codelineno-0-241"></a>--namespace<span class="w"> </span>longhorn-system<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-242" name="__codelineno-0-242"></a>--watch
-<a id="__codelineno-0-243" name="__codelineno-0-243"></a>
-<a id="__codelineno-0-244" name="__codelineno-0-244"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
-<a id="__codelineno-0-245" name="__codelineno-0-245"></a>kubectl<span class="w"> </span>get<span class="w"> </span>svc
-<a id="__codelineno-0-246" name="__codelineno-0-246"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>--all-namespaces<span class="w"> </span>-o<span class="w"> </span>wide
-<a id="__codelineno-0-247" name="__codelineno-0-247"></a>
-<a id="__codelineno-0-248" name="__codelineno-0-248"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot; \033[32;5mHappy Kubing! Access Nginx at EXTERNAL-IP above\033[0m&quot;</span>
-</code></pre></div></td></tr></table></div>
+        function typeEffect() {
+            if (index < textToDisplay.length) {
+                textElement.textContent += textToDisplay[index];
+                index++;
+                setTimeout(typeEffect, 100); // Adjust typing speed here
+            }
+        }
 
+        window.onload = typeEffect;
+    </script>
 
-
-
-
-
-
-  
-    
-  
-  
-    
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Created">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
-  </span>
-
-    
-    
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="Contributors">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/mer0x" class="md-author" title="@mer0x">
-          
-          <img src="https://avatars.githubusercontent.com/u/35839230?v=4&size=72" alt="mer0x">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
-    
-  </aside>
-
-
-  
-
-
-
-  <form class="md-feedback" name="feedback" hidden>
-    <fieldset>
-      <legend class="md-feedback__title">
-        Was this page helpful?
-      </legend>
-      <div class="md-feedback__inner">
-        <div class="md-feedback__list">
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
-            </button>
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
-            </button>
-          
-        </div>
-        <div class="md-feedback__note">
-          
-            <div data-md-value="1" hidden>
-              
-              
-                
-              
-              Thanks for your feedback!
-            </div>
-          
-            <div data-md-value="0" hidden>
-              
-              
-                
-              
-              Thanks for your feedback! Help us improve this page by using our feedback form.
-            </div>
-          
-        </div>
-      </div>
-    </fieldset>
-  </form>
-
-
-                
               </article>
             </div>
           

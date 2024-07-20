@@ -1,5 +1,3 @@
-<!-- Elements added to "main.html" will be displayed on all pages -->
-
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -23,10 +21,10 @@
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
-      
-        <title>DNS - MEROX.DEV</title>
-      
-    
+  
+    <title>DNS - MEROX.DEV</title>
+  
+
     
       <link rel="stylesheet" href="../../../../../assets/stylesheets/main.76a95c52.min.css">
       
@@ -71,10 +69,33 @@
     
     <!-- main.html | Added "navigation.instant" support -->
     <link rel="canonical" href=".">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878" crossorigin="anonymous"></script>
 
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="merox.dev" data-description="Support me on Buy me a coffee!" data-message="If something here did the trick, grab me beer! Cheers! 🍺" data-color="#fdb503" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+        }
+        .terminal {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .terminal .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: #00ff00;
+            animation: blink 1s infinite step-start;
+        }
+        @keyframes blink {
+            50% {
+                background-color: transparent;
+            }
+        }
+    </style>
 
   </head>
   
@@ -4221,158 +4242,27 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+    <div class="terminal">
+        <span id="text"></span><span class="cursor"></span>
+    </div>
 
-  
-  
+    <script>
+        const textElement = document.getElementById('text');
+        const textToDisplay = 'Welcome to merox.dev! This is a simulated terminal.';
 
+        let index = 0;
 
-<h1 id="efficient-dns-troubleshooting-in-active-directory">Efficient DNS Troubleshooting in Active Directory</h1>
-<p>Active Directory (AD) and the Domain Name System (DNS) work hand in hand to ensure smooth network operations. Correct DNS functioning is essential for AD-related tasks like locating domain controllers, authentication, and replication. This guide focuses on technical troubleshooting techniques and essential commands for DNS issues in an AD environment.</p>
-<h2 id="key-dns-troubleshooting-steps">Key DNS Troubleshooting Steps</h2>
-<h3 id="verify-dns-records-and-configuration">Verify DNS Records and Configuration</h3>
-<ul>
-<li>
-<p><strong>DNS Settings Check</strong>: Ensure DNS servers in network settings point to AD-integrated DNS servers. Use <code>ipconfig /all</code> to review.</p>
-</li>
-<li>
-<p><strong>SRV Records Validation</strong>: Confirm SRV records for AD are correctly registered with <code>nslookup -type=srv _ldap._tcp.dc._msdcs.&lt;YourDomain.com&gt;</code>.</p>
-</li>
-<li>
-<p><strong>Dynamic Updates Status</strong>: Check if dynamic updates are enabled in your DNS zones, allowing automatic DNS record registration.</p>
-</li>
-</ul>
-<h3 id="monitoring-and-logging">Monitoring and Logging</h3>
-<ul>
-<li>
-<p><strong>Enable Debug Logging</strong>: Activate DNS debug logging to track queries and responses, helping identify issues. Be mindful of the potential impact on performance.</p>
-</li>
-<li>
-<p><strong>Performance Monitoring</strong>: Utilize performance counters to monitor DNS operations, focusing on query processing times and response rates.</p>
-</li>
-</ul>
-<h3 id="zone-health-and-replication">Zone Health and Replication</h3>
-<ul>
-<li>
-<p><strong>Replication Checks</strong>: Use <code>repadmin /replsummary</code> and <code>dcdiag /test:dns</code> to assess AD replication and DNS health.</p>
-</li>
-<li>
-<p><strong>Aging and Scavenging</strong>: Verify settings to ensure outdated records are cleaned up without affecting necessary ones.</p>
-</li>
-</ul>
-<h2 id="practical-dns-maintenance-tips">Practical DNS Maintenance Tips</h2>
-<ul>
-<li>
-<p><strong>Regular DNS Records Review</strong>: Periodically audit DNS records for accuracy, removing or correcting as necessary.</p>
-</li>
-<li>
-<p><strong>DNSLint Utility</strong>: Employ Microsoft's DNSLint for diagnosing DNS and AD issues.</p>
-</li>
-<li>
-<p><strong>Best Practices Implementation</strong>: Maintain DNS server redundancy, separate AD from other services, and keep DNS server software updated.</p>
-</li>
-</ul>
-<h2 id="advanced-dns-features-for-ad">Advanced DNS Features for AD</h2>
-<ul>
-<li>
-<p><strong>Conditional Forwarders</strong>: Implement for efficient resolution in multi-domain environments.</p>
-</li>
-<li>
-<p><strong>DNSSEC</strong>: Consider DNS Security Extensions for added security, especially for internet-facing AD setups.</p>
-</li>
-<li>
-<p><strong>GlobalNames Zone</strong>: Enable for simplified access to resources via single-label DNS names.</p>
-</li>
-</ul>
-<h2 id="conclusion">Conclusion</h2>
-<p>Proactive DNS management and troubleshooting are crucial for maintaining a robust AD environment. By applying these focused techniques and utilizing the recommended commands, administrators can ensure optimal DNS performance, enhancing overall network health and security.</p>
+        function typeEffect() {
+            if (index < textToDisplay.length) {
+                textElement.textContent += textToDisplay[index];
+                index++;
+                setTimeout(typeEffect, 100); // Adjust typing speed here
+            }
+        }
 
+        window.onload = typeEffect;
+    </script>
 
-
-
-
-
-
-  
-    
-  
-  
-    
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2024</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Created">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
-  </span>
-
-    
-    
-    
-  </aside>
-
-
-  
-
-
-
-  <form class="md-feedback" name="feedback" hidden>
-    <fieldset>
-      <legend class="md-feedback__title">
-        Was this page helpful?
-      </legend>
-      <div class="md-feedback__inner">
-        <div class="md-feedback__list">
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
-            </button>
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
-            </button>
-          
-        </div>
-        <div class="md-feedback__note">
-          
-            <div data-md-value="1" hidden>
-              
-              
-                
-              
-              Thanks for your feedback!
-            </div>
-          
-            <div data-md-value="0" hidden>
-              
-              
-                
-              
-              Thanks for your feedback! Help us improve this page by using our feedback form.
-            </div>
-          
-        </div>
-      </div>
-    </fieldset>
-  </form>
-
-
-                
               </article>
             </div>
           
