@@ -388,7 +388,7 @@
 
     .tx-container {
         padding-top: 4rem;
-        background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+        background: linear-gradient(135deg, rgba(43, 88, 118, 0.8), rgba(91, 137, 168, 0.9), rgba(255, 255, 255, 0.8));
     }
 
     .tx-hero {
@@ -396,6 +396,9 @@
         padding: 2rem;
         max-width: 1200px;
         text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .tx-hero__image {
@@ -404,6 +407,7 @@
         border-radius: 50%;
         margin-bottom: 1.5rem;
         border: 5px solid #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .tx-hero h1 {
@@ -426,12 +430,13 @@
         background-color: #333;
         border: none;
         border-radius: 5px;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, transform 0.3s;
     }
 
     .tx-hero .md-button:hover,
     .tx-hero .md-button:focus {
         background-color: #555;
+        transform: translateY(-2px);
     }
 
     .logos {
@@ -444,6 +449,12 @@
     .logos img {
         margin: 1rem;
         max-height: 100px;
+        filter: grayscale(100%);
+        transition: filter 0.3s;
+    }
+
+    .logos img:hover {
+        filter: grayscale(0%);
     }
 
     @media (max-width: 767px) {
