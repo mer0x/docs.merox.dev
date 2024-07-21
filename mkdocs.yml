@@ -183,6 +183,8 @@ plugins:
   - blog:
       archive: true
       categories: true
+extra_js:
+  - stylesheets/extra.js
 extra_css:
   - stylesheets/extra.css
 extra:
