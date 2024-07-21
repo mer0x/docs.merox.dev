@@ -38,8 +38,9 @@ footer {
 
 .tx-hero {
     display: flex;
+    flex-direction: column; /* Stack elements vertically on smaller screens */
     align-items: center;
-    justify-content: space-between; /* Aligns image to the right and content to the left */
+    text-align: center;
     margin: 32px 2.8rem;
     color: var(--md-primary-bg-color);
     position: relative;
@@ -52,12 +53,14 @@ footer {
 }
 
 .tx-hero__content {
-    max-width: 50%; /* Limit the width of the content area */
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .tx-hero__image {
-    width: 45%; /* Adjust width of the image container */
-    max-width: 500px; /* Set max-width for the image */
+    width: 100%;
+    max-width: 500px;
+    margin: 1rem 0;
     position: relative;
 }
 
@@ -144,11 +147,24 @@ footer {
     footer {
         position: static;
     }
+
+    .tx-hero {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        padding: 1rem;
+    }
+
+    .tx-hero__image {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width:30em) {
     .tx-hero h1 {
         font-size: 1.4rem;
+    }
+
+    .tx-hero__content {
+        font-size: 0.9rem; /* Adjust font size for better readability on smaller screens */
     }
 }
 
@@ -158,17 +174,18 @@ footer {
     }
 
     .tx-hero {
-        display: flex;
+        flex-direction: row; /* Arrange elements in a row on larger screens */
         align-items: center;
-        justify-content: space-between;
+        text-align: left;
     }
 
     .tx-hero__content {
-        max-width: 40rem; /* Adjust width on larger screens */
-        margin-top: 3.5rem;
-        margin-bottom: 3.5rem;
-        margin-left: 1.0rem;
-        margin-right: 4.0rem;
+        max-width: 50%; /* Limit the width of the content area on larger screens */
+    }
+
+    .tx-hero__image {
+        margin-left: 2rem; /* Space between text and image */
+        width: 45%; /* Adjust width of the image container */
     }
 }
 
