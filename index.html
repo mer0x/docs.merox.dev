@@ -1,3 +1,5 @@
+<!-- Elements added to "home.html" will only be displayed on the home page -->
+
 
 
 
@@ -359,276 +361,260 @@
         
       
 
+
+<!-- Stole this styling from the "up42-py" project (link: https://sdk.up42.com/) -->
+<!-- .tx-container Original Green Gradient: hsla(160deg,47%,55%,1) -->
 <style>
+
 .md-main {
-    flex-grow: 0;
-}
+        flex-grow: 0
+    }
 
-.md-main__inner {
-    display: flex;
-    height: 100%;
-}
+    .md-main__inner {
+        display: flex;
+        height: 100%;
+    }
 
-.md-footer-nav {
-    display: none;
-}
 
-.md-banner {
-    display: none;
-}
+    .md-footer-nav {
+        
+        display: none;
+    }
 
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
+    .md-banner {
+        display: none;
+    }
 
-.tx-container {
-    padding-top: 2rem;
-    background: transparent;
-}
 
-.md-container {
-    background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(231, 48%, 48%, 1) 17%);
-}
-
-.tx-hero {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically on smaller screens */
-    align-items: center;
-    text-align: center;
-    margin: 32px 2.8rem;
-    color: var(--md-primary-bg-color);
-    position: relative;
-}
-
-.tx-hero h1 {
-    margin-bottom: 1rem;
-    color: currentColor;
-    font-weight: 700;
-}
-
-.tx-hero__content {
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-.tx-hero__image {
-    width: 100%;
-    max-width: 500px;
-    margin: 1rem 0;
-    position: relative;
-}
-
-.tx-hero__image img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px; /* Rounded corners for the image */
-    border: 2px solid #ccc; /* Subtle border for the image */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-.tx-hero__image img:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
-.tx-hero .md-button {
-    margin-top: .5rem;
-    margin-right: .5rem;
-    color: var(--md-primary-bg-color);
-}
-
-.tx-hero .md-button--primary {
-    background-color: var(--md-primary-bg-color);
-    color: hsl(0, 0%, 0%);
-    border-color: var(--md-primary-bg-color);
-}
-
-.tx-hero .md-button:focus,
-.tx-hero .md-button:hover {
-    background-color: hsl(0, 0%, 0%);
-    color: hsl(0, 0%, 100%);
-    border-color: hsl(0, 0%, 0%);
-}
-
-.feature-item h2 svg {
-    height: 30px;
-    float: left;
-    margin-right: 10px;
-    transform: translateY(10%);
-}
-
-.top-hr {
-    margin-top: 42px;
-}
-
-.feature-item {
-    border-radius: 20px;
-    margin-top: .5rem;
-    margin-right: .5rem;
-    background-color: var(--md-primary-bg-color);
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    box-sizing: border-box;
-    padding: 0 15px;
-    word-break: break-word;
-}
-
-.feature-item h2 {
-    color: #333;
-    font-weight: 300;
-    font-size: 25px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: normal;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: inherit;
-}
-
-.feature-item p {
-    font-size: 16px;
-    line-height: 1.8em;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: #111;
-    margin: 0 0 10px;
-    display: block;
-}
-
-@media (max-width: 767px) {
     footer {
-        position: static;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      /* Alte stiluri pentru footer */
+   }
+
+
+
+    .tx-container {
+        padding-top: 2rem;
+        background: transparent;
     }
 
+    .md-container {
+      background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(231, 48%, 48%, 1) 17%);
+    }
+
+  
     .tx-hero {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
-        padding: 1rem;
+        margin: 32px 2.8rem;
+        color: var(--md-primary-bg-color);
+        justify-content: center;
     }
 
-    .tx-hero__image {
-        max-width: 100%;
-    }
-}
-
-@media screen and (max-width:30em) {
     .tx-hero h1 {
-        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: currentColor;
+        font-weight: 700
     }
 
     .tx-hero__content {
-        font-size: 0.9rem; /* Adjust font size for better readability on smaller screens */
-    }
-}
-
-@media screen and (min-width:60em) {
-    .md-sidebar--secondary {
-        display: none;
+        padding-bottom: 1rem;
+        margin: 0 auto;
     }
 
-    .tx-hero {
-        flex-direction: row; /* Arrange elements in a row on larger screens */
-        align-items: center;
-        text-align: left;
+    .tx-hero__image{
+        width:17rem;
+        height:17rem;
+        order:1;
+        padding-right: 2.5rem;
     }
 
-    .tx-hero__content {
-        max-width: 50%; /* Limit the width of the content area on larger screens */
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        color: var(--md-primary-bg-color)
     }
 
-    .tx-hero__image {
-        margin-left: 2rem; /* Space between text and image */
-        width: 45%; /* Adjust width of the image container */
+    .tx-hero .md-button--primary {
+        background-color: var(--md-primary-bg-color);
+        color: hsl(0, 0%, 0%);
+        border-color: var(--md-primary-bg-color)
     }
-}
 
-@media screen and (min-width:76.25em) {
-    .md-sidebar--primary {
-        display: none;
+    .tx-hero .md-button:focus,
+    .tx-hero .md-button:hover {
+        background-color: hsl(0, 0%, 0%);
+        color: hsl(0, 0%, 100%);
+        border-color: hsl(0, 0%, 0%);
+    }
+
+    .feature-item h2 svg {
+        height: 30px;
+        float: left;
+        margin-right: 10px;
+        transform: translateY(10%);
     }
 
     .top-hr {
-        width: 100%;
-        display: flex;
-        max-width: 61rem;
-        margin-right: auto;
-        margin-left: auto;
-        padding: 0 .2rem;
-    }
-
-    .bottom-hr {
-        margin-top: 10px;
-        width: 100%;
-        display: flex;
-        max-width: 61rem;
-        margin-right: auto;
-        margin-left: auto;
-        padding: 0 .2rem;
+        margin-top: 42px;
     }
 
     .feature-item {
-        flex: 1;
-        min-width: 0;
+	border-radius: 20px;
+	margin-top: .5rem;
+        margin-right: .5rem;
+	background-color: var(--md-primary-bg-color);
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word
     }
 
-    .feature-item:hover {
-        background-color: #52feb647;
-        border-radius: 3px;
+    .feature-item h2 {
+        color: #333;
+        font-weight: 300;
+        font-size: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: normal;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: inherit;
     }
-}
 
-.hr {
-    border-bottom: 1px solid #eee;
-    width: 100%;
-    margin: 20px 0;
-}
+    .feature-item p {
+        font-size: 16px;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: #111;
+        margin: 0 0 10px;
+        display: block;
+    }
 
-.text-center {
-    text-align: center;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 15px;
-    font-family: 'Lato', sans-serif;
-    font-size: 23px;
-    font-weight: 300;
-    padding-bottom: 10px;
-}
 
-.logos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: row wrap;
-    margin: 0 auto;
-}
 
-.logos img {
-    flex: 1 1 auto;
-    padding: 25px;
-    max-height: 130px;
-    vertical-align: middle;
-}
+    @media (max-width: 767px) {
+      footer {
+        position: static; /* sau poți folosi 'relative' dacă este mai potrivit */
 
-.hr-logos {
-    margin-top: 0;
-    margin-bottom: 30px;
-}
+        }
+    }
 
-.md-footer-meta__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+    @media screen and (max-width:30em) {
+        .tx-hero h1 {
+            font-size: 1.4rem
+        }
+    }
 
-.md-footer-social {
-    padding-top: 20px;
-}
+    @media screen and (min-width:60em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+
+        .tx-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tx-hero__content {
+            max-width: 22rem;
+            margin-top: 3.5rem;
+            margin-bottom: 3.5rem;
+            margin-left: 1.0rem;
+            margin-right: 4.0rem;
+            align-items: center;
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+
+        .top-hr {
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .bottom-hr {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .feature-item:hover {
+            background-color: #52feb647;
+            border-radius: 3px;
+        }
+    }
+
+    .hr {
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .text-center {
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 15px;
+        font-family: 'Lato', sans-serif;
+        font-size: 23px;
+        font-weight: 300;
+        padding-bottom: 10px;
+    }
+
+    .logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+        margin: 0 auto;
+    }
+
+    .logos img {
+        flex: 1 1 auto;
+        padding: 25px;
+        max-height: 130px;
+        vertical-align: middle;
+    }
+
+    .hr-logos {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .md-footer-meta__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+ 
+    }
+
+    .md-footer-social {
+        padding-top: 20px;
+    }
 </style>
 
 <meta property="og:description" content="MEROX.dev is your go-to for homelab setup guidance and curated insights." />
@@ -643,16 +629,16 @@ footer {
     
       <!-- Custom Image -->
       <div class="tx-hero__image">
-        <img src="images/meroxdc.webp" alt="Cover Image" draggable="false">
+  <img src="images/meroxdc.webp"  style="border-radius: 15px;" draggable="false">
       </div>
 
-      <!-- Main Tagline -->
+<!-- Main Tagline -->
       <div class="tx-hero__content">
         <h1>MEROX.dev</h1>
         <p>Welcome to merox.dev—your IT realm powered by insights from a skilled System Administrator with a background in cybersecurity. Dive into tutorials, tips, and firsthand experiences designed to elevate your tech expertise. Let’s decode complexity together! 🍻
 </p>
   
-        <!-- Added Buttons (up to 3) --><a href="homelab/infrastructure/" title="Material | MkDocs" class="md-button md-button--primary">
+  <!-- Added Buttons (up to 3) --><a href="homelab/infrastructure/" title="Material | MkDocs" class="md-button md-button--primary">
           Homelab
         </a><a href="/operations/intro/" title="Material | MkDocs" class="md-button">
           Resources
@@ -660,6 +646,8 @@ footer {
     </div>
   </div>
 </section>
+
+
 
 
       <main class="md-main" data-md-component="main">
