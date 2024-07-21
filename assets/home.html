@@ -270,11 +270,34 @@
   <div class="md-grid md-typeset">
     <div class="tx-hero">
     
-      <!-- Custom Image -->
-      <div class="tx-hero__image">
-  <img src="{{ config.extra.home_cover_image }}"  style="border-radius: 15px;" draggable="false">
-      </div>
-
+ <!-- Custom Image -->
+<div class="tx-hero__image">
+    <img src="{{ config.extra.home_cover_image }}" alt="Cover Image" class="custom-image" draggable="false">
+  </div>
+  
+  <style>
+  .tx-hero__image {
+    display: flex;
+    justify-content: center; /* Centrează imaginea pe orizontală */
+    align-items: center; /* Centrează imaginea pe verticală */
+    padding: 20px; /* Adaugă puțin spațiu în jurul imaginii */
+    background: #f5f5f5; /* Poate adăuga un fundal deschis pentru contrast */
+    border-radius: 20px; /* Răsfrângere mai mare a colțurilor pentru un aspect modern */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adaugă o umbră ușoară pentru efect de adâncire */
+  }
+  
+  .custom-image {
+    max-width: 100%; /* Asigură că imaginea nu depășește lățimea containerului */
+    height: auto; /* Menține proporțiile originale ale imaginii */
+    border-radius: 15px; /* Răsfrângere a colțurilor imaginii */
+    transition: transform 0.3s ease; /* Adaugă o tranziție lină pentru efectele hover */
+  }
+  
+  .custom-image:hover {
+    transform: scale(1.05); /* Mică scalare pe hover pentru efect vizual dinamic */
+  }
+  </style>
+  
 <!-- Main Tagline -->
       <div class="tx-hero__content">
         <h1>{{ config.extra.home_tagline }}</h1>
