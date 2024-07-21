@@ -361,7 +361,6 @@
         
       
 
-<!-- Styling inspired by modern web trends for 2024 -->
 <style>
     .md-main {
         flex-grow: 0;
@@ -381,96 +380,89 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: var(--md-primary-bg-color);
-        padding: 1rem;
+        background-color: #333;
+        color: #fff;
         text-align: center;
-        color: var(--md-primary-fg-color);
+        padding: 1rem;
     }
 
     .tx-container {
-        padding-top: 2rem;
-        background: transparent;
-    }
-
-    .md-container {
-        background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(231, 48%, 48%, 1) 17%);
+        padding-top: 4rem;
+        background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
     }
 
     .tx-hero {
-        margin: 32px 2.8rem;
-        color: var(--md-primary-bg-color);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        margin: 0 auto;
+        padding: 2rem;
+        max-width: 1200px;
         text-align: center;
     }
 
-    .tx-hero h1 {
-        margin-bottom: 1rem;
-        color: currentColor;
-        font-weight: 700;
-        font-size: 2rem;
-    }
-
-    .tx-hero__content {
-        max-width: 600px;
-        margin: 0 auto;
-        padding-bottom: 1rem;
-    }
-
     .tx-hero__image {
-        width: 17rem;
-        height: 17rem;
-        border-radius: 15px;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
         margin-bottom: 1.5rem;
+        border: 5px solid #333;
+    }
+
+    .tx-hero h1 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .tx-hero p {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 2rem;
     }
 
     .tx-hero .md-button {
-        margin: 0.5rem 0.5rem;
-        color: var(--md-primary-bg-color);
-        border: 2px solid var(--md-primary-bg-color);
-        padding: 0.5rem 1rem;
-        text-transform: uppercase;
-    }
-
-    .tx-hero .md-button--primary {
-        background-color: var(--md-primary-bg-color);
-        color: hsl(0, 0%, 100%);
-        border-color: var(--md-primary-bg-color);
+        margin: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #333;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
     }
 
     .tx-hero .md-button:hover,
     .tx-hero .md-button:focus {
-        background-color: hsl(0, 0%, 0%);
-        color: hsl(0, 0%, 100%);
-        border-color: hsl(0, 0%, 0%);
+        background-color: #555;
+    }
+
+    .logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+    }
+
+    .logos img {
+        margin: 1rem;
+        max-height: 100px;
     }
 
     @media (max-width: 767px) {
         footer {
             position: static;
         }
-    }
 
-    @media screen and (max-width: 30em) {
         .tx-hero h1 {
-            font-size: 1.4rem;
+            font-size: 1.8rem;
         }
-    }
 
-    .logos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 2rem 0;
-    }
+        .tx-hero p {
+            font-size: 1rem;
+        }
 
-    .logos img {
-        flex: 1 1 auto;
-        max-height: 130px;
-        margin: 1rem;
+        .tx-hero__image {
+            width: 200px;
+            height: 200px;
+        }
     }
 </style>
 
@@ -481,26 +473,27 @@
 
 <!-- Main site entry button descriptions -->
 <section class="tx-container">
-  <div class="md-grid md-typeset">
     <div class="tx-hero">
-      <!-- Custom Image -->
-      <div class="tx-hero__image">
-        <img src="images/meroxdc.webp" alt="Home Cover Image" draggable="false">
-      </div>
+        <!-- Custom Image -->
+        <img src="images/meroxdc.webp" alt="Home Cover Image" class="tx-hero__image">
 
-      <!-- Main Tagline -->
-      <div class="tx-hero__content">
+        <!-- Main Tagline -->
         <h1>MEROX.dev</h1>
         <p>Welcome to merox.dev—your IT realm powered by insights from a skilled System Administrator with a background in cybersecurity. Dive into tutorials, tips, and firsthand experiences designed to elevate your tech expertise. Let’s decode complexity together! 🍻
 </p>
 
         <!-- Added Buttons (up to 3) --><a href="homelab/infrastructure/" class="md-button md-button--primary">
-          Homelab
+            Homelab
         </a><a href="/operations/intro/" class="md-button md-button--primary">
-          Resources
+            Resources
         </a></div>
+
+    <!-- Logo Section -->
+    <div class="logos">
+        <img src="path/to/logo1.png" alt="Logo 1">
+        <img src="path/to/logo2.png" alt="Logo 2">
+        <img src="path/to/logo3.png" alt="Logo 3">
     </div>
-  </div>
 </section>
 
 
