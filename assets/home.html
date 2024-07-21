@@ -61,36 +61,39 @@ footer {
 
 .tx-hero__image {
     position: relative;
-    width: 17rem;
-    height: 17rem;
+    width: 18rem; /* Mărire pentru imagine */
+    height: 18rem; /* Menținerea raportului 1:1 */
     order: 1;
     padding-right: 2.5rem;
-    overflow: hidden; /* Ascunde orice parte a imaginii în afara cadrului */
-    border: 5px solid transparent; /* Folosit pentru efectul de hover */
-    transition: border-color 0.3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Centrarea imaginii pe orizontală */
+    align-items: center; /* Centrarea imaginii pe verticală */
 }
 
 .custom-image-wrapper {
     position: relative;
     width: 100%;
     height: 100%;
-    clip-path: polygon(0% 5%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%); /* Cadru cu colțuri tăiate mai subtile */
+    clip-path: polygon(0% 5%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .custom-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px; /* Stilizare suplimentară pentru imagine */
+    border-radius: 10px;
     transition: transform 0.3s ease-in-out;
+}
+
+.tx-hero__image:hover .custom-image-wrapper {
+    transform: translateY(-10px); /* Efect de plutire */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adăugăm umbra pentru a accentua efectul de plutire */
 }
 
 .tx-hero__image:hover .custom-image-wrapper img {
     transform: scale(1.05); /* Mărire ușoară a imaginii la hover */
-}
-
-.tx-hero__image:hover {
-    border-color: var(--md-primary-bg-color); /* Schimbă culoarea bordurii la hover */
 }
 
 .tx-hero .md-button {
