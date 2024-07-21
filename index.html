@@ -382,7 +382,6 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    /* Alte stiluri pentru footer */
 }
 
 .tx-container {
@@ -397,8 +396,10 @@ footer {
 .tx-hero {
     margin: 32px 2.8rem;
     color: var(--md-primary-bg-color);
-    justify-content: center;
-    position: relative; /* Necessary for the parallax effect */
+    display: flex;
+    justify-content: space-between; /* Place content on the left and image on the right */
+    align-items: center;
+    position: relative;
 }
 
 .tx-hero h1 {
@@ -408,20 +409,19 @@ footer {
 }
 
 .tx-hero__content {
-    padding-bottom: 1rem;
-    margin: 0 auto;
-    text-align: center; /* Center text in the hero section */
+    max-width: 50%; /* Limit the width of the content area */
+    text-align: left; /* Align text to the left */
 }
 
 .tx-hero__image {
+    width: 50%; /* Set width to fit the space available */
+    max-width: 500px; /* Maximum width for the image */
+    height: auto; /* Allow height to adjust automatically */
     position: relative;
-    width: 100%; /* Make the image responsive */
-    max-width: 500px; /* Limit the max-width */
-    height: 300px; /* Fixed height for better layout control */
-    margin: 0 auto; /* Center the image horizontally */
-    border-radius: 20px; /* Increase border-radius for a modern look */
-    overflow: hidden; /* Hide any overflow */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a more pronounced shadow */
+    overflow: hidden;
+    border: 10px solid transparent; /* Create space for custom border effect */
+    border-radius: 15px; /* Round the corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow for a more pronounced look */
     transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth scaling and shadow effect */
     filter: brightness(90%) contrast(110%); /* Apply filters for better visibility */
 }
@@ -434,7 +434,7 @@ footer {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3); /* Dark overlay */
-    border-radius: inherit; /* Match the border-radius of the image */
+    border-radius: 15px; /* Match the border-radius of the image */
     z-index: 1;
 }
 
@@ -442,13 +442,13 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensure the image covers the area */
-    border-radius: inherit; /* Inherit border-radius from container */
+    border-radius: 15px; /* Ensure the image has rounded corners */
     transition: transform 0.3s ease; /* Smooth scaling effect on hover */
     z-index: 0; /* Place the image below the overlay */
 }
 
 .tx-hero__image:hover {
-    transform: scale(1.1); /* Scale image slightly on hover */
+    transform: scale(1.05); /* Slightly scale image on hover */
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
 }
 
@@ -523,7 +523,7 @@ footer {
 
 @media (max-width: 767px) {
     footer {
-        position: static; /* sau poți folosi 'relative' dacă este mai potrivit */
+        position: static;
     }
 }
 
@@ -541,16 +541,15 @@ footer {
     .tx-hero {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between; /* Adjust alignment for larger screens */
     }
 
     .tx-hero__content {
-        max-width: 22rem;
+        max-width: 40rem; /* Adjust width on larger screens */
         margin-top: 3.5rem;
         margin-bottom: 3.5rem;
         margin-left: 1.0rem;
         margin-right: 4.0rem;
-        align-items: center;
     }
 }
 
