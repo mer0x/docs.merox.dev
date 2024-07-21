@@ -2,3 +2,23 @@
 .md-header__button.md-logo svg {
     height: 1.7rem;
 }
+
+#dynamic-text {
+    display: inline;
+    font-family: monospace;
+    font-size: 24px;
+    color: #00ff00; /* culoarea textului */
+    border-right: 2px solid #00ff00; /* cursorul */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blinkCursor 0.7s step-end infinite;
+}
+
+@keyframes blinkCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #00ff00; /* culoarea cursorului */
+    }
+}
