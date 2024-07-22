@@ -5,7 +5,7 @@
  
 !!! danger "Updates"
     13.07.2024 [Major update]: Workstation DELL T7910 was replaced with DELL R720 Server
-    See more on this [blog article](https://merox.dev/blog/2024/07/13/setting-up-dell-r720-in-the-home-lab/)
+    See more on this [blog article](https://merox.dev/blog/2024/07/13/setting-up-dell-r720-server-in-the-home-lab/)
 
 
 
