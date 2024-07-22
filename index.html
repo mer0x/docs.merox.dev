@@ -103,7 +103,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="root@merox.dev:~#" class="md-header__button md-logo" aria-label="root@merox.dev:~#" data-md-component="logo">
+    <a href="." title="TEST ENV" class="md-header__button md-logo" aria-label="TEST ENV" data-md-component="logo">
       
   <img src="images/meroxdev.png" alt="logo">
 
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            root@merox.dev:~#
+            TEST ENV
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -361,8 +361,11 @@
       
 
 <!-- Stole this styling from the "up42-py" project (link: https://sdk.up42.com/) -->
-<!-- .tx-container Original Green Gradient: hsla(160deg,47%,55%,1) -->
 <style>
+/* Previne scroll-ul orizontal pe ecranele mici */
+body {
+    overflow-x: hidden;
+}
 
 .md-main {
     flex-grow: 0;
@@ -392,52 +395,46 @@ footer {
 .tx-container {
     padding-top: 2rem;
     background: transparent;
+    display: flex;
+    justify-content: center; /* Centrează conținutul pe orizontală */
 }
 
 .md-container {
-    background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(0, 0%, 10%, 1));
+    background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(0, 0%, 15%, 1));
 }
 
 .tx-hero {
-    margin: 32px 2.8rem;
-    color: var(--md-primary-bg-color);
+    display: flex;
+    align-items: center;
     justify-content: center;
-}
-
-.tx-hero h1 {
-    margin-bottom: 1rem;
-    color: currentColor;
-    font-weight: 700;
-}
-
-.tx-hero__content {
-    padding-bottom: 1rem;
+    flex-direction: column; /* Implicit pe ecranele mici */
     margin: 0 auto;
+    padding: 2rem 1rem; /* Padding pe stânga și dreapta pentru a preveni scroll-ul */
+    text-align: center; /* Centrează textul pe ecranele mici */
 }
 
 .tx-hero__image {
     position: relative;
-    width: 18rem; /* Mărire pentru imagine */
-    height: 18rem; /* Menținerea raportului 1:1 */
-    order: 1;
-    padding-right: 2.5rem;
-    overflow: hidden;
+    width: 100%;
+    max-width: 18rem; /* Ajustează dimensiunea maximă a imaginii */
+    height: auto; /* Menține aspectul imaginii */
+    margin: 0 auto; /* Centrează imaginea pe ecranele mici */
     display: flex;
-    justify-content: center; /* Centrarea imaginii pe orizontală */
-    align-items: center; /* Centrarea imaginii pe verticală */
+    justify-content: center; /* Centrează imaginea pe orizontală */
+    align-items: center; /* Centrează imaginea pe verticală */
 }
 
 .custom-image-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: auto; /* Menține aspectul imaginii */
     clip-path: polygon(0% 5%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .custom-image-wrapper img {
     width: 100%;
-    height: 100%;
+    height: auto; /* Menține aspectul imaginii */
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
@@ -450,6 +447,11 @@ footer {
 
 .tx-hero__image:hover .custom-image-wrapper img {
     transform: scale(1.05); /* Mărire ușoară a imaginii la hover */
+}
+
+.tx-hero__content {
+    padding-bottom: 1rem;
+    max-width: 100%;
 }
 
 .tx-hero .md-button {
@@ -520,6 +522,43 @@ footer {
 @media (max-width: 767px) {
     footer {
         position: static; /* sau poți folosi 'relative' dacă este mai potrivit */
+    }
+
+    .tx-hero {
+        flex-direction: column; /* Imaginea și textul sunt pe coloană */
+        padding: 1rem; /* Ajustează padding-ul pentru ecrane mici */
+        align-items: center; /* Centrează conținutul */
+    }
+
+    .tx-hero__image {
+        max-width: 14rem; /* Ajustează dimensiunea maximă a imaginii pentru ecrane mici */
+        order: -1; /* Imaginea va fi afișată înainte de text pe ecrane mici */
+        margin-bottom: 1rem; /* Spațiu între imagine și text */
+    }
+
+    .tx-hero__content {
+        max-width: 100%;
+        padding: 0 1rem; /* Adaugă padding pentru a preveni scroll-ul */
+        text-align: center; /* Centrează textul pe ecranele mici */
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .tx-hero {
+        flex-direction: row; /* Imaginea și textul sunt pe rând */
+        text-align: left; /* Aliniază textul la stânga pe ecrane mari */
+        justify-content: center; /* Centrează conținutul pe orizontală */
+        max-width: 100%; /* Asigură că conținutul nu depășește lățimea paginii */
+    }
+
+    .tx-hero__image {
+        margin-left: 2rem; /* Spațiu între imagine și text */
+        width: auto; /* Permite imaginii să nu fie limitată */
+        max-width: 18rem; /* Dimensiunea maximă a imaginii */
+    }
+
+    .tx-hero__content {
+        max-width: 100%;
     }
 }
 
@@ -635,7 +674,7 @@ footer {
 }
 </style>
 
-<meta property="og:description" content="MEROX.dev is your go-to for homelab setup guidance and curated insights." />
+<meta property="og:description" content="Merox.Dev is your go-to for homelab setup guidance and curated insights." />
 <meta property="og:url" content="https://merox.dev" />
 <meta property="og:image" content="images/meroxindc.jpeg" />
 <meta name="description" content="Welcome to merox.dev—your IT realm powered by insights from a skilled System Administrator with a background in cybersecurity.">
@@ -645,16 +684,9 @@ footer {
   <div class="md-grid md-typeset">
     <div class="tx-hero">
     
-      <!-- Custom Image -->
-      <div class="tx-hero__image">
-        <div class="custom-image-wrapper">
-          <img src="images/meroxdc.webp" alt="Cover Image" draggable="false">
-        </div>
-      </div>
-
       <!-- Main Tagline -->
       <div class="tx-hero__content">
-        <h1>MEROX.dev</h1>
+        <h1>merox.dev</h1>
         <p>Welcome to merox.dev—your IT realm powered by insights from a skilled System Administrator with a background in cybersecurity. Dive into tutorials, tips, and firsthand experiences designed to elevate your tech expertise. Let’s decode complexity together! 🍻
 </p>
   
@@ -663,6 +695,13 @@ footer {
         </a><a href="/operations/intro/" title="Material | MkDocs" class="md-button">
           Resources
         </a></div>
+
+      <!-- Custom Image -->
+      <div class="tx-hero__image">
+        <div class="custom-image-wrapper">
+          <img src="images/meroxdc.webp" alt="Cover Image" draggable="false">
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -686,12 +725,12 @@ footer {
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="root@merox.dev:~#" class="md-nav__button md-logo" aria-label="root@merox.dev:~#" data-md-component="logo">
+    <a href="." title="TEST ENV" class="md-nav__button md-logo" aria-label="TEST ENV" data-md-component="logo">
       
   <img src="images/meroxdev.png" alt="logo">
 
     </a>
-    root@merox.dev:~#
+    TEST ENV
   </label>
   
     <div class="md-nav__source">
