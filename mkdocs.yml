@@ -1,4 +1,4 @@
-site_name: TEST ENV
+site_name: root@merox.dev:~#
 site_url: https://merox.dev
 repo_url: https://github.com
 repo_name: mer0x/merox.dev
@@ -175,11 +175,11 @@ nav:
 plugins:
   - search:
       lang: en
-#  - git-revision-date-localized:
-#      enable_creation_date: true
-#  - git-committers:
-#      repository: mer0x/merox.cloud
-#      branch: master
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-committers:
+      repository: mer0x/merox.cloud
+      branch: master
   - blog:
       archive: true
       categories: true
