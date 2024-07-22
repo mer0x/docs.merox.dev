@@ -31,14 +31,14 @@ theme:
 
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: indigo
+      primary: black
       toggle:
         icon: material/link
         name: Switch to light mode
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: indigo
+      primary: black
       scheme: default 
       toggle:
         icon: material/toggle-switch
@@ -47,7 +47,7 @@ theme:
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: indigo
+      primary: black
       scheme: slate
       toggle:
         icon: material/toggle-switch-off
@@ -230,7 +230,7 @@ extra:
     Welcome to merox.dev—your IT realm powered by insights from a skilled System Administrator with a background in cybersecurity. Dive into tutorials, tips, and firsthand experiences designed to elevate your tech expertise. Let’s decode complexity together! 🍻
 
   # Gradient Color
-  home_gradient_hsla:  hsla(231, 48%, 48%, 1) 17%
+  home_gradient_hsla:  hsla(0, 0%, 15%, 1)
 
   # Custom Homepage Button(s)
   home_button1_name: Homelab
