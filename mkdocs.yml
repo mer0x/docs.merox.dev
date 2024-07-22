@@ -4,7 +4,7 @@ repo_url: https://github.com
 repo_name: mer0x/merox.dev
 theme:
   custom_dir: assets
-  favicon: images/logomeroxdev.png
+  favicon: images/merox.png
   logo: images/meroxdev.png
   name: material
   features:
