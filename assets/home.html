@@ -98,6 +98,14 @@ footer {
     max-width: 100%;
 }
 
+.tx-hero__tagline {
+    color: #333; /* Gri închis care să rămână constant */
+}
+
+.tx-hero__text {
+    color: #fff; /* Alb pentru textul descrierii */
+}
+
 .tx-hero .md-button {
     margin-top: .5rem;
     margin-right: .5rem;
@@ -158,7 +166,7 @@ footer {
     line-height: 1.8em;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    color: #111;
+    color: #fff; /* Alb pentru text */
     margin: 0 0 10px;
     display: block;
 }
@@ -321,7 +329,7 @@ footer {
 <meta property="og:description" content="Merox.Dev is your go-to for homelab setup guidance and curated insights." />
 <meta property="og:url" content="https://merox.dev" />
 <meta property="og:image" content="images/meroxindc.jpeg" />
-<meta name="description" content="Welcome to merox.dev—your IT realm powered by insights from a skilled System Administrator with a background in cybersecurity.">
+<meta name="description" content="Welcome to merox.dev—your IT realm powered by insights from a skilled System Administrator with a background in cybersecurity. Dive into tutorials, tips, and firsthand experiences designed to elevate your tech expertise. Let’s decode complexity together! 🍻">
 
 <!-- Main site entry button descriptions -->
 <section class="tx-container">
@@ -330,8 +338,10 @@ footer {
     
       <!-- Main Tagline -->
       <div class="tx-hero__content">
-        <h1>{{ config.extra.home_tagline }}</h1>
-        <p>{{ config.extra.home_description }}</p>
+        <h1 class="tx-hero__tagline">{{ config.extra.home_tagline }}</h1>
+        <p class="tx-hero__text">
+            {{ config.extra.home_description }}
+        </p>
   
         <!-- Added Buttons (up to 3) -->
         {%- if config.extra.home_button1_name -%}
