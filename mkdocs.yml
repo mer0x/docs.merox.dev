@@ -230,7 +230,7 @@ extra:
     Welcome to merox.dev—your IT realm powered by insights from a skilled System Administrator with a background in cybersecurity. Dive into tutorials, tips, and firsthand experiences designed to elevate your tech expertise. Let’s decode complexity together! 🍻
 
   # Gradient Color
-  home_gradient_hsla:  hsla(0, 0%, 15%, 1)
+  home_gradient_hsla:  hsla(0, 0%, 10%, 1)
 
   # Custom Homepage Button(s)
   home_button1_name: Homelab
