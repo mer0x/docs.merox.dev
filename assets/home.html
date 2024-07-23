@@ -4,23 +4,11 @@
 {% block tabs %}
 {{ super() }}
 
-<!-- Modern Styling -->
+<!-- Stole this styling from the "up42-py" project (link: https://sdk.up42.com/) -->
 <style>
-/* Global Styling */
+/* Previne scroll-ul orizontal pe ecranele mici */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #333;
-    padding-bottom: 60px; /* Asigură că footer-ul nu se suprapune peste conținut */
-}
-
-/* Resetare marginilor implicite pentru a preveni spații neașteptate */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .md-main {
@@ -32,127 +20,347 @@ body {
     height: 100%;
 }
 
-.md-footer-nav, .md-banner {
+.md-footer-nav {
+    display: none;
+}
+
+.md-banner {
     display: none;
 }
 
 footer {
-    position: absolute; /* Schimbă din fixed în absolute */
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background: #282828;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    box-sizing: border-box;
-    z-index: 1; /* Asigură că este deasupra altor elemente */
+    /* Alte stiluri pentru footer */
 }
 
-/* Hero Section Styling */
-.hero-section {
-    position: relative;
-    min-height: 100vh; /* Asigură că secțiunea ocupă cel puțin înălțimea ferestrei vizibile */
-    background: url('{{ config.extra.home_cover_image }}') no-repeat;
-    background-size: cover; /* Asigură că imaginea acoperă complet containerul */
-    background-position: center 25%; /* Ajustează poziția verticală */
-    color: #fff;
+.tx-container {
+    padding-top: 2rem;
+    background: transparent;
     display: flex;
-    flex-direction: column;
+    justify-content: center; /* Centrează conținutul pe orizontală */
+}
+
+.md-container {
+    background: linear-gradient(to bottom, var(--md-primary-fg-color), {{ config.extra.home_gradient_hsla }});
+}
+
+.tx-hero {
+    display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    overflow: hidden; /* Asigură că imaginea nu depășește containerul */
-    margin-bottom: -33px;
+    flex-direction: column; /* Implicit pe ecranele mici */
+    margin: 0 auto;
+    padding: 2rem 1rem; /* Padding pe stânga și dreapta pentru a preveni scroll-ul */
+    text-align: center; /* Centrează textul pe ecranele mici */
 }
 
-/* Restabilirea efectului de întunecare */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Efect de întunecare */
-    z-index: 0; /* Asigură că este sub conținutul textului */
-}
-
-.hero-content {
+.tx-hero__image {
     position: relative;
-    z-index: 1; /* Asigură că textul este deasupra efectului de întunecare */
-    padding: 0 1rem; /* Adaugă padding pentru a evita contactul direct cu marginea ecranului */
+    width: 100%;
+    max-width: 18rem; /* Ajustează dimensiunea maximă a imaginii */
+    height: auto; /* Menține aspectul imaginii */
+    margin: 0 auto; /* Centrează imaginea pe ecranele mici */
+    display: flex;
+    justify-content: center; /* Centrează imaginea pe orizontală */
+    align-items: center; /* Centrează imaginea pe verticală */
 }
 
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+.custom-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto; /* Menține aspectul imaginii */
+    clip-path: polygon(0% 5%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.hero-content p {
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
+.custom-image-wrapper img {
+    width: 100%;
+    height: auto; /* Menține aspectul imaginii */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.hero-content .btn {
-    display: inline-block;
-    background: linear-gradient(145deg, #0052cc, #003d99); /* Gradient elegant */
-    color: #fff;
-    padding: 0.75rem 1.5rem; /* Mărimea moderată a padding-ului */
-    margin: 0.5rem;
-    border-radius: 12px; /* Colțuri rotunjite pentru un aspect premium */
-    text-decoration: none;
-    font-weight: 600; /* Font mai gros pentru text */
-    font-size: 1rem; /* Dimensiune mai mică a textului */
-    text-transform: uppercase; /* Text majuscule pentru un aspect mai îndrăzneț */
-    letter-spacing: 0.5px; /* Spațiere între litere pentru un aspect elegant */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Umbre subtile și moderne */
-    transition: all 0.3s ease;
+.tx-hero__image:hover .custom-image-wrapper {
+    transform: translateY(-10px); /* Efect de plutire */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adăugăm umbra pentru a accentua efectul de plutire */
 }
 
-.hero-content .btn:hover {
-    background: linear-gradient(145deg, #003d99, #0052cc); /* Schimbă direcția gradientului pe hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Umbra mai pronunțată pe hover */
-    transform: translateY(-2px); /* Efect de mișcare la hover */
-    background-color: #003d99; /* Culoare solidă la hover pentru contrast */
+.tx-hero__image:hover .custom-image-wrapper img {
+    transform: scale(1.05); /* Mărire ușoară a imaginii la hover */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
+.tx-hero__content {
+    padding-bottom: 1rem;
+    max-width: 100%;
+}
 
-    .hero-section p {
-        font-size: 1rem;
-    }
+.tx-hero__tagline {
+    color: #333; /* Gri închis care să rămână constant */
+}
 
-    .hero-content {
-        padding: 0 0.5rem; /* Ajustează padding-ul pe ecrane mici */
-    }
-    
+.tx-hero__text {
+    color: #fff; /* Alb pentru textul descrierii */
+}
+
+.tx-hero .md-button {
+    margin-top: .5rem;
+    margin-right: .5rem;
+    color: var(--md-primary-bg-color);
+}
+
+.tx-hero .md-button--primary {
+    background-color: var(--md-primary-bg-color);
+    color: hsl(0, 0%, 0%);
+    border-color: var(--md-primary-bg-color);
+}
+
+.tx-hero .md-button:focus,
+.tx-hero .md-button:hover {
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    border-color: hsl(0, 0%, 0%);
+}
+
+.feature-item h2 svg {
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+    transform: translateY(10%);
+}
+
+.top-hr {
+    margin-top: 42px;
+}
+
+.feature-item {
+    border-radius: 20px;
+    margin-top: .5rem;
+    margin-right: .5rem;
+    background-color: var(--md-primary-bg-color);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    box-sizing: border-box;
+    padding: 0 15px;
+    word-break: break-word;
+}
+
+.feature-item h2 {
+    color: #333;
+    font-weight: 300;
+    font-size: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+.feature-item p {
+    font-size: 16px;
+    line-height: 1.8em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: #fff; /* Alb pentru text */
+    margin: 0 0 10px;
+    display: block;
+}
+
+@media (max-width: 767px) {
     footer {
-        padding: 0.5rem; /* Ajustează padding-ul pentru footer pe ecrane mici */
+        position: static; /* sau poți folosi 'relative' dacă este mai potrivit */
     }
-    
-    .hero-content .btn {
-        font-size: 0.875rem; /* Dimensiune mai mică a textului pe ecrane mici */
-        padding: 0.5rem 1rem; /* Ajustează padding-ul pe ecrane mici */
+
+    .tx-hero {
+        flex-direction: column; /* Imaginea și textul sunt pe coloană */
+        padding: 1rem; /* Ajustează padding-ul pentru ecrane mici */
+        align-items: center; /* Centrează conținutul */
     }
+
+    .tx-hero__image {
+        max-width: 14rem; /* Ajustează dimensiunea maximă a imaginii pentru ecrane mici */
+        order: -1; /* Imaginea va fi afișată înainte de text pe ecrane mici */
+        margin-bottom: 1rem; /* Spațiu între imagine și text */
+    }
+
+    .tx-hero__content {
+        max-width: 100%;
+        padding: 0 1rem; /* Adaugă padding pentru a preveni scroll-ul */
+        text-align: center; /* Centrează textul pe ecranele mici */
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .tx-hero {
+        flex-direction: row; /* Imaginea și textul sunt pe rând */
+        text-align: left; /* Aliniază textul la stânga pe ecrane mari */
+        justify-content: center; /* Centrează conținutul pe orizontală */
+        max-width: 100%; /* Asigură că conținutul nu depășește lățimea paginii */
+    }
+
+    .tx-hero__image {
+        margin-left: 2rem; /* Spațiu între imagine și text */
+        width: auto; /* Permite imaginii să nu fie limitată */
+        max-width: 18rem; /* Dimensiunea maximă a imaginii */
+    }
+
+    .tx-hero__content {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 30em) {
+    .tx-hero h1 {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .md-sidebar--secondary {
+        display: none;
+    }
+
+    .tx-hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tx-hero__content {
+        max-width: 22rem;
+        margin-top: 3.5rem;
+        margin-bottom: 3.5rem;
+        margin-left: 1.0rem;
+        margin-right: 4.0rem;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 76.25em) {
+    .md-sidebar--primary {
+        display: none;
+    }
+
+    .top-hr {
+        width: 100%;
+        display: flex;
+        max-width: 61rem;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 .2rem;
+    }
+
+    .bottom-hr {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        max-width: 61rem;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 .2rem;
+    }
+
+    .feature-item {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .feature-item:hover {
+        background-color: #52feb647;
+        border-radius: 3px;
+    }
+}
+
+.hr {
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.text-center {
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 0 auto;
+}
+
+.logos img {
+    flex: 1 1 auto;
+    padding: 25px;
+    max-height: 130px;
+    vertical-align: middle;
+}
+
+.hr-logos {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.md-footer-meta__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.md-footer-social {
+    padding-top: 20px;
 }
 </style>
 
-<!-- Hero Section -->
-<section class="hero-section">
-  <div class="hero-content">
-    <h1>{{ config.extra.home_tagline }}</h1>
-    <p>{{ config.extra.home_description }}</p>
-    <a href="{{ config.extra.home_button1_url }}" class="btn">{{ config.extra.home_button1_name }}</a>
-    {%- if config.extra.home_button2_name -%}
-    <a href="{{ config.extra.home_button2_url }}" class="btn">{{ config.extra.home_button2_name }}</a>
-    {%- endif -%}
+
+<!-- Main site entry button descriptions -->
+<section class="tx-container">
+  <div class="md-grid md-typeset">
+    <div class="tx-hero">
+    
+      <!-- Main Tagline -->
+      <div class="tx-hero__content">
+        <h1 class="tx-hero__tagline" style="color: #f0f0f0;">{{ config.extra.home_tagline }}</h1>
+        <p class="tx-hero__text">
+            {{ config.extra.home_description }}
+        </p>
+  
+        <!-- Added Buttons (up to 3) -->
+        {%- if config.extra.home_button1_name -%}
+        <a href="{{ config.extra.home_button1_url }}" title="Material | MkDocs" class="{{ config.extra.home_button1_theme }}">
+          {{ config.extra.home_button1_name }}
+        </a>
+        {%- endif -%}
+  
+        {%- if config.extra.home_button2_name -%}
+        <a href="{{ config.extra.home_button2_url }}" title="Material | MkDocs" class="{{ config.extra.home_button2_theme }}">
+          {{ config.extra.home_button2_name }}
+        </a>
+        {%- endif -%}
+  
+      </div>
+
+      <!-- Custom Image -->
+      <div class="tx-hero__image">
+        <div class="custom-image-wrapper">
+          <img src="{{ config.extra.home_cover_image }}" alt="Cover Image" draggable="false">
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
