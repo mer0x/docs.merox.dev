@@ -173,6 +173,8 @@ nav:
 
 
 plugins:
+  - social:
+      cards: true
   - search:
       lang: en
   - git-revision-date-localized:
