@@ -30,5 +30,6 @@ jobs:
       - run: pip install mkdocs-material \
              mkdocs-git-revision-date-localized-plugin \
              mkdocs-git-committers-plugin-2 \
-             mkdocs-rss-plugin
+             mkdocs-rss-plugin \
+             mkdocs-material[imaging]
       - run: mkdocs gh-deploy --force
