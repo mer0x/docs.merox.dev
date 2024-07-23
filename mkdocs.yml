@@ -235,7 +235,7 @@ extra:
   home_gradient_hsla:  hsla(0, 0%, 15%, 1)
 
   # Custom Homepage Button(s)
-  home_button1_name: Homelab
+  home_button1_name: Get Started
   home_button1_url: homelab/infrastructure/
   home_button1_theme: md-button md-button--primary
   home_button1_icon: people
