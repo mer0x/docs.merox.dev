@@ -1,0 +1,160 @@
+<!-- Elements added to "home.html" will only be displayed on the home page -->
+
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+
+<!-- Modern Styling -->
+<style>
+/* Global Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+/*    color: #333; */
+    padding-bottom: 60px; /* Asigură că footer-ul nu se suprapune peste conținut */
+}
+
+/* Resetare marginilor implicite pentru a preveni spații neașteptate */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.md-main {
+    flex-grow: 0;
+}
+
+.md-main__inner {
+    display: flex;
+    height: 100%;
+}
+
+.md-footer-nav, .md-banner {
+    display: none;
+}
+
+footer {
+    position: absolute; /* Schimbă din fixed în absolute */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #282828;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    z-index: 1; /* Asigură că este deasupra altor elemente */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    min-height: 100vh; /* Asigură că secțiunea ocupă cel puțin înălțimea ferestrei vizibile */
+    background: url('{{ config.extra.home_cover_image }}') no-repeat;
+    background-size: cover; /* Asigură că imaginea acoperă complet containerul */
+    background-position: center 25%; /* Ajustează poziția verticală */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Asigură că imaginea nu depășește containerul */
+    margin-bottom: -33px;
+}
+
+/* Restabilirea efectului de întunecare */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Efect de întunecare */
+    z-index: 0; /* Asigură că este sub conținutul textului */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Asigură că textul este deasupra efectului de întunecare */
+    padding: 0 1rem; /* Adaugă padding pentru a evita contactul direct cu marginea ecranului */
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.hero-content .btn {
+    display: inline-block;
+    background: linear-gradient(145deg, #0052cc, #003d99); /* Gradient elegant */
+    color: #fff;
+    padding: 0.75rem 1.5rem; /* Mărimea moderată a padding-ului */
+    margin: 0.5rem;
+    border-radius: 12px; /* Colțuri rotunjite pentru un aspect premium */
+    text-decoration: none;
+    font-weight: 600; /* Font mai gros pentru text */
+    font-size: 1rem; /* Dimensiune mai mică a textului */
+    text-transform: uppercase; /* Text majuscule pentru un aspect mai îndrăzneț */
+    letter-spacing: 0.5px; /* Spațiere între litere pentru un aspect elegant */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Umbre subtile și moderne */
+    transition: all 0.3s ease;
+}
+
+.hero-content .btn:hover {
+    background: linear-gradient(145deg, #003d99, #0052cc); /* Schimbă direcția gradientului pe hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Umbra mai pronunțată pe hover */
+    transform: translateY(-2px); /* Efect de mișcare la hover */
+    background-color: #003d99; /* Culoare solidă la hover pentru contrast */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        padding: 0 0.5rem; /* Ajustează padding-ul pe ecrane mici */
+    }
+    
+    footer {
+        padding: 0.5rem; /* Ajustează padding-ul pentru footer pe ecrane mici */
+    }
+    
+    .hero-content .btn {
+        font-size: 0.875rem; /* Dimensiune mai mică a textului pe ecrane mici */
+        padding: 0.5rem 1rem; /* Ajustează padding-ul pe ecrane mici */
+    }
+}
+</style>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>{{ config.extra.home_tagline }}</h1>
+    <p>{{ config.extra.home_description }}</p>
+    <a href="{{ config.extra.home_button1_url }}" class="btn">{{ config.extra.home_button1_name }}</a>
+    {%- if config.extra.home_button2_name -%}
+    <a href="{{ config.extra.home_button2_url }}" class="btn">{{ config.extra.home_button2_name }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% endblock %}
+{% block content %}{% endblock %}
