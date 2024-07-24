@@ -409,7 +409,7 @@ body {
 .hero-section {
     position: relative;
     min-height: calc(100vh - 120px); /* Ajustați în funcție de înălțimea header-ului și footer-ului */
-    background: linear-gradient(-45deg, #0097c5, #e415ff, #0c0c0c, #0c0c0c);
+    background: linear-gradient(-45deg, #0097c5, #e415ff, #2801a8, #0c0c0c);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     display: flex;
@@ -545,6 +545,11 @@ body {
 }
 
 /* Responsive Design */
+@media screen and (min-width:780px) {
+   .hero-text{
+    margin-left: 25px;
+}
+}
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column-reverse; /* Schimbă ordinea elementelor pe ecrane mici */
