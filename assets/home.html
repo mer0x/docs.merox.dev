@@ -128,9 +128,9 @@ body {
     position: relative;
     background: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px; /* Creștem padding-ul pentru butoane mai mari */
     display: inline-block;
-    font-size: 15px;
+    font-size: 17px; /* Creștem dimensiunea fontului pentru butoane mai mari */
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
@@ -187,7 +187,6 @@ body[data-theme="dark"] .btn::before {
 }
 
 /* Adaptare pentru mobil */
-
 @media screen and (min-width:780px) {
    .hero-text{
     margin-left: 25px;
@@ -227,9 +226,9 @@ body[data-theme="dark"] .btn::before {
     }
     
     .btn {
-        font-size: 14px;
-        padding: 8px 16px;
-        margin: 0 10px; /* Adăugăm un mic spațiu între butoane pe mobil */
+        font-size: 16px; /* Ajustăm dimensiunea fontului pentru mobil */
+        padding: 10px 20px; /* Ajustăm padding-ul pentru mobil */
+        margin: 0 10px; /* Spațiu între butoane pe mobil */
     }
 
     .custom-image-wrapper {
