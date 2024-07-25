@@ -507,41 +507,71 @@ body {
     transform: scale(1.05);
 }
 
+/* Design pentru butoane */
 .btn {
-    display: inline-block;
+    position: relative;
     background: #fff;
-    color: #333;
-    padding: 0.75rem 1.5rem;
-    margin: 0.5rem;
-    border-radius: 50px;
-    text-decoration: none;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
     font-weight: 600;
-    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    animation: fadeInUp 1s ease 0.4s;
+    cursor: pointer;
+    width: auto; /* Lărgește butonul pentru a se potrivi conținutului */
+    text-align: center;
+    color: #333;
+    transform: skew(-21deg);
+    overflow: hidden; /* Asigură că ::before nu depășește butonul */
+    text-decoration: none;
+    white-space: nowrap; /* Evită împărțirea textului pe mai multe linii */
+}
+
+.btn span {
+    display: inline-block;
+    transform: skew(21deg);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
 }
 
 .btn:hover {
+    color: #fff;
+}
+
+.btn:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+/* Adaptare pentru dark mode */
+body[data-theme="dark"] .btn {
     background: #333;
     color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+body[data-theme="dark"] .btn::before {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
+/* Spatiu intre butoane */
+.btn + .btn {
+    margin-left: 10px;
+}
+
+/* Adaptare pentru mobil */
+
 @media screen and (min-width:780px) {
    .hero-text{
     margin-left: 25px;
@@ -552,6 +582,7 @@ body {
     margin-right: 20px;
 }
 }
+
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column-reverse;
@@ -580,8 +611,9 @@ body {
     }
     
     .btn {
-        font-size: 0.875rem;
-        padding: 0.5rem 1rem;
+        font-size: 14px;
+        padding: 8px 16px;
+        margin: 0 10px; /* Adăugăm un mic spațiu între butoane pe mobil */
     }
 
     .custom-image-wrapper {
@@ -608,7 +640,7 @@ body {
             <h1>merox.dev</h1>
             <p>Welcome to merox.dev—your IT realm unleashed.<br>  Dive into battle-tested tutorials, insider tips, and real-world experiences that elevate your tech game.<br> <br>Ready to decode complexity and level up? Let's dive in! 🚀
 </p>
-            <a href="homelab/infrastructure/" class="btn">Get Started</a><a href="/operations/intro/" class="btn">Resources</a></div>
+            <a href="homelab/infrastructure/" class="btn"><span>Get Started</span></a><a href="/operations/intro/" class="btn"><span>Resources</span></a></div>
         <div class="hero-image">
             <div class="custom-image-wrapper">
                 <img src="images/meroxdc.webp" alt="Cover Image" draggable="false">
@@ -620,129 +652,157 @@ body {
 <script>
 const canvas = document.getElementById('digitalNetworkCanvas');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let particlesArray = [];
+const numberOfParticles = 50;
+const connectDistance = 150;
+let mouse = {
+    x: null,
+    y: null,
+    radius: 150
+};
+let animationFrameId;
+let debounceTimeout;
 
-// Check if the user is on a mobile device
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-if (!isMobile) {
-    let particlesArray = [];
-    const numberOfParticles = 50;
-    const connectDistance = 150;
-    let mouse = {
-        x: null,
-        y: null,
-        radius: 150
+function Particle(x, y) {
+    this.x = x;
+    this.y = y;
+    this.size = 3;
+    this.baseX = this.x;
+    this.baseY = this.y;
+    this.density = (Math.random() * 30) + 1;
+    this.speed = {
+        x: (Math.random() - 0.5) * 0.5,
+        y: (Math.random() - 0.5) * 0.5
     };
+}
 
-    window.addEventListener('mousemove', function(event) {
-        mouse.x = event.x;
-        mouse.y = event.y;
+Particle.prototype.update = function() {
+    this.x += this.speed.x;
+    this.y += this.speed.y;
+
+    if (this.x > canvas.width || this.x < 0) {
+        this.speed.x *= -1;
+    }
+    if (this.y > canvas.height || this.y < 0) {
+        this.speed.y *= -1;
+    }
+
+    let dx = mouse.x - this.x;
+    let dy = mouse.y - this.y;
+    let distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance < mouse.radius) {
+        const forceX = dx / distance;
+        const forceY = dy / distance;
+        this.x -= forceX * 2;
+        this.y -= forceY * 2;
+    }
+};
+
+Particle.prototype.draw = function() {
+    ctx.fillStyle = 'rgba(255,255,255,0.8)';
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.fill();
+};
+
+function initializeParticles() {
+    particlesArray = [];
+    for (let i = 0; i < numberOfParticles; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        particlesArray.push(new Particle(x, y));
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particlesArray.forEach(particle => {
+        particle.update();
+        particle.draw();
     });
+    connect();
+    animationFrameId = requestAnimationFrame(animate);
+}
 
-    class Particle {
-        constructor(x, y) {
-            this.x = x;
-            this.y = y;
-            this.size = 3;
-            this.baseX = this.x;
-            this.baseY = this.y;
-            this.density = (Math.random() * 30) + 1;
-            this.speed = {
-                x: (Math.random() - 0.5) * 0.5,
-                y: (Math.random() - 0.5) * 0.5
-            };
-        }
-
-        update() {
-            this.x += this.speed.x;
-            this.y += this.speed.y;
-
-            if (this.x > canvas.width || this.x < 0) {
-                this.speed.x *= -1;
-            }
-            if (this.y > canvas.height || this.y < 0) {
-                this.speed.y *= -1;
-            }
-
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
+function connect() {
+    for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+            let dx = particlesArray[a].x - particlesArray[b].x;
+            let dy = particlesArray[a].y - particlesArray[b].y;
             let distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < mouse.radius) {
-                const forceX = dx / distance;
-                const forceY = dy / distance;
-                this.x -= forceX * 2;
-                this.y -= forceY * 2;
-            }
-        }
-
-        draw() {
-            ctx.fillStyle = 'rgba(255,255,255,0.8)';
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.closePath();
-            ctx.fill();
-        }
-    }
-
-    function init() {
-        particlesArray = [];
-        for (let i = 0; i < numberOfParticles; i++) {
-            let x = Math.random() * canvas.width;
-            let y = Math.random() * canvas.height;
-            particlesArray.push(new Particle(x, y));
-        }
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particlesArray.length; i++) {
-            particlesArray[i].update();
-            particlesArray[i].draw();
-        }
-        connect();
-        animationFrameId = requestAnimationFrame(animate);
-    }
-
-    function connect() {
-        for (let a = 0; a < particlesArray.length; a++) {
-            for (let b = a; b < particlesArray.length; b++) {
-                let dx = particlesArray[a].x - particlesArray[b].x;
-                let dy = particlesArray[a].y - particlesArray[b].y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < connectDistance) {
-                    let opacity = 1 - (distance / connectDistance);
-                    ctx.strokeStyle = `rgba(255,255,255,${opacity * 0.4})`;
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                    ctx.stroke();
-                }
+            
+            if (distance < connectDistance) {
+                let opacity = 1 - (distance / connectDistance);
+                ctx.strokeStyle = `rgba(255,255,255,${opacity * 0.4})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.stroke();
             }
         }
     }
+}
 
-    init();
+function startAnimation() {
+    initializeParticles();
     animate();
+}
 
-    window.addEventListener('resize', function() {
+function stopAnimation() {
+    cancelAnimationFrame(animationFrameId);
+}
+
+function debounce(func, wait) {
+    return function(...args) {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
+function handleResize() {
+    stopAnimation();
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    startAnimation();
+}
+
+function handleVisibilityChange() {
+    if (document.visibilityState === 'visible') {
+        stopAnimation();
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        init();
-    });
-
-    window.addEventListener('blur', function() {
-        cancelAnimationFrame(animationFrameId);
-    });
-
-    window.addEventListener('focus', function() {
-        animate();
-    });
+        startAnimation();
+    }
 }
+
+function handlePageshow(event) {
+    if (event.persisted || document.visibilityState === 'visible') {
+        stopAnimation();
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        startAnimation();
+    }
+}
+
+function init() {
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        startAnimation();
+        window.addEventListener('resize', debounce(handleResize, 200));
+        window.addEventListener('visibilitychange', handleVisibilityChange);
+        window.addEventListener('pageshow', handlePageshow);
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', init);
 </script>
 
 
