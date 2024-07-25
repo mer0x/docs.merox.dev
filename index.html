@@ -408,8 +408,8 @@ body {
 /* Hero Section Styling */
 .hero-section {
     position: relative;
-    min-height: calc(100vh - 120px); /* Ajustați în funcție de înălțimea header-ului și footer-ului */
-    background: linear-gradient(-45deg, #0097c5, #e415ff, #2801a8, #0c0c0c);
+    min-height: calc(100vh - 120px);
+    background: linear-gradient(-45deg, #0097c5, #700de1, #101010, #101010);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     display: flex;
@@ -418,7 +418,7 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow: hidden; /* Ascunde orice spațiu suplimentar */
+    overflow: hidden;
     margin-bottom: -42px;
 }
 
@@ -434,7 +434,8 @@ body {
     justify-content: space-between;
     max-width: 1200px;
     width: 100%;
-    flex-direction: row; /* Ordinea elementelor pe ecrane mari */
+    flex-direction: row;
+    z-index: 2;
 }
 
 .hero-text {
@@ -474,7 +475,7 @@ body {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: #f0f0f0; /* Asigură-te că aceasta este aceeași culoare ca fundalul site-ului */
+    background-color: #f0f0f0;
 }
 
 .custom-image-wrapper::before {
@@ -486,7 +487,7 @@ body {
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
     border-radius: 15px;
-    pointer-events: none;  /* Ensure the gradient does not interfere with other effects */
+    pointer-events: none;
 }
 
 .custom-image-wrapper img {
@@ -494,7 +495,7 @@ body {
     height: auto;
     object-fit: cover;
     border-radius: 15px;
-    opacity: 0.9; /* Reduce opacity for blending effect */
+    opacity: 0.9;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
@@ -505,10 +506,6 @@ body {
 .custom-image-wrapper img {
     transform: scale(1.05);
 }
-
-
-
-
 
 .btn {
     display: inline-block;
@@ -557,16 +554,14 @@ body {
 }
 @media (max-width: 768px) {
     .hero-content {
-        flex-direction: column-reverse; /* Schimbă ordinea elementelor pe ecrane mici */
+        flex-direction: column-reverse;
         align-items: center;
         padding: 1rem;
     }
 
-    @media (max-width: 768px) {
     .hero-section {
         margin-bottom: -40px;
     }
-}
 
     .hero-text {
         padding-right: 0;
@@ -591,12 +586,23 @@ body {
 
     .custom-image-wrapper {
         max-width: 300px;
-        margin-top: 2rem; /* Adaugă un spațiu între text și imagine */
+        margin-top: 2rem;
     }
+}
+
+#digitalNetworkCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
 }
 </style>
 
 <section class="hero-section">
+    <canvas id="digitalNetworkCanvas"></canvas>
     <div class="hero-content">
         <div class="hero-text">
             <h1>merox.dev</h1>
@@ -610,6 +616,121 @@ body {
         </div>
     </div>
 </section>
+
+<script>
+const canvas = document.getElementById('digitalNetworkCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray = [];
+const numberOfParticles = 50;
+const connectDistance = 150;
+let mouse = {
+    x: null,
+    y: null,
+    radius: 150
+}
+
+window.addEventListener('mousemove', function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+});
+
+class Particle {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = 3;
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.density = (Math.random() * 30) + 1;
+        this.speed = {
+            x: (Math.random() - 0.5) * 0.5,
+            y: (Math.random() - 0.5) * 0.5
+        };
+    }
+
+    update() {
+        this.x += this.speed.x;
+        this.y += this.speed.y;
+
+        if (this.x > canvas.width || this.x < 0) {
+            this.speed.x *= -1;
+        }
+        if (this.y > canvas.height || this.y < 0) {
+            this.speed.y *= -1;
+        }
+
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < mouse.radius) {
+            const forceX = dx / distance;
+            const forceY = dy / distance;
+            this.x -= forceX * 2;
+            this.y -= forceY * 2;
+        }
+    }
+
+    draw() {
+        ctx.fillStyle = 'rgba(255,255,255,0.8)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+    }
+}
+
+function init() {
+    particlesArray = [];
+    for (let i = 0; i < numberOfParticles; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        particlesArray.push(new Particle(x, y));
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+    }
+    connect();
+    requestAnimationFrame(animate);
+}
+
+function connect() {
+    for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+            let dx = particlesArray[a].x - particlesArray[b].x;
+            let dy = particlesArray[a].y - particlesArray[b].y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < connectDistance) {
+                let opacity = 1 - (distance / connectDistance);
+                ctx.strokeStyle = `rgba(255,255,255,${opacity * 0.4})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+init();
+animate();
+
+window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();
+});
+</script>
 
 
       <main class="md-main" data-md-component="main">
