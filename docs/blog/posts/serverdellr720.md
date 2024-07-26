@@ -171,6 +171,20 @@ ipmitool sensor | grep -i fan
 ## Upgrading Firmware via UpdateYODell.net
 Keeping firmware up-to-date is essential for security and performance. I upgraded my R720's firmware using the resources available on UpdateYODell.net. Here’s a step-by-step guide:
 
+<!-- test ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2989869646477878"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2989869646477878"
+     data-ad-slot="4301109295"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 ### 1. Identify Your Server’s Generation:
 Visit [Wikipedia's Dell PowerEdge](https://en.wikipedia.org/wiki/List_of_PowerEdge_servers) page to find your server model and its generation.
 
