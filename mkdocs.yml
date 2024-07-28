@@ -195,23 +195,29 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
+    cookies:
+      analytics: Google Analytics
+      adsense:
+        name: Google AdSense
+        checked: true
   analytics:
     provider: google
     property: G-RXSCNFY5WZ
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: >-
-            Thanks for your feedback! Help us improve this page by
-            using our feedback form.
+  feedback:
+    title: Was this page helpful?
+    ratings:
+      - icon: material/emoticon-happy-outline
+        name: This page was helpful
+        data: 1
+        note: >-
+          Thanks for your feedback!
+      - icon: material/emoticon-sad-outline
+        name: This page could be improved
+        data: 0
+        note: >-
+          Thanks for your feedback! Help us improve this page by
+          using our feedback form.
+
   social:
     - icon: fontawesome/brands/facebook
       link: https://www.facebook.com/robertmelcher97
@@ -292,5 +298,6 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
-copyright: |
-  deployed with ❤️ on kubernetes &copy; 2024 | <a href="mailto:hello@merox.dev">hello@merox.dev</a>
+copyright: >
+  deployed with ❤️ on kubernetes &copy; 2024 | <a href="mailto:hello@merox.dev">hello@merox.dev</a> <br>
+  <a href="#__consent">Change cookie settings</a>
