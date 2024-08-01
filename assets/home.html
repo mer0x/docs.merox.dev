@@ -25,9 +25,9 @@ body {
 .hero-section {
     position: relative;
     min-height: calc(100vh - 120px);
-    background: linear-gradient(-45deg, #0097c5, #700de1, #101010, #101010);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    background: linear-gradient(-45deg, #2C3E50, #4CA1AF, #2980B9, #8E44AD);
+    background-size: 300% 300%;
+    animation: gradient 20s ease infinite;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,8 +40,21 @@ body {
 
 @keyframes gradient {
     0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
     50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
     100% { background-position: 0% 50%; }
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
 }
 
 .hero-content {
@@ -268,145 +281,144 @@ body[data-theme="dark"] .btn::before {
 </section>
 
 <script>
-const canvas = document.getElementById('digitalNetworkCanvas');
-const ctx = canvas.getContext('2d');
-let particlesArray = [];
-const numberOfParticles = 50;
-const connectDistance = 150;
-let mouse = {
-    x: null,
-    y: null,
-    radius: 150
-};
-let animationFrameId;
-let debounceTimeout;
-
-function Particle(x, y) {
-    this.x = x;
-    this.y = y;
-    this.size = 3;
-    this.baseX = this.x;
-    this.baseY = this.y;
-    this.density = (Math.random() * 30) + 1;
-    this.speed = {
-        x: (Math.random() - 0.5) * 0.5,
-        y: (Math.random() - 0.5) * 0.5
+    const canvas = document.getElementById('digitalNetworkCanvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const numberOfParticles = 30; // Redus semnificativ
+    const connectDistance = 180;
+    let mouse = {
+        x: null,
+        y: null,
+        radius: 150
     };
-}
-
-Particle.prototype.update = function() {
-    this.x += this.speed.x;
-    this.y += this.speed.y;
-
-    if (this.x > canvas.width || this.x < 0) {
-        this.speed.x *= -1;
+    let animationFrameId;
+    let debounceTimeout;
+    
+    function Particle(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 2 + 1; // Particule mai mici
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.density = (Math.random() * 30) + 1;
+        this.speed = {
+            x: (Math.random() - 0.5) * 0.2, // Viteză redusă semnificativ
+            y: (Math.random() - 0.5) * 0.2
+        };
     }
-    if (this.y > canvas.height || this.y < 0) {
-        this.speed.y *= -1;
+    
+    Particle.prototype.update = function() {
+        this.x += this.speed.x;
+        this.y += this.speed.y;
+    
+        if (this.x > canvas.width || this.x < 0) {
+            this.speed.x *= -1;
+        }
+        if (this.y > canvas.height || this.y < 0) {
+            this.speed.y *= -1;
+        }
+    
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+    
+        if (distance < mouse.radius) {
+            const forceX = dx / distance;
+            const forceY = dy / distance;
+            this.x -= forceX;
+            this.y -= forceY;
+        }
+    };
+    
+    Particle.prototype.draw = function() {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'; // Particule semi-transparente
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+    };
+    
+    function initializeParticles() {
+        particlesArray = [];
+        for (let i = 0; i < numberOfParticles; i++) {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height;
+            particlesArray.push(new Particle(x, y));
+        }
     }
-
-    let dx = mouse.x - this.x;
-    let dy = mouse.y - this.y;
-    let distance = Math.sqrt(dx * dx + dy * dy);
-
-    if (distance < mouse.radius) {
-        const forceX = dx / distance;
-        const forceY = dy / distance;
-        this.x -= forceX * 2;
-        this.y -= forceY * 2;
+    
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach(particle => {
+            particle.update();
+            particle.draw();
+        });
+        connect();
+        animationFrameId = requestAnimationFrame(animate);
     }
-};
-
-Particle.prototype.draw = function() {
-    ctx.fillStyle = 'rgba(255,255,255,0.8)';
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.closePath();
-    ctx.fill();
-};
-
-function initializeParticles() {
-    particlesArray = [];
-    for (let i = 0; i < numberOfParticles; i++) {
-        let x = Math.random() * canvas.width;
-        let y = Math.random() * canvas.height;
-        particlesArray.push(new Particle(x, y));
-    }
-}
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particlesArray.forEach(particle => {
-        particle.update();
-        particle.draw();
-    });
-    connect();
-    animationFrameId = requestAnimationFrame(animate);
-}
-
-function connect() {
-    for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-            let dx = particlesArray[a].x - particlesArray[b].x;
-            let dy = particlesArray[a].y - particlesArray[b].y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-            
-            if (distance < connectDistance) {
-                let opacity = 1 - (distance / connectDistance);
-                ctx.strokeStyle = `rgba(255,255,255,${opacity * 0.4})`;
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                ctx.stroke();
+    
+    function connect() {
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                let dx = particlesArray[a].x - particlesArray[b].x;
+                let dy = particlesArray[a].y - particlesArray[b].y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < connectDistance) {
+                    let opacity = 1 - (distance / connectDistance);
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.2})`; // Linii mai subtile
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
             }
         }
     }
-}
-
-function startAnimation() {
-    initializeParticles();
-    animate();
-}
-
-function stopAnimation() {
-    cancelAnimationFrame(animationFrameId);
-}
-
-function debounce(func, wait) {
-    return function(...args) {
-        clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(() => func.apply(this, args), wait);
-    };
-}
-
-function handleResize() {
-    stopAnimation();
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    startAnimation();
-}
-
-function handleVisibilityChange() {
-    if (document.visibilityState === 'visible') {
+    
+    function startAnimation() {
+        initializeParticles();
+        animate();
+    }
+    
+    function stopAnimation() {
+        cancelAnimationFrame(animationFrameId);
+    }
+    
+    function debounce(func, wait) {
+        return function(...args) {
+            clearTimeout(debounceTimeout);
+            debounceTimeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+    
+    function handleResize() {
         stopAnimation();
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         startAnimation();
     }
-}
-
-function handlePageshow(event) {
-    if (event.persisted || document.visibilityState === 'visible') {
-        stopAnimation();
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        startAnimation();
+    
+    function handleVisibilityChange() {
+        if (document.visibilityState === 'visible') {
+            stopAnimation();
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            startAnimation();
+        }
     }
-}
-
-function init() {
-    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+    
+    function handlePageshow(event) {
+        if (event.persisted || document.visibilityState === 'visible') {
+            stopAnimation();
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            startAnimation();
+        }
+    }
+    
+    function init() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         startAnimation();
@@ -418,10 +430,9 @@ function init() {
             mouse.y = event.y;
         });
     }
-}
-
-document.addEventListener('DOMContentLoaded', init);
-</script>
+    
+    document.addEventListener('DOMContentLoaded', init);
+    </script>
 
 {% endblock %}
 {% block content %}{% endblock %}
