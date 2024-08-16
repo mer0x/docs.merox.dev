@@ -6,26 +6,30 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-      
-      
-        <link rel="canonical" href="https://merox.dev/blog/">
-      
+        <meta name="description" content="Learn how to set up AI at home with Ollama and OpenWebUI in this guide. This tutorial covers both CPU and GPU options, offering practical insights and resources for beginners looking to build their own AI environment. Ideal for those interested in running AI systems in a home lab.">
       
       
       
-      <link rel="icon" href="../images/merox.png">
+        <link rel="canonical" href="https://merox.dev/blog/2024/08/16/setting-up-your-own-ai-with-ollama-openwebui-and-stable-diffusion/">
+      
+      
+        <link rel="prev" href="../../../07/13/setting-up-dell-r720-server-in-the-home-lab/">
+      
+      
+      
+      <link rel="icon" href="../../../../../images/merox.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
   
-    <title>Blog - MEROX.DEV | IT Documentation & Homelab Projects</title>
+    <title>Setting Up Your Own AI with Ollama, OpenWebUI, and Stable Diffusion - MEROX.DEV | IT Documentation & Homelab Projects</title>
   
 
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -65,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Blog - root@merox.dev:~#" >
+        <meta  property="og:title"  content="Setting Up Your Own AI with Ollama, OpenWebUI, and Stable Diffusion - root@merox.dev:~#" >
       
-        <meta  property="og:description"  content="None" >
+        <meta  property="og:description"  content="Learn how to set up AI at home with Ollama and OpenWebUI in this guide. This tutorial covers both CPU and GPU options, offering practical insights and resources for beginners looking to build their own AI environment. Ideal for those interested in running AI systems in a home lab." >
       
-        <meta  property="og:image"  content="https://merox.dev/assets/images/social/blog/index.png" >
+        <meta  property="og:image"  content="https://merox.dev/assets/images/social/blog/posts/run-ai-at-home-ollama-openwebui.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -77,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://merox.dev/blog/" >
+        <meta  property="og:url"  content="https://merox.dev/blog/2024/08/16/setting-up-your-own-ai-with-ollama-openwebui-and-stable-diffusion/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Blog - root@merox.dev:~#" >
+        <meta  name="twitter:title"  content="Setting Up Your Own AI with Ollama, OpenWebUI, and Stable Diffusion - root@merox.dev:~#" >
       
-        <meta  name="twitter:description"  content="None" >
+        <meta  name="twitter:description"  content="Learn how to set up AI at home with Ollama and OpenWebUI in this guide. This tutorial covers both CPU and GPU options, offering practical insights and resources for beginners looking to build their own AI environment. Ideal for those interested in running AI systems in a home lab." >
       
-        <meta  name="twitter:image"  content="https://merox.dev/assets/images/social/blog/index.png" >
+        <meta  name="twitter:image"  content="https://merox.dev/assets/images/social/blog/posts/run-ai-at-home-ollama-openwebui.png" >
       
     
     
@@ -121,7 +125,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blog" class="md-skip">
+        <a href="#setting-up-your-own-ai-with-ollama-openwebui-and-stable-diffusion" class="md-skip">
           Skip to content
         </a>
       
@@ -135,9 +139,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="root@merox.dev:~#" class="md-header__button md-logo" aria-label="root@merox.dev:~#" data-md-component="logo">
+    <a href="../../../../.." title="root@merox.dev:~#" class="md-header__button md-logo" aria-label="root@merox.dev:~#" data-md-component="logo">
       
-  <img src="../images/meroxdev.png" alt="logo">
+  <img src="../../../../../images/meroxdev.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -154,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blog
+              Setting Up Your Own AI with Ollama, OpenWebUI, and Stable Diffusion
             
           </span>
         </div>
@@ -273,7 +277,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../../../.." class="md-tabs__link">
         
   
     
@@ -292,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../homelab/infrastructure/" class="md-tabs__link">
+        <a href="../../../../../homelab/infrastructure/" class="md-tabs__link">
           
   
     
@@ -312,7 +316,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../fundamentals/intro/" class="md-tabs__link">
+        <a href="../../../../../fundamentals/intro/" class="md-tabs__link">
           
   
     
@@ -332,7 +336,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../operations/intro/" class="md-tabs__link">
+        <a href="../../../../../operations/intro/" class="md-tabs__link">
           
   
     
@@ -350,7 +354,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../about/" class="md-tabs__link">
+      <a href="../../../../../about/" class="md-tabs__link">
         
   
     
@@ -369,7 +373,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="./" class="md-tabs__link">
+        <a href="../../../../" class="md-tabs__link">
           
   
     
@@ -393,7 +397,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -404,9 +410,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="root@merox.dev:~#" class="md-nav__button md-logo" aria-label="root@merox.dev:~#" data-md-component="logo">
+    <a href="../../../../.." title="root@merox.dev:~#" class="md-nav__button md-logo" aria-label="root@merox.dev:~#" data-md-component="logo">
       
-  <img src="../images/meroxdev.png" alt="logo">
+  <img src="../../../../../images/meroxdev.png" alt="logo">
 
     </a>
     root@merox.dev:~#
@@ -433,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -513,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/infrastructure/" class="md-nav__link">
+      <a href="../../../../../homelab/infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -534,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/connectivity/" class="md-nav__link">
+      <a href="../../../../../homelab/connectivity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/hypervisors/" class="md-nav__link">
+      <a href="../../../../../homelab/hypervisors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -576,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/virtual-machines/" class="md-nav__link">
+      <a href="../../../../../homelab/virtual-machines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -597,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/docker/" class="md-nav__link">
+      <a href="../../../../../homelab/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -618,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/kubernetes/" class="md-nav__link">
+      <a href="../../../../../homelab/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -639,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/ansible/" class="md-nav__link">
+      <a href="../../../../../homelab/ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -660,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/security/" class="md-nav__link">
+      <a href="../../../../../homelab/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -681,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/monitoring/" class="md-nav__link">
+      <a href="../../../../../homelab/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -761,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/intro/" class="md-nav__link">
+      <a href="../../../../../fundamentals/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -876,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/configs/DNS/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/configs/DNS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -897,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/configs/DHCP/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/configs/DHCP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1020,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/firewall/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/cisco/install/firewall/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1041,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/router/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/cisco/install/router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1062,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/switch/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/cisco/install/switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1127,7 +1133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/ipsecgre/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/cisco/install/ipsecgre/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1216,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/ccna/cheatsheet/" class="md-nav__link">
+      <a href="../../../../../fundamentals/networking/ccna/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1391,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1466,7 +1472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/config/ufw/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/linux/config/ufw/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1487,7 +1493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1564,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/tshoot/grub/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/linux/tshoot/grub/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1585,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1606,7 +1612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1735,7 +1741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/windows/install/wserver2019/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/windows/install/wserver2019/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1808,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/windows/config/active-directory/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/windows/config/active-directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1881,7 +1887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/windows/tshoot/dns/" class="md-nav__link">
+      <a href="../../../../../fundamentals/operating-systems/windows/tshoot/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2016,7 +2022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/database/mysql/basics/" class="md-nav__link">
+      <a href="../../../../../fundamentals/database/mysql/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2089,7 +2095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/database/influxdb/basics/" class="md-nav__link">
+      <a href="../../../../../fundamentals/database/influxdb/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2170,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/backup/clonezilla/" class="md-nav__link">
+      <a href="../../../../../fundamentals/backup/clonezilla/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2260,7 +2266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/intro/" class="md-nav__link">
+      <a href="../../../../../operations/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2369,7 +2375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/virtualization/VMs/proxmox/" class="md-nav__link">
+      <a href="../../../../../operations/virtualization/VMs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2456,7 +2462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/kubernetes/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2525,7 +2531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/installation/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2546,7 +2552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/upgrade/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2633,7 +2639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2654,7 +2660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2675,7 +2681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2696,7 +2702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2717,7 +2723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2738,7 +2744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2759,7 +2765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2780,7 +2786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2801,7 +2807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2822,7 +2828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2843,7 +2849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2864,7 +2870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2945,7 +2951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/LXCs/proxmox/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/LXCs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3072,7 +3078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3093,7 +3099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3114,7 +3120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3135,7 +3141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3156,7 +3162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3177,7 +3183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
+      <a href="../../../../../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3310,7 +3316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
+      <a href="../../../../../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3483,7 +3489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
+      <a href="../../../../../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3504,7 +3510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
+      <a href="../../../../../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3525,7 +3531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
+      <a href="../../../../../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3660,7 +3666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/monitoring/grafana/basics/" class="md-nav__link">
+      <a href="../../../../../operations/monitoring/grafana/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3681,7 +3687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
+      <a href="../../../../../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3725,7 +3731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../../../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3793,7 +3799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./" class="md-nav__link">
+      <a href="../../../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3862,7 +3868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="category/server" class="md-nav__link">
+      <a href="../../../../category/server" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3883,7 +3889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="category/installation" class="md-nav__link">
+      <a href="../../../../category/installation" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3904,7 +3910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="category/networking" class="md-nav__link">
+      <a href="../../../../category/networking" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3977,7 +3983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="archive/2024" class="md-nav__link">
+      <a href="../../../../archive/2024" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4014,6 +4020,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -4026,6 +4034,236 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-ollama-my-first-step-into-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Ollama: My First Step into AI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up Ollama: My First Step into AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-ollama-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Ollama on Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloading-the-llama3-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloading the Llama3 Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-llama3-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the Llama3 Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-stable-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Stable Diffusion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up Stable Diffusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-the-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Install the Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-download-the-web-ui-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Download the Web UI Script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-the-webui-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Run the WebUI Script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-configure-the-webui-usersh-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configure the webui-user.sh File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-start-the-web-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Start the Web UI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-openwebui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up OpenWebUI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up OpenWebUI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-with-default-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation with Default Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrating-ollama-and-stable-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrating Ollama and Stable Diffusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting Ollama
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting Ollama">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-your-browser-and-navigate-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open your browser and navigate to:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-stable-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting Stable Diffusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Links
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4033,49 +4271,101 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="blog">Blog</h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-08-16 00:00:00">August 16, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="category/ai/" class="md-meta__link">AI</a>, 
-              <a href="category/server/" class="md-meta__link">server</a>, 
-              <a href="category/installation/" class="md-meta__link">installation</a></li>
-        
-        
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Robert Melcher
+                        
+                      </strong>
+                      <br>
+                      Creator
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2024-08-16 00:00:00" class="md-ellipsis">August 16, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/ai/">AI</a>, 
+                              <a href="../../../../category/server/">server</a>, 
+                              <a href="../../../../category/installation/">installation</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              8 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
           
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="setting-up-your-own-ai-with-ollama-openwebui-and-stable-diffusion"><a class="toclink" href="2024/08/16/setting-up-your-own-ai-with-ollama-openwebui-and-stable-diffusion/">Setting Up Your Own AI with Ollama, OpenWebUI, and Stable Diffusion</a></h2>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+  
+  
+
+
+<h1 id="setting-up-your-own-ai-with-ollama-openwebui-and-stable-diffusion">Setting Up Your Own AI with Ollama, OpenWebUI, and Stable Diffusion</h1>
 <figure>
   <img alt="header-media" src="/images/ollamaowu.png" width="400" />
   <figcaption>Connecting AI Tools</figcaption>
@@ -4087,266 +4377,273 @@
 <li><strong>OpenWebUI:</strong> An intuitive interface that makes it easier to manage and interact with AI models.</li>
 <li><strong>Ollama:</strong> A versatile AI framework designed for seamless integration and reliable performance.</li>
 </ul>
+<!-- more -->
 
-    
-      <nav class="md-post__action">
-        <a href="2024/08/16/setting-up-your-own-ai-with-ollama-openwebui-and-stable-diffusion/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-07-13 00:00:00">July 13, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/server/" class="md-meta__link">server</a>, 
-              <a href="category/installation/" class="md-meta__link">installation</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              6 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="setting-up-dell-r720-server-in-the-home-lab"><a class="toclink" href="2024/07/13/setting-up-dell-r720-server-in-the-home-lab/">Setting Up Dell R720 Server in the Home Lab</a></h2>
-<figure>
-  <img alt="header-media" src="/images/dellr720_2.svg" width="400" />
-  <figcaption>Dell R720 in my Home Lab</figcaption>
-</figure>
-<p>I recently stumbled upon an incredible deal for the Dell PowerEdge R720 server. This powerhouse boasts impressive specifications:</p>
-<h3 id="technical-specifications"><a class="toclink" href="2024/07/13/setting-up-dell-r720-server-in-the-home-lab/#technical-specifications">Technical Specifications</a></h3>
+<p>In this article, I’ll guide you through the setup and configuration process for these tools on my server. I’ll share the challenges I faced, the solutions I found, and some tips that might help you if you’re working with a similar setup. While I'm still learning the ropes with AI, I hope my experience can be a helpful resource for others who are just getting started.</p>
+<h2 id="setting-up-ollama-my-first-step-into-ai">Setting Up Ollama: My First Step into AI</h2>
+<p>The first tool I tackled was <strong>Ollama</strong>. After doing some research, it seemed like a good starting point because of its straightforward setup and broad compatibility. Ollama is a flexible AI framework that can be installed on all major platforms—<strong>Linux</strong>, <strong>MacOS</strong>, and <strong>Windows</strong>—which made it accessible no matter what system you’re running. Plus, it provides a solid foundation for further AI experiments, which is exactly what I needed for my home lab.</p>
+<h3 id="installing-ollama-on-linux">Installing Ollama on Linux</h3>
+<p>I began by setting up Ollama on a virtual machine running <strong>Ubuntu 22.04</strong> in my <strong>Proxmox</strong> environment. I allocated <strong>20 cores</strong> and <strong>64GB of RAM</strong> to this VM to ensure smooth performance during testing.</p>
+<p>To install Ollama, I used the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://ollama.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</code></pre></div>
+<h3 id="downloading-the-llama3-model">Downloading the Llama3 Model</h3>
+<p>Once the installation was complete, the next step was to download a model to work with. I chose the Llama3 model, which is known for its performance in various AI tasks. To download it, I ran the command:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ollama<span class="w"> </span>pull<span class="w"> </span>llama3
+</code></pre></div></p>
+<h3 id="running-the-llama3-model">Running the Llama3 Model</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ollama<span class="w"> </span>run<span class="w"> </span>llama3
+</code></pre></div>
+From here, you can start experimenting with generating text, answering questions, or other AI tasks.</p>
+<details class="example">
+<summary>llama3 cli example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&gt;&gt;&gt;<span class="w"> </span>How<span class="w"> </span>does<span class="w"> </span>the<span class="w"> </span>concept<span class="w"> </span>of<span class="w"> </span><span class="nb">time</span><span class="w"> </span>dilation<span class="w"> </span><span class="k">in</span><span class="w"> </span>*Interstellar*<span class="w"> </span>relate<span class="w"> </span>to<span class="w"> </span>Einstein<span class="s1">&#39;s theory of relativity?</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s1">The concept of time dilation in Interstellar is directly related to Albert Einstein&#39;</span>s<span class="w"> </span>theory<span class="w"> </span>of<span class="w"> </span>special<span class="w"> </span>relativity,<span class="w"> </span>specifically<span class="w"> </span>the<span class="w"> </span>concept<span class="w"> </span>of<span class="w"> </span><span class="nb">time</span><span class="w"> </span>dilation.<span class="w"> </span>Here<span class="s1">&#39;s how:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="s1">In the movie, a wormhole allows Cooper&#39;</span>s<span class="w"> </span>spaceship<span class="w"> </span>to<span class="w"> </span>travel<span class="w"> </span>at<span class="w"> </span>incredibly<span class="w"> </span>high<span class="w"> </span>speeds,<span class="w"> </span>approaching<span class="w"> </span>relativistic<span class="w"> </span>velocities.<span class="w"> </span>As<span class="w"> </span>they<span class="w"> </span>approach<span class="w"> </span>the<span class="w"> </span>speed<span class="w"> </span>of<span class="w"> </span>light<span class="w"> </span><span class="o">(</span><span class="m">0</span>.99c<span class="o">)</span>,<span class="w"> </span><span class="nb">time</span><span class="w"> </span>appears<span class="w"> </span>to<span class="w"> </span>slow<span class="w"> </span>down<span class="w"> </span><span class="k">for</span><span class="w"> </span>them<span class="w"> </span>relative<span class="w"> </span>to<span class="w"> </span>Earth.<span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>precisely
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>what<span class="w"> </span>Einstein<span class="w"> </span>predicted<span class="w"> </span><span class="k">in</span><span class="w"> </span>his<span class="w"> </span>theory<span class="w"> </span>of<span class="w"> </span>special<span class="w"> </span>relativity.
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>According<span class="w"> </span>to<span class="w"> </span>special<span class="w"> </span>relativity,<span class="w"> </span>when<span class="w"> </span>an<span class="w"> </span>object<span class="w"> </span>moves<span class="w"> </span>at<span class="w"> </span>high<span class="w"> </span>speeds<span class="w"> </span>relative<span class="w"> </span>to<span class="w"> </span>an<span class="w"> </span>observer,<span class="w"> </span><span class="nb">time</span><span class="w"> </span>appears<span class="w"> </span>to<span class="w"> </span>pass<span class="w"> </span>slower<span class="w"> </span><span class="k">for</span><span class="w"> </span>that<span class="w"> </span>object<span class="w"> </span>compared<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>stationary<span class="w"> </span>observer.<span class="w"> </span>This<span class="w"> </span>effect<span class="w"> </span>becomes<span class="w"> </span>more<span class="w"> </span>pronounced<span class="w"> </span>as<span class="w"> </span>the<span class="w"> </span>object<span class="w"> </span>approaches<span class="w"> </span>the
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>speed<span class="w"> </span>of<span class="w"> </span>light.<span class="w"> </span>The<span class="w"> </span>faster<span class="w"> </span>you<span class="w"> </span>move,<span class="w"> </span>the<span class="w"> </span>slower<span class="w"> </span><span class="nb">time</span><span class="w"> </span>passes<span class="w"> </span><span class="k">for</span><span class="w"> </span>you<span class="w"> </span>relative<span class="w"> </span>to<span class="w"> </span>outside<span class="w"> </span>observers.
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>In<span class="w"> </span>Interstellar,<span class="w"> </span>this<span class="w"> </span>means<span class="w"> </span>that<span class="w"> </span>Cooper<span class="w"> </span>and<span class="w"> </span>his<span class="w"> </span>crew<span class="w"> </span>experience<span class="w"> </span><span class="nb">time</span><span class="w"> </span>passing<span class="w"> </span>at<span class="w"> </span>a<span class="w"> </span>rate<span class="w"> </span>about<span class="w"> </span><span class="m">3</span>:1<span class="w"> </span>or<span class="w"> </span><span class="m">4</span>:1<span class="w"> </span>compared<span class="w"> </span>to<span class="w"> </span>Earth,<span class="w"> </span>depending<span class="w"> </span>on<span class="w"> </span>their<span class="w"> </span>speed<span class="w"> </span>and<span class="w"> </span>distance<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>center<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>black<span class="w"> </span>hole.<span class="w"> </span>This<span class="w"> </span>effect<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>just<span class="w"> </span>theoretical<span class="p">;</span><span class="w"> </span>it<span class="w"> </span>has
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>been<span class="w"> </span>experimentally<span class="w"> </span>confirmed<span class="w"> </span><span class="k">in</span><span class="w"> </span>particle<span class="w"> </span>accelerators<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>well-established<span class="w"> </span>aspect<span class="w"> </span>of<span class="w"> </span>modern<span class="w"> </span>physics.
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>The<span class="w"> </span>plot<span class="w"> </span>twist<span class="w"> </span><span class="k">in</span><span class="w"> </span>Interstellar<span class="w"> </span>revolves<span class="w"> </span>around<span class="w"> </span>this<span class="w"> </span>concept<span class="w"> </span>of<span class="w"> </span><span class="nb">time</span><span class="w"> </span>dilation.<span class="w"> </span>As<span class="w"> </span>Cooper<span class="w"> </span>approaches<span class="w"> </span>the<span class="w"> </span>event<span class="w"> </span>horizon<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>black<span class="w"> </span>hole,<span class="w"> </span>he<span class="w"> </span>experiences<span class="w"> </span>only<span class="w"> </span>a<span class="w"> </span>few<span class="w"> </span>years<span class="w"> </span>passing,<span class="w"> </span><span class="k">while</span><span class="w"> </span>back<span class="w"> </span>on<span class="w"> </span>Earth,<span class="w"> </span>decades<span class="w"> </span>have<span class="w"> </span>passed<span class="w"> </span>since<span class="w"> </span>his<span class="w"> </span>departure.<span class="w"> </span>This
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>creates<span class="w"> </span>a<span class="w"> </span>poignant<span class="w"> </span>reunion<span class="w"> </span>between<span class="w"> </span>Cooper<span class="w"> </span>and<span class="w"> </span>Murph<span class="w"> </span><span class="o">(</span>his<span class="w"> </span>daughter<span class="o">)</span><span class="w"> </span>when<span class="w"> </span>he<span class="w"> </span>finally<span class="w"> </span>returns<span class="w"> </span>to<span class="w"> </span>Earth.
+</code></pre></div>
+</details>
+<h2 id="setting-up-stable-diffusion">Setting Up Stable Diffusion</h2>
+<p><strong>Stable Diffusion</strong> is a powerful model for generating high-quality images from text prompts. Setting it up on my Ubuntu 22.04 VM was quite straightforward thanks to the clear installation guide provided in the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">official GitHub repository</a>.</p>
+<h3 id="installation-steps">Installation Steps</h3>
+<p>Here’s a summary of the steps I followed to install Stable Diffusion:</p>
+<h4 id="1-install-the-dependencies">1. <strong>Install the Dependencies</strong></h4>
+<p>Depending on your Linux distribution, use one of the following commands to install the necessary dependencies:</p>
 <ul>
-<li><strong>Server Model:</strong> Dell PowerEdge R720</li>
-<li><strong>RAM:</strong> 192GB</li>
-<li><strong>Processors:</strong> Dual 6-core CPUs with Hyper-Threading (24 threads)</li>
-<li><strong>iDRAC Controller:</strong> iDRAC7 Enterprise</li>
-<li><strong>Storage:</strong> 2 x 2TB SSD &amp; 6 x 300GB SAS drives at 6Gb/s </li>
+<li>
+<p><strong>Debian-based (e.g., Ubuntu):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>wget<span class="w"> </span>git<span class="w"> </span>python3<span class="w"> </span>python3-venv<span class="w"> </span>libgl1<span class="w"> </span>libglib2.0-0
+</code></pre></div>
+</li>
+<li>
+<p><strong>Red Hat-based:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>wget<span class="w"> </span>git<span class="w"> </span>python3<span class="w"> </span>gperftools-libs<span class="w"> </span>libglvnd-glx
+</code></pre></div>
+</li>
+<li>
+<p><strong>openSUSE-based:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"> </span>wget<span class="w"> </span>git<span class="w"> </span>python3<span class="w"> </span>libtcmalloc4<span class="w"> </span>libglvnd
+</code></pre></div>
+</li>
 </ul>
-<p><em>This article covers my journey of integrating this powerhouse into my home lab setup.</em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="2024/07/13/setting-up-dell-r720-server-in-the-home-lab/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-03-27 00:00:00">March 27, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/networking/" class="md-meta__link">networking</a>, 
-              <a href="category/installation/" class="md-meta__link">installation</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="tailscale-site-to-site-pfsense-linux"><a class="toclink" href="2024/03/27/tailscale-site-to-site-pfsense---linux/">Tailscale site-to-site pfSense - Linux</a></h2>
-<figure>
-  <img alt="header-media" src="/images/blog-headerimage.png" width="400" />
-  <figcaption>Tailscale between pfSense and Linux</figcaption>
-</figure>
-<p>I've decided to implement monitoring for my homelab through a cloud virtual machine.<br>
-<i>As cloud provider I've opted for Hetzner, but more on that in a future post</i></p>
-<p>To enhance the security of this setup, I've chosen to establish the cloud VM from Hetzner as the single entry point to my infrastructure. For this purpose, I've opted to use Tailscale for tunneling, not only for client-to-site but also for site-to-site connectivity.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Informations provided by tailscale:
-"Use site-to-site layer 3 (L3) networking to connect two subnets on your Tailscale network with each other. The two subnets are each required to provide a subnet router but their devices do not need to install Tailscale. This scenario applies to Linux subnet routers only."</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This scenario will not work on subnets with overlapping CIDR ranges, nor with 4via6 subnet routing.</p>
-</div>
-
-    
-      <nav class="md-post__action">
-        <a href="2024/03/27/tailscale-site-to-site-pfsense---linux/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-03-06 00:00:00">March 6, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/kubernetes/" class="md-meta__link">kubernetes</a>, 
-              <a href="category/installation/" class="md-meta__link">installation</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              9 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="deploying-a-kubernetes-based-media-server-a-comprehensive-guide"><a class="toclink" href="2024/03/06/deploying-a-kubernetes-based-media-server-a-comprehensive-guide/">Deploying a Kubernetes-Based Media Server: A Comprehensive Guide</a></h2>
-<figure>
-  <img alt="header-media" src="/images/content/media-header.png" width="300" />
-  <figcaption>MEDIA STACK K8S</figcaption>
-</figure>
-<p>For a long time, I've been on the hunt for a comprehensive and well-crafted tutorial to deploy a media server on my Kubernetes cluster. This media server stack includes Jellyfin, Radarr, Sonarr, Jackett, and qBittorrent. Let's briefly dive into what each component brings to our setup</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><strong>Jellyfin</strong>: An open-source media system that provides a way to manage and stream your media library across various devices.<br>
-<strong>Radarr</strong>: A movie collection manager for Usenet and BitTorrent users. It automates the process of searching for movies, downloading, and managing your movie library.<br>
-<strong>Sonarr</strong>: Similar to Radarr but for TV shows. It keeps track of your series, downloads new episodes, and manages your collection with ease.<br>
-<strong>Jackett</strong>: Acts as a proxy server, translating queries from other apps (like Sonarr or Radarr) into queries that can be understood by a wide array of torrent search engines.<br>
-<strong>qBittorrent</strong>: A powerful BitTorrent client that handles your downloads. Paired with Jackett, it streamlines finding and downloading media content. <br>
-<strong>Gluetun</strong>: A lightweight, open-source VPN client for Docker environments, supporting multiple VPN providers to secure and manage internet connections across containerized applications. It ensures privacy and seamless network security with easy configuration and integration.</p>
+<h4 id="2-download-the-web-ui-script">2. <strong>Download the Web UI Script</strong></h4>
+<p>Navigate to the directory where you want to install Stable Diffusion and execute the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>wget<span class="w"> </span>-q<span class="w"> </span>https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
+</code></pre></div>
+<h4 id="3-run-the-webui-script">3. Run the WebUI Script</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./webui.sh
+</code></pre></div>
+<h4 id="4-configure-the-webui-usersh-file">4. Configure the webui-user.sh File</h4>
+<p>Since my server does not have a GPU, I needed to adapt the webui-user.sh file to optimize performance for CPU usage. Specifically, I added the following line to configure the environment for CPU-only operation:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">COMMANDLINE_ARGS</span><span class="o">=</span><span class="s2">&quot;--lowvram --precision full --no-half --skip-torch-cuda-test&quot;</span>
+</code></pre></div>
+ <strong>--lowvram:</strong> Reduces memory usage to accommodate systems with limited GPU memory.<br><br>
+ <strong>--precision full:</strong> Ensures full precision calculations, useful for CPU processing.<br><br>
+ <strong>--no-half:</strong> Disables half-precision calculations to avoid potential issues on CPUs.<br><br>
+ <strong>--skip-torch-cuda-test:</strong> Skips tests related to CUDA, which is irrelevant on systems without GPUs.</p>
+<h4 id="5-start-the-web-ui">5. <strong>Start the Web UI</strong></h4>
+<p>By default, running the webui.sh command will start the server and bind it to localhost (127.0.0.1). To allow access from other interfaces (useful for integration with OpenWebUI), use the --listen parameter:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>./webui.sh<span class="w"> </span>--listen
+</code></pre></div>
+This command makes the server accessible on all network interfaces at port 7860 (0.0.0.0:7860).</p>
+<p><b>Stable Diffusion Webpage</b>
+ <img alt="header-media" src="/images/stablediffusion.png" /></p>
+<h2 id="setting-up-openwebui">Setting Up OpenWebUI</h2>
+<p>With Ollama and Stable Diffusion installed and configured, the next step is to centralize these tools into a single, user-friendly interface. <strong>OpenWebUI</strong> provides a cohesive platform to interact with your AI models, similar to ChatGPT.</p>
+<h3 id="installation-steps_1">Installation Steps</h3>
+<p>Setting up OpenWebUI is probably the easiest and quickest part of this tutorial, thanks to its well-organized and straightforward documentation. You can deploy OpenWebUI using Docker, which simplifies the installation process.</p>
+<h4 id="installation-with-default-configuration">Installation with Default Configuration</h4>
+<p>If Ollama is running on the same server as OpenWebUI, use the following Docker command:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:8080<span class="w"> </span>--add-host<span class="o">=</span>host.docker.internal:host-gateway<span class="w"> </span>-v<span class="w"> </span>open-webui:/app/backend/data<span class="w"> </span>--name<span class="w"> </span>open-webui<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>ghcr.io/open-webui/open-webui:main
+</code></pre></div>
+If Ollama is hosted on a different server, you need to specify the URL of the Ollama server:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:8080<span class="w"> </span>-e<span class="w"> </span><span class="nv">OLLAMA_BASE_URL</span><span class="o">=</span>https://example.com<span class="w"> </span>-v<span class="w"> </span>open-webui:/app/backend/data<span class="w"> </span>--name<span class="w"> </span>open-webui<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>ghcr.io/open-webui/open-webui:main
+</code></pre></div></p>
+<p>For running OpenWebUI with Nvidia GPU support, use this command:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:8080<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>--add-host<span class="o">=</span>host.docker.internal:host-gateway<span class="w"> </span>-v<span class="w"> </span>open-webui:/app/backend/data<span class="w"> </span>--name<span class="w"> </span>open-webui<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>ghcr.io/open-webui/open-webui:cuda
+</code></pre></div></p>
+<h3 id="integrating-ollama-and-stable-diffusion">Integrating Ollama and Stable Diffusion</h3>
+<p>Once OpenWebUI is up and running, the next step is to integrate it with Ollama and Stable Diffusion via API connections.</p>
+<h3 id="connecting-ollama">Connecting Ollama</h3>
+<h4 id="open-your-browser-and-navigate-to">Open your browser and navigate to:</h4>
+<details class="example" open="open">
+<summary>OpenWebUI Admin Settings</summary>
+<p><b>1.1 http://ip_server_openwebui:3000/admin/settings/</b><br>
+1.2 Go to <b>Models</b> -&gt; <b>Manage Ollama Models.</b><br>
+1.3 Enter the <b>URL</b> of your Ollama server<br></p>
+<p><img alt="OpenWebUI" src="/images/openwebuiaset.png" title="Admin Settings" /> <br>
+<i>If you're running Ollama and OpenWebUI on the same server, this step might be auto-filled.</i></p>
+</details>
+<h3 id="connecting-stable-diffusion">Connecting Stable Diffusion</h3>
+<details class="example" open="open">
+<summary>StableDiffusion Admin Settings</summary>
+<p>1.1 Go to Images and find the <b>AUTOMATIC1111 Base URL</b> field.<br>
+1.2 Enter the <b>URL</b> of your Stable Diffusion server:<br>
+1.3 Press the <b>refresh check button</b> next to the URL to verify the connection with the Stable Diffusion server. If everything is working correctly, click Save.<br>
+1.4 You can now adjust the parameters under <b>Set Default Model</b> according to your needs.<br><br>
+<img alt="StableDiffusion" src="/images/stablediffusionaset.png" title="Admin Settings" /> <br></p>
+</details>
+<p><i>Voilà!</i><br>
+ <img alt="header-media" src="/images/meroxai.png" /></p>
+<p>With OpenWebUI, Ollama, and Stable Diffusion all integrated, you now have a unified interface to interact with your AI models, making it easier to manage and utilize these powerful tools in your home lab.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>As I continue to explore and build my AI environment, I plan to enhance my setup with a dedicated GPU in the near future. I'm considering an NVIDIA TESLA P40, which should significantly boost performance and allow for more efficient processing. Once I have this upgrade in place, I'll provide updated information and tips on configuring AI tools with GPU support.</p>
+<p>Currently, with my setup of dual Intel Xeon E5-2620 v2 CPUs at 2.10GHz, the performance is functional but not particularly fast. The experience has been quite interesting, offering valuable insights into AI integration and usage. Here are some performance metrics from my current setup with Ollama and Stable Diffusion:</p>
+<ul>
+<li><strong>Response Token/s:</strong> 0.46</li>
+<li><strong>Prompt Token/s:</strong> 1.99</li>
+<li><strong>Total Duration:</strong> 1072376.46 ms (approximately 17 minutes 52 seconds)</li>
+<li><strong>Load Duration:</strong> 61347.1 ms</li>
+<li><strong>Prompt Eval Count:</strong> 33</li>
+<li><strong>Prompt Eval Duration:</strong> 16571.72 ms</li>
+<li><strong>Eval Count:</strong> 457</li>
+<li><strong>Eval Duration:</strong> 994411.07 ms</li>
+</ul>
+<p>These numbers illustrate the impact of running AI models on a CPU-only configuration. Despite the slower performance, the journey has been rewarding and informative.</p>
+<p>Thank you for following along with my AI setup journey. I hope these insights and steps will be useful for anyone starting with AI tools in a similar environment. If you have any questions or need further assistance, feel free to reach out!<br><br> <br />
+For those interested in GPU setups, here are some useful resources to help with GPU configuration:</p>
+<h3 id="recommended-links">Recommended Links</h3>
+<div class="grid cards">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=GrLpdfhTwLg&t=467s"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span> <strong>TechnoTim</strong> AI Setup.</a></li>
+<li><a href="https://medium.com/@blackhorseya/running-llama-3-model-with-nvidia-gpu-using-ollama-docker-on-rhel-9-0504aeb1c924"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"/></svg></span> <strong>Sean Zheng</strong>  Running Llama 3 Model with NVIDIA GPU</a></li>
+</ul>
 </div>
 
-    
-      <nav class="md-post__action">
-        <a href="2024/03/06/deploying-a-kubernetes-based-media-server-a-comprehensive-guide/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://merox.dev/images/meroxdc.webp" alt="Robert Melcher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-03-01 00:00:00">March 1, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/networking/" class="md-meta__link">networking</a>, 
-              <a href="category/installation/" class="md-meta__link">installation</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="argocd-installation-on-kubernetes"><a class="toclink" href="2024/03/01/argocd-installation-on-kubernetes/">ArgoCD installation on kubernetes</a></h2>
-<p><strong>Install and configure ArgoCD</strong></p>
-<ol>
-<li>Create a new namespace argocd and deploy ArgoCD with the web UI included.
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>argocd
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-</code></pre></div></td></tr></table></div></li>
-<li>Log in to the ArgoCD web interface</li>
-</ol>
-<p>Log in to the ArgoCD web interface https://<strong>[your-dns-record/]</strong> by using the default username admin and the password, collected by the following command.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>argocd-initial-admin-secret<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.password}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
-</code></pre></div></td></tr></table></div>
-    
-  </div>
-</article>
-      
-      
-        
-          
 
 
 
-<nav class="md-pagination">
+
+
+
   
-</nav>
-        
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
       
-    </div>
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2024</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2024</span>
+  </span>
+
+    
+    
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/mer0x" class="md-author" title="@mer0x">
+          
+          <img src="https://avatars.githubusercontent.com/u/35839230?v=4&size=72" alt="mer0x">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+
+  <h2 id="__comments">Comments</h2>
+  <script src="https://giscus.app/client.js"
+  data-repo="mer0x/merox.cloud"
+  data-repo-id="R_kgDOLY5RTg"
+  data-category="General"
+  data-category-id="DIC_kwDOLY5RTs4Cdwo2"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  crossorigin="anonymous"
+  async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+      
+    </article>
   </div>
 
           
@@ -4365,6 +4662,30 @@
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../../07/13/setting-up-dell-r720-server-in-the-home-lab/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setting Up Dell R720 Server in the Home Lab">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Setting Up Dell R720 Server in the Home Lab
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -4538,10 +4859,10 @@
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>
