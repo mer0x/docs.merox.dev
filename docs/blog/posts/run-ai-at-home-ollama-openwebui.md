@@ -20,9 +20,9 @@ comments: true
   <figcaption>Connecting AI Tools</figcaption>
 </figure>
 
-Recently, I started exploring the world of AI to see what I could accomplish with my home lab setup. Using my Dell PowerEdge R720 server—192GB of RAM, dual 6-core CPUs (24 threads total), and no GPU—I decided to dive into some AI tools for the first time. After some research, I focused on three key tools: Stable Diffusion, OpenWebUI, and Ollama. Each of these tools offers different features, and together they form a functional AI environment that I'm eager to experiment with.
+First, I recently took up exploring AI in a bid to fathom what my home lab setup could do. On this occasion, I utilized Dell PowerEdge R720 server which comprised of 192GB RAM, dual 6-core CPUs (24 threads) and lacked GPU that I used to plunge myself into some AI tools. Having done some investigation into this matter, three major tools attracted my attention-Stable Diffusion, OpenWebUI and Ollama. Each tool has unique features while together they make up a functional AI environment for me to play around with.
 
-**Here’s a brief overview of each tool:**
+**Below are brief descriptions of the tools::**
 
 - **Stable Diffusion:** A model that generates high-quality images from text prompts, ideal for exploring AI-generated art.
 - **OpenWebUI:** An intuitive interface that makes it easier to manage and interact with AI models.
@@ -30,7 +30,7 @@ Recently, I started exploring the world of AI to see what I could accomplish wit
 
 <!-- more -->
 
-In this article, I’ll guide you through the setup and configuration process for these tools on my server. I’ll share the challenges I faced, the solutions I found, and some tips that might help you if you’re working with a similar setup. While I'm still learning the ropes with AI, I hope my experience can be a helpful resource for others who are just getting started.
+In this article, I will go over how I set these tools up on my server as well as their configurations. The difficulties that were there , the solutions I found and useful tips that may be helpful when working under similar conditions will also be shared. Even though still new in Artificial Intelligence systems at least my experience can be of great help to others who may want to start too.
 
 ## Setting Up Ollama: My First Step into AI
 
