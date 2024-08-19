@@ -8,7 +8,7 @@ categories:
   - installation
 authors:
   - robertmelcher
-description: "Learn how to set up AI at home with Ollama and OpenWebUI in this guide."
+description: "Learn how to set up AI at home with Ollama, OpenWebUI and Stable Diffusion in this guide."
 comments: true
 ---
 
