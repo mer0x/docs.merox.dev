@@ -16,6 +16,21 @@ Seasoned System Administrator and Cybersecurity Engineer, with a profound passio
 > "Innovating at the intersection of Linux, Networking, and Security"
 
 
+## Why merox.dev?
+
+Well, "merox.dev" does have a personal touch and a little history. It's a fusion of elements that reflect both my background and interests:
+
+- **MERO**: The first part of the name comes from combining the first letters of my name, "ME" for Melcher and "RO" for Robert. This is sort of a wink toward my identity and a touch of personality within the work I do.
+
+The "X" in "merox" adds some mystery and adaptability to the name. My username was originally based on hexadecimal notation—"mer0x39," where "0x39" is the number 57, essentially the day and month of my birthday.
+
+**Development Focus**: One more important feature is that "merox.dev" shows people my involvement in IT and development. The "DEV" in this domain reflects my interest in development and novelties in the area of technology.
+
+The idea of merox.dev was to create a full-scale repository including all my experience and knowledge gained within the last ten years working in IT. This site is my personal archive, containing from complex technical solutions to many experiences obtained during projects. A blog section is the newest part where I share my thoughts, trends, and updates on what's new in tech.
+
+In essence, merox.dev represents a bit of my path, expertise, and passion for IT; it provides useful resources and information to others within this industry.
+
+
 ## Professional Journey
 
 Throughout my career, I've had the privilege of working with industry leaders such as **Hella**, **Atos**, and **Netex**. These experiences have shaped my approach to IT and cybersecurity, allowing me to:
