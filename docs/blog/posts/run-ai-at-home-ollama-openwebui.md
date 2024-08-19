@@ -1,6 +1,7 @@
 ---
 draft: false 
 date: 2024-08-16
+title: Setting Up Your Own AI with Ollama, OpenWebUI and Stable Diffusion
 categories:
   - AI
   - server
