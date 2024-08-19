@@ -7,12 +7,12 @@ categories:
   - installation
 authors:
   - robertmelcher
-description: "Learn how to set up AI at home with Ollama and OpenWebUI in this guide. This tutorial covers both CPU and GPU options, offering practical insights and resources for beginners looking to build their own AI environment."
+description: "Learn how to set up AI at home with Ollama and OpenWebUI in this guide."
 comments: true
 ---
 
 
-# Setting Up Your Own AI with Ollama, OpenWebUI, and Stable Diffusion
+# Setting Up Your Own AI
 
 <figure markdown="span">
   ![header-media](/images/ollamaowu.png){ width="400" }
