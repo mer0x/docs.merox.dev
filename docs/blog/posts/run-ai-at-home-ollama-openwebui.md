@@ -22,7 +22,7 @@ comments: true
 
 First, I recently took up exploring AI in a bid to fathom what my home lab setup could do. On this occasion, I utilized Dell PowerEdge R720 server which comprised of 192GB RAM, dual 6-core CPUs (24 threads) and lacked GPU that I used to plunge myself into some AI tools. Having done some investigation into this matter, three major tools attracted my attention-Stable Diffusion, OpenWebUI and Ollama. Each tool has unique features while together they make up a functional AI environment for me to play around with.
 
-**Below are brief descriptions of the tools::**
+**Below are brief descriptions of the tools:**
 
 - **Stable Diffusion:** A model that generates high-quality images from text prompts, ideal for exploring AI-generated art.
 - **OpenWebUI:** An intuitive interface that makes it easier to manage and interact with AI models.
