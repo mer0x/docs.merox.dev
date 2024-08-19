@@ -1,7 +1,7 @@
 ---
 draft: false 
 date: 2024-08-16
-title: Setting Up Your Own AI with Ollama, OpenWebUI and Stable Diffusion
+title: Setting Up Your Own AI
 categories:
   - AI
   - server
@@ -13,7 +13,7 @@ comments: true
 ---
 
 
-# Setting Up Your Own AI
+# Setting Up Your Own AI with Ollama, OpenWebUI and Stable Diffusion
 
 <figure markdown="span">
   ![header-media](/images/ollamaowu.png){ width="400" }
