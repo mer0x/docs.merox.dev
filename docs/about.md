@@ -68,7 +68,6 @@ Interested in collaborating or learning more about my work? I'm always open to d
 
 !!! tip "Contact Information"
     📧 Email: hello@merox.dev<br>
-    🔗 LinkedIn: [linkedin.com/in/robertmelcher](https://linkedin.com/in/robertmelcher)<br>
 
 ??? abstract "Curriculum Vitae"
     For a detailed overview of my professional experience and skills, please review my CV:
