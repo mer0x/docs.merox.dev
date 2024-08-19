@@ -22,7 +22,7 @@ Well, **"merox.dev"** does have a personal touch and a little history. It's a fu
 
 - **MERO**: The first part of the name comes from combining the first letters of my name, **"ME"** for Melcher and **"RO"** for Robert. This is sort of a wink toward my identity and a touch of personality within the work I do.
 
-- The "X" in "merox" adds some mystery and adaptability to the name. My username was originally based on hexadecimal notation—**"mer0x39,"** where **"0x39"** is the number 57, essentially the day and month of my birthday.
+- The **"X"** in "merox" adds some mystery and adaptability to the name. My username was originally based on hexadecimal notation—**"mer0x39,"** where **"0x39"** is the number 57, essentially the day and month of my birthday.
 
 The idea of **merox.dev** was to create a full-scale repository including all my experience and knowledge gained within the last ten years working in IT. This site is my personal archive, containing from complex technical solutions to many experiences obtained during projects. A blog section is the newest part where I share my thoughts, trends, and updates on what's new in tech.
 
