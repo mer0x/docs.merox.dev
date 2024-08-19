@@ -61,8 +61,8 @@ Interested in collaborating or learning more about my work? I'm always open to d
 ??? abstract "Curriculum Vitae"
     For a detailed overview of my professional experience and skills, please review my CV:
     
-    [Download CV (PDF)](path/to/your/cv.pdf)
+    [Download CV (PDF)](/cv.pdf)
     
-    *Last updated: August 2024*
+    *Last updated: August 2022*
 
 ---
