@@ -39,7 +39,7 @@ Throughout my career, I've had the privilege of working with industry leaders su
 
 ### Key Achievements
 
-* 🐳 Successfully dockerized and migrated a Python server from a virtual machine to a Kubernetes cluster, enhancing scalability and resource efficiency
+* 🐳 Successfully dockerized and migrated a Puppet server from a virtual machine to a Kubernetes cluster, enhancing scalability and resource efficiency
 * 🖥️ Led the migration and creation of Forescout policies from Windows 7 to Windows 10, ensuring seamless transition and improved security posture
 * 🛡️ Implemented robust security measures across various network devices including Palo Alto, Fortigate, Cisco, and McAfee, significantly enhancing the organization's cybersecurity infrastructure
 * 💾 Designed and implemented a comprehensive backup solution using Bareos for an entire datacenter, ensuring data integrity and disaster recovery readiness
