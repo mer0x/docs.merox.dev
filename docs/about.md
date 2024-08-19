@@ -38,7 +38,6 @@ Throughout my career, I've had the privilege of working with industry leaders su
 - Align IT strategies with organizational goals
 
 ### Key Achievements
-### Key Achievements
 
 * 🐳 Successfully dockerized and migrated a Python server from a virtual machine to a Kubernetes cluster, enhancing scalability and resource efficiency
 * 🖥️ Led the migration and creation of Forescout policies from Windows 7 to Windows 10, ensuring seamless transition and improved security posture
