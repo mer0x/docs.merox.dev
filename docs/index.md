@@ -1,5 +1,5 @@
 ---
-title: Home
+title:
 template: home.html
 hide:
   - navigation
