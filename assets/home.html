@@ -232,11 +232,11 @@ body {
         <div class="hero-text">
             <h1>{{ config.site_name }}</h1>
             <p>Explore the latest posts and insights on our blog.</p>
-            <a href="{{ url_for('main.blog') }}" class="hero-cta">Read the Blog</a>
+            <a href="" class="hero-cta">Read the Blog</a>
         </div>
         <div class="hero-image">
             <div class="custom-image-wrapper">
-                <img src="{{ url_for('static', filename='img/your-image.jpg') }}" alt="Hero Image" class="custom-image">
+                <img src="" alt="Hero Image" class="custom-image">
             </div>
         </div>
     </div>
@@ -249,7 +249,7 @@ body {
         <div class="blog-post">
             <h3>{{ post.title }}</h3>
             <p>{{ post.description[:150] }}...</p>
-            <a href="{{ url_for('main.post', post_id=post.id) }}">Read More</a>
+            <a href="">Read More</a>
         </div>
         {% endfor %}
     </div>
