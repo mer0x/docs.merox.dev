@@ -233,7 +233,7 @@ extra:
 
   # Custom Homepage Elements
   home_cover_image: images/meroxdc.webp
-  home_tagline: Hello there!
+  home_tagline: Hello there
   home_description: |
     Welcome to your ultimate <br> <i>IT-verse</i> learning experience.<br> Dive into battle-tested tutorials, insider tips, and real-world experiences that elevate your skills.<br> <br>Ready to decode complexity and level up? Let's dive in! 🚀
 
