@@ -235,9 +235,7 @@ extra:
   home_cover_image: images/meroxdc.webp
   home_tagline: tech hunter
   home_description: |
-    Hi there! I’m a HPC System Administrator and Cybersecurity Engineer with a passion for Linux, Networking, and Security. Here, you'll find a collection of documentation, blog posts, and tutorials based on real-world experience and hands-on knowledge.
-<br><br>
-Explore the resources and guides I’ve put together to help you navigate and grow in the IT field.🚀
+   Hi there! I’m a HPC System Administrator and Cybersecurity Engineer with a passion for Linux, Networking, and Security. Here, you'll find a collection of documentation, blog posts, and tutorials based on real-world experience and hands-on knowledge. <br><br> Explore the resources and guides I’ve put together to help you navigate and grow in the IT field.🚀
 
   # Gradient Color
   home_gradient_hsla:  hsla(0, 0%, 15%, 1)
