@@ -233,7 +233,7 @@ extra:
 
   # Custom Homepage Elements
   home_cover_image: images/meroxdc.webp
-  home_tagline: hello there 👋🏻
+  home_tagline: hello there
   home_description: |
    I’m an HPC System Administrator with a background in Cybersecurity and a strong passion for Linux, Networking, and Security. Here, you'll find a range of documentation, blog posts, and tutorials based on my practical experience.<br><br>
 
