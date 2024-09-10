@@ -8,7 +8,7 @@ hide:
 ## HPC System Administrator 
 
 <div style="display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/robertmelcher.jpg" alt="Robert Melcher" style="border-radius: 50%; width: 150px; height: 150px; margin-right: 20px;">
+    <img src="/images/robertmelcher1.jpg" alt="Robert Melcher" style="border-radius: 50%; width: 150px; height: 150px; margin-right: 20px;">
     <p style="font-size: 1.1em; line-height: 1.5;">
 Seasoned System Administrator and Cybersecurity Engineer, with a profound passion for Linux, Networking, and Security. My career has been a journey through challenging roles, where I've developed a blend of technical prowess and strategic insight.
     </p>
