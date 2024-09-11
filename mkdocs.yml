@@ -235,7 +235,7 @@ extra:
   home_cover_image: images/meroxdc.webp
   home_tagline: hello there
   home_description: |
-   I’m an HPC System Administrator with a background in Cybersecurity and a strong passion for Linux, Networking, and Security. Here, you'll find a range of documentation, blog posts, and tutorials based on my practical experience.<br><br>
+   I’m an HPC System Administrator with a background in Cybersecurity and a strong passion for Linux, Networking, and Security. Here, you'll find a range of documentation, blog posts, and tutorials based on my practical experience over the last 10 years.<br><br>
 
   # Gradient Color
   home_gradient_hsla:  hsla(0, 0%, 15%, 1)
