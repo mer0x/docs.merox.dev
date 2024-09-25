@@ -1,7 +1,7 @@
 :root {
-  --md-primary-fg-color:        #1877F2;
-  --md-primary-fg-color--light: #1877F2;
-  --md-primary-fg-color--dark:  #1877F2;
+  --md-primary-fg-color:        #0f7b7b;
+  --md-primary-fg-color--light: #0f7b7b;
+  --md-primary-fg-color--dark:  #0f7b7b;
 }
 
 .md-header__button.md-logo img,
