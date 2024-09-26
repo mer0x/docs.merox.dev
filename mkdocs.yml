@@ -31,14 +31,14 @@ theme:
 
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: custom
+      primary: black
       toggle:
         icon: material/link
         name: Switch to light mode
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: custom
+      primary: black
       scheme: default 
       toggle:
         icon: material/toggle-switch
@@ -47,7 +47,7 @@ theme:
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: custom
+      primary: black
       scheme: slate
       toggle:
         icon: material/toggle-switch-off
