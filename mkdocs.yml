@@ -164,13 +164,7 @@ nav:
 #        - Basics: operations/monitoring/alertmanager/basics.md
   - About: about.md
   - Blog:
-      - Overview: blog/
-      - Categories:
-          - Server: blog/category/server
-          - Installation: blog/category/installation
-          - Networking: blog/category/networking
-      - Archives:
-          - 2024: blog/archive/2024
+      - blog/index.md
 
 
 
@@ -186,6 +180,7 @@ plugins:
       repository: mer0x/merox.cloud
       branch: master
   - blog:
+      blog_dir: blog
       archive: true
       categories: true
 extra_css:
