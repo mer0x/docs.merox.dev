@@ -2,8 +2,8 @@
 draft: false 
 date: 2024-03-06 
 categories:
-  - kubernetes
-  - installation
+  - Kubernetes
+  - Installation
 authors:
   - robertmelcher
 comments: true

@@ -2,8 +2,8 @@
 draft: false 
 date: 2024-03-27
 categories:
-  - networking
-  - installation
+  - Networking
+  - Installation
 authors:
   - robertmelcher
 comments: true

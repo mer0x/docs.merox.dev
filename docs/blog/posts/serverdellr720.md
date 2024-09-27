@@ -2,8 +2,8 @@
 draft: false 
 date: 2024-07-13
 categories:
-  - server
-  - installation
+  - Server
+  - Installation
 authors:
   - robertmelcher
 description: "How to initial setup dell r720 server in homelab"

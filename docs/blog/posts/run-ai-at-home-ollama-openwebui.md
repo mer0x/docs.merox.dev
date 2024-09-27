@@ -4,8 +4,8 @@ date: 2024-08-16
 title: Setting Up Your Own AI
 categories:
   - AI
-  - server
-  - installation
+  - Server
+  - Installation
 authors:
   - robertmelcher
 description: "Learn how to set up AI at home with Ollama, OpenWebUI and Stable Diffusion in this guide."
