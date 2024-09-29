@@ -58,5 +58,5 @@ I suspect this process highlights a bug in PBS datastore creation. It requires `
 ### Special thanks
 
 <div class="grid cards" markdown>
-- <a href="https://forum.proxmox.com/members/grantph.148121/">:octicons-mark-github-24: __@grantph__  Running Llama 3 Model with NVIDIA GPU</a>
+- <a href="https://forum.proxmox.com/members/grantph.148121/">:simple-proxmox: __@grantph__  Proxmox Forum User</a>
 </div>
