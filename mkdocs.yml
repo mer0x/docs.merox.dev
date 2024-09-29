@@ -110,6 +110,7 @@ nav:
         - Basics: fundamentals/database/influxdb/basics.md
     - Backup:
       - Clonezilla: fundamentals/backup/clonezilla.md
+      - NFSonPBS: fundamentals/backup/pbs-nfs-backup.md
 
   - Operations : 
     - Intro: operations/intro.md
