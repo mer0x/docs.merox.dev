@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://merox.dev/about/">
+        <link rel="canonical" href="https://merox.dev/fundamentals/backup/pbs-nfs-backup/">
       
       
-        <link rel="prev" href="../operations/monitoring/grafana/prometheus-alertmanager/">
+        <link rel="prev" href="../clonezilla/">
       
       
-        <link rel="next" href="../blog/">
+        <link rel="next" href="../../../operations/intro/">
       
       
-      <link rel="icon" href="../images/merox.png">
+      <link rel="icon" href="../../../images/merox.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
   
-    <title>About - Merox </title>
+    <title>NFSonPBS - Merox </title>
   
 
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -69,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="About - Merox.dev" >
+        <meta  property="og:title"  content="NFSonPBS - Merox.dev" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://merox.dev/assets/images/social/about.png" >
+        <meta  property="og:image"  content="https://merox.dev/assets/images/social/fundamentals/backup/pbs-nfs-backup.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -81,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://merox.dev/about/" >
+        <meta  property="og:url"  content="https://merox.dev/fundamentals/backup/pbs-nfs-backup/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="About - Merox.dev" >
+        <meta  name="twitter:title"  content="NFSonPBS - Merox.dev" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://merox.dev/assets/images/social/about.png" >
+        <meta  name="twitter:image"  content="https://merox.dev/assets/images/social/fundamentals/backup/pbs-nfs-backup.png" >
       
     
     
@@ -124,7 +124,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#robert-melcher" class="md-skip">
+        <a href="#clonezilla-backup-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -157,9 +157,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Merox.dev" class="md-header__button md-logo" aria-label="Merox.dev" data-md-component="logo">
+    <a href="../../.." title="Merox.dev" class="md-header__button md-logo" aria-label="Merox.dev" data-md-component="logo">
       
-  <img src="../images/meroxdev.png" alt="logo">
+  <img src="../../../images/meroxdev.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -176,7 +176,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About
+              NFSonPBS
             
           </span>
         </div>
@@ -295,7 +295,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -314,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../homelab/infrastructure/" class="md-tabs__link">
+        <a href="../../../homelab/infrastructure/" class="md-tabs__link">
           
   
     
@@ -330,11 +330,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../fundamentals/intro/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../intro/" class="md-tabs__link">
           
   
     
@@ -354,7 +356,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../operations/intro/" class="md-tabs__link">
+        <a href="../../../operations/intro/" class="md-tabs__link">
           
   
     
@@ -370,11 +372,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
         
   
     
@@ -393,7 +393,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../blog/" class="md-tabs__link">
+        <a href="../../../blog/" class="md-tabs__link">
           
   
     
@@ -417,9 +417,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -430,9 +428,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Merox.dev" class="md-nav__button md-logo" aria-label="Merox.dev" data-md-component="logo">
+    <a href="../../.." title="Merox.dev" class="md-nav__button md-logo" aria-label="Merox.dev" data-md-component="logo">
       
-  <img src="../images/meroxdev.png" alt="logo">
+  <img src="../../../images/meroxdev.png" alt="logo">
 
     </a>
     Merox.dev
@@ -459,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -539,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/infrastructure/" class="md-nav__link">
+      <a href="../../../homelab/infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -560,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/connectivity/" class="md-nav__link">
+      <a href="../../../homelab/connectivity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -581,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/hypervisors/" class="md-nav__link">
+      <a href="../../../homelab/hypervisors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -602,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/virtual-machines/" class="md-nav__link">
+      <a href="../../../homelab/virtual-machines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -623,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/docker/" class="md-nav__link">
+      <a href="../../../homelab/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -644,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/kubernetes/" class="md-nav__link">
+      <a href="../../../homelab/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -665,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/ansible/" class="md-nav__link">
+      <a href="../../../homelab/ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -686,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/security/" class="md-nav__link">
+      <a href="../../../homelab/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -707,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/monitoring/" class="md-nav__link">
+      <a href="../../../homelab/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -732,8 +730,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -750,19 +750,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -773,7 +776,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Fundamentals
@@ -787,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/intro/" class="md-nav__link">
+      <a href="../../intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,17 +824,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -902,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/configs/DNS/" class="md-nav__link">
+      <a href="../../networking/configs/DNS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -923,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/configs/DHCP/" class="md-nav__link">
+      <a href="../../networking/configs/DHCP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1046,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/firewall/" class="md-nav__link">
+      <a href="../../networking/cisco/install/firewall/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1067,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/router/" class="md-nav__link">
+      <a href="../../networking/cisco/install/router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1088,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/switch/" class="md-nav__link">
+      <a href="../../networking/cisco/install/switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1153,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/cisco/install/ipsecgre/" class="md-nav__link">
+      <a href="../../networking/cisco/install/ipsecgre/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1242,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/networking/ccna/cheatsheet/" class="md-nav__link">
+      <a href="../../networking/ccna/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1290,17 +1296,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1417,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
+      <a href="../../operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1492,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/config/ufw/" class="md-nav__link">
+      <a href="../../operating-systems/linux/config/ufw/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1513,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
+      <a href="../../operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1590,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/tshoot/grub/" class="md-nav__link">
+      <a href="../../operating-systems/linux/tshoot/grub/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1611,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
+      <a href="../../operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1632,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
+      <a href="../../operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1761,7 +1770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/windows/install/wserver2019/" class="md-nav__link">
+      <a href="../../operating-systems/windows/install/wserver2019/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1834,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/windows/config/active-directory/" class="md-nav__link">
+      <a href="../../operating-systems/windows/config/active-directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1907,7 +1916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/operating-systems/windows/tshoot/dns/" class="md-nav__link">
+      <a href="../../operating-systems/windows/tshoot/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1963,17 +1972,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2042,7 +2054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/database/mysql/basics/" class="md-nav__link">
+      <a href="../../database/mysql/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2115,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/database/influxdb/basics/" class="md-nav__link">
+      <a href="../../database/influxdb/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2149,8 +2161,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2162,18 +2176,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2184,7 +2201,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             Backup
@@ -2198,7 +2215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/backup/clonezilla/" class="md-nav__link">
+      <a href="../clonezilla/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2216,10 +2233,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../fundamentals/backup/pbs-nfs-backup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    NFSonPBS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2228,6 +2265,191 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-requisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#booting-clonezilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booting Clonezilla
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-using-nfs-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup using NFS Share
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup using NFS Share">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-select-backup-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Select Backup Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-storage-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Storage Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-nfs-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Configure NFS Share
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-select-source-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Select Source Disk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-start-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Start Backup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-to-local-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup to Local Storage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup to Local Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-backup-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Backup Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-choose-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Choose Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-connect-storage-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Connect Storage Device
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-select-source-disk_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Select Source Disk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-initiate-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Initiate Backup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restoring-from-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restoring from Backup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing and Validation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2309,7 +2531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/intro/" class="md-nav__link">
+      <a href="../../../operations/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2418,7 +2640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/virtualization/VMs/proxmox/" class="md-nav__link">
+      <a href="../../../operations/virtualization/VMs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2505,7 +2727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/kubernetes/" class="md-nav__link">
+      <a href="../../../operations/containerization/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2574,7 +2796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/installation/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2595,7 +2817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/upgrade/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2682,7 +2904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2703,7 +2925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2724,7 +2946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2745,7 +2967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2766,7 +2988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2787,7 +3009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2808,7 +3030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2829,7 +3051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2850,7 +3072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2871,7 +3093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2892,7 +3114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2913,7 +3135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
+      <a href="../../../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2994,7 +3216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/LXCs/proxmox/" class="md-nav__link">
+      <a href="../../../operations/containerization/LXCs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3121,7 +3343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
+      <a href="../../../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3142,7 +3364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
+      <a href="../../../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3163,7 +3385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
+      <a href="../../../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3184,7 +3406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
+      <a href="../../../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3205,7 +3427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
+      <a href="../../../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3226,7 +3448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
+      <a href="../../../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3359,7 +3581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
+      <a href="../../../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3532,7 +3754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
+      <a href="../../../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3553,7 +3775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
+      <a href="../../../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3574,7 +3796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
+      <a href="../../../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3709,7 +3931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/monitoring/grafana/basics/" class="md-nav__link">
+      <a href="../../../operations/monitoring/grafana/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3730,7 +3952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
+      <a href="../../../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3771,30 +3993,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    About
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3803,95 +4005,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hpc-system-administrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      HPC System Administrator
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-meroxdev" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why merox.dev?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#professional-journey" class="md-nav__link">
-    <span class="md-ellipsis">
-      Professional Journey
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Professional Journey">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-achievements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Achievements
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-competencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Competencies
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#philosophy-continuous-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Philosophy &amp; Continuous Learning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-connect" class="md-nav__link">
-    <span class="md-ellipsis">
-      Let's Connect
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3930,7 +4043,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../blog/" class="md-nav__link ">
+            <a href="../../../blog/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4009,7 +4122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/archive/2024/" class="md-nav__link">
+      <a href="../../../blog/archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4092,7 +4205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/ai/" class="md-nav__link">
+      <a href="../../../blog/category/ai/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4115,7 +4228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/installation/" class="md-nav__link">
+      <a href="../../../blog/category/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4138,7 +4251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/kubernetes/" class="md-nav__link">
+      <a href="../../../blog/category/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4161,7 +4274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/networking/" class="md-nav__link">
+      <a href="../../../blog/category/networking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4184,7 +4297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/server/" class="md-nav__link">
+      <a href="../../../blog/category/server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4221,9 +4334,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -4242,37 +4353,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hpc-system-administrator" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      HPC System Administrator
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-meroxdev" class="md-nav__link">
+  <a href="#pre-requisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Why merox.dev?
+      Pre-requisites
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#professional-journey" class="md-nav__link">
+  <a href="#booting-clonezilla" class="md-nav__link">
     <span class="md-ellipsis">
-      Professional Journey
+      Booting Clonezilla
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Professional Journey">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-using-nfs-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup using NFS Share
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup using NFS Share">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-achievements" class="md-nav__link">
+  <a href="#step-1-select-backup-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Achievements
+      Step 1: Select Backup Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-storage-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Storage Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-nfs-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Configure NFS Share
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-select-source-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Select Source Disk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-start-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Start Backup
     </span>
   </a>
   
@@ -4284,27 +4440,78 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-competencies" class="md-nav__link">
+  <a href="#backup-to-local-storage" class="md-nav__link">
     <span class="md-ellipsis">
-      Core Competencies
+      Backup to Local Storage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup to Local Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-backup-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Backup Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-choose-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Choose Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-connect-storage-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Connect Storage Device
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-select-source-disk_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Select Source Disk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-initiate-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Initiate Backup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restoring-from-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restoring from Backup
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#philosophy-continuous-learning" class="md-nav__link">
+  <a href="#testing-and-validation" class="md-nav__link">
     <span class="md-ellipsis">
-      Philosophy &amp; Continuous Learning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-connect" class="md-nav__link">
-    <span class="md-ellipsis">
-      Let's Connect
+      Testing and Validation
     </span>
   </a>
   
@@ -4328,92 +4535,71 @@
   
 
 
-<h1 id="robert-melcher">Robert Melcher</h1>
-<h2 id="hpc-system-administrator">HPC System Administrator</h2>
-<div style="display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/robertmelcher1.webp" alt="Robert Melcher" style="border-radius: 50%; width: 150px; height: 150px; margin-right: 20px;">
-    <p style="font-size: 1.1em; line-height: 1.5;">
-Seasoned System Administrator and Cybersecurity Engineer, with a profound passion for Linux, Networking, and Security. My career has been a journey through challenging roles, where I've developed a blend of technical prowess and strategic insight.
-    </p>
-</div>
-<blockquote>
-<p>"Innovating at the intersection of Linux, Networking, and Security"</p>
-</blockquote>
-<h2 id="why-meroxdev">Why merox.dev?</h2>
-<p>Well, <strong>"merox.dev"</strong> does have a personal touch and a little history. It's a fusion of elements that reflect both my background and interests:</p>
+<h1 id="clonezilla-backup-guide">Clonezilla: Backup Guide</h1>
+<h2 id="overview">Overview</h2>
+<p>Clonezilla is a versatile tool for disk and partition imaging/cloning, perfect for backing up any disks. This guide covers how to use Clonezilla for backups using both NFS shares and local storage options, ensuring your data's safety and system's rapid recovery in various scenarios.For example, I use clonezilla to clone my Proxmox cluster installation disks.</p>
+<h2 id="pre-requisites">Pre-requisites</h2>
 <ul>
-<li>
-<p><strong>MERO</strong>: The first part of the name comes from combining the first letters of my name, <strong>"ME"</strong> for Melcher and <strong>"RO"</strong> for Robert. This is sort of a wink toward my identity and a touch of personality within the work I do.</p>
-</li>
-<li>
-<p>The <strong>"X"</strong> in "merox" adds some mystery and adaptability to the name. My username was originally based on hexadecimal notation—<strong>"mer0x39,"</strong> where <strong>"0x39"</strong> is the number 57, essentially the day and month of my birthday.</p>
-</li>
+<li>Clonezilla Live on a bootable USB drive : <a href="https://clonezilla.org/downloads.php">Downlaod link</a></li>
+<li>Configured and accessible NFS server (for NFS share backups)</li>
+<li>Sufficient storage space on your backup destination</li>
 </ul>
-<p>The idea of <strong>merox.dev</strong> was to create a full-scale repository including all my experience and knowledge gained within the last ten years working in IT. This site is my personal archive, containing from complex technical solutions to many experiences obtained during projects. A blog section is the newest part where I share my thoughts, trends, and updates on what's new in tech.</p>
-<p>In essence, <strong>merox.dev</strong> represents a bit of my path, expertise, and passion for IT; it provides useful resources and information to others within this industry.</p>
-<h2 id="professional-journey">Professional Journey</h2>
-<p>Throughout my career, I've had the privilege of working with industry leaders such as <strong>Hella</strong>, <strong>Atos</strong>, and <strong>Netex</strong>. These experiences have shaped my approach to IT and cybersecurity, allowing me to:</p>
-<ul>
-<li>Spearhead cutting-edge cybersecurity initiatives</li>
-<li>Optimize complex server environments</li>
-<li>Align IT strategies with organizational goals</li>
-</ul>
-<h3 id="key-achievements">Key Achievements</h3>
-<ul>
-<li>🐳 Successfully dockerized and migrated a Puppet server from a virtual machine to a Kubernetes cluster, enhancing scalability and resource efficiency</li>
-<li>🖥️ Led the migration and creation of Forescout policies from Windows 7 to Windows 10, ensuring seamless transition and improved security posture</li>
-<li>🛡️ Implemented robust security measures across various network devices including Palo Alto, Fortigate, Cisco, and McAfee, significantly enhancing the organization's cybersecurity infrastructure</li>
-<li>💾 Designed and implemented a comprehensive backup solution using Bareos for an entire datacenter, ensuring data integrity and disaster recovery readiness</li>
-<li>🌐 Leveraged CCNA expertise to design and implement complex network infrastructures, optimizing performance and security</li>
-<li>🚀 Orchestrated multiple infrastructure modernization projects, improving system reliability and operational efficiency</li>
-</ul>
-<h2 id="core-competencies">Core Competencies</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Linux Systems</th>
-<th style="text-align: center;">Networking</th>
-<th style="text-align: center;">Security</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">System optimization</td>
-<td style="text-align: center;">Infrastructure design</td>
-<td style="text-align: center;">Threat analysis</td>
-</tr>
-<tr>
-<td style="text-align: center;">Shell scripting</td>
-<td style="text-align: center;">Network protocols</td>
-<td style="text-align: center;">Penetration testing</td>
-</tr>
-<tr>
-<td style="text-align: center;">Performance tuning</td>
-<td style="text-align: center;">Troubleshooting</td>
-<td style="text-align: center;">Security audits</td>
-</tr>
-</tbody>
-</table>
-<h2 id="philosophy-continuous-learning">Philosophy &amp; Continuous Learning</h2>
-<p>I believe in the power of continuous learning and staying ahead of the technological curve. My approach involves:</p>
+<h2 id="booting-clonezilla">Booting Clonezilla</h2>
 <ol>
-<li>Constantly exploring emerging technologies</li>
-<li>Participating in cybersecurity communities and forums</li>
-<li>Sharing knowledge through mentoring and tech talks</li>
+<li>Insert the Clonezilla Live USB into the system.</li>
+<li>Reboot and select the USB drive as the boot device.</li>
+<li>Follow the on-screen instructions to load Clonezilla.</li>
 </ol>
-<h2 id="lets-connect">Let's Connect</h2>
-<p>Interested in collaborating or learning more about my work? I'm always open to discussing new opportunities and ideas in the world of IT and cybersecurity.</p>
-<div class="admonition tip">
-<p class="admonition-title">Contact Information</p>
-<p>📧 Email: hello@merox.dev<br></p>
-</div>
-<details class="abstract">
-<summary>Curriculum Vitae</summary>
-<p>For a detailed overview of my professional experience and skills, please review my CV:</p>
-<p><a href="/cv.pdf">Download CV (PDF)</a></p>
-<p><em>Last updated: August 2022</em></p>
-</details>
-<hr />
+<h2 id="backup-using-nfs-share">Backup using NFS Share</h2>
+<h3 id="step-1-select-backup-mode">Step 1: Select Backup Mode</h3>
+<ul>
+<li>Choose "device-image" for disk or partition image backups.</li>
+</ul>
+<h3 id="step-2-storage-selection">Step 2: Storage Selection</h3>
+<ul>
+<li>Select "NFS server" to utilize an NFS share as your backup destination.</li>
+</ul>
+<h3 id="step-3-configure-nfs-share">Step 3: Configure NFS Share</h3>
+<ul>
+<li>Input your NFS server's IP and the shared folder path for storing backups.</li>
+</ul>
+<h3 id="step-4-select-source-disk">Step 4: Select Source Disk</h3>
+<ul>
+<li>Choose the disk within your Proxmox cluster to back up.</li>
+</ul>
+<h3 id="step-5-start-backup">Step 5: Start Backup</h3>
+<ul>
+<li>Follow prompts to initiate the backup process to the NFS share.</li>
+</ul>
+<h2 id="backup-to-local-storage">Backup to Local Storage</h2>
+<h3 id="step-1-backup-mode">Step 1: Backup Mode</h3>
+<ul>
+<li>Opt for "device-image" for creating image backups.</li>
+</ul>
+<h3 id="step-2-choose-storage">Step 2: Choose Storage</h3>
+<ul>
+<li>Select "local_dev" for using local storage as the backup destination.</li>
+</ul>
+<h3 id="step-3-connect-storage-device">Step 3: Connect Storage Device</h3>
+<ul>
+<li>Ensure your external storage device is connected and recognized by Clonezilla.</li>
+</ul>
+<h3 id="step-4-select-source-disk_1">Step 4: Select Source Disk</h3>
+<ul>
+<li>Identify and select the Proxmox cluster disk for backup.</li>
+</ul>
+<h3 id="step-5-initiate-backup">Step 5: Initiate Backup</h3>
+<ul>
+<li>Proceed with on-screen instructions to begin backup to local storage.</li>
+</ul>
+<h2 id="restoring-from-backup">Restoring from Backup</h2>
+<ol>
+<li>Boot from the Clonezilla Live USB.</li>
+<li>Follow similar steps to the backup process but choose "restore."</li>
+<li>Select your backup image and follow the on-screen steps to complete restoration.</li>
+</ol>
+<h2 id="testing-and-validation">Testing and Validation</h2>
+<p>Ensure to test your Proxmox cluster post-backup or restoration to validate functionality and data integrity.</p>
 
 
 
@@ -4436,7 +4622,7 @@ Seasoned System Administrator and Cybersecurity Engineer, with a profound passio
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2024</span>
   </span>
 
     
@@ -4446,7 +4632,7 @@ Seasoned System Administrator and Cybersecurity Engineer, with a profound passio
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2024</span>
   </span>
 
     
@@ -4481,8 +4667,6 @@ Seasoned System Administrator and Cybersecurity Engineer, with a profound passio
   
 
 
-  
-
 
 
                 
@@ -4507,12 +4691,10 @@ Seasoned System Administrator and Cybersecurity Engineer, with a profound passio
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../operations/monitoring/grafana/prometheus-alertmanager/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prometheus w/ Alertmanager">
+          <a href="../clonezilla/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Clonezilla">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4522,20 +4704,20 @@ Seasoned System Administrator and Cybersecurity Engineer, with a profound passio
                 Previous
               </span>
               <div class="md-ellipsis">
-                Prometheus w/ Alertmanager
+                Clonezilla
               </div>
             </div>
           </a>
         
         
           
-          <a href="../blog/" class="md-footer__link md-footer__link--next" aria-label="Next: Blog">
+          <a href="../../../operations/intro/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Blog
+                Intro
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4719,10 +4901,10 @@ Seasoned System Administrator and Cybersecurity Engineer, with a profound passio
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>
