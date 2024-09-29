@@ -124,7 +124,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#clonezilla-backup-guide" class="md-skip">
+        <a href="#how-to-mount-synology-nfs-share-on-proxmox-backup-server" class="md-skip">
           Skip to content
         </a>
       
@@ -2380,82 +2380,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#on-synology-1234" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      On Synology [1.2.3.4]:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pre-requisites" class="md-nav__link">
+  <a href="#on-pbs-1235" class="md-nav__link">
     <span class="md-ellipsis">
-      Pre-requisites
+      On PBS [1.2.3.5]:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#booting-clonezilla" class="md-nav__link">
+  <a href="#back-on-synology" class="md-nav__link">
     <span class="md-ellipsis">
-      Booting Clonezilla
+      Back on Synology:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#backup-using-nfs-share" class="md-nav__link">
+  <a href="#back-on-pbs" class="md-nav__link">
     <span class="md-ellipsis">
-      Backup using NFS Share
+      Back on PBS:
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Backup using NFS Share">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes:">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-select-backup-mode" class="md-nav__link">
+  <a href="#special-thanks" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Select Backup Mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-storage-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Storage Selection
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-configure-nfs-share" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Configure NFS Share
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-select-source-disk" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Select Source Disk
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-start-backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 5: Start Backup
+      Special thanks
     </span>
   </a>
   
@@ -2463,84 +2436,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backup-to-local-storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup to Local Storage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Backup to Local Storage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-backup-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Backup Mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-choose-storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Choose Storage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-connect-storage-device" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Connect Storage Device
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-select-source-disk_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Select Source Disk
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-initiate-backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 5: Initiate Backup
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#restoring-from-backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Restoring from Backup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-and-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing and Validation
-    </span>
-  </a>
   
 </li>
       
@@ -4459,82 +4354,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#on-synology-1234" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      On Synology [1.2.3.4]:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pre-requisites" class="md-nav__link">
+  <a href="#on-pbs-1235" class="md-nav__link">
     <span class="md-ellipsis">
-      Pre-requisites
+      On PBS [1.2.3.5]:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#booting-clonezilla" class="md-nav__link">
+  <a href="#back-on-synology" class="md-nav__link">
     <span class="md-ellipsis">
-      Booting Clonezilla
+      Back on Synology:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#backup-using-nfs-share" class="md-nav__link">
+  <a href="#back-on-pbs" class="md-nav__link">
     <span class="md-ellipsis">
-      Backup using NFS Share
+      Back on PBS:
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Backup using NFS Share">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes:">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-select-backup-mode" class="md-nav__link">
+  <a href="#special-thanks" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Select Backup Mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-storage-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Storage Selection
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-configure-nfs-share" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Configure NFS Share
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-select-source-disk" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Select Source Disk
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-start-backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 5: Start Backup
+      Special thanks
     </span>
   </a>
   
@@ -4542,84 +4410,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backup-to-local-storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup to Local Storage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Backup to Local Storage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-backup-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Backup Mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-choose-storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Choose Storage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-connect-storage-device" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Connect Storage Device
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-select-source-disk_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Select Source Disk
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-initiate-backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 5: Initiate Backup
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#restoring-from-backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Restoring from Backup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-and-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing and Validation
-    </span>
-  </a>
   
 </li>
       
@@ -4641,71 +4431,67 @@
   
 
 
-<h1 id="clonezilla-backup-guide">Clonezilla: Backup Guide</h1>
-<h2 id="overview">Overview</h2>
-<p>Clonezilla is a versatile tool for disk and partition imaging/cloning, perfect for backing up any disks. This guide covers how to use Clonezilla for backups using both NFS shares and local storage options, ensuring your data's safety and system's rapid recovery in various scenarios.For example, I use clonezilla to clone my Proxmox cluster installation disks.</p>
-<h2 id="pre-requisites">Pre-requisites</h2>
-<ul>
-<li>Clonezilla Live on a bootable USB drive : <a href="https://clonezilla.org/downloads.php">Downlaod link</a></li>
-<li>Configured and accessible NFS server (for NFS share backups)</li>
-<li>Sufficient storage space on your backup destination</li>
-</ul>
-<h2 id="booting-clonezilla">Booting Clonezilla</h2>
+<h1 id="how-to-mount-synology-nfs-share-on-proxmox-backup-server">How to Mount Synology NFS Share on Proxmox Backup Server</h1>
+<p><strong>Synology DSM</strong>: 6.2.4-25556 Update 3, with BTRFS volume (required) [1.2.3.4]<br />
+<strong>Proxmox Backup Server</strong>: 2.1-1 [1.2.3.5]</p>
+<h2 id="on-synology-1234">On Synology [1.2.3.4]:</h2>
 <ol>
-<li>Insert the Clonezilla Live USB into the system.</li>
-<li>Reboot and select the USB drive as the boot device.</li>
-<li>Follow the on-screen instructions to load Clonezilla.</li>
+<li>Create a Shared Folder named <code>xxxx</code> on a BTRFS Volume (in this case, volume1), and give the user <code>admin</code> Read/Write permission.</li>
+<li>In the <strong>NFS Permissions</strong> tab, set:</li>
+<li><strong>Privilege</strong>: Read/Write</li>
+<li><strong>Squash</strong>: No mapping</li>
+<li><strong>Security</strong>: sys</li>
+<li><strong>Enabled Async</strong>: checked</li>
+<li><strong>Allow Connections</strong>: unchecked</li>
+<li><strong>Allow Subfolders</strong>: checked</li>
 </ol>
-<h2 id="backup-using-nfs-share">Backup using NFS Share</h2>
-<h3 id="step-1-select-backup-mode">Step 1: Select Backup Mode</h3>
-<ul>
-<li>Choose "device-image" for disk or partition image backups.</li>
-</ul>
-<h3 id="step-2-storage-selection">Step 2: Storage Selection</h3>
-<ul>
-<li>Select "NFS server" to utilize an NFS share as your backup destination.</li>
-</ul>
-<h3 id="step-3-configure-nfs-share">Step 3: Configure NFS Share</h3>
-<ul>
-<li>Input your NFS server's IP and the shared folder path for storing backups.</li>
-</ul>
-<h3 id="step-4-select-source-disk">Step 4: Select Source Disk</h3>
-<ul>
-<li>Choose the disk within your Proxmox cluster to back up.</li>
-</ul>
-<h3 id="step-5-start-backup">Step 5: Start Backup</h3>
-<ul>
-<li>Follow prompts to initiate the backup process to the NFS share.</li>
-</ul>
-<h2 id="backup-to-local-storage">Backup to Local Storage</h2>
-<h3 id="step-1-backup-mode">Step 1: Backup Mode</h3>
-<ul>
-<li>Opt for "device-image" for creating image backups.</li>
-</ul>
-<h3 id="step-2-choose-storage">Step 2: Choose Storage</h3>
-<ul>
-<li>Select "local_dev" for using local storage as the backup destination.</li>
-</ul>
-<h3 id="step-3-connect-storage-device">Step 3: Connect Storage Device</h3>
-<ul>
-<li>Ensure your external storage device is connected and recognized by Clonezilla.</li>
-</ul>
-<h3 id="step-4-select-source-disk_1">Step 4: Select Source Disk</h3>
-<ul>
-<li>Identify and select the Proxmox cluster disk for backup.</li>
-</ul>
-<h3 id="step-5-initiate-backup">Step 5: Initiate Backup</h3>
-<ul>
-<li>Proceed with on-screen instructions to begin backup to local storage.</li>
-</ul>
-<h2 id="restoring-from-backup">Restoring from Backup</h2>
+<h2 id="on-pbs-1235">On PBS [1.2.3.5]:</h2>
 <ol>
-<li>Boot from the Clonezilla Live USB.</li>
-<li>Follow similar steps to the backup process but choose "restore."</li>
-<li>Select your backup image and follow the on-screen steps to complete restoration.</li>
+<li>
+<p>Create and mount <code>xxxx</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>/mnt/xxxx
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mount<span class="w"> </span><span class="m">1</span>.2.3.4:/volume1/xxxx<span class="w"> </span>/mnt/xxxx
+</code></pre></div>
+</li>
+<li>
+<p>Add a Datastore named <code>xxxx</code> using the <strong>Backing path</strong>: <code>/mnt/xxxx</code></p>
+</li>
+<li>Open/Refresh the Datastore page (you should see <strong>Error 13</strong> on <code>xxxx</code>).</li>
+<li>
+<p>Unmount <code>xxxx</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>umount<span class="w"> </span>/mnt/xxxx
+</code></pre></div>
+</li>
 </ol>
-<h2 id="testing-and-validation">Testing and Validation</h2>
-<p>Ensure to test your Proxmox cluster post-backup or restoration to validate functionality and data integrity.</p>
+<h2 id="back-on-synology">Back on Synology:</h2>
+<ol>
+<li>Open Shared Folder <code>xxxx</code>, go to <strong>NFS Permissions</strong>, and change <strong>Squash</strong> to: Map all users to <code>admin</code>.</li>
+<li>Browse to <code>xxxx</code> and delete the <code>.lock</code> file.</li>
+</ol>
+<h2 id="back-on-pbs">Back on PBS:</h2>
+<ol>
+<li>
+<p>Remount <code>xxxx</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mount<span class="w"> </span><span class="m">1</span>.2.3.4:/volume1/xxxx<span class="w"> </span>/mnt/xxxx
+</code></pre></div>
+</li>
+<li>
+<p>Open/Refresh the Datastore page (Error 13 should clear).</p>
+</li>
+<li>
+<p>Perform a host backup on a Proxmox Node to verify (e.g., backup the <code>/etc</code> folder which is usually small). This assumes you've already connected the Node to PBS (add Cluster Storage PBS Server).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>proxmox-backup-client<span class="w"> </span>backup<span class="w"> </span>nodeABC-etc.pxar:/etc<span class="w"> </span>--repository<span class="w"> </span><span class="m">1</span>.2.3.5:xxxx
+</code></pre></div>
+</li>
+</ol>
+<h2 id="notes">Notes:</h2>
+<p>I suspect this process highlights a bug in PBS datastore creation. It requires <code>backup</code> uid/gid 34:34 to create the <code>.chunks</code> folders but seems to prefer <code>root</code> after creation (for the UI and client backups). It wasn't necessary to create a <code>backup</code> user on Synology; that just led to uid/gid headaches.</p>
+<h3 id="special-thanks">Special thanks</h3>
+<div class="grid cards">
+<ul>
+<li><a href="https://forum.proxmox.com/members/grantph.148121/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75"/></svg></span> <strong>@grantph</strong>  Running Llama 3 Model with NVIDIA GPU</a></li>
+</ul>
+</div>
 
 
 
