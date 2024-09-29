@@ -3,7 +3,7 @@
 **Synology DSM**: 6.2.4-25556 Update 3, with BTRFS volume (required) [1.2.3.4]  
 **Proxmox Backup Server**: 2.1-1 [1.2.3.5]
 
-## On Synology [1.2.3.4]:
+## On Synology
 
 1. Create a Shared Folder named `xxxx` on a BTRFS Volume (in this case, volume1), and give the user `admin` Read/Write permission.
 2. In the **NFS Permissions** tab, set:
@@ -14,7 +14,7 @@
    - **Allow Connections**: unchecked
    - **Allow Subfolders**: checked
 
-## On PBS [1.2.3.5]:
+## On PBS 
 
 3. Create and mount `xxxx`:
 
@@ -31,12 +31,12 @@
     umount /mnt/xxxx
     ```
 
-## Back on Synology:
+## Back on Synology
 
 7. Open Shared Folder `xxxx`, go to **NFS Permissions**, and change **Squash** to: Map all users to `admin`.
 8. Browse to `xxxx` and delete the `.lock` file.
 
-## Back on PBS:
+## Back on PBS
 
 9. Remount `xxxx`:
 
@@ -51,9 +51,10 @@
     proxmox-backup-client backup nodeABC-etc.pxar:/etc --repository 1.2.3.5:xxxx
     ```
 
-## Notes:
+## Notes
 
-I suspect this process highlights a bug in PBS datastore creation. It requires `backup` uid/gid 34:34 to create the `.chunks` folders but seems to prefer `root` after creation (for the UI and client backups). It wasn't necessary to create a `backup` user on Synology; that just led to uid/gid headaches.
+@grantph:<br>
+"I suspect this process highlights a bug in PBS datastore creation. It requires `backup` uid/gid 34:34 to create the `.chunks` folders but seems to prefer `root` after creation (for the UI and client backups). It wasn't necessary to create a `backup` user on Synology; that just led to uid/gid headaches."
 
 ### Special thanks
 
