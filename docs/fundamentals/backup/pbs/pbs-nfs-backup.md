@@ -1,71 +1,62 @@
-# Clonezilla: Backup Guide
+# How to Mount Synology NFS Share on Proxmox Backup Server
 
-## Overview
+**Synology DSM**: 6.2.4-25556 Update 3, with BTRFS volume (required) [1.2.3.4]  
+**Proxmox Backup Server**: 2.1-1 [1.2.3.5]
 
-Clonezilla is a versatile tool for disk and partition imaging/cloning, perfect for backing up any disks. This guide covers how to use Clonezilla for backups using both NFS shares and local storage options, ensuring your data's safety and system's rapid recovery in various scenarios.For example, I use clonezilla to clone my Proxmox cluster installation disks.
+## On Synology [1.2.3.4]:
 
-## Pre-requisites
+1. Create a Shared Folder named `xxxx` on a BTRFS Volume (in this case, volume1), and give the user `admin` Read/Write permission.
+2. In the **NFS Permissions** tab, set:
+   - **Privilege**: Read/Write
+   - **Squash**: No mapping
+   - **Security**: sys
+   - **Enabled Async**: checked
+   - **Allow Connections**: unchecked
+   - **Allow Subfolders**: checked
 
-- Clonezilla Live on a bootable USB drive : [Downlaod link](https://clonezilla.org/downloads.php)
-- Configured and accessible NFS server (for NFS share backups)
-- Sufficient storage space on your backup destination
+## On PBS [1.2.3.5]:
 
-## Booting Clonezilla
+3. Create and mount `xxxx`:
 
-1. Insert the Clonezilla Live USB into the system.
-2. Reboot and select the USB drive as the boot device.
-3. Follow the on-screen instructions to load Clonezilla.
+    ```bash
+    mkdir /mnt/xxxx
+    mount 1.2.3.4:/volume1/xxxx /mnt/xxxx
+    ```
 
-## Backup using NFS Share
+4. Add a Datastore named `xxxx` using the **Backing path**: `/mnt/xxxx`
+5. Open/Refresh the Datastore page (you should see **Error 13** on `xxxx`).
+6. Unmount `xxxx`:
 
-### Step 1: Select Backup Mode
+    ```bash
+    umount /mnt/xxxx
+    ```
 
-- Choose "device-image" for disk or partition image backups.
+## Back on Synology:
 
-### Step 2: Storage Selection
+7. Open Shared Folder `xxxx`, go to **NFS Permissions**, and change **Squash** to: Map all users to `admin`.
+8. Browse to `xxxx` and delete the `.lock` file.
 
-- Select "NFS server" to utilize an NFS share as your backup destination.
+## Back on PBS:
 
-### Step 3: Configure NFS Share
+9. Remount `xxxx`:
 
-- Input your NFS server's IP and the shared folder path for storing backups.
+    ```bash
+    mount 1.2.3.4:/volume1/xxxx /mnt/xxxx
+    ```
 
-### Step 4: Select Source Disk
+10. Open/Refresh the Datastore page (Error 13 should clear).
+11. Perform a host backup on a Proxmox Node to verify (e.g., backup the `/etc` folder which is usually small). This assumes you've already connected the Node to PBS (add Cluster Storage PBS Server).
 
-- Choose the disk within your Proxmox cluster to back up.
+    ```bash
+    proxmox-backup-client backup nodeABC-etc.pxar:/etc --repository 1.2.3.5:xxxx
+    ```
 
-### Step 5: Start Backup
+## Notes:
 
-- Follow prompts to initiate the backup process to the NFS share.
+I suspect this process highlights a bug in PBS datastore creation. It requires `backup` uid/gid 34:34 to create the `.chunks` folders but seems to prefer `root` after creation (for the UI and client backups). It wasn't necessary to create a `backup` user on Synology; that just led to uid/gid headaches.
 
-## Backup to Local Storage
+### Special thanks
 
-### Step 1: Backup Mode
-
-- Opt for "device-image" for creating image backups.
-
-### Step 2: Choose Storage
-
-- Select "local_dev" for using local storage as the backup destination.
-
-### Step 3: Connect Storage Device
-
-- Ensure your external storage device is connected and recognized by Clonezilla.
-
-### Step 4: Select Source Disk
-
-- Identify and select the Proxmox cluster disk for backup.
-
-### Step 5: Initiate Backup
-
-- Proceed with on-screen instructions to begin backup to local storage.
-
-## Restoring from Backup
-
-1. Boot from the Clonezilla Live USB.
-2. Follow similar steps to the backup process but choose "restore."
-3. Select your backup image and follow the on-screen steps to complete restoration.
-
-## Testing and Validation
-
-Ensure to test your Proxmox cluster post-backup or restoration to validate functionality and data integrity.
+<div class="grid cards" markdown>
+- <a href="https://forum.proxmox.com/members/grantph.148121/">:octicons-mark-github-24: __@grantph__  Running Llama 3 Model with NVIDIA GPU</a>
+</div>
