@@ -2380,18 +2380,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-synology-1234" class="md-nav__link">
+  <a href="#on-synology" class="md-nav__link">
     <span class="md-ellipsis">
-      On Synology [1.2.3.4]:
+      On Synology
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-pbs-1235" class="md-nav__link">
+  <a href="#on-pbs" class="md-nav__link">
     <span class="md-ellipsis">
-      On PBS [1.2.3.5]:
+      On PBS
     </span>
   </a>
   
@@ -2400,7 +2400,7 @@
         <li class="md-nav__item">
   <a href="#back-on-synology" class="md-nav__link">
     <span class="md-ellipsis">
-      Back on Synology:
+      Back on Synology
     </span>
   </a>
   
@@ -2409,7 +2409,7 @@
         <li class="md-nav__item">
   <a href="#back-on-pbs" class="md-nav__link">
     <span class="md-ellipsis">
-      Back on PBS:
+      Back on PBS
     </span>
   </a>
   
@@ -2418,11 +2418,11 @@
         <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes:
+      Notes
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Notes:">
+    <nav class="md-nav" aria-label="Notes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4354,18 +4354,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-synology-1234" class="md-nav__link">
+  <a href="#on-synology" class="md-nav__link">
     <span class="md-ellipsis">
-      On Synology [1.2.3.4]:
+      On Synology
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-pbs-1235" class="md-nav__link">
+  <a href="#on-pbs" class="md-nav__link">
     <span class="md-ellipsis">
-      On PBS [1.2.3.5]:
+      On PBS
     </span>
   </a>
   
@@ -4374,7 +4374,7 @@
         <li class="md-nav__item">
   <a href="#back-on-synology" class="md-nav__link">
     <span class="md-ellipsis">
-      Back on Synology:
+      Back on Synology
     </span>
   </a>
   
@@ -4383,7 +4383,7 @@
         <li class="md-nav__item">
   <a href="#back-on-pbs" class="md-nav__link">
     <span class="md-ellipsis">
-      Back on PBS:
+      Back on PBS
     </span>
   </a>
   
@@ -4392,11 +4392,11 @@
         <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes:
+      Notes
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Notes:">
+    <nav class="md-nav" aria-label="Notes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4434,7 +4434,7 @@
 <h1 id="how-to-mount-synology-nfs-share-on-proxmox-backup-server">How to Mount Synology NFS Share on Proxmox Backup Server</h1>
 <p><strong>Synology DSM</strong>: 6.2.4-25556 Update 3, with BTRFS volume (required) [1.2.3.4]<br />
 <strong>Proxmox Backup Server</strong>: 2.1-1 [1.2.3.5]</p>
-<h2 id="on-synology-1234">On Synology [1.2.3.4]:</h2>
+<h2 id="on-synology">On Synology</h2>
 <ol>
 <li>Create a Shared Folder named <code>xxxx</code> on a BTRFS Volume (in this case, volume1), and give the user <code>admin</code> Read/Write permission.</li>
 <li>In the <strong>NFS Permissions</strong> tab, set:</li>
@@ -4445,7 +4445,7 @@
 <li><strong>Allow Connections</strong>: unchecked</li>
 <li><strong>Allow Subfolders</strong>: checked</li>
 </ol>
-<h2 id="on-pbs-1235">On PBS [1.2.3.5]:</h2>
+<h2 id="on-pbs">On PBS</h2>
 <ol>
 <li>
 <p>Create and mount <code>xxxx</code>:</p>
@@ -4463,12 +4463,12 @@
 </code></pre></div>
 </li>
 </ol>
-<h2 id="back-on-synology">Back on Synology:</h2>
+<h2 id="back-on-synology">Back on Synology</h2>
 <ol>
 <li>Open Shared Folder <code>xxxx</code>, go to <strong>NFS Permissions</strong>, and change <strong>Squash</strong> to: Map all users to <code>admin</code>.</li>
 <li>Browse to <code>xxxx</code> and delete the <code>.lock</code> file.</li>
 </ol>
-<h2 id="back-on-pbs">Back on PBS:</h2>
+<h2 id="back-on-pbs">Back on PBS</h2>
 <ol>
 <li>
 <p>Remount <code>xxxx</code>:</p>
@@ -4484,8 +4484,9 @@
 </code></pre></div>
 </li>
 </ol>
-<h2 id="notes">Notes:</h2>
-<p>I suspect this process highlights a bug in PBS datastore creation. It requires <code>backup</code> uid/gid 34:34 to create the <code>.chunks</code> folders but seems to prefer <code>root</code> after creation (for the UI and client backups). It wasn't necessary to create a <code>backup</code> user on Synology; that just led to uid/gid headaches.</p>
+<h2 id="notes">Notes</h2>
+<p>@grantph:<br>
+"I suspect this process highlights a bug in PBS datastore creation. It requires <code>backup</code> uid/gid 34:34 to create the <code>.chunks</code> folders but seems to prefer <code>root</code> after creation (for the UI and client backups). It wasn't necessary to create a <code>backup</code> user on Synology; that just led to uid/gid headaches."</p>
 <h3 id="special-thanks">Special thanks</h3>
 <div class="grid cards">
 <ul>
