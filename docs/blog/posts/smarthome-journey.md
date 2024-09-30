@@ -13,7 +13,7 @@ slug: smarthome-journey
 ---
 
 
-# Automating My Smart Home Journey with Alexa, Home Assistant, and More
+# Automating My Smart Home Journey
 
 
 <figure markdown="span">
