@@ -7,6 +7,7 @@ categories:
 authors:
   - robertmelcher
 comments: true
+pin: true
 ---
 
 # Deploying a Kubernetes-Based Media Server: A Comprehensive Guide
