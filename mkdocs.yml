@@ -249,7 +249,7 @@ extra:
   home_button1_blurb: |
     This joker navigates to the shadow wizard armory located in "/Folder1/index.md"
 
-  home_button2_name: Resources
+  home_button2_name: Notebook
   home_button2_url: /blog
   home_button2_theme: md-button
   home_button2_icon: gear
