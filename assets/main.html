@@ -2,11 +2,11 @@
 
 {% block htmltitle %}
   {% if page.meta and page.meta.title %}
-    <title>{{ page.meta.title }} - Merox </title>
+    <title>{{ page.meta.title }} - docs.merox.dev </title>
   {% elif page.title and not page.is_homepage %}
-    <title>{{ page.title | striptags }} - Merox </title>
+    <title>{{ page.title | striptags }} - docs.merox.dev </title>
   {% else %}
-    <title>Merox</title>
+    <title>docs.merox.dev</title>
   {% endif %}
 {% endblock %}
 
