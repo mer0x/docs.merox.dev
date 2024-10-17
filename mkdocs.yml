@@ -180,10 +180,6 @@ plugins:
   - git-committers:
       repository: mer0x/merox.cloud
       branch: master
-  - blog:
-      blog_dir: blog
-      archive: true
-      categories: true
 extra_css:
   - stylesheets/extra.css
 extra:
