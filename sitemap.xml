@@ -9,30 +9,6 @@
          <lastmod>2024-10-17</lastmod>
     </url>
     <url>
-         <loc>https://docs.merox.dev/blog/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/2024/03/06/deploying-a-kubernetes-based-media-server-a-comprehensive-guide/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/2024/08/16/setting-up-your-own-ai/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/2024/07/13/setting-up-dell-r720-server-in-the-home-lab/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/2024/09/30/smarthome-journey/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/2024/03/27/tailscale-site-to-site-pfsense---linux/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
          <loc>https://docs.merox.dev/fundamentals/intro/</loc>
          <lastmod>2024-10-17</lastmod>
     </url>
@@ -330,38 +306,6 @@
     </url>
     <url>
          <loc>https://docs.merox.dev/operations/virtualization/VMs/proxmox/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/archive/2024/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/category/smarthome/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/category/server/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/category/configuration/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/category/ai/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/category/installation/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/category/networking/</loc>
-         <lastmod>2024-10-17</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/blog/category/kubernetes/</loc>
          <lastmod>2024-10-17</lastmod>
     </url>
 </urlset>
