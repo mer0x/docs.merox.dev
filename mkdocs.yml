@@ -58,7 +58,6 @@ theme:
 
 
 nav:
-  - Home: index.md
   - Homelab:
     - Infrastructure: homelab/infrastructure.md
     - Connectivity: homelab/connectivity.md
@@ -165,9 +164,8 @@ nav:
 #        - Basics: operations/monitoring/prometheus/basics.md
 #      - Alertmanager:
 #        - Basics: operations/monitoring/alertmanager/basics.md
-  - About: about.md
-  - Blog:
-      - blog/index.md
+  - About: https://merox.dev/about
+  - Blog: https://merox.dev
 
 
 
