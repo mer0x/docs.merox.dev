@@ -31,7 +31,7 @@ theme:
 
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: blue
+      primary: indigo
       accent: teal
       toggle:
         icon: material/link
@@ -39,7 +39,7 @@ theme:
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: blue
+      primary: indigo
       accent: teal
       scheme: default 
       toggle:
@@ -49,7 +49,7 @@ theme:
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: blue
+      primary: indigo
       accent: teal
       scheme: slate
       toggle:
@@ -237,7 +237,7 @@ extra:
 
   # Custom Homepage Button(s)
   home_button1_name: Get Started
-  home_button1_url: homelab/infrastructure/
+  home_button1_url: fundamentals/intro/
   home_button1_theme: md-button md-button--primary
   home_button1_icon: people
   home_button1_blurb: |
