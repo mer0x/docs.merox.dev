@@ -227,7 +227,7 @@ extra:
 
 
   # Custom Homepage Elements
-  home_cover_image: images/meroxdc.webp
+  home_cover_image: images/docs.jpg
   home_tagline: docs.merox.dev
   home_description: |
    Here you will find all documentation related to www.merox.dev
