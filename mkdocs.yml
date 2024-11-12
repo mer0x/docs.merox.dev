@@ -162,7 +162,7 @@ nav:
         - Prometheus w/ Alertmanager: operations/monitoring/grafana/prometheus-alertmanager.md
 
     - Storage:
-      - SMB: operations/storage/SMB/samba-sssd-winbind.md
+      - SMB SSSD and Winbind: operations/storage/SMB/samba-sssd-winbind.md
 
 #      - Prometheus:
 #        - Basics: operations/monitoring/prometheus/basics.md
