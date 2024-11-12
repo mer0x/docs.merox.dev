@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://docs.merox.dev/operations/containerization/k3s/upgrade/">
+        <link rel="canonical" href="https://docs.merox.dev/operations/storage/SMB/samba-sssd-winbind/">
       
       
-        <link rel="prev" href="../installation/">
+        <link rel="prev" href="../../../monitoring/grafana/prometheus-alertmanager/">
       
-      
-        <link rel="next" href="../manifests/dashboard/">
       
       
       <link rel="icon" href="../../../../images/merox.png">
@@ -22,7 +20,7 @@
     
     
   
-    <title>Upgrade | Docs - Merox </title>
+    <title>SMB | Docs - Merox </title>
   
 
     
@@ -69,11 +67,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Upgrade - docs.merox.dev" >
+        <meta  property="og:title"  content="SMB - docs.merox.dev" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/operations/containerization/k3s/upgrade.png" >
+        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/operations/storage/SMB/samba-sssd-winbind.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -81,15 +79,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://docs.merox.dev/operations/containerization/k3s/upgrade/" >
+        <meta  property="og:url"  content="https://docs.merox.dev/operations/storage/SMB/samba-sssd-winbind/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Upgrade - docs.merox.dev" >
+        <meta  name="twitter:title"  content="SMB - docs.merox.dev" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/operations/containerization/k3s/upgrade.png" >
+        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/operations/storage/SMB/samba-sssd-winbind.png" >
       
     
     
@@ -124,7 +122,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-upgrade-k3s-cluster" class="md-skip">
+        <a href="#integrating-kerberized-samba-with-sssd-and-winbind-passwordless-access-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -176,7 +174,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Upgrade
+              SMB
             
           </span>
         </div>
@@ -2524,8 +2522,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2550,11 +2546,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
@@ -2568,7 +2564,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Containerization
@@ -2582,7 +2578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/" class="md-nav__link">
+      <a href="../../../containerization/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2600,10 +2596,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -2621,11 +2615,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
@@ -2639,7 +2633,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3_2">
             <span class="md-nav__icon md-icon"></span>
             K3S
@@ -2653,7 +2647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+      <a href="../../../containerization/k3s/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2671,28 +2665,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Upgrade
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../containerization/k3s/upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2701,69 +2677,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-upgrade-k3s-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to upgrade K3S cluster
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-upgrade-rancher" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to upgrade Rancher
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-upgrade-longhorn" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to upgrade Longhorn
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-upgrade-metallb" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to upgrade Metallb
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-upgrade-kubevip" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to upgrade KubeVIP
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2842,7 +2755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/dashboard/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2863,7 +2776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/loki/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2884,7 +2797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/wikijs/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/wikijs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2905,7 +2818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/netdata/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/netdata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2926,7 +2839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/wordpress/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2947,7 +2860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/argocd/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2968,7 +2881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/traefik/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/traefik/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2989,7 +2902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/expose-service/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/expose-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3010,7 +2923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/cert-manager/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/cert-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3031,7 +2944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/monitor-stack/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3052,7 +2965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/media-stack/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3073,7 +2986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manifests/nfs-share/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/nfs-share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3154,7 +3067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LXCs/proxmox/" class="md-nav__link">
+      <a href="../../../containerization/LXCs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3281,7 +3194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/docker-compose/monitoring-stack/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3302,7 +3215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/docker-compose/media-stack/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3323,7 +3236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/docker-compose/wordpress/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3344,7 +3257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/docker-compose/uptime-kuma/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3365,7 +3278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/docker-compose/influxdb/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/influxdb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3386,7 +3299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/docker-compose/cloudflare/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3933,6 +3846,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3951,11 +3866,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
         
           
           <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
@@ -3969,7 +3884,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             Storage
@@ -3980,10 +3895,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../storage/SMB/samba-sssd-winbind/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SMB
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -3992,6 +3927,149 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-necessary-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Install Necessary Packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-join-the-machine-to-the-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Join the Machine to the Domain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configure-system-files-for-the-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Configure System Files for the Domain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Configure System Files for the Domain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etckrb5conf" class="md-nav__link">
+    <span class="md-ellipsis">
+      /etc/krb5.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcnsswitchconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      /etc/nsswitch.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcsmbconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      /etc/smb.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcsssdsssdconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      /etc/sssd/sssd.conf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clear-caches-and-restart-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Clear Caches and Restart Services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-test-authentication-and-kerberos-ticketing" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Test Authentication and Kerberos Ticketing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-check-sssd-winbind-id-mapping-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Check SSSD-Winbind ID Mapping Plugin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-test-the-samba-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Test the Samba Share
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4069,6 +4147,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -4077,45 +4157,123 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-upgrade-k3s-cluster" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      How to upgrade K3S cluster
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-upgrade-rancher" class="md-nav__link">
+  <a href="#1-install-necessary-packages" class="md-nav__link">
     <span class="md-ellipsis">
-      How to upgrade Rancher
+      1. Install Necessary Packages
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-upgrade-longhorn" class="md-nav__link">
+  <a href="#2-join-the-machine-to-the-domain" class="md-nav__link">
     <span class="md-ellipsis">
-      How to upgrade Longhorn
+      2. Join the Machine to the Domain
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-upgrade-metallb" class="md-nav__link">
+  <a href="#3-configure-system-files-for-the-domain" class="md-nav__link">
     <span class="md-ellipsis">
-      How to upgrade Metallb
+      3. Configure System Files for the Domain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Configure System Files for the Domain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etckrb5conf" class="md-nav__link">
+    <span class="md-ellipsis">
+      /etc/krb5.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcnsswitchconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      /etc/nsswitch.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcsmbconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      /etc/smb.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcsssdsssdconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      /etc/sssd/sssd.conf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clear-caches-and-restart-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Clear Caches and Restart Services
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-upgrade-kubevip" class="md-nav__link">
+  <a href="#5-test-authentication-and-kerberos-ticketing" class="md-nav__link">
     <span class="md-ellipsis">
-      How to upgrade KubeVIP
+      5. Test Authentication and Kerberos Ticketing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-check-sssd-winbind-id-mapping-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Check SSSD-Winbind ID Mapping Plugin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-test-the-samba-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Test the Samba Share
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
     </span>
   </a>
   
@@ -4139,110 +4297,172 @@
   
 
 
-  <h1>Upgrade</h1>
-
-<h3 id="how-to-upgrade-k3s-cluster">How to upgrade K3S cluster</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#Upgrade master1</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">INSTALL_K3S_CHANNEL</span><span class="o">=</span>latest<span class="w"> </span>sh<span class="w"> </span>-s<span class="w"> </span>-<span class="w"> </span>server<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span>--cluster-init<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span>--tls-san<span class="w"> </span>x.x.x.x.88<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span>--disable<span class="w"> </span>traefik<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span>--disable<span class="w"> </span>servicelb<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span>--flannel-iface<span class="w"> </span>eth0<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span>--node-ip<span class="w"> </span>x.x.x.x.81<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span>--node-taint<span class="w"> </span><span class="s2">&quot;node-role.kubernetes.io/master=true:NoSchedule&quot;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#Upgrade master2</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">INSTALL_K3S_CHANNEL</span><span class="o">=</span>latest<span class="w"> </span>sh<span class="w"> </span>-s<span class="w"> </span>-<span class="w"> </span>server<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span>--server<span class="w"> </span>https://x.x.x.x.81:6443<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span>--disable<span class="w"> </span>traefik<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span>--disable<span class="w"> </span>servicelb<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span>--flannel-iface<span class="w"> </span>eth0<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span>--node-ip<span class="w"> </span>x.x.x.x.82<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span>--node-taint<span class="w"> </span><span class="s2">&quot;node-role.kubernetes.io/master=true:NoSchedule&quot;</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="c1">#Upgrade master3</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">INSTALL_K3S_CHANNEL</span><span class="o">=</span>latest<span class="w"> </span>sh<span class="w"> </span>-s<span class="w"> </span>-<span class="w"> </span>server<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">    </span>--server<span class="w"> </span>https://x.x.x.x.81:6443<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span>--disable<span class="w"> </span>traefik<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">    </span>--disable<span class="w"> </span>servicelb<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span>--flannel-iface<span class="w"> </span>eth0<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">    </span>--node-ip<span class="w"> </span>x.x.x.x.83<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">    </span>--node-taint<span class="w"> </span><span class="s2">&quot;node-role.kubernetes.io/master=true:NoSchedule&quot;</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="c1">#Upgrade workers</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">INSTALL_K3S_CHANNEL</span><span class="o">=</span>latest<span class="w"> </span><span class="nv">K3S_URL</span><span class="o">=</span>https://x.x.x.x.81:6443<span class="w"> </span><span class="nv">K3S_TOKEN</span><span class="o">=</span>/var/lib/rancher/k3s/server/node-token<span class="w"> </span>sh<span class="w"> </span>-s<span class="w"> </span>-<span class="w"> </span>agent<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">    </span>--node-label<span class="w"> </span><span class="s1">&#39;longhorn=true&#39;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">    </span>--node-label<span class="w"> </span><span class="s1">&#39;worker=true&#39;</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="how-to-upgrade-rancher">How to upgrade Rancher</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>rancher<span class="w"> </span>rancher-latest/rancher<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w"> </span>--namespace<span class="w"> </span>cattle-system<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w"> </span>--set<span class="w"> </span><span class="nv">hostname</span><span class="o">=</span>rancher.my.org<span class="w"> </span><span class="se">\</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="how-to-upgrade-longhorn">How to upgrade Longhorn</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/longhorn/longhorn/v1.5.3/deploy/longhorn.yaml
-</code></pre></div></td></tr></table></div>
-<h3 id="how-to-upgrade-metallb">How to upgrade Metallb</h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Change version on the delete command to the version you are currently running (e.g., v0.13.11)
-Change version on the apply to the new version (e.g., v0.13.12)
-Ensure your Lbrange is still the one you want (check ipAddressPool.yaml)</p>
-</div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/metallb/metallb/v0.13.11/config/manifests/metallb-native.yaml
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests/metallb-native.yaml
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>ipAddressPool.yaml
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/mer0x/merox.cloud/k3s/K3S/cluster-deployment/l2Advertisement.yaml
-</code></pre></div></td></tr></table></div>
-<h3 id="how-to-upgrade-kubevip">How to upgrade KubeVIP</h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Delete the daemonset in Rancher or use kubectl delete
-Redeploy the daemonset with updated values (check kube-vip file)</p>
-</div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>kube-vip
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>kube-vip
-</code></pre></div></td></tr></table></div>
+<h1 id="integrating-kerberized-samba-with-sssd-and-winbind-passwordless-access-setup">Integrating Kerberized Samba with SSSD and Winbind: Passwordless Access Setup</h1>
+<h2 id="overview">Overview</h2>
+<p>This guide covers the integration of SMB, Winbind, and SSSD with Kerberos for passwordless access to Samba shares. This is ideal for environments requiring centralized authentication with Active Directory.</p>
+<hr />
+<h2 id="1-install-necessary-packages">1. Install Necessary Packages</h2>
+<p>Ensure all required packages are installed. Here’s a sample command for installing them:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>yum<span class="w"> </span>install<span class="w"> </span>realmd<span class="w"> </span>oddjob<span class="w"> </span>oddjob-mkhomedir<span class="w"> </span>sssd<span class="w"> </span>adcli<span class="w"> </span>samba<span class="w"> </span>samba-winbind<span class="w"> </span>krb5-workstation
+</code></pre></div></p>
+<hr />
+<h2 id="2-join-the-machine-to-the-domain">2. Join the Machine to the Domain</h2>
+<p>To join the machine to the Active Directory domain, use the following command:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>realm<span class="w"> </span>join<span class="w"> </span>&lt;domain&gt;<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;<span class="w"> </span>--client-software<span class="o">=</span>sssd<span class="w"> </span>--membership-software<span class="o">=</span>samba
+</code></pre></div></p>
+<hr />
+<h2 id="3-configure-system-files-for-the-domain">3. Configure System Files for the Domain</h2>
+<p>Edit the following configuration files to match your domain settings.</p>
+<h3 id="etckrb5conf"><code>/etc/krb5.conf</code></h3>
+<p>This file configures Kerberos, setting defaults and specifying realm details.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>includedir  /etc/krb5.conf.d
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>[libdefaults]
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    default_realm = EXAMPLE.COM
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    default_ccache_name = FILE:/tmp/krb5cc_%{uid}
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    dns_lookup_realm = true
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    dns_lookup_kdc = true
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    ticket_lifetime = 24h
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    renew_lifetime = 7d
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    forwardable = true
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>[realms]
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    EXAMPLE.COM = {
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        kdc = serverdc1.example.com
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        admin_server = serverdc1.example.com
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    }
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>[logging]
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    kdc = FILE:/var/log/krb5/krb5kdc.log
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    admin_server = FILE:/var/log/krb5/kadmind.log
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    default = SYSLOG:NOTICE:DAEMON
+</code></pre></div>
+<hr />
+<h3 id="etcnsswitchconf"><code>/etc/nsswitch.conf</code></h3>
+<p>Controls lookup order for services like user information. Configure as follows for SSSD:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>passwd:     files sss
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>group:      files sss
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>shadow:     files sss
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>hosts:      files dns
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>netgroup:   files sss
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>protocols:  files usrfiles
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>services:   files sss
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>automount:  files nis
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>bootparams: files
+</code></pre></div></p>
+<hr />
+<h3 id="etcsmbconf"><code>/etc/smb.conf</code></h3>
+<p>Defines global settings for Samba and permissions for shared directories.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[global]
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    workgroup = example
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    realm = EXAMPLE.COM
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    security = ads
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    kerberos method = secrets and keytab
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    idmap config * : backend = tdb
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    idmap config * : range = 10000-199999
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    idmap config EXAMPLE.COM : backend = sss
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    idmap config EXAMPLE.COM : range = 200000-2147483647
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    follow symlinks = yes
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    wide links = yes
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    unix extensions = no
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    ad_update_samba_machine_account_password = True
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    log level = 3
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>[share_point]
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    path = /share_point
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    browsable = no
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    public = no
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    guest ok = no
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    writeable = yes
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    create mask = 0770
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    force create mode = 0770
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    directory mask = 0770
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>    force directory mode = 0770
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    force group = ad.group
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>    dfree command = /usr/local/samba/bin/dfree
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    valid users = @ad.group@example.com
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    oplocks = False
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    level2 oplocks = False
+</code></pre></div>
+<hr />
+<h3 id="etcsssdsssdconf"><code>/etc/sssd/sssd.conf</code></h3>
+<p>Configures SSSD to integrate with Active Directory and define access controls.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[sssd]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>domains = example.com
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>domain_resolution_order = example.com
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>config_file_version = 2
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>services = nss, pam
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>[nss]
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>filter_groups = root
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>filter_users = root, nobody, pbsdata
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>debug_level = 2
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>[domain/example.com]
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>default_shell = /bin/bash
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>krb5_store_password_if_offline = True
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>cache_credentials = True
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>krb5_realm = EXAMPLE.COM
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>realmd_tags = manages-system joined-with-adcli
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>id_provider = ad
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>fallback_homedir = /home/%u
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>ad_domain = example.com
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>use_fully_qualified_names = False
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>full_name_format = %1$s
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>ldap_id_mapping = True
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>ignore_group_members = True
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>access_provider = simple
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>enumerate = False
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>simple_allow_groups = gr.ad1@example.com, gr.ad2@example.com
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>simple_allow_users = user1ad@example.com, user2ad@example.com
+</code></pre></div>
+<hr />
+<h2 id="4-clear-caches-and-restart-services">4. Clear Caches and Restart Services</h2>
+<p>Use the following script to clear caches and restart the necessary services. This can help after reboots if mount points are not accessible.</p>
+<p>Create the file <code>clearcaches.sh</code> and add the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>smb<span class="w"> </span>winbind
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>rm<span class="w"> </span>-f<span class="w"> </span>/var/lib/samba/*.tdb
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>rm<span class="w"> </span>-f<span class="w"> </span>/var/cache/samba/*.tdb
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>net<span class="w"> </span>cache<span class="w"> </span>flush
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>sss_cache<span class="w"> </span>-E
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>sssd
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/sss/db/*
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>sssd<span class="w"> </span>smb<span class="w"> </span>winbind
+</code></pre></div></p>
+<p>Run the script as needed:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./clearcaches.sh
+</code></pre></div></p>
+<p>If you still have problem accessing samba mount points from client, you can also try to execute <em>realm leave</em> and </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>realm<span class="w"> </span>join<span class="w"> </span>&lt;domain&gt;<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;<span class="w"> </span>--client-software<span class="o">=</span>sssd<span class="w"> </span>--membership-software<span class="o">=</span>samba
+</code></pre></div>
+if you still have problem accessing samba mount points from client.</p>
+<hr />
+<h2 id="5-test-authentication-and-kerberos-ticketing">5. Test Authentication and Kerberos Ticketing</h2>
+<p>Verify that user authentication and Kerberos ticket creation work as expected:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>id<span class="w"> </span>&lt;username&gt;<span class="w">       </span><span class="c1"># Verifies AD group membership</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>kinit<span class="w"> </span>&lt;username&gt;<span class="w">    </span><span class="c1"># Obtains a Kerberos ticket</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>klist<span class="w">               </span><span class="c1"># Lists the current Kerberos ticket</span>
+</code></pre></div></p>
+<hr />
+<h2 id="6-check-sssd-winbind-id-mapping-plugin">6. Check SSSD-Winbind ID Mapping Plugin</h2>
+<p>Confirm that the SSSD-Winbind ID Mapping Plugin is in use:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>alternatives<span class="w"> </span>--display<span class="w"> </span>cifs-idmap-plugin
+</code></pre></div></p>
+<blockquote>
+<p>This should display that the link points to <code>/usr/lib64/cifs-utils/cifs_idmap_sss.so</code>.</p>
+</blockquote>
+<hr />
+<h2 id="7-test-the-samba-share">7. Test the Samba Share</h2>
+<p>From a Windows client, try mapping the Samba share by accessing it via Windows Explorer:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>\\&lt;hostname&gt;\&lt;smb-share&gt;
+</code></pre></div></p>
+<hr />
+<h2 id="notes">Notes</h2>
+<p>This guide includes specific settings ideal for integrating Samba and SSSD with Kerberos for a passwordless authentication setup. For additional configuration options, refer to the files in <code>./configs</code>.</p>
 
 
 
@@ -4265,7 +4485,7 @@ Redeploy the daemonset with updated values (check kube-vip file)</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 12, 2024</span>
   </span>
 
     
@@ -4275,7 +4495,7 @@ Redeploy the daemonset with updated values (check kube-vip file)</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 12, 2024</span>
   </span>
 
     
@@ -4314,7 +4534,7 @@ Redeploy the daemonset with updated values (check kube-vip file)</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation">
+          <a href="../../../monitoring/grafana/prometheus-alertmanager/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prometheus w/ Alertmanager">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4324,27 +4544,11 @@ Redeploy the daemonset with updated values (check kube-vip file)</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Installation
+                Prometheus w/ Alertmanager
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../manifests/dashboard/" class="md-footer__link md-footer__link--next" aria-label="Next: Homepage">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Homepage
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
