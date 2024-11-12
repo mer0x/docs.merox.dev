@@ -168,7 +168,12 @@ Run the script as needed:
 ./clearcaches.sh
 ```
 
-If you still have problem accessing samba mount points from client, you can also try to execute *realm leave* and 
+If you still have problem accessing samba mount points from client, you can also try to execute:
+
+```bash
+realm leave
+```
+and after the server is no longer in the domain, you can join again:
 
 ```bash
 realm join <domain> -U <username> --client-software=sssd --membership-software=samba
@@ -204,6 +209,3 @@ From a Windows client, try mapping the Samba share by accessing it via Windows E
 ```
 
 ---
-
-## Notes
-This guide includes specific settings ideal for integrating Samba and SSSD with Kerberos for a passwordless authentication setup. For additional configuration options, refer to the files in `./configs`.
