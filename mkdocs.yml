@@ -1,4 +1,4 @@
-site_name: Docs
+site_name: docs.merox.dev
 site_url: https://docs.merox.dev
 repo_url: https://github.com
 repo_name: mer0x/merox.dev
@@ -235,7 +235,7 @@ extra:
 
   # Custom Homepage Elements
   home_cover_image: images/docsmeroxdev.webp
-  home_tagline: docs.merox.dev
+  home_tagline: Merox Docs
   home_description: |
    Here you will find all documentation related to www.merox.dev
 
