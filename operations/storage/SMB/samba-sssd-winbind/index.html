@@ -4057,15 +4057,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4270,15 +4261,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4436,21 +4418,24 @@
 <p>Run the script as needed:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./clearcaches.sh
 </code></pre></div></p>
-<p>If you still have problem accessing samba mount points from client, you can also try to execute <em>realm leave</em> and </p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>realm<span class="w"> </span>join<span class="w"> </span>&lt;domain&gt;<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;<span class="w"> </span>--client-software<span class="o">=</span>sssd<span class="w"> </span>--membership-software<span class="o">=</span>samba
+<p>If you still have problem accessing samba mount points from client, you can also try to execute:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>realm<span class="w"> </span>leave
+</code></pre></div>
+and after the server is no longer in the domain, you can join again:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>realm<span class="w"> </span>join<span class="w"> </span>&lt;domain&gt;<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;<span class="w"> </span>--client-software<span class="o">=</span>sssd<span class="w"> </span>--membership-software<span class="o">=</span>samba
 </code></pre></div>
 if you still have problem accessing samba mount points from client.</p>
 <hr />
 <h2 id="5-test-authentication-and-kerberos-ticketing">5. Test Authentication and Kerberos Ticketing</h2>
 <p>Verify that user authentication and Kerberos ticket creation work as expected:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>id<span class="w"> </span>&lt;username&gt;<span class="w">       </span><span class="c1"># Verifies AD group membership</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>kinit<span class="w"> </span>&lt;username&gt;<span class="w">    </span><span class="c1"># Obtains a Kerberos ticket</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>klist<span class="w">               </span><span class="c1"># Lists the current Kerberos ticket</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>id<span class="w"> </span>&lt;username&gt;<span class="w">       </span><span class="c1"># Verifies AD group membership</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>kinit<span class="w"> </span>&lt;username&gt;<span class="w">    </span><span class="c1"># Obtains a Kerberos ticket</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>klist<span class="w">               </span><span class="c1"># Lists the current Kerberos ticket</span>
 </code></pre></div></p>
 <hr />
 <h2 id="6-check-sssd-winbind-id-mapping-plugin">6. Check SSSD-Winbind ID Mapping Plugin</h2>
 <p>Confirm that the SSSD-Winbind ID Mapping Plugin is in use:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>alternatives<span class="w"> </span>--display<span class="w"> </span>cifs-idmap-plugin
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>alternatives<span class="w"> </span>--display<span class="w"> </span>cifs-idmap-plugin
 </code></pre></div></p>
 <blockquote>
 <p>This should display that the link points to <code>/usr/lib64/cifs-utils/cifs_idmap_sss.so</code>.</p>
@@ -4458,11 +4443,9 @@ if you still have problem accessing samba mount points from client.</p>
 <hr />
 <h2 id="7-test-the-samba-share">7. Test the Samba Share</h2>
 <p>From a Windows client, try mapping the Samba share by accessing it via Windows Explorer:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>\\&lt;hostname&gt;\&lt;smb-share&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>\\&lt;hostname&gt;\&lt;smb-share&gt;
 </code></pre></div></p>
 <hr />
-<h2 id="notes">Notes</h2>
-<p>This guide includes specific settings ideal for integrating Samba and SSSD with Kerberos for a passwordless authentication setup. For additional configuration options, refer to the files in <code>./configs</code>.</p>
 
 
 
