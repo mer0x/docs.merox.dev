@@ -9,7 +9,7 @@ This guide covers the integration of SMB, Winbind, and SSSD with Kerberos for pa
 ## 1. Install Necessary Packages
 Ensure all required packages are installed. Here’s a sample command for installing them:
 ```bash
-yum install realmd oddjob oddjob-mkhomedir sssd adcli samba samba-winbind krb5-workstation
+yum install realmd oddjob oddjob-mkhomedir sss sssd adcli samba samba-winbind krb5 krb5-workstation 
 ```
 
 ---
