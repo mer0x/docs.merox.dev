@@ -22,7 +22,24 @@ realm join <domain> -U <username> --client-software=sssd --membership-software=s
 
 ---
 
-## 3. Configure System Files for the Domain
+
+## 3.Test Domain Join
+
+To verify if your machine is properly joined to the Active Directory domain, you can use the following command:
+
+```bash
+net ads testjoin
+```
+
+This command will check if the system is correctly joined to the domain and if there are any connectivity or authentication issues with the AD server. If the join is successful, you should see a message like:
+
+```shell
+Join is OK
+```
+
+If there are errors, you may need to check DNS configurations or ensure that the Active Directory server is accessible from your network.
+
+## 4. Configure System Files for the Domain
 Edit the following configuration files to match your domain settings.
 
 ### `/etc/krb5.conf`
@@ -146,7 +163,7 @@ simple_allow_users = user1ad@example.com, user2ad@example.com
 
 ---
 
-## 4. Clear Caches and Restart Services
+## 5. Clear Caches and Restart Services
 Use the following script to clear caches and restart the necessary services. This can help after reboots if mount points are not accessible.
 
 Create the file `clearcaches.sh` and add the following:
@@ -183,7 +200,7 @@ if you still have problem accessing samba mount points from client.
 
 ---
 
-## 5. Test Authentication and Kerberos Ticketing
+## 6. Test Authentication and Kerberos Ticketing
 Verify that user authentication and Kerberos ticket creation work as expected:
 ```bash
 id <username>       # Verifies AD group membership
@@ -193,7 +210,7 @@ klist               # Lists the current Kerberos ticket
 
 ---
 
-## 6. Check SSSD-Winbind ID Mapping Plugin
+## 7. Check SSSD-Winbind ID Mapping Plugin
 Confirm that the SSSD-Winbind ID Mapping Plugin is in use:
 ```bash
 alternatives --display cifs-idmap-plugin
@@ -202,7 +219,7 @@ alternatives --display cifs-idmap-plugin
 
 ---
 
-## 7. Test the Samba Share
+## 8. Test the Samba Share
 From a Windows client, try mapping the Samba share by accessing it via Windows Explorer:
 ```plaintext
 \\<hostname>\<smb-share>
