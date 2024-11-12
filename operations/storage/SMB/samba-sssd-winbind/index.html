@@ -3971,13 +3971,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-configure-system-files-for-the-domain" class="md-nav__link">
+  <a href="#3test-domain-join" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Configure System Files for the Domain
+      3.Test Domain Join
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Configure System Files for the Domain">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-system-files-for-the-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configure System Files for the Domain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Configure System Files for the Domain">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4022,36 +4031,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-clear-caches-and-restart-services" class="md-nav__link">
+  <a href="#5-clear-caches-and-restart-services" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Clear Caches and Restart Services
+      5. Clear Caches and Restart Services
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-test-authentication-and-kerberos-ticketing" class="md-nav__link">
+  <a href="#6-test-authentication-and-kerberos-ticketing" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Test Authentication and Kerberos Ticketing
+      6. Test Authentication and Kerberos Ticketing
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-check-sssd-winbind-id-mapping-plugin" class="md-nav__link">
+  <a href="#7-check-sssd-winbind-id-mapping-plugin" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Check SSSD-Winbind ID Mapping Plugin
+      7. Check SSSD-Winbind ID Mapping Plugin
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-test-the-samba-share" class="md-nav__link">
+  <a href="#8-test-the-samba-share" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Test the Samba Share
+      8. Test the Samba Share
     </span>
   </a>
   
@@ -4175,13 +4184,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-configure-system-files-for-the-domain" class="md-nav__link">
+  <a href="#3test-domain-join" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Configure System Files for the Domain
+      3.Test Domain Join
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Configure System Files for the Domain">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-system-files-for-the-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configure System Files for the Domain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Configure System Files for the Domain">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4226,36 +4244,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-clear-caches-and-restart-services" class="md-nav__link">
+  <a href="#5-clear-caches-and-restart-services" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Clear Caches and Restart Services
+      5. Clear Caches and Restart Services
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-test-authentication-and-kerberos-ticketing" class="md-nav__link">
+  <a href="#6-test-authentication-and-kerberos-ticketing" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Test Authentication and Kerberos Ticketing
+      6. Test Authentication and Kerberos Ticketing
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-check-sssd-winbind-id-mapping-plugin" class="md-nav__link">
+  <a href="#7-check-sssd-winbind-id-mapping-plugin" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Check SSSD-Winbind ID Mapping Plugin
+      7. Check SSSD-Winbind ID Mapping Plugin
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-test-the-samba-share" class="md-nav__link">
+  <a href="#8-test-the-samba-share" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Test the Samba Share
+      8. Test the Samba Share
     </span>
   </a>
   
@@ -4293,157 +4311,165 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>realm<span class="w"> </span>join<span class="w"> </span>&lt;domain&gt;<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;<span class="w"> </span>--client-software<span class="o">=</span>sssd<span class="w"> </span>--membership-software<span class="o">=</span>samba
 </code></pre></div></p>
 <hr />
-<h2 id="3-configure-system-files-for-the-domain">3. Configure System Files for the Domain</h2>
+<h2 id="3test-domain-join">3.Test Domain Join</h2>
+<p>To verify if your machine is properly joined to the Active Directory domain, you can use the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>net<span class="w"> </span>ads<span class="w"> </span>testjoin
+</code></pre></div>
+<p>This command will check if the system is correctly joined to the domain and if there are any connectivity or authentication issues with the AD server. If the join is successful, you should see a message like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Join<span class="w"> </span>is<span class="w"> </span>OK
+</code></pre></div>
+<p>If there are errors, you may need to check DNS configurations or ensure that the Active Directory server is accessible from your network.</p>
+<h2 id="4-configure-system-files-for-the-domain">4. Configure System Files for the Domain</h2>
 <p>Edit the following configuration files to match your domain settings.</p>
 <h3 id="etckrb5conf"><code>/etc/krb5.conf</code></h3>
 <p>This file configures Kerberos, setting defaults and specifying realm details.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>includedir  /etc/krb5.conf.d
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>[libdefaults]
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    default_realm = EXAMPLE.COM
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    default_ccache_name = FILE:/tmp/krb5cc_%{uid}
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    dns_lookup_realm = true
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    dns_lookup_kdc = true
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    ticket_lifetime = 24h
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    renew_lifetime = 7d
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    forwardable = true
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>[realms]
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    EXAMPLE.COM = {
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        kdc = serverdc1.example.com
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        admin_server = serverdc1.example.com
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    }
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>[logging]
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    kdc = FILE:/var/log/krb5/krb5kdc.log
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    admin_server = FILE:/var/log/krb5/kadmind.log
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    default = SYSLOG:NOTICE:DAEMON
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>includedir  /etc/krb5.conf.d
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>[libdefaults]
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    default_realm = EXAMPLE.COM
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    default_ccache_name = FILE:/tmp/krb5cc_%{uid}
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    dns_lookup_realm = true
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    dns_lookup_kdc = true
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    ticket_lifetime = 24h
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    renew_lifetime = 7d
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    forwardable = true
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>[realms]
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    EXAMPLE.COM = {
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        kdc = serverdc1.example.com
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        admin_server = serverdc1.example.com
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    }
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>[logging]
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    kdc = FILE:/var/log/krb5/krb5kdc.log
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    admin_server = FILE:/var/log/krb5/kadmind.log
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    default = SYSLOG:NOTICE:DAEMON
 </code></pre></div>
 <hr />
 <h3 id="etcnsswitchconf"><code>/etc/nsswitch.conf</code></h3>
 <p>Controls lookup order for services like user information. Configure as follows for SSSD:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>passwd:     files sss
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>group:      files sss
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>shadow:     files sss
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>hosts:      files dns
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>netgroup:   files sss
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>protocols:  files usrfiles
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>services:   files sss
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>automount:  files nis
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>bootparams: files
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>passwd:     files sss
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>group:      files sss
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>shadow:     files sss
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>hosts:      files dns
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>netgroup:   files sss
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>protocols:  files usrfiles
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>services:   files sss
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>automount:  files nis
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>bootparams: files
 </code></pre></div></p>
 <hr />
 <h3 id="etcsmbconf"><code>/etc/smb.conf</code></h3>
 <p>Defines global settings for Samba and permissions for shared directories.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[global]
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    workgroup = example
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    realm = EXAMPLE.COM
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    security = ads
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    kerberos method = secrets and keytab
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    idmap config * : backend = tdb
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    idmap config * : range = 10000-199999
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    idmap config EXAMPLE.COM : backend = sss
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    idmap config EXAMPLE.COM : range = 200000-2147483647
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    follow symlinks = yes
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    wide links = yes
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    unix extensions = no
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    ad_update_samba_machine_account_password = True
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    log level = 3
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>[share_point]
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    path = /share_point
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    browsable = no
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    public = no
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    guest ok = no
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    writeable = yes
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    create mask = 0770
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    force create mode = 0770
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    directory mask = 0770
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>    force directory mode = 0770
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    force group = ad.group
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>    dfree command = /usr/local/samba/bin/dfree
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    valid users = @ad.group@example.com
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    oplocks = False
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    level2 oplocks = False
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[global]
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    workgroup = example
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    realm = EXAMPLE.COM
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    security = ads
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    kerberos method = secrets and keytab
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    idmap config * : backend = tdb
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    idmap config * : range = 10000-199999
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    idmap config EXAMPLE.COM : backend = sss
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    idmap config EXAMPLE.COM : range = 200000-2147483647
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    follow symlinks = yes
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    wide links = yes
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    unix extensions = no
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    ad_update_samba_machine_account_password = True
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    log level = 3
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>[share_point]
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    path = /share_point
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    browsable = no
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    public = no
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>    guest ok = no
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>    writeable = yes
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    create mask = 0770
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    force create mode = 0770
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    directory mask = 0770
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    force directory mode = 0770
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    force group = ad.group
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>    dfree command = /usr/local/samba/bin/dfree
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>    valid users = @ad.group@example.com
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>    oplocks = False
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>    level2 oplocks = False
 </code></pre></div>
 <hr />
 <h3 id="etcsssdsssdconf"><code>/etc/sssd/sssd.conf</code></h3>
 <p>Configures SSSD to integrate with Active Directory and define access controls.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[sssd]
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>domains = example.com
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>domain_resolution_order = example.com
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>config_file_version = 2
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>services = nss, pam
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>[nss]
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>filter_groups = root
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>filter_users = root, nobody, pbsdata
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>debug_level = 2
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>[domain/example.com]
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>default_shell = /bin/bash
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>krb5_store_password_if_offline = True
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>cache_credentials = True
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>krb5_realm = EXAMPLE.COM
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>realmd_tags = manages-system joined-with-adcli
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>id_provider = ad
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>fallback_homedir = /home/%u
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>ad_domain = example.com
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>use_fully_qualified_names = False
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>full_name_format = %1$s
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>ldap_id_mapping = True
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>ignore_group_members = True
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>access_provider = simple
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>enumerate = False
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>simple_allow_groups = gr.ad1@example.com, gr.ad2@example.com
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>simple_allow_users = user1ad@example.com, user2ad@example.com
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[sssd]
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>domains = example.com
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>domain_resolution_order = example.com
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>config_file_version = 2
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>services = nss, pam
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>[nss]
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>filter_groups = root
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>filter_users = root, nobody, pbsdata
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>debug_level = 2
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>[domain/example.com]
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>default_shell = /bin/bash
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>krb5_store_password_if_offline = True
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>cache_credentials = True
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>krb5_realm = EXAMPLE.COM
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>realmd_tags = manages-system joined-with-adcli
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>id_provider = ad
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>fallback_homedir = /home/%u
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>ad_domain = example.com
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>use_fully_qualified_names = False
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>full_name_format = %1$s
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>ldap_id_mapping = True
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>ignore_group_members = True
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>access_provider = simple
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>enumerate = False
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>simple_allow_groups = gr.ad1@example.com, gr.ad2@example.com
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>simple_allow_users = user1ad@example.com, user2ad@example.com
 </code></pre></div>
 <hr />
-<h2 id="4-clear-caches-and-restart-services">4. Clear Caches and Restart Services</h2>
+<h2 id="5-clear-caches-and-restart-services">5. Clear Caches and Restart Services</h2>
 <p>Use the following script to clear caches and restart the necessary services. This can help after reboots if mount points are not accessible.</p>
 <p>Create the file <code>clearcaches.sh</code> and add the following:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>smb<span class="w"> </span>winbind
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>rm<span class="w"> </span>-f<span class="w"> </span>/var/lib/samba/*.tdb
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>rm<span class="w"> </span>-f<span class="w"> </span>/var/cache/samba/*.tdb
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>net<span class="w"> </span>cache<span class="w"> </span>flush
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>sss_cache<span class="w"> </span>-E
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>sssd
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/sss/db/*
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>sssd<span class="w"> </span>smb<span class="w"> </span>winbind
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>smb<span class="w"> </span>winbind
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>rm<span class="w"> </span>-f<span class="w"> </span>/var/lib/samba/*.tdb
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>rm<span class="w"> </span>-f<span class="w"> </span>/var/cache/samba/*.tdb
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>net<span class="w"> </span>cache<span class="w"> </span>flush
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>sss_cache<span class="w"> </span>-E
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>sssd
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/sss/db/*
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>sssd<span class="w"> </span>smb<span class="w"> </span>winbind
 </code></pre></div></p>
 <p>Run the script as needed:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./clearcaches.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>./clearcaches.sh
 </code></pre></div></p>
 <p>If you still have problem accessing samba mount points from client, you can also try to execute:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>realm<span class="w"> </span>leave
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>realm<span class="w"> </span>leave
 </code></pre></div>
 and after the server is no longer in the domain, you can join again:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>realm<span class="w"> </span>join<span class="w"> </span>&lt;domain&gt;<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;<span class="w"> </span>--client-software<span class="o">=</span>sssd<span class="w"> </span>--membership-software<span class="o">=</span>samba
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>realm<span class="w"> </span>join<span class="w"> </span>&lt;domain&gt;<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;<span class="w"> </span>--client-software<span class="o">=</span>sssd<span class="w"> </span>--membership-software<span class="o">=</span>samba
 </code></pre></div>
 if you still have problem accessing samba mount points from client.</p>
 <hr />
-<h2 id="5-test-authentication-and-kerberos-ticketing">5. Test Authentication and Kerberos Ticketing</h2>
+<h2 id="6-test-authentication-and-kerberos-ticketing">6. Test Authentication and Kerberos Ticketing</h2>
 <p>Verify that user authentication and Kerberos ticket creation work as expected:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>id<span class="w"> </span>&lt;username&gt;<span class="w">       </span><span class="c1"># Verifies AD group membership</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>kinit<span class="w"> </span>&lt;username&gt;<span class="w">    </span><span class="c1"># Obtains a Kerberos ticket</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>klist<span class="w">               </span><span class="c1"># Lists the current Kerberos ticket</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>id<span class="w"> </span>&lt;username&gt;<span class="w">       </span><span class="c1"># Verifies AD group membership</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>kinit<span class="w"> </span>&lt;username&gt;<span class="w">    </span><span class="c1"># Obtains a Kerberos ticket</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>klist<span class="w">               </span><span class="c1"># Lists the current Kerberos ticket</span>
 </code></pre></div></p>
 <hr />
-<h2 id="6-check-sssd-winbind-id-mapping-plugin">6. Check SSSD-Winbind ID Mapping Plugin</h2>
+<h2 id="7-check-sssd-winbind-id-mapping-plugin">7. Check SSSD-Winbind ID Mapping Plugin</h2>
 <p>Confirm that the SSSD-Winbind ID Mapping Plugin is in use:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>alternatives<span class="w"> </span>--display<span class="w"> </span>cifs-idmap-plugin
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>alternatives<span class="w"> </span>--display<span class="w"> </span>cifs-idmap-plugin
 </code></pre></div></p>
 <blockquote>
 <p>This should display that the link points to <code>/usr/lib64/cifs-utils/cifs_idmap_sss.so</code>.</p>
 </blockquote>
 <hr />
-<h2 id="7-test-the-samba-share">7. Test the Samba Share</h2>
+<h2 id="8-test-the-samba-share">8. Test the Samba Share</h2>
 <p>From a Windows client, try mapping the Samba share by accessing it via Windows Explorer:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>\\&lt;hostname&gt;\&lt;smb-share&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>\\&lt;hostname&gt;\&lt;smb-share&gt;
 </code></pre></div></p>
 <hr />
 
