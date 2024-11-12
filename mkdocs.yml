@@ -163,6 +163,9 @@ nav:
 
     - Storage:
       - SMB SSSD and Winbind: operations/storage/SMB/samba-sssd-winbind.md
+    
+    - UPS:
+      - CyberPower: operations/UPS/CyberPower/usb-management.md
 
 #      - Prometheus:
 #        - Basics: operations/monitoring/prometheus/basics.md
