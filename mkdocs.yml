@@ -58,6 +58,7 @@ theme:
 
 
 nav:
+  - Home: /
   - Homelab:
     - Infrastructure: homelab/infrastructure.md
     - Connectivity: homelab/connectivity.md
