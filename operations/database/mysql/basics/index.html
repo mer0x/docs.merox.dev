@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.merox.dev/fundamentals/backup/pbs/pbs-nfs-backup/">
+        <link rel="canonical" href="https://docs.merox.dev/operations/database/mysql/basics/">
       
       
-        <link rel="prev" href="../../clonezilla/clonezilla/">
+        <link rel="prev" href="../../../monitoring/grafana/prometheus-alertmanager/">
       
       
-        <link rel="next" href="../../../../operations/intro/">
+        <link rel="next" href="../../influxdb/basics/">
       
       
       <link rel="icon" href="../../../../images/merox.png">
@@ -22,7 +22,7 @@
     
     
   
-    <title>NFSonPBS | Docs - Merox </title>
+    <title>Basics | Docs - Merox </title>
   
 
     
@@ -69,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="NFSonPBS - docs.merox.dev" >
+        <meta  property="og:title"  content="Basics - docs.merox.dev" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/fundamentals/backup/pbs/pbs-nfs-backup.png" >
+        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/operations/database/mysql/basics.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -81,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://docs.merox.dev/fundamentals/backup/pbs/pbs-nfs-backup/" >
+        <meta  property="og:url"  content="https://docs.merox.dev/operations/database/mysql/basics/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="NFSonPBS - docs.merox.dev" >
+        <meta  name="twitter:title"  content="Basics - docs.merox.dev" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/fundamentals/backup/pbs/pbs-nfs-backup.png" >
+        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/operations/database/mysql/basics.png" >
       
     
     
@@ -124,7 +124,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-mount-synology-nfs-share-on-proxmox-backup-server" class="md-skip">
+        <a href="#mysql-cheatsheet" class="md-skip">
           Skip to content
         </a>
       
@@ -176,7 +176,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NFSonPBS
+              Basics
             
           </span>
         </div>
@@ -330,13 +330,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../intro/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../fundamentals/intro/" class="md-tabs__link">
           
   
     
@@ -352,11 +350,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../operations/intro/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../intro/" class="md-tabs__link">
           
   
     
@@ -727,16 +727,10 @@
       
   
   
-    
   
   
-  
     
     
-      
-        
-      
-        
       
         
       
@@ -747,22 +741,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -773,7 +764,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Fundamentals
@@ -787,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../intro/" class="md-nav__link">
+      <a href="../../../../fundamentals/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,20 +812,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -905,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../networking/configs/DNS/" class="md-nav__link">
+      <a href="../../../../fundamentals/networking/configs/DNS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -926,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../networking/configs/DHCP/" class="md-nav__link">
+      <a href="../../../../fundamentals/networking/configs/DHCP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1049,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../networking/cisco/install/firewall/" class="md-nav__link">
+      <a href="../../../../fundamentals/networking/cisco/install/firewall/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1070,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../networking/cisco/install/router/" class="md-nav__link">
+      <a href="../../../../fundamentals/networking/cisco/install/router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1091,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../networking/cisco/install/switch/" class="md-nav__link">
+      <a href="../../../../fundamentals/networking/cisco/install/switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1156,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../networking/cisco/install/ipsecgre/" class="md-nav__link">
+      <a href="../../../../fundamentals/networking/cisco/install/ipsecgre/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1245,7 +1233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../networking/ccna/cheatsheet/" class="md-nav__link">
+      <a href="../../../../fundamentals/networking/ccna/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1293,20 +1281,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1423,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
+      <a href="../../../../fundamentals/operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1498,7 +1483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/config/ufw/" class="md-nav__link">
+      <a href="../../../../fundamentals/operating-systems/linux/config/ufw/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1519,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
+      <a href="../../../../fundamentals/operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1596,7 +1581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/tshoot/grub/" class="md-nav__link">
+      <a href="../../../../fundamentals/operating-systems/linux/tshoot/grub/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1617,7 +1602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
+      <a href="../../../../fundamentals/operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1638,7 +1623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
+      <a href="../../../../fundamentals/operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1767,7 +1752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/windows/install/wserver2019/" class="md-nav__link">
+      <a href="../../../../fundamentals/operating-systems/windows/install/wserver2019/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1840,7 +1825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/windows/config/active-directory/" class="md-nav__link">
+      <a href="../../../../fundamentals/operating-systems/windows/config/active-directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1913,7 +1898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operating-systems/windows/tshoot/dns/" class="md-nav__link">
+      <a href="../../../../fundamentals/operating-systems/windows/tshoot/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1951,211 +1936,15 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Database
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
-            <span class="md-nav__icon md-icon"></span>
-            Database
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    MySQL
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            MySQL
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../database/mysql/basics/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    InfluxDB
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            InfluxDB
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../database/influxdb/basics/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
   
   
     
@@ -2169,13 +1958,31 @@
       
         
       
-    
-    
-      
+        
       
         
-          
-          
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
         
       
     
@@ -2184,333 +1991,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Backup
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_5">
-            <span class="md-nav__icon md-icon"></span>
-            Backup
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_5_1" id="__nav_3_5_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Clonezilla
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            Clonezilla
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clonezilla/clonezilla/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tutorial
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_5_2" id="__nav_3_5_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    PBS
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            PBS
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    NFSonPBS
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    NFSonPBS
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#on-synology" class="md-nav__link">
-    <span class="md-ellipsis">
-      On Synology
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#on-pbs" class="md-nav__link">
-    <span class="md-ellipsis">
-      On PBS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#back-on-synology" class="md-nav__link">
-    <span class="md-ellipsis">
-      Back on Synology
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#back-on-pbs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Back on PBS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#special-thanks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Special thanks
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2521,7 +2005,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Operations
@@ -2535,7 +2019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/intro/" class="md-nav__link">
+      <a href="../../../intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2565,17 +2049,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2644,7 +2131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/virtualization/VMs/proxmox/" class="md-nav__link">
+      <a href="../../../virtualization/VMs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2696,17 +2183,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2731,7 +2221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/kubernetes/" class="md-nav__link">
+      <a href="../../../containerization/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2800,7 +2290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/installation/" class="md-nav__link">
+      <a href="../../../containerization/k3s/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2821,7 +2311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/upgrade/" class="md-nav__link">
+      <a href="../../../containerization/k3s/upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2908,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2929,7 +2419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2950,7 +2440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/wikijs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2971,7 +2461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/netdata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2992,7 +2482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3013,7 +2503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3034,7 +2524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/traefik/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3055,7 +2545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/expose-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3076,7 +2566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/cert-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3097,7 +2587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3118,7 +2608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3139,7 +2629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/nfs-share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3220,7 +2710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/LXCs/proxmox/" class="md-nav__link">
+      <a href="../../../containerization/LXCs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3347,7 +2837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3368,7 +2858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3389,7 +2879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3410,7 +2900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3431,7 +2921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/influxdb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3452,7 +2942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3506,17 +2996,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3585,7 +3078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
+      <a href="../../../Cybersecurity/pentesting/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3631,17 +3124,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3758,7 +3254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
+      <a href="../../../DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3779,7 +3275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
+      <a href="../../../DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3800,7 +3296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
+      <a href="../../../DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3854,17 +3350,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3935,7 +3434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/monitoring/grafana/basics/" class="md-nav__link">
+      <a href="../../../monitoring/grafana/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3956,7 +3455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
+      <a href="../../../monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3990,6 +3489,300 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_7_1" id="__nav_4_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MySQL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            MySQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mysql-cheatsheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      MySQL Cheatsheet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MySQL Cheatsheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Database;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grant-privileges-to-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grant Privileges to User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-users-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update users password
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show Users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-grants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show Grants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#give-admin-rights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Give Admin Rights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drop-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drop database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-process-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show Process list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      max connections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#increase-max-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Increase max connections:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max-allowed-packets" class="md-nav__link">
+    <span class="md-ellipsis">
+      max allowed packets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-max-allowed-packets-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change max allowed packets value:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     
@@ -4009,10 +3802,94 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_7_2" id="__nav_4_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    InfluxDB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            InfluxDB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../influxdb/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -4023,8 +3900,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Storage
           </label>
@@ -4037,11 +3914,133 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/storage/SMB/samba-sssd-winbind/" class="md-nav__link">
+      <a href="../../../storage/SMB/samba-sssd-winbind/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     SMB SSSD and Winbind
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Backup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Backup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9_1" id="__nav_4_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Clonezilla
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Clonezilla
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backup/clonezilla/clonezilla/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial
   </span>
   
 
@@ -4082,10 +4081,94 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_9_2" id="__nav_4_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PBS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            PBS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backup/pbs/pbs-nfs-backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFSonPBS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -4096,8 +4179,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
             <span class="md-nav__icon md-icon"></span>
             UPS
           </label>
@@ -4110,7 +4193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/UPS/CyberPower/usb-management/" class="md-nav__link">
+      <a href="../../../UPS/CyberPower/usb-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4156,17 +4239,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -4177,8 +4263,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
             <span class="md-nav__icon md-icon"></span>
             Cheatsheet
           </label>
@@ -4191,7 +4277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/cheatsheet/Linux/ultimate-cheathseet/" class="md-nav__link">
+      <a href="../../../cheatsheet/Linux/ultimate-cheathseet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4212,7 +4298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/cheatsheet/Git/cheatsheet/" class="md-nav__link">
+      <a href="../../../cheatsheet/Git/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4233,7 +4319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/cheatsheet/Docker/cheatsheet/" class="md-nav__link">
+      <a href="../../../cheatsheet/Docker/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4254,7 +4340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/cheatsheet/WebServer/cheatsheet/" class="md-nav__link">
+      <a href="../../../cheatsheet/WebServer/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4275,7 +4361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operations/cheatsheet/Infiniband/mellanox_infiniband/" class="md-nav__link">
+      <a href="../../../cheatsheet/Infiniband/mellanox_infiniband/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4361,8 +4447,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -4371,55 +4455,127 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-synology" class="md-nav__link">
+  <a href="#mysql-cheatsheet" class="md-nav__link">
     <span class="md-ellipsis">
-      On Synology
+      MySQL Cheatsheet
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#on-pbs" class="md-nav__link">
-    <span class="md-ellipsis">
-      On PBS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#back-on-synology" class="md-nav__link">
-    <span class="md-ellipsis">
-      Back on Synology
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#back-on-pbs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Back on PBS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Notes">
+    <nav class="md-nav" aria-label="MySQL Cheatsheet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#special-thanks" class="md-nav__link">
+  <a href="#create-database" class="md-nav__link">
     <span class="md-ellipsis">
-      Special thanks
+      Create Database;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grant-privileges-to-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grant Privileges to User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-users-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update users password
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show Users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-grants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show Grants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#give-admin-rights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Give Admin Rights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drop-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drop database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-process-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show Process list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      max connections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#increase-max-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Increase max connections:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max-allowed-packets" class="md-nav__link">
+    <span class="md-ellipsis">
+      max allowed packets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-max-allowed-packets-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change max allowed packets value:
     </span>
   </a>
   
@@ -4448,68 +4604,61 @@
   
 
 
-<h1 id="how-to-mount-synology-nfs-share-on-proxmox-backup-server">How to Mount Synology NFS Share on Proxmox Backup Server</h1>
-<p><strong>Synology DSM</strong>: 6.2.4-25556 Update 3, with BTRFS volume (required) [1.2.3.4]<br />
-<strong>Proxmox Backup Server</strong>: 2.1-1 [1.2.3.5]</p>
-<h2 id="on-synology">On Synology</h2>
-<ol>
-<li>Create a Shared Folder named <code>xxxx</code> on a BTRFS Volume (in this case, volume1), and give the user <code>admin</code> Read/Write permission.</li>
-<li>In the <strong>NFS Permissions</strong> tab, set:</li>
-<li><strong>Privilege</strong>: Read/Write</li>
-<li><strong>Squash</strong>: No mapping</li>
-<li><strong>Security</strong>: sys</li>
-<li><strong>Enabled Async</strong>: checked</li>
-<li><strong>Allow Connections</strong>: unchecked</li>
-<li><strong>Allow Subfolders</strong>: checked</li>
-</ol>
-<h2 id="on-pbs">On PBS</h2>
-<ol>
-<li>
-<p>Create and mount <code>xxxx</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>/mnt/xxxx
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mount<span class="w"> </span><span class="m">1</span>.2.3.4:/volume1/xxxx<span class="w"> </span>/mnt/xxxx
-</code></pre></div>
-</li>
-<li>
-<p>Add a Datastore named <code>xxxx</code> using the <strong>Backing path</strong>: <code>/mnt/xxxx</code></p>
-</li>
-<li>Open/Refresh the Datastore page (you should see <strong>Error 13</strong> on <code>xxxx</code>).</li>
-<li>
-<p>Unmount <code>xxxx</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>umount<span class="w"> </span>/mnt/xxxx
-</code></pre></div>
-</li>
-</ol>
-<h2 id="back-on-synology">Back on Synology</h2>
-<ol>
-<li>Open Shared Folder <code>xxxx</code>, go to <strong>NFS Permissions</strong>, and change <strong>Squash</strong> to: Map all users to <code>admin</code>.</li>
-<li>Browse to <code>xxxx</code> and delete the <code>.lock</code> file.</li>
-</ol>
-<h2 id="back-on-pbs">Back on PBS</h2>
-<ol>
-<li>
-<p>Remount <code>xxxx</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mount<span class="w"> </span><span class="m">1</span>.2.3.4:/volume1/xxxx<span class="w"> </span>/mnt/xxxx
-</code></pre></div>
-</li>
-<li>
-<p>Open/Refresh the Datastore page (Error 13 should clear).</p>
-</li>
-<li>
-<p>Perform a host backup on a Proxmox Node to verify (e.g., backup the <code>/etc</code> folder which is usually small). This assumes you've already connected the Node to PBS (add Cluster Storage PBS Server).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>proxmox-backup-client<span class="w"> </span>backup<span class="w"> </span>nodeABC-etc.pxar:/etc<span class="w"> </span>--repository<span class="w"> </span><span class="m">1</span>.2.3.5:xxxx
-</code></pre></div>
-</li>
-</ol>
-<h2 id="notes">Notes</h2>
-<p>@grantph:<br>
-"I suspect this process highlights a bug in PBS datastore creation. It requires <code>backup</code> uid/gid 34:34 to create the <code>.chunks</code> folders but seems to prefer <code>root</code> after creation (for the UI and client backups). It wasn't necessary to create a <code>backup</code> user on Synology; that just led to uid/gid headaches."</p>
-<h3 id="special-thanks">Special thanks</h3>
-<div class="grid cards">
-<ul>
-<li><a href="https://forum.proxmox.com/members/grantph.148121/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.928 1.825c-1.09.553-1.09.64-.07 1.78 5.655 6.295 7.004 7.782 7.107 7.782.139.017 7.971-8.542 8.058-8.801.034-.07-.208-.312-.519-.536-.415-.312-.864-.433-1.712-.467-1.59-.104-2.144.242-4.115 2.455-.899 1.003-1.66 1.833-1.66 1.833-.017 0-.76-.813-1.642-1.798S8.473 2.1 8.127 1.91c-.796-.45-2.421-.484-3.2-.086zM1.297 4.367C.45 4.695 0 5.007 0 5.248c0 .121 1.331 1.678 2.94 3.459 1.625 1.78 2.939 3.268 2.939 3.302s-1.331 1.522-2.94 3.303C1.314 17.11.017 18.683.035 18.822c.086.467 1.504 1.055 2.541 1.055 1.678-.018 2.058-.312 5.603-4.202 1.78-1.954 3.233-3.614 3.233-3.666 0-.069-1.435-1.694-3.199-3.63-2.3-2.508-3.423-3.632-3.96-3.874-.812-.398-2.126-.467-2.956-.138m18.467.12c-.502.26-1.764 1.505-3.943 3.891-1.763 1.937-3.199 3.562-3.199 3.631 0 .07 1.453 1.712 3.234 3.666 3.544 3.89 3.925 4.184 5.602 4.202 1.038 0 2.455-.588 2.542-1.055.017-.156-1.28-1.712-2.905-3.493-1.608-1.78-2.94-3.285-2.94-3.32s1.332-1.539 2.94-3.32C22.72 6.91 24.017 5.352 24 5.214c-.087-.45-1.366-.968-2.473-1.038-.795-.034-1.21.035-1.763.312zM7.954 16.973c-2.144 2.369-3.908 4.374-3.943 4.46-.034.07.208.312.52.537.414.311.864.432 1.711.467 1.574.103 2.161-.26 4.15-2.508.864-.968 1.608-1.78 1.625-1.78s.761.812 1.643 1.798c2.023 2.248 2.559 2.576 4.132 2.49.848-.035 1.297-.156 1.712-.467.311-.225.553-.467.519-.536-.087-.26-7.92-8.819-8.058-8.801-.069 0-1.867 1.954-4.011 4.34"/></svg></span> <strong>@grantph</strong>  Proxmox Forum User</a></li>
-</ul>
-</div>
+  <h1>Basics</h1>
+
+<h2 id="mysql-cheatsheet">MySQL Cheatsheet</h2>
+<h3 id="create-database">Create Database;</h3>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">dbname</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+or</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n n-Quoted">`dbname`</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8_general_ci</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>or</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">create</span><span class="w"> </span><span class="k">schema</span><span class="w"> </span><span class="n">some_db</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">utf8mb4</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="create-user">Create User</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="nv">@&#39;%&#39;</span><span class="w"> </span><span class="k">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;some_pwd&#39;</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="grant-privileges-to-user">Grant Privileges to User</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">grant</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">privileges</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">dbname</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="nv">@&#39;%&#39;</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">flush</span><span class="w"> </span><span class="k">privileges</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="update-users-password">Update users password</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;userName&#39;</span><span class="nv">@&#39;%&#39;</span><span class="w"> </span><span class="k">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;Newpass&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">flush</span><span class="w"> </span><span class="k">privileges</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="show-users">Show Users</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">select</span><span class="w"> </span><span class="k">user</span><span class="p">,</span><span class="k">host</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="k">user</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="show-grants">Show Grants</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">show</span><span class="w"> </span><span class="k">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;some_user&#39;</span><span class="nv">@&#39;%&#39;</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="give-admin-rights">Give Admin Rights</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;some_user&#39;</span><span class="nv">@&#39;%&#39;</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;some_user&#39;</span><span class="nv">@&#39;localhost&#39;</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="drop-database">Drop database</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">drop</span><span class="w"> </span><span class="n">databse</span><span class="w"> </span><span class="n">some_db</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="show-process-list">Show Process list</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">show</span><span class="w"> </span><span class="k">processlist</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="max-connections">max connections</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">show</span><span class="w"> </span><span class="k">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s2">&quot;max_connections&quot;</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="increase-max-connections">Increase max connections:</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">set</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">max_connections</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="max-allowed-packets">max allowed packets</h3>
+<p>See max allowed packets value:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">SHOW</span><span class="w"> </span><span class="k">VARIABLES</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;max_allowed_packet&#39;</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="change-max-allowed-packets-value">Change max allowed packets value:</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">max_allowed_packet</span><span class="o">=</span><span class="mi">16777216</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
 
 
 
@@ -4532,7 +4681,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2024</span>
   </span>
 
     
@@ -4542,39 +4691,11 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2024</span>
   </span>
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="Contributors">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/mer0x" class="md-author" title="@mer0x">
-          
-          <img src="https://avatars.githubusercontent.com/u/35839230?v=4&size=72" alt="mer0x">
-        </a>
-      
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -4609,7 +4730,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../clonezilla/clonezilla/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tutorial">
+          <a href="../../../monitoring/grafana/prometheus-alertmanager/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prometheus w/ Alertmanager">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4619,20 +4740,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Tutorial
+                Prometheus w/ Alertmanager
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../../operations/intro/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro">
+          <a href="../../influxdb/basics/" class="md-footer__link md-footer__link--next" aria-label="Next: Basics">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Intro
+                Basics
               </div>
             </div>
             <div class="md-footer__button md-icon">

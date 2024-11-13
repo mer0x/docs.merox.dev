@@ -9,22 +9,6 @@
          <lastmod>2024-11-13</lastmod>
     </url>
     <url>
-         <loc>https://docs.merox.dev/fundamentals/backup/clonezilla/clonezilla/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/backup/pbs/pbs-nfs-backup/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/database/influxdb/basics/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/database/mysql/basics/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
          <loc>https://docs.merox.dev/fundamentals/networking/readme/</loc>
          <lastmod>2024-11-13</lastmod>
     </url>
@@ -185,6 +169,14 @@
          <lastmod>2024-11-13</lastmod>
     </url>
     <url>
+         <loc>https://docs.merox.dev/operations/backup/clonezilla/clonezilla/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/backup/pbs/pbs-nfs-backup/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
          <loc>https://docs.merox.dev/operations/cheatsheet/Docker/cheatsheet/</loc>
          <lastmod>2024-11-13</lastmod>
     </url>
@@ -302,6 +294,14 @@
     </url>
     <url>
          <loc>https://docs.merox.dev/operations/containerization/k3s/manifests/wordpress/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/database/influxdb/basics/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/database/mysql/basics/</loc>
          <lastmod>2024-11-13</lastmod>
     </url>
     <url>
