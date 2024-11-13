@@ -119,6 +119,7 @@ nav:
       - Git: fundamentals/cheatsheet/Git/cheatsheet.md
       - Docker: fundamentals/cheatsheet/Docker/cheatsheet.md
       - WebServer: fundamentals/cheatsheet/WebServer/cheatsheet.md
+      - Infiniband: fundamentals/cheatsheet/Infiniband/mellanox_infiniband.md
 
 
   - Operations : 
