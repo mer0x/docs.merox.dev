@@ -69,50 +69,23 @@ nav:
     - Ansible: homelab/ansible.md
     - Protection: homelab/security.md
     - System Monitoring: homelab/monitoring.md
-  - Fundamentals : 
-    - Intro: fundamentals/intro.md
-    - Networking: 
-      - Configs: 
-        - DNS: fundamentals/networking/configs/DNS.md
-        - DHCP: fundamentals/networking/configs/DHCP.md
-      - Cisco: 
-        - Install:
-          - ASA: fundamentals/networking/cisco/install/firewall.md
-          - Router: fundamentals/networking/cisco/install/router.md
-          - Switch: fundamentals/networking/cisco/install/switch.md
-          - VPN:
-            - IPsec over GRE: fundamentals/networking/cisco/install/ipsecgre.md
 
-      - CCNA:
-        - Cheatsheet: fundamentals/networking/ccna/cheatsheet.md
-    - Operating Systems: 
-      - Linux: 
-         - Install:
-           - Ubuntu cloud-init: fundamentals/operating-systems/linux/install/ubuntu-cloud-init.md
-         - Config:
-           - UFW: fundamentals/operating-systems/linux/config/ufw.md
-           - Extend LVM: fundamentals/operating-systems/linux/config/extend-lvm-proxmox.md
-         - T-shoot:
-           - GRUB recovery: fundamentals/operating-systems/linux/tshoot/grub.md 
-           - Root password recovery: fundamentals/operating-systems/linux/tshoot/root-password-recovery.md
-           - Proxmox e1000 driver hang: fundamentals/operating-systems/linux/tshoot/proxmox-e1000.md
-      - Windows: 
-         - Install:
-           - Windows Server 2019: fundamentals/operating-systems/windows/install/wserver2019.md
-         - Config:
-           - Active Directory: fundamentals/operating-systems/windows/config/active-directory.md
-         - T-shoot:
-           - DNS: fundamentals/operating-systems/windows/tshoot/dns.md
-
-
-
-
-  - Operations : 
+  - Tech Setup : 
     - Intro: operations/intro.md
     - Virtualization: 
       - VMs: 
         - Proxmox: operations/virtualization/VMs/proxmox.md
-
+    - Operating Systems: 
+      - Linux: 
+         - Install:
+           - Ubuntu cloud-init: operations/operating-systems/linux/install/ubuntu-cloud-init.md
+         - Config:
+           - UFW: operations/operating-systems/linux/config/ufw.md
+           - Extend LVM: operations/operating-systems/linux/config/extend-lvm-proxmox.md
+         - T-shoot:
+           - GRUB recovery: operations/operating-systems/linux/tshoot/grub.md 
+           - Root password recovery: operations/operating-systems/linux/tshoot/root-password-recovery.md
+           - Proxmox e1000 driver hang: operations/operating-systems/linux/tshoot/proxmox-e1000.md
     - Containerization: 
       - Kubernetes/K3S: operations/containerization/kubernetes.md
       - K3S:
