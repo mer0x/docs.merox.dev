@@ -33,7 +33,7 @@ We can use **cheat.sh** to get examples for **kubectl**, the Kubernetes command-
 === "Command"
 
         ```bash
-            curl cheat.sh/kubectl
+        curl cheat.sh/kubectl
         ```
 
 === "Result"
