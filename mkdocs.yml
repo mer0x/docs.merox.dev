@@ -115,7 +115,7 @@ nav:
         - NFSonPBS: fundamentals/backup/pbs/pbs-nfs-backup.md
 
     - Cheatsheet:
-      - Linux: fundamentals/cheatsheet/Linux/ultimate-linux-cheathseet.md
+      - Linux: fundamentals/cheatsheet/Linux/ultimate-cheathseet.md
 
 
   - Operations : 
