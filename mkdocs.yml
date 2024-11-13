@@ -230,7 +230,7 @@ extra:
 
   # Custom Homepage Button(s)
   home_button1_name: Get Started
-  home_button1_url: fundamentals/intro/
+  home_button1_url: operations/intro/
   home_button1_theme: md-button md-button--primary
   home_button1_icon: people
   home_button1_blurb: |
