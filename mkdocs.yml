@@ -114,12 +114,6 @@ nav:
       - PBS:
         - NFSonPBS: fundamentals/backup/pbs/pbs-nfs-backup.md
 
-    - Cheatsheet:
-      - Linux: fundamentals/cheatsheet/Linux/ultimate-cheathseet.md
-      - Git: fundamentals/cheatsheet/Git/cheatsheet.md
-      - Docker: fundamentals/cheatsheet/Docker/cheatsheet.md
-      - WebServer: fundamentals/cheatsheet/WebServer/cheatsheet.md
-      - Infiniband: fundamentals/cheatsheet/Infiniband/mellanox_infiniband.md
 
 
   - Operations : 
@@ -175,6 +169,13 @@ nav:
     
     - UPS:
       - CyberPower: operations/UPS/CyberPower/usb-management.md
+
+    - Cheatsheet:
+      - Linux: operations/cheatsheet/Linux/ultimate-cheathseet.md
+      - Git: operations/cheatsheet/Git/cheatsheet.md
+      - Docker: operations/cheatsheet/Docker/cheatsheet.md
+      - WebServer: operations/cheatsheet/WebServer/cheatsheet.md
+      - Infiniband: operations/cheatsheet/Infiniband/mellanox_infiniband.md
 
 #      - Prometheus:
 #        - Basics: operations/monitoring/prometheus/basics.md
