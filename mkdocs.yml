@@ -70,7 +70,7 @@ nav:
     - Protection: homelab/security.md
     - System Monitoring: homelab/monitoring.md
 
-  - Tech Setup : 
+  - The Nerd Box : 
     - Intro: operations/intro.md
     - Virtualization: 
       - VMs: 
