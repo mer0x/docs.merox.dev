@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://docs.merox.dev/fundamentals/operating-systems/linux/config/ufw/">
+        <link rel="canonical" href="https://docs.merox.dev/fundamentals/cheatsheet/Infiniband/mellanox_infiniband/">
       
       
-        <link rel="prev" href="../../install/ubuntu-cloud-init/">
+        <link rel="prev" href="../../WebServer/cheatsheet/">
       
       
-        <link rel="next" href="../extend-lvm-proxmox/">
+        <link rel="next" href="../../../../operations/intro/">
       
       
-      <link rel="icon" href="../../../../../images/merox.png">
+      <link rel="icon" href="../../../../images/merox.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
   
-    <title>UFW | Docs - Merox </title>
+    <title>Infiniband | Docs - Merox </title>
   
 
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -69,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="UFW - docs.merox.dev" >
+        <meta  property="og:title"  content="Infiniband - docs.merox.dev" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/fundamentals/operating-systems/linux/config/ufw.png" >
+        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/fundamentals/cheatsheet/Infiniband/mellanox_infiniband.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -81,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://docs.merox.dev/fundamentals/operating-systems/linux/config/ufw/" >
+        <meta  property="og:url"  content="https://docs.merox.dev/fundamentals/cheatsheet/Infiniband/mellanox_infiniband/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="UFW - docs.merox.dev" >
+        <meta  name="twitter:title"  content="Infiniband - docs.merox.dev" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/fundamentals/operating-systems/linux/config/ufw.png" >
+        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/fundamentals/cheatsheet/Infiniband/mellanox_infiniband.png" >
       
     
     
@@ -123,6 +123,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#mellanox-infiniband-cheatsheet" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -152,9 +157,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="docs.merox.dev" class="md-header__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
+    <a href="../../../.." title="docs.merox.dev" class="md-header__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
       
-  <img src="../../../../../images/meroxdev.png" alt="logo">
+  <img src="../../../../images/meroxdev.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -171,7 +176,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UFW
+              Infiniband
             
           </span>
         </div>
@@ -309,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../homelab/infrastructure/" class="md-tabs__link">
+        <a href="../../../../homelab/infrastructure/" class="md-tabs__link">
           
   
     
@@ -331,7 +336,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../intro/" class="md-tabs__link">
+        <a href="../../../intro/" class="md-tabs__link">
           
   
     
@@ -351,7 +356,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../operations/intro/" class="md-tabs__link">
+        <a href="../../../../operations/intro/" class="md-tabs__link">
           
   
     
@@ -420,9 +425,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="docs.merox.dev" class="md-nav__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
+    <a href="../../../.." title="docs.merox.dev" class="md-nav__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
       
-  <img src="../../../../../images/meroxdev.png" alt="logo">
+  <img src="../../../../images/meroxdev.png" alt="logo">
 
     </a>
     docs.merox.dev
@@ -529,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/infrastructure/" class="md-nav__link">
+      <a href="../../../../homelab/infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -550,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/connectivity/" class="md-nav__link">
+      <a href="../../../../homelab/connectivity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/hypervisors/" class="md-nav__link">
+      <a href="../../../../homelab/hypervisors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -592,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/virtual-machines/" class="md-nav__link">
+      <a href="../../../../homelab/virtual-machines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -613,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/docker/" class="md-nav__link">
+      <a href="../../../../homelab/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -634,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/kubernetes/" class="md-nav__link">
+      <a href="../../../../homelab/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -655,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/ansible/" class="md-nav__link">
+      <a href="../../../../homelab/ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -676,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/security/" class="md-nav__link">
+      <a href="../../../../homelab/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -697,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/monitoring/" class="md-nav__link">
+      <a href="../../../../homelab/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -784,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../intro/" class="md-nav__link">
+      <a href="../../../intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -902,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/configs/DNS/" class="md-nav__link">
+      <a href="../../../networking/configs/DNS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -923,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/configs/DHCP/" class="md-nav__link">
+      <a href="../../../networking/configs/DHCP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1046,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/cisco/install/firewall/" class="md-nav__link">
+      <a href="../../../networking/cisco/install/firewall/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1067,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/cisco/install/router/" class="md-nav__link">
+      <a href="../../../networking/cisco/install/router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1088,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/cisco/install/switch/" class="md-nav__link">
+      <a href="../../../networking/cisco/install/switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1153,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/cisco/install/ipsecgre/" class="md-nav__link">
+      <a href="../../../networking/cisco/install/ipsecgre/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1242,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/ccna/cheatsheet/" class="md-nav__link">
+      <a href="../../../networking/ccna/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1276,8 +1281,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1298,11 +1301,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
@@ -1316,7 +1319,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Operating Systems
@@ -1327,10 +1330,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1348,11 +1349,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
         
           
           <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
@@ -1366,7 +1367,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3_1">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -1424,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install/ubuntu-cloud-init/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1450,10 +1451,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1469,11 +1468,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_2" >
         
           
           <label class="md-nav__link" for="__nav_3_3_1_2" id="__nav_3_3_1_2_label" tabindex="0">
@@ -1487,7 +1486,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3_1_2">
             <span class="md-nav__icon md-icon"></span>
             Config
@@ -1498,17 +1497,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../operating-systems/linux/config/ufw/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1517,7 +1509,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1530,7 +1521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../extend-lvm-proxmox/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1607,7 +1598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tshoot/grub/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/grub/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1628,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tshoot/root-password-recovery/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1649,7 +1640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tshoot/proxmox-e1000/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1778,7 +1769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../windows/install/wserver2019/" class="md-nav__link">
+      <a href="../../../operating-systems/windows/install/wserver2019/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1851,7 +1842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../windows/config/active-directory/" class="md-nav__link">
+      <a href="../../../operating-systems/windows/config/active-directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1924,7 +1915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../windows/tshoot/dns/" class="md-nav__link">
+      <a href="../../../operating-systems/windows/tshoot/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2062,7 +2053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../database/mysql/basics/" class="md-nav__link">
+      <a href="../../../database/mysql/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2135,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../database/influxdb/basics/" class="md-nav__link">
+      <a href="../../../database/influxdb/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2265,7 +2256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backup/clonezilla/clonezilla/" class="md-nav__link">
+      <a href="../../../backup/clonezilla/clonezilla/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2338,7 +2329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backup/pbs/pbs-nfs-backup/" class="md-nav__link">
+      <a href="../../../backup/pbs/pbs-nfs-backup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2372,6 +2363,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2398,11 +2391,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
           <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
@@ -2416,7 +2409,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             Cheatsheet
@@ -2430,7 +2423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cheatsheet/Linux/ultimate-cheathseet/" class="md-nav__link">
+      <a href="../../Linux/ultimate-cheathseet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2451,7 +2444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cheatsheet/Git/cheatsheet/" class="md-nav__link">
+      <a href="../../Git/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2472,7 +2465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cheatsheet/Docker/cheatsheet/" class="md-nav__link">
+      <a href="../../Docker/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2493,7 +2486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cheatsheet/WebServer/cheatsheet/" class="md-nav__link">
+      <a href="../../WebServer/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2511,10 +2504,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../cheatsheet/Infiniband/mellanox_infiniband/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Infiniband
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2523,6 +2536,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-checking-status-and-configuration-of-infiniband" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Checking Status and Configuration of InfiniBand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuring-and-managing-infiniband-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configuring and Managing InfiniBand Devices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-performance-testing-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Performance Testing and Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configuring-and-securing-rdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configuring and Securing RDMA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configuring-and-managing-infiniband-subnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Configuring and Managing InfiniBand Subnets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-using-mellanox-ofed-openfabrics-enterprise-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Using Mellanox OFED (OpenFabrics Enterprise Distribution)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-advanced-mellanox-administration-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Advanced Mellanox Administration Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-configuring-qos-on-infiniband" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Configuring QoS on InfiniBand
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2608,7 +2722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/intro/" class="md-nav__link">
+      <a href="../../../../operations/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2717,7 +2831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/virtualization/VMs/proxmox/" class="md-nav__link">
+      <a href="../../../../operations/virtualization/VMs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2804,7 +2918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/kubernetes/" class="md-nav__link">
+      <a href="../../../../operations/containerization/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2873,7 +2987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/installation/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2894,7 +3008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/upgrade/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2981,7 +3095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3002,7 +3116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3023,7 +3137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3044,7 +3158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3065,7 +3179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3086,7 +3200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3107,7 +3221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3128,7 +3242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3149,7 +3263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3170,7 +3284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3191,7 +3305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3212,7 +3326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3293,7 +3407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/LXCs/proxmox/" class="md-nav__link">
+      <a href="../../../../operations/containerization/LXCs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3420,7 +3534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3441,7 +3555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3462,7 +3576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3483,7 +3597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3504,7 +3618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3525,7 +3639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3658,7 +3772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
+      <a href="../../../../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3831,7 +3945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
+      <a href="../../../../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3852,7 +3966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
+      <a href="../../../../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3873,7 +3987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
+      <a href="../../../../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4008,7 +4122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/monitoring/grafana/basics/" class="md-nav__link">
+      <a href="../../../../operations/monitoring/grafana/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4029,7 +4143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
+      <a href="../../../../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4110,7 +4224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/storage/SMB/samba-sssd-winbind/" class="md-nav__link">
+      <a href="../../../../operations/storage/SMB/samba-sssd-winbind/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4183,7 +4297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/UPS/CyberPower/usb-management/" class="md-nav__link">
+      <a href="../../../../operations/UPS/CyberPower/usb-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4269,6 +4383,97 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-checking-status-and-configuration-of-infiniband" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Checking Status and Configuration of InfiniBand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuring-and-managing-infiniband-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configuring and Managing InfiniBand Devices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-performance-testing-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Performance Testing and Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configuring-and-securing-rdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configuring and Securing RDMA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configuring-and-managing-infiniband-subnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Configuring and Managing InfiniBand Subnets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-using-mellanox-ofed-openfabrics-enterprise-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Using Mellanox OFED (OpenFabrics Enterprise Distribution)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-advanced-mellanox-administration-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Advanced Mellanox Administration Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-configuring-qos-on-infiniband" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Configuring QoS on InfiniBand
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -4286,44 +4491,135 @@
   
 
 
-  <h1>UFW</h1>
-
-<p>UFW, or Uncomplicated Firewall, is a user-friendly interface designed to manage netfilter firewall rules on Linux systems. It provides a much simpler way to configure the firewall, making it accessible for users who may not be as experienced with firewall concepts. Here’s a guide to understanding and using UFW, including setting up basic rules and troubleshooting common issues.
-Understanding UFW</p>
-<p>UFW operates by allowing or blocking traffic based on the rules you define. These rules can specify which services are allowed to communicate in and out of your system. For instance, you might allow HTTP traffic on port 80 for a web server or SSH traffic on port 22 for remote administration.
-Setting Up UFW</p>
-<ul>
-<li>
-<p>Installation: UFW is included with most Linux distributions. If it’s not already installed, you can usually add it using your distribution's package manager.</p>
-</li>
-<li>
-<p>Enabling UFW: To activate UFW, use the command sudo ufw enable. This command starts the firewall and ensures it starts automatically at boot.</p>
-</li>
-<li>
-<p>Defining Rules: Rules can be added based on applications or specifically by port number. For example, sudo ufw allow http or sudo ufw allow 22/tcp. The first command allows traffic on the HTTP port (80), and the second allows TCP traffic on port 22 (SSH).</p>
-</li>
-<li>
-<p>Checking the Status: You can view the current rules and status of UFW by typing sudo ufw status. This command lists all active rules and indicates whether the firewall is active.</p>
-</li>
-</ul>
-<p>Advanced UFW Usage</p>
-<ul>
-<li>Denying Traffic: If you wish to block traffic, you can use sudo ufw deny followed by the service or port number.</li>
-<li>Deleting Rules: To remove a rule, you can use sudo ufw delete followed by the rule specification, either by number (after listing rules with sudo ufw status numbered) or by the rule itself (e.g., sudo ufw delete allow http).</li>
-</ul>
-<p>Troubleshooting with UFW</p>
-<ul>
-<li>Firewall Logs: UFW logs activities which can be helpful for troubleshooting. Logs are typically found in /var/log/ufw.log. Viewing these logs can provide insights into which packets were blocked or allowed, and why.</li>
-<li>Resetting UFW: If you encounter issues or wish to start over, you can reset UFW to its default settings with sudo ufw reset. This action clears all active rules and disables the firewall, allowing you to rebuild your rule set from scratch.</li>
-<li>Disabling UFW: If you need to temporarily disable the firewall for troubleshooting or setup purposes, you can do so with sudo ufw disable. Remember to enable it again with sudo ufw enable once you're done.</li>
-</ul>
-<p>Best Practices</p>
-<ul>
-<li>Minimum Necessary Access: Only allow traffic necessary for your applications to function. Limiting access reduces the potential for unauthorized access.</li>
-<li>Regularly Review Rules: Over time, the needs of your system may change. Regularly review and update your firewall rules to ensure they reflect your current requirements.</li>
-<li>Use Application Profiles: UFW supports application profiles which can simplify rule management. These profiles allow you to define rules based on the application rather than specific port numbers.</li>
-</ul>
-<p>By following this guide, you can effectively manage your system’s firewall with UFW, enhancing your Linux system's security through a straightforward and accessible interface. Whether you're running a home server or managing enterprise systems, UFW provides the tools needed to protect your network.</p>
+<p>InfiniBand is a high-performance networking technology used primarily in data centers and high-performance computing (HPC) applications. It is utilized to interconnect servers, storage systems, and other devices within a distributed computing network, providing superior performance compared to other networking technologies like Ethernet or Fibre Channel. InfiniBand is known for its low latency, high bandwidth, and high scalability, making it ideal for applications requiring fast data transfers and consistent performance.</p>
+<p>InfiniBand is particularly used in high-performance computing environments, such as supercomputing centers, but also in high-speed storage networks and virtualization applications. Additionally, InfiniBand supports RDMA (Remote Direct Memory Access), allowing direct data transfers between the memory of different systems without involving the CPU, significantly improving data throughput and reducing latency.</p>
+<h1 id="mellanox-infiniband-cheatsheet">Mellanox InfiniBand Cheatsheet</h1>
+<h2 id="1-checking-status-and-configuration-of-infiniband">1. <strong>Checking Status and Configuration of InfiniBand</strong></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Check InfiniBand device status</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ibstat
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Get detailed InfiniBand device info</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>ibv_devinfo
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># List all InfiniBand devices</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>ibdevices
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Check port status of InfiniBand devices</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>iblinkinfo
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Get InfiniBand address configuration (RDMA)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>ibaddr
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Show detailed information about InfiniBand ports</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>ibportstate
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1"># Show port statistics for InfiniBand</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>ibportinfo
+</code></pre></div>
+<h2 id="2-configuring-and-managing-infiniband-devices">2. <strong>Configuring and Managing InfiniBand Devices</strong></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Configure InfiniBand device (e.g., network link)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ibdev2netdev
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Set an InfiniBand device to use a specific driver</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>ibdriver
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Update firmware for InfiniBand devices</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>mstflint<span class="w"> </span>-d<span class="w"> </span>&lt;device&gt;<span class="w"> </span>qflash<span class="w"> </span>&lt;firmware_file.bin&gt;
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># List all available paths for InfiniBand devices</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>ibpathln
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Discover all InfiniBand connections between nodes</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>ibnetdiscover
+</code></pre></div>
+<h2 id="3-performance-testing-and-monitoring">3. <strong>Performance Testing and Monitoring</strong></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Test InfiniBand performance between two devices (check latency and bandwidth)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>ib_send_bw<span class="w"> </span>&lt;device&gt;<span class="w"> </span>&lt;destination&gt;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Test RDMA performance on InfiniBand</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>ib_send_lat<span class="w"> </span>&lt;device&gt;<span class="w"> </span>&lt;destination&gt;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Monitor InfiniBand traffic (e.g., bandwidth, latency, packets)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>ibstat<span class="w"> </span>-i<span class="w"> </span>&lt;device&gt;<span class="w"> </span>-s
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Monitor InfiniBand errors</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>iberrdump
+</code></pre></div>
+<h2 id="4-configuring-and-securing-rdma">4. <strong>Configuring and Securing RDMA</strong></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Check RDMA configuration on an InfiniBand device</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>rdma<span class="w"> </span>link
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Set an InfiniBand device for RDMA usage</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>rdma_resolve_route
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Test RDMA performance on InfiniBand</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>ib_send_lat<span class="w"> </span>-D<span class="w"> </span>&lt;device&gt;<span class="w"> </span>&lt;destination&gt;
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># Check RDMA security and permissions</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>rdma_sec
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># Configure RDMA encryption and authentication (for security)</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>rdma_auth
+</code></pre></div>
+<h2 id="5-troubleshooting">5. <strong>Troubleshooting</strong></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Check InfiniBand configuration on multiple nodes</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>ibnetdiscover
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Diagnose InfiniBand errors and alerts</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ib
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># InfiniBand logs</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/ib_log
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Check port errors</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>ibportstate
+</code></pre></div>
+<h2 id="6-configuring-and-managing-infiniband-subnets">6. <strong>Configuring and Managing InfiniBand Subnets</strong></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Show detailed information about InfiniBand subnets</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>ibnetdiscover<span class="w"> </span>-v
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Set a subnet manager for InfiniBand</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>sm_profile
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Check active subnet manager on the InfiniBand network</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>ibstat<span class="w"> </span>-s
+</code></pre></div>
+<h2 id="7-using-mellanox-ofed-openfabrics-enterprise-distribution">7. <strong>Using Mellanox OFED (OpenFabrics Enterprise Distribution)</strong></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Check Mellanox OFED version</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ofed_info
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Install Mellanox OFED on Linux</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>mlnx-ofed
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Run performance benchmark using Mellanox OFED</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>mlnx_bench
+</code></pre></div>
+<h2 id="8-advanced-mellanox-administration-commands">8. <strong>Advanced Mellanox Administration Commands</strong></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Check status and details of Mellanox InfiniBand adapter</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>mst<span class="w"> </span>status
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Start or configure Mellanox driver for InfiniBand devices</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>mst<span class="w"> </span>start
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Configure a Mellanox device for RDMA</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>rdma_configure_device
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># Install and configure Mellanox management software</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>mstflint<span class="w"> </span>-d<span class="w"> </span>&lt;device&gt;<span class="w"> </span>qflash<span class="w"> </span>&lt;firmware_file.bin&gt;
+</code></pre></div>
+<h2 id="9-configuring-qos-on-infiniband">9. <strong>Configuring QoS on InfiniBand</strong></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Set quality of service policy for InfiniBand</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ib_qos_policy
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Configure flow priorities for InfiniBand</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>ib_flowcontrol
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Check QoS settings and flow priorities</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>ib_qos_show
+</code></pre></div>
+<hr />
+<p>This is a complete cheatsheet for managing and configuring Mellanox InfiniBand networks. It includes commands for checking status, performance testing, RDMA configuration, troubleshooting, and using Mellanox OFED. </p>
+<p>You can use these commands to familiarize yourself with InfiniBand network management and Mellanox devices.</p>
 
 
 
@@ -4346,7 +4642,7 @@ Setting Up UFW</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 13, 2024</span>
   </span>
 
     
@@ -4356,11 +4652,39 @@ Setting Up UFW</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 13, 2024</span>
   </span>
 
     
     
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/mer0x" class="md-author" title="@mer0x">
+          
+          <img src="https://avatars.githubusercontent.com/u/35839230?v=4&size=72" alt="mer0x">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
@@ -4395,7 +4719,7 @@ Setting Up UFW</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../install/ubuntu-cloud-init/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ubuntu cloud-init">
+          <a href="../../WebServer/cheatsheet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: WebServer">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4405,20 +4729,20 @@ Setting Up UFW</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Ubuntu cloud-init
+                WebServer
               </div>
             </div>
           </a>
         
         
           
-          <a href="../extend-lvm-proxmox/" class="md-footer__link md-footer__link--next" aria-label="Next: Extend LVM">
+          <a href="../../../../operations/intro/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Extend LVM
+                Intro
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4602,10 +4926,10 @@ Setting Up UFW</p>
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
