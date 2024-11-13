@@ -38,7 +38,7 @@ We can use **cheat.sh** to get examples for **kubectl**, the Kubernetes command-
 
 === "Result"
 
-```
+```bash
             cheat:kubectl 
             # To display list of all available commands:
             kubectl -h
