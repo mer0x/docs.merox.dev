@@ -31,7 +31,7 @@ theme:
 
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: indigo
+      primary: green
       accent: teal
       toggle:
         icon: material/link
@@ -39,7 +39,7 @@ theme:
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: indigo
+      primary: green
       accent: teal
       scheme: default 
       toggle:
@@ -49,7 +49,7 @@ theme:
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: indigo
+      primary: green
       accent: teal
       scheme: slate
       toggle:
