@@ -114,6 +114,10 @@ nav:
       - PBS:
         - NFSonPBS: fundamentals/backup/pbs/pbs-nfs-backup.md
 
+    - Cheatsheet:
+      - Linux: fundamentals/linux/ultimate-linux-cheatsheet-2025.md
+
+
   - Operations : 
     - Intro: operations/intro.md
     - Virtualization: 
