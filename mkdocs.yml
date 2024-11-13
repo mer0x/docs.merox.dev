@@ -135,7 +135,7 @@ nav:
         - Basics: operations/database/influxdb/basics.md
 
     - Storage:
-      - SMB SSSD and Winbind: operations/storage/SMB/samba-sssd-winbind.md
+      - SMB SSSD Winbind: operations/storage/SMB/samba-sssd-winbind.md
 
     - Backup:
         - Clonezilla:
