@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://docs.merox.dev/operations/operating-systems/linux/config/ufw/">
+        <link rel="canonical" href="https://docs.merox.dev/operations/cheatsheet/Linux/cheat.sh/">
       
       
-        <link rel="prev" href="../../install/ubuntu-cloud-init/">
+        <link rel="prev" href="../ultimate-cheathseet/">
       
       
-        <link rel="next" href="../extend-lvm-proxmox/">
+        <link rel="next" href="../../Git/cheatsheet/">
       
       
-      <link rel="icon" href="../../../../../images/merox.png">
+      <link rel="icon" href="../../../../images/merox.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
   
-    <title>UFW | Docs - Merox </title>
+    <title>Cheat.sh | Docs - Merox </title>
   
 
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -69,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="UFW - docs.merox.dev" >
+        <meta  property="og:title"  content="Cheat.sh - docs.merox.dev" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/operations/operating-systems/linux/config/ufw.png" >
+        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/operations/cheatsheet/Linux/cheat.sh.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -81,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://docs.merox.dev/operations/operating-systems/linux/config/ufw/" >
+        <meta  property="og:url"  content="https://docs.merox.dev/operations/cheatsheet/Linux/cheat.sh/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="UFW - docs.merox.dev" >
+        <meta  name="twitter:title"  content="Cheat.sh - docs.merox.dev" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/operations/operating-systems/linux/config/ufw.png" >
+        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/operations/cheatsheet/Linux/cheat.sh.png" >
       
     
     
@@ -123,6 +123,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#lets-cheat-cheatsh-chtsh" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -152,9 +157,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="docs.merox.dev" class="md-header__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
+    <a href="../../../.." title="docs.merox.dev" class="md-header__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
       
-  <img src="../../../../../images/meroxdev.png" alt="logo">
+  <img src="../../../../images/meroxdev.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -171,7 +176,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UFW
+              Cheat.sh
             
           </span>
         </div>
@@ -309,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../homelab/infrastructure/" class="md-tabs__link">
+        <a href="../../../../homelab/infrastructure/" class="md-tabs__link">
           
   
     
@@ -331,7 +336,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../intro/" class="md-tabs__link">
+        <a href="../../../intro/" class="md-tabs__link">
           
   
     
@@ -400,9 +405,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="docs.merox.dev" class="md-nav__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
+    <a href="../../../.." title="docs.merox.dev" class="md-nav__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
       
-  <img src="../../../../../images/meroxdev.png" alt="logo">
+  <img src="../../../../images/meroxdev.png" alt="logo">
 
     </a>
     docs.merox.dev
@@ -509,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/infrastructure/" class="md-nav__link">
+      <a href="../../../../homelab/infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -530,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/connectivity/" class="md-nav__link">
+      <a href="../../../../homelab/connectivity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/hypervisors/" class="md-nav__link">
+      <a href="../../../../homelab/hypervisors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -572,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/virtual-machines/" class="md-nav__link">
+      <a href="../../../../homelab/virtual-machines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -593,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/docker/" class="md-nav__link">
+      <a href="../../../../homelab/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -614,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/kubernetes/" class="md-nav__link">
+      <a href="../../../../homelab/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -635,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/ansible/" class="md-nav__link">
+      <a href="../../../../homelab/ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -656,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/security/" class="md-nav__link">
+      <a href="../../../../homelab/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -677,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/monitoring/" class="md-nav__link">
+      <a href="../../../../homelab/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -776,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../intro/" class="md-nav__link">
+      <a href="../../../intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -888,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../virtualization/VMs/proxmox/" class="md-nav__link">
+      <a href="../../../virtualization/VMs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -922,8 +927,6 @@
                 
   
   
-    
-  
   
   
     
@@ -942,11 +945,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
@@ -960,7 +963,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Operating Systems
@@ -971,10 +974,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -992,11 +993,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
         
           
           <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
@@ -1010,7 +1011,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3_1">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -1068,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install/ubuntu-cloud-init/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1094,10 +1095,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1113,11 +1112,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_2" >
         
           
           <label class="md-nav__link" for="__nav_3_3_1_2" id="__nav_3_3_1_2_label" tabindex="0">
@@ -1131,7 +1130,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3_1_2">
             <span class="md-nav__icon md-icon"></span>
             Config
@@ -1142,17 +1141,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../operating-systems/linux/config/ufw/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1161,7 +1153,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1174,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../extend-lvm-proxmox/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1251,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tshoot/grub/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/grub/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1272,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tshoot/root-password-recovery/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1293,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tshoot/proxmox-e1000/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1391,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/kubernetes/" class="md-nav__link">
+      <a href="../../../containerization/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1460,7 +1451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/installation/" class="md-nav__link">
+      <a href="../../../containerization/k3s/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1481,7 +1472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/upgrade/" class="md-nav__link">
+      <a href="../../../containerization/k3s/upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1568,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/dashboard/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1589,7 +1580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/loki/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1610,7 +1601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/wikijs/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/wikijs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1631,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/netdata/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/netdata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1652,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/wordpress/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1673,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/argocd/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1694,7 +1685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/traefik/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/traefik/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1715,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/expose-service/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/expose-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1736,7 +1727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/cert-manager/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/cert-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1757,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1778,7 +1769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/media-stack/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1799,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/k3s/manifests/nfs-share/" class="md-nav__link">
+      <a href="../../../containerization/k3s/manifests/nfs-share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1880,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/LXCs/proxmox/" class="md-nav__link">
+      <a href="../../../containerization/LXCs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2007,7 +1998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2028,7 +2019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/docker/docker-compose/media-stack/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2049,7 +2040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/docker/docker-compose/wordpress/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2070,7 +2061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2091,7 +2082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/docker/docker-compose/influxdb/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/influxdb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2112,7 +2103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
+      <a href="../../../containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2248,7 +2239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cybersecurity/pentesting/tools/" class="md-nav__link">
+      <a href="../../../Cybersecurity/pentesting/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2424,7 +2415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
+      <a href="../../../DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2445,7 +2436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
+      <a href="../../../DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2466,7 +2457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
+      <a href="../../../DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2604,7 +2595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../monitoring/grafana/basics/" class="md-nav__link">
+      <a href="../../../monitoring/grafana/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2625,7 +2616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
+      <a href="../../../monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2755,7 +2746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../database/mysql/basics/" class="md-nav__link">
+      <a href="../../../database/mysql/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2828,7 +2819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../database/influxdb/basics/" class="md-nav__link">
+      <a href="../../../database/influxdb/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2912,7 +2903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../storage/SMB/samba-sssd-winbind/" class="md-nav__link">
+      <a href="../../../storage/SMB/samba-sssd-winbind/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3034,7 +3025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backup/clonezilla/clonezilla/" class="md-nav__link">
+      <a href="../../../backup/clonezilla/clonezilla/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3107,7 +3098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backup/pbs/pbs-nfs-backup/" class="md-nav__link">
+      <a href="../../../backup/pbs/pbs-nfs-backup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3191,7 +3182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../UPS/CyberPower/usb-management/" class="md-nav__link">
+      <a href="../../../UPS/CyberPower/usb-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3217,6 +3208,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3243,11 +3236,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" checked>
         
           
           <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="">
@@ -3261,7 +3254,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_12">
             <span class="md-nav__icon md-icon"></span>
             Cheatsheet
@@ -3272,8 +3265,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -3289,11 +3284,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_12_1" id="__nav_3_12_1_label" tabindex="0">
@@ -3307,7 +3302,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_12_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_12_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_12_1">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -3321,7 +3316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cheatsheet/Linux/ultimate-cheathseet/" class="md-nav__link">
+      <a href="../ultimate-cheathseet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3339,10 +3334,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../cheatsheet/Linux/cheat.sh/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cheat.sh
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -3351,6 +3366,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Use?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Command
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Useful Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-linux-ls-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Linux ls Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-docker-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Docker Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3371,7 +3481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cheatsheet/Git/cheatsheet/" class="md-nav__link">
+      <a href="../../Git/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3392,7 +3502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cheatsheet/Docker/cheatsheet/" class="md-nav__link">
+      <a href="../../Docker/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3413,7 +3523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cheatsheet/WebServer/cheatsheet/" class="md-nav__link">
+      <a href="../../WebServer/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3434,7 +3544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cheatsheet/Infiniband/mellanox_infiniband/" class="md-nav__link">
+      <a href="../../Infiniband/mellanox_infiniband/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3520,6 +3630,91 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Use?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Command
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Useful Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-linux-ls-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Linux ls Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-docker-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Docker Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3537,44 +3732,52 @@
   
 
 
-  <h1>UFW</h1>
-
-<p>UFW, or Uncomplicated Firewall, is a user-friendly interface designed to manage netfilter firewall rules on Linux systems. It provides a much simpler way to configure the firewall, making it accessible for users who may not be as experienced with firewall concepts. Here’s a guide to understanding and using UFW, including setting up basic rules and troubleshooting common issues.
-Understanding UFW</p>
-<p>UFW operates by allowing or blocking traffic based on the rules you define. These rules can specify which services are allowed to communicate in and out of your system. For instance, you might allow HTTP traffic on port 80 for a web server or SSH traffic on port 22 for remote administration.
-Setting Up UFW</p>
+<h1 id="lets-cheat-cheatsh-chtsh">Let's Cheat: cheat.sh / cht.sh</h1>
+<p><strong>cheat.sh</strong> (accessible via <strong>cht.sh</strong>) is a service that provides quick command examples and solutions for various tools and programming languages, directly from the terminal.</p>
+<h2 id="how-to-use">How to Use?</h2>
+<h3 id="basic-command">Basic Command</h3>
+<p>To use <strong>cheat.sh</strong>, run the following command in your terminal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>cheat.sh/&lt;command&gt;
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>cheat.sh/git
+</code></pre></div>
+<p>This will return useful command examples for <strong>Git</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>cheat.sh</strong> supports various programming languages, Linux commands, and other tools, all accessible with a simple <strong>curl</strong> command.</p>
+</div>
+<h2 id="useful-examples">Useful Examples</h2>
+<h3 id="1-linux-ls-command">1. <strong>Linux <code>ls</code> Command</strong></h3>
+<p>To get examples for the <code>ls</code> command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>cheat.sh/ls
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>cheat.sh</strong> can provide detailed information on options and usage examples for commands.</p>
+</div>
+<h3 id="2-docker-commands">2. <strong>Docker Commands</strong></h3>
+<p>To get examples for <strong>Docker</strong> commands:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>cheat.sh/docker
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure <strong>Docker</strong> is installed on your system to test the examples locally.</p>
+</div>
+<h2 id="advantages">Advantages</h2>
 <ul>
-<li>
-<p>Installation: UFW is included with most Linux distributions. If it’s not already installed, you can usually add it using your distribution's package manager.</p>
-</li>
-<li>
-<p>Enabling UFW: To activate UFW, use the command sudo ufw enable. This command starts the firewall and ensures it starts automatically at boot.</p>
-</li>
-<li>
-<p>Defining Rules: Rules can be added based on applications or specifically by port number. For example, sudo ufw allow http or sudo ufw allow 22/tcp. The first command allows traffic on the HTTP port (80), and the second allows TCP traffic on port 22 (SSH).</p>
-</li>
-<li>
-<p>Checking the Status: You can view the current rules and status of UFW by typing sudo ufw status. This command lists all active rules and indicates whether the firewall is active.</p>
-</li>
+<li><strong>Fast Access</strong>: Quickly access commands without leaving your terminal.</li>
+<li><strong>Interactive</strong>: Supports dynamic searching for commands, languages, and tools.</li>
+<li><strong>Multiple Solutions</strong>: Provides various usage examples for each command or tool.</li>
 </ul>
-<p>Advanced UFW Usage</p>
-<ul>
-<li>Denying Traffic: If you wish to block traffic, you can use sudo ufw deny followed by the service or port number.</li>
-<li>Deleting Rules: To remove a rule, you can use sudo ufw delete followed by the rule specification, either by number (after listing rules with sudo ufw status numbered) or by the rule itself (e.g., sudo ufw delete allow http).</li>
-</ul>
-<p>Troubleshooting with UFW</p>
-<ul>
-<li>Firewall Logs: UFW logs activities which can be helpful for troubleshooting. Logs are typically found in /var/log/ufw.log. Viewing these logs can provide insights into which packets were blocked or allowed, and why.</li>
-<li>Resetting UFW: If you encounter issues or wish to start over, you can reset UFW to its default settings with sudo ufw reset. This action clears all active rules and disables the firewall, allowing you to rebuild your rule set from scratch.</li>
-<li>Disabling UFW: If you need to temporarily disable the firewall for troubleshooting or setup purposes, you can do so with sudo ufw disable. Remember to enable it again with sudo ufw enable once you're done.</li>
-</ul>
-<p>Best Practices</p>
-<ul>
-<li>Minimum Necessary Access: Only allow traffic necessary for your applications to function. Limiting access reduces the potential for unauthorized access.</li>
-<li>Regularly Review Rules: Over time, the needs of your system may change. Regularly review and update your firewall rules to ensure they reflect your current requirements.</li>
-<li>Use Application Profiles: UFW supports application profiles which can simplify rule management. These profiles allow you to define rules based on the application rather than specific port numbers.</li>
-</ul>
-<p>By following this guide, you can effectively manage your system’s firewall with UFW, enhancing your Linux system's security through a straightforward and accessible interface. Whether you're running a home server or managing enterprise systems, UFW provides the tools needed to protect your network.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p><strong>cheat.sh</strong> is an essential tool for any programmer or system administrator. It offers fast and efficient solutions to common problems directly in the terminal, saving valuable time.</p>
+<div class="admonition tip">
+<p class="admonition-title">Extra Tip</p>
+<p>You can save useful commands to a file for later use by redirecting the output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>cheat.sh/git<span class="w"> </span>&gt;<span class="w"> </span>git_cheats.txt
+</code></pre></div>
+</div>
 
 
 
@@ -3597,7 +3800,7 @@ Setting Up UFW</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 13, 2024</span>
   </span>
 
     
@@ -3607,11 +3810,39 @@ Setting Up UFW</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 13, 2024</span>
   </span>
 
     
     
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/mer0x" class="md-author" title="@mer0x">
+          
+          <img src="https://avatars.githubusercontent.com/u/35839230?v=4&size=72" alt="mer0x">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
@@ -3646,7 +3877,7 @@ Setting Up UFW</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../install/ubuntu-cloud-init/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ubuntu cloud-init">
+          <a href="../ultimate-cheathseet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Commands">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3656,20 +3887,20 @@ Setting Up UFW</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Ubuntu cloud-init
+                Commands
               </div>
             </div>
           </a>
         
         
           
-          <a href="../extend-lvm-proxmox/" class="md-footer__link md-footer__link--next" aria-label="Next: Extend LVM">
+          <a href="../../Git/cheatsheet/" class="md-footer__link md-footer__link--next" aria-label="Next: Git">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Extend LVM
+                Git
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3853,10 +4084,10 @@ Setting Up UFW</p>
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
