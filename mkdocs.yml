@@ -116,6 +116,9 @@ nav:
 
     - Cheatsheet:
       - Linux: fundamentals/cheatsheet/Linux/ultimate-cheathseet.md
+      - Git: fundamentals/cheatsheet/Git/cheatsheet.md
+      - Docker: fundamentals/cheatsheet/Docker/cheatsheet.md
+      - WebServer: fundamentals/cheatsheet/WebServer/cheatsheet.md
 
 
   - Operations : 
