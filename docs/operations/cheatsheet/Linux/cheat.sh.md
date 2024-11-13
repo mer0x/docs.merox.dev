@@ -5,33 +5,19 @@
 
 ## How to Use?
 
-### Basic Command
-
-To use **cheat.sh**, run the following command in your terminal:
-
-```bash
-curl cheat.sh/<command>
-```
-
-Example:
-
-```bash
-curl cheat.sh/git
-```
 
 This will return useful command examples for **Git**.
 
 !!! tip "Tip"
     **cheat.sh** supports various programming languages, Linux commands, and other tools, all accessible with a simple **curl** command.
 
-## Example with Content Tabs: `kubectl`
 
 We can use **cheat.sh** to get examples for **kubectl**, the Kubernetes command-line tool.
 
 ### 1. **Command and Output**
 
 
-
+## How to Use?
 !!! example
 
     === "Command"
