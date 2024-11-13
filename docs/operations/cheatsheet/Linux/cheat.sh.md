@@ -1,5 +1,5 @@
 
-# Let's Cheat: cheat.sh / cht.sh
+# Let's Cheat a Little Bit: cheat.sh / cht.sh
 
 **cheat.sh** (accessible via **cht.sh**) is a service that provides quick command examples and solutions for various tools and programming languages, directly from the terminal.
 
@@ -47,6 +47,40 @@ curl cheat.sh/docker
 
 !!! warning "Warning"
     Make sure **Docker** is installed on your system to test the examples locally.
+
+## Example with Content Tabs: `kubectl`
+
+We can use **cheat.sh** to get examples for **kubectl**, the Kubernetes command-line tool.
+
+### 1. **Command and Output**
+
+```bash
+curl cheat.sh/kubectl
+```
+
+!!! info "Result"
+    This will return useful examples of **kubectl** commands, such as how to list pods, get clusters, or interact with the Kubernetes API.
+
+### 2. **Command and Output with Content Tabs**
+
+<tabs>
+<tab title="Command">
+
+```bash
+curl cheat.sh/kubectl get pods
+```
+
+</tab>
+<tab title="Result">
+
+```bash
+NAME                       READY   STATUS    RESTARTS   AGE
+nginx-5c5c67df9f-dxz5b      1/1     Running   0          5m
+redis-7c9c98f6d9-vhns2      1/1     Running   0          5m
+```
+
+</tab>
+</tabs>
 
 ## Advantages
 
