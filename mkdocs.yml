@@ -164,11 +164,11 @@ nav:
     - Storage:
       - SMB SSSD and Winbind: operations/storage/SMB/samba-sssd-winbind.md
 
-   - Backup:
-      - Clonezilla:
-        - Tutorial: operations/backup/clonezilla/clonezilla.md
-      - PBS:
-        - NFSonPBS: operations/backup/pbs/pbs-nfs-backup.md
+    - Backup:
+        - Clonezilla:
+          - Tutorial: operations/backup/clonezilla/clonezilla.md
+        - PBS:
+          - NFSonPBS: operations/backup/pbs/pbs-nfs-backup.md
     
     - UPS:
       - CyberPower: operations/UPS/CyberPower/usb-management.md
