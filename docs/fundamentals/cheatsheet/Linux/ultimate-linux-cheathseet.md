@@ -1,4 +1,4 @@
-# Linux Power User Complete Cheatsheet 2024
+# Linux Power User Complete Cheatsheet 
 
 ## System Operations & Monitoring
 ```bash
