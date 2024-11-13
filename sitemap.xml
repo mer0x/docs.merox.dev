@@ -53,50 +53,6 @@
          <lastmod>2024-11-13</lastmod>
     </url>
     <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/linux/readme/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/linux/config/extend-lvm-proxmox/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/linux/config/ufw/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/linux/install/ubuntu-cloud-init/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/linux/tshoot/grub/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/linux/tshoot/proxmox-e1000/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/linux/tshoot/root-password-recovery/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/windows/readme/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/windows/config/active-directory/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/windows/install/wserver2019/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/operating-systems/windows/tshoot/dns/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
          <loc>https://docs.merox.dev/homelab/ansible/</loc>
          <lastmod>2024-11-13</lastmod>
     </url>
@@ -318,6 +274,50 @@
     </url>
     <url>
          <loc>https://docs.merox.dev/operations/monitoring/prometheus/basics/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/linux/readme/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/linux/config/extend-lvm-proxmox/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/linux/config/ufw/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/linux/install/ubuntu-cloud-init/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/linux/tshoot/grub/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/linux/tshoot/proxmox-e1000/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/linux/tshoot/root-password-recovery/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/windows/readme/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/windows/config/active-directory/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/windows/install/wserver2019/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/operating-systems/windows/tshoot/dns/</loc>
          <lastmod>2024-11-13</lastmod>
     </url>
     <url>
