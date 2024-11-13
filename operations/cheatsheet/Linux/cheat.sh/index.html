@@ -3732,78 +3732,59 @@
 <h2 id="example-with-content-tabs-kubectl">Example with Content Tabs: <code>kubectl</code></h2>
 <p>We can use <strong>cheat.sh</strong> to get examples for <strong>kubectl</strong>, the Kubernetes command-line tool.</p>
 <h3 id="1-command-and-output">1. <strong>Command and Output</strong></h3>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="command" name="__tabbed_1" type="radio" /><input id="result" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="command">Command</label><label for="result">Result</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>```bash
-curl cheat.sh/kubectl
-```
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>cheat.sh/kubectl
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>    ```bash
-    cheat:kubectl 
-    # To display list of all available commands:
-    kubectl -h
-
-    # To display an explanation of a specific command:
-    kubectl command_name -h
-
-    # To display complete list of supported resources:
-    kubectl api-resources
-
-    # To display an explanation of a specific resource:
-    kubectl explain resource_name
-
-    # To display an explanation of a specific field of resource:
-    kubectl explain resource_name.field_name
-
-    # To display list of global command-line options:
-    kubectl options
-
-    # To set up `kubectl` autocomplete in bash (press Tab to use):
-    source &lt;(kubectl completion bash)
-
-    # To display all resources in all namespaces:
-    kubectl get all -A
-
-    # To order events by `creationTimestamp`:
-    kubectl get events --sort-by=&#39;.metadata.creationTimestamp&#39;
-
-    # To switch context of a specific cluster:
-    kubectl config use-context CONTEXT_NAME [options]
-
-    tldr:kubectl 
-    # kubectl
-    # Command-line interface for running commands against Kubernetes clusters.
-    # Some subcommands such as `kubectl run` have their own usage documentation.
-    # More information: &lt;https://kubernetes.io/docs/reference/kubectl/&gt;.
-
-    # List information about a resource with more details:
-    kubectl get pod|service|deployment|ingress|... -o wide
-
-    # Update specified pod with the label &#39;unhealthy&#39; and the value &#39;true&#39;:
-    kubectl label pods name unhealthy=true
-
-    # List all resources with different types:
-    kubectl get all
-
-    # Display resource (CPU/Memory/Storage) usage of nodes or pods:
-    kubectl top pod|node
-
-    # Print the address of the master and cluster services:
-    kubectl cluster-info
-
-    # Display an explanation of a specific field:
-    kubectl explain pods.spec.containers
-
-    # Print the logs for a container in a pod or specified resource:
-    kubectl logs pod_name
-
-    # Run command in an existing pod:
-    kubectl exec pod_name -- ls /
-    ```
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cheat:kubectl<span class="w"> </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># To display list of all available commands:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>kubectl<span class="w"> </span>-h
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># To display an explanation of a specific command:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>kubectl<span class="w"> </span>command_name<span class="w"> </span>-h
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># To display complete list of supported resources:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>kubectl<span class="w"> </span>api-resources
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># To display an explanation of a specific resource:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>kubectl<span class="w"> </span>explain<span class="w"> </span>resource_name
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># To display an explanation of a specific field of resource:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>kubectl<span class="w"> </span>explain<span class="w"> </span>resource_name.field_name
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># To display list of global command-line options:</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>kubectl<span class="w"> </span>options
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># To set up `kubectl` autocomplete in bash (press Tab to use):</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nb">source</span><span class="w"> </span>&lt;<span class="o">(</span>kubectl<span class="w"> </span>completion<span class="w"> </span>bash<span class="o">)</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1"># To display all resources in all namespaces:</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-A
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1"># To order events by `creationTimestamp`:</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>kubectl<span class="w"> </span>get<span class="w"> </span>events<span class="w"> </span>--sort-by<span class="o">=</span><span class="s1">&#39;.metadata.creationTimestamp&#39;</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1"># To switch context of a specific cluster:</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>kubectl<span class="w"> </span>config<span class="w"> </span>use-context<span class="w"> </span>CONTEXT_NAME<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>tldr:kubectl<span class="w"> </span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="c1"># kubectl</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="c1"># Command-line interface for running commands against Kubernetes clusters.</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="c1"># Some subcommands such as `kubectl run` have their own usage documentation.</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="c1"># More information: &lt;https://kubernetes.io/docs/reference/kubectl/&gt;.</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="c1"># List information about a resource with more details:</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="p">|</span>service<span class="p">|</span>deployment<span class="p">|</span>ingress<span class="p">|</span>...<span class="w"> </span>-o<span class="w"> </span>wide
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="c1"># Update specified pod with the label &#39;unhealthy&#39; and the value &#39;true&#39;:</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>kubectl<span class="w"> </span>label<span class="w"> </span>pods<span class="w"> </span>name<span class="w"> </span><span class="nv">unhealthy</span><span class="o">=</span><span class="nb">true</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="c1"># List all resources with different types:</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>kubectl<span class="w"> </span>get<span class="w"> </span>all
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="c1"># Display resource (CPU/Memory/Storage) usage of nodes or pods:</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>kubectl<span class="w"> </span>top<span class="w"> </span>pod<span class="p">|</span>node
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="c1"># Print the address of the master and cluster services:</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>kubectl<span class="w"> </span>cluster-info
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="c1"># Display an explanation of a specific field:</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>kubectl<span class="w"> </span>explain<span class="w"> </span>pods.spec.containers
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="c1"># Print the logs for a container in a pod or specified resource:</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>pod_name
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="c1"># Run command in an existing pod:</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>pod_name<span class="w"> </span>--<span class="w"> </span>ls<span class="w"> </span>/
 </code></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -3858,34 +3839,6 @@ curl cheat.sh/kubectl
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="Contributors">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/mer0x" class="md-author" title="@mer0x">
-          
-          <img src="https://avatars.githubusercontent.com/u/35839230?v=4&size=72" alt="mer0x">
-        </a>
-      
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
