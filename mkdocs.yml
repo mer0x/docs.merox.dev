@@ -147,7 +147,9 @@ nav:
       - CyberPower: operations/UPS/CyberPower/usb-management.md
 
     - Cheatsheet:
-      - Linux: operations/cheatsheet/Linux/ultimate-cheathseet.md
+      - Linux: 
+          - Commands: operations/cheatsheet/Linux/ultimate-cheathseet.md
+          - Cheat.sh: operations/cheatsheet/Linux/cheat.sh.md
       - Git: operations/cheatsheet/Git/cheatsheet.md
       - Docker: operations/cheatsheet/Docker/cheatsheet.md
       - WebServer: operations/cheatsheet/WebServer/cheatsheet.md
