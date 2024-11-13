@@ -8,24 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://docs.merox.dev/fundamentals/cheatsheet/Linux/WebServer/cheatsheet/">
+        <link rel="canonical" href="https://docs.merox.dev/fundamentals/cheatsheet/Docker/cheatsheet/">
       
       
+        <link rel="prev" href="../../Git/cheatsheet/">
       
       
-      <link rel="icon" href="../../../../../images/merox.png">
+        <link rel="next" href="../../WebServer/cheatsheet/">
+      
+      
+      <link rel="icon" href="../../../../images/merox.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
   
-    <title>Web Server Cheatsheet | Docs - Merox </title>
+    <title>Docker | Docs - Merox </title>
   
 
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -65,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Web Server Cheatsheet - docs.merox.dev" >
+        <meta  property="og:title"  content="Docker - docs.merox.dev" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/fundamentals/cheatsheet/Linux/WebServer/cheatsheet.png" >
+        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/fundamentals/cheatsheet/Docker/cheatsheet.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -77,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://docs.merox.dev/fundamentals/cheatsheet/Linux/WebServer/cheatsheet/" >
+        <meta  property="og:url"  content="https://docs.merox.dev/fundamentals/cheatsheet/Docker/cheatsheet/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Web Server Cheatsheet - docs.merox.dev" >
+        <meta  name="twitter:title"  content="Docker - docs.merox.dev" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/fundamentals/cheatsheet/Linux/WebServer/cheatsheet.png" >
+        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/fundamentals/cheatsheet/Docker/cheatsheet.png" >
       
     
     
@@ -120,7 +124,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#web-server-cheatsheet" class="md-skip">
+        <a href="#docker-cheatsheet" class="md-skip">
           Skip to content
         </a>
       
@@ -153,9 +157,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="docs.merox.dev" class="md-header__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
+    <a href="../../../.." title="docs.merox.dev" class="md-header__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
       
-  <img src="../../../../../images/meroxdev.png" alt="logo">
+  <img src="../../../../images/meroxdev.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -172,7 +176,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Web Server Cheatsheet
+              Docker
             
           </span>
         </div>
@@ -310,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../homelab/infrastructure/" class="md-tabs__link">
+        <a href="../../../../homelab/infrastructure/" class="md-tabs__link">
           
   
     
@@ -326,11 +330,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../intro/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../intro/" class="md-tabs__link">
           
   
     
@@ -350,7 +356,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../operations/intro/" class="md-tabs__link">
+        <a href="../../../../operations/intro/" class="md-tabs__link">
           
   
     
@@ -419,9 +425,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="docs.merox.dev" class="md-nav__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
+    <a href="../../../.." title="docs.merox.dev" class="md-nav__button md-logo" aria-label="docs.merox.dev" data-md-component="logo">
       
-  <img src="../../../../../images/meroxdev.png" alt="logo">
+  <img src="../../../../images/meroxdev.png" alt="logo">
 
     </a>
     docs.merox.dev
@@ -528,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/infrastructure/" class="md-nav__link">
+      <a href="../../../../homelab/infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -549,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/connectivity/" class="md-nav__link">
+      <a href="../../../../homelab/connectivity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -570,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/hypervisors/" class="md-nav__link">
+      <a href="../../../../homelab/hypervisors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -591,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/virtual-machines/" class="md-nav__link">
+      <a href="../../../../homelab/virtual-machines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -612,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/docker/" class="md-nav__link">
+      <a href="../../../../homelab/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -633,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/kubernetes/" class="md-nav__link">
+      <a href="../../../../homelab/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -654,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/ansible/" class="md-nav__link">
+      <a href="../../../../homelab/ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -675,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/security/" class="md-nav__link">
+      <a href="../../../../homelab/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -696,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../homelab/monitoring/" class="md-nav__link">
+      <a href="../../../../homelab/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -721,8 +727,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -741,19 +749,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -764,7 +775,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Fundamentals
@@ -778,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../intro/" class="md-nav__link">
+      <a href="../../../intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,17 +823,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -893,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/configs/DNS/" class="md-nav__link">
+      <a href="../../../networking/configs/DNS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -914,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/configs/DHCP/" class="md-nav__link">
+      <a href="../../../networking/configs/DHCP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1037,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/cisco/install/firewall/" class="md-nav__link">
+      <a href="../../../networking/cisco/install/firewall/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1058,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/cisco/install/router/" class="md-nav__link">
+      <a href="../../../networking/cisco/install/router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1079,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/cisco/install/switch/" class="md-nav__link">
+      <a href="../../../networking/cisco/install/switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1144,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/cisco/install/ipsecgre/" class="md-nav__link">
+      <a href="../../../networking/cisco/install/ipsecgre/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1233,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/ccna/cheatsheet/" class="md-nav__link">
+      <a href="../../../networking/ccna/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1281,17 +1295,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1408,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1483,7 +1500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operating-systems/linux/config/ufw/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/config/ufw/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1504,7 +1521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/config/extend-lvm-proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1581,7 +1598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operating-systems/linux/tshoot/grub/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/grub/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1602,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1623,7 +1640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1752,7 +1769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operating-systems/windows/install/wserver2019/" class="md-nav__link">
+      <a href="../../../operating-systems/windows/install/wserver2019/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1825,7 +1842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operating-systems/windows/config/active-directory/" class="md-nav__link">
+      <a href="../../../operating-systems/windows/config/active-directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1898,7 +1915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../operating-systems/windows/tshoot/dns/" class="md-nav__link">
+      <a href="../../../operating-systems/windows/tshoot/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1954,17 +1971,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2033,7 +2053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../database/mysql/basics/" class="md-nav__link">
+      <a href="../../../database/mysql/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2106,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../database/influxdb/basics/" class="md-nav__link">
+      <a href="../../../database/influxdb/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2154,17 +2174,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2233,7 +2256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backup/clonezilla/clonezilla/" class="md-nav__link">
+      <a href="../../../backup/clonezilla/clonezilla/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2306,7 +2329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backup/pbs/pbs-nfs-backup/" class="md-nav__link">
+      <a href="../../../backup/pbs/pbs-nfs-backup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2340,8 +2363,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2357,18 +2382,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2379,7 +2407,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             Cheatsheet
@@ -2393,7 +2421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ultimate-cheathseet/" class="md-nav__link">
+      <a href="../../Linux/ultimate-cheathseet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2414,7 +2442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Git/cheatsheet.md" class="md-nav__link">
+      <a href="../../Git/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2432,10 +2460,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../Docker/cheatsheet.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2444,6 +2492,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-docker-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Docker Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Compose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-volumes-and-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Volumes and Networks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2456,7 +2551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../WebServer/cheatsheet.md" class="md-nav__link">
+      <a href="../../WebServer/cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2550,7 +2645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/intro/" class="md-nav__link">
+      <a href="../../../../operations/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2659,7 +2754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/virtualization/VMs/proxmox/" class="md-nav__link">
+      <a href="../../../../operations/virtualization/VMs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2746,7 +2841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/kubernetes/" class="md-nav__link">
+      <a href="../../../../operations/containerization/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2815,7 +2910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/installation/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2836,7 +2931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/upgrade/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2923,7 +3018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2944,7 +3039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2965,7 +3060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/wikijs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2986,7 +3081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/netdata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3007,7 +3102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3028,7 +3123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3049,7 +3144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/traefik/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3070,7 +3165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/expose-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3091,7 +3186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/cert-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3112,7 +3207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/monitor-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3133,7 +3228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3154,7 +3249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
+      <a href="../../../../operations/containerization/k3s/manifests/nfs-share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3235,7 +3330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/LXCs/proxmox/" class="md-nav__link">
+      <a href="../../../../operations/containerization/LXCs/proxmox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3362,7 +3457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/monitoring-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3383,7 +3478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/media-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3404,7 +3499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/wordpress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3425,7 +3520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/uptime-kuma/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3446,7 +3541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/influxdb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3467,7 +3562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
+      <a href="../../../../operations/containerization/docker/docker-compose/cloudflare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3600,7 +3695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
+      <a href="../../../../operations/Cybersecurity/pentesting/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3773,7 +3868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
+      <a href="../../../../operations/DevOps/ansible/playbooks/linux-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3794,7 +3889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
+      <a href="../../../../operations/DevOps/ansible/playbooks/windows-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3815,7 +3910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
+      <a href="../../../../operations/DevOps/ansible/playbooks/proxmox-vm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3950,7 +4045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/monitoring/grafana/basics/" class="md-nav__link">
+      <a href="../../../../operations/monitoring/grafana/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3971,7 +4066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
+      <a href="../../../../operations/monitoring/grafana/prometheus-alertmanager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4052,7 +4147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/storage/SMB/samba-sssd-winbind/" class="md-nav__link">
+      <a href="../../../../operations/storage/SMB/samba-sssd-winbind/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4125,7 +4220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../operations/UPS/CyberPower/usb-management/" class="md-nav__link">
+      <a href="../../../../operations/UPS/CyberPower/usb-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4221,18 +4316,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nginx" class="md-nav__link">
+  <a href="#basic-docker-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Nginx
+      Basic Docker Commands
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#apache" class="md-nav__link">
+  <a href="#docker-compose" class="md-nav__link">
     <span class="md-ellipsis">
-      Apache
+      Docker Compose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-volumes-and-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Volumes and Networks
     </span>
   </a>
   
@@ -4256,76 +4360,90 @@
   
 
 
-<h1 id="web-server-cheatsheet">Web Server Cheatsheet</h1>
-<h2 id="nginx">Nginx</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install Nginx on Ubuntu/Debian</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>nginx
+<h1 id="docker-cheatsheet">Docker Cheatsheet</h1>
+<h2 id="basic-docker-commands">Basic Docker Commands</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Check Docker version</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>--version
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Check Nginx status</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Get detailed Docker information</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>docker<span class="w"> </span>info
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Start Nginx</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>nginx
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># List running containers</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>docker<span class="w"> </span>ps
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Stop Nginx</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>nginx
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># List all containers (including stopped)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Reload Nginx</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nginx
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># List all local images</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>docker<span class="w"> </span>images
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Check Nginx configuration</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Inspect a container</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>docker<span class="w"> </span>inspect<span class="w"> </span>container_id_or_name
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1"># Generate an SSL certificate with Let&#39;s Encrypt (certbot)</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>sudo<span class="w"> </span>certbot<span class="w"> </span>--nginx
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1"># Create and start a container from an image</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>container_name<span class="w"> </span>image_name
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c1"># Allow traffic on ports 80 and 443 through firewall (UFW)</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">&#39;Nginx Full&#39;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c1"># Stop a container</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>docker<span class="w"> </span>stop<span class="w"> </span>container_name_or_id
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1"># Enable Nginx to start on boot</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nginx
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1"># Start a stopped container</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>docker<span class="w"> </span>start<span class="w"> </span>container_name_or_id
 <a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="c1"># Configure Nginx for a domain</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>server<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span>listen<span class="w"> </span><span class="m">80</span><span class="p">;</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span>server_name<span class="w"> </span>example.com<span class="p">;</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span>root<span class="w"> </span>/var/www/html<span class="p">;</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">        </span>index<span class="w"> </span>index.html<span class="p">;</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="o">}</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="o">}</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="c1"># Remove a container</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>docker<span class="w"> </span>rm<span class="w"> </span>container_name_or_id
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="c1"># Remove an image</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>docker<span class="w"> </span>rmi<span class="w"> </span>image_name_or_id
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="c1"># Run a command inside a running container</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>container_name_or_id<span class="w"> </span>bash
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="c1"># Run a command inside a container without interactive shell</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>container_name_or_id<span class="w"> </span><span class="nb">command</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="c1"># Load an image from a tar file</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>docker<span class="w"> </span>load<span class="w"> </span>&lt;<span class="w"> </span>path_to_image.tar
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="c1"># Save an image to a tar file</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>docker<span class="w"> </span>save<span class="w"> </span>image_name<span class="w"> </span>-o<span class="w"> </span>path_to_image.tar
 </code></pre></div>
-<h2 id="apache">Apache</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Install Apache on Ubuntu/Debian</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>apache2
+<h2 id="docker-compose">Docker Compose</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Check Docker Compose version</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker-compose<span class="w"> </span>--version
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Check Apache status</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Run services defined in docker-compose.yml</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Start Apache</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>apache2
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Stop services</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>docker-compose<span class="w"> </span>down
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Stop Apache</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>apache2
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># View service logs</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>docker-compose<span class="w"> </span>logs
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Reload Apache</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Build or rebuild services</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>docker-compose<span class="w"> </span>build
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1"># Check Apache configuration</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>sudo<span class="w"> </span>apache2ctl<span class="w"> </span>configtest
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c1"># Enable Apache to start on boot</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>apache2
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="c1"># Allow traffic on ports 80 and 443 through firewall</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">&#39;Apache Full&#39;</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="c1"># Configure Apache VirtualHost for a domain</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>&lt;VirtualHost<span class="w"> </span>*:80&gt;
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span>ServerAdmin<span class="w"> </span>webmaster@localhost
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span>DocumentRoot<span class="w"> </span>/var/www/html
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span>ServerName<span class="w"> </span>example.com
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>&lt;/VirtualHost&gt;
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1"># Create a new container from a service defined in docker-compose.yml</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>docker-compose<span class="w"> </span>run<span class="w"> </span>service_name
+</code></pre></div>
+<h2 id="docker-volumes-and-networks">Docker Volumes and Networks</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Create a Docker volume</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>volume_name
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># List volumes</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>docker<span class="w"> </span>volume<span class="w"> </span>ls
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Inspect a volume</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>docker<span class="w"> </span>volume<span class="w"> </span>inspect<span class="w"> </span>volume_name
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Create a Docker network</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>network_name
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1"># List networks</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>docker<span class="w"> </span>network<span class="w"> </span>ls
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1"># Connect a container to a network</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>docker<span class="w"> </span>network<span class="w"> </span>connect<span class="w"> </span>network_name<span class="w"> </span>container_name
 </code></pre></div>
 
 
@@ -4421,6 +4539,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../Git/cheatsheet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Git">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Git
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../WebServer/cheatsheet/" class="md-footer__link md-footer__link--next" aria-label="Next: WebServer">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                WebServer
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -4595,10 +4751,10 @@
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["header.autohide", "navigation.path", "navigation.tracking", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.sections", "navigation.footer", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
