@@ -3,10 +3,6 @@
 
 **cheat.sh** (accessible via **cht.sh**) is a service that provides quick command examples and solutions for various tools and programming languages, directly from the terminal.
 
-## How to Use?
-
-
-This will return useful command examples for **Git**.
 
 !!! tip "Tip"
     **cheat.sh** supports various programming languages, Linux commands, and other tools, all accessible with a simple **curl** command.
