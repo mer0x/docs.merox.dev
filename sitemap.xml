@@ -17,26 +17,6 @@
          <lastmod>2024-11-13</lastmod>
     </url>
     <url>
-         <loc>https://docs.merox.dev/fundamentals/cheatsheet/Docker/cheatsheet/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/cheatsheet/Git/cheatsheet/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/cheatsheet/Infiniband/mellanox_infiniband/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/cheatsheet/Linux/ultimate-cheathseet/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.merox.dev/fundamentals/cheatsheet/WebServer/cheatsheet/</loc>
-         <lastmod>2024-11-13</lastmod>
-    </url>
-    <url>
          <loc>https://docs.merox.dev/fundamentals/database/influxdb/basics/</loc>
          <lastmod>2024-11-13</lastmod>
     </url>
@@ -202,6 +182,26 @@
     </url>
     <url>
          <loc>https://docs.merox.dev/operations/UPS/CyberPower/usb-management/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/cheatsheet/Docker/cheatsheet/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/cheatsheet/Git/cheatsheet/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/cheatsheet/Infiniband/mellanox_infiniband/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/cheatsheet/Linux/ultimate-cheathseet/</loc>
+         <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.merox.dev/operations/cheatsheet/WebServer/cheatsheet/</loc>
          <lastmod>2024-11-13</lastmod>
     </url>
     <url>
