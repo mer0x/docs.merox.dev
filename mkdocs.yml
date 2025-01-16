@@ -81,7 +81,7 @@ nav:
            - Ubuntu cloud-init: operations/operating-systems/linux/install/ubuntu-cloud-init.md
          - Config:
            - UFW: operations/operating-systems/linux/config/ufw.md
-           - Extend LVM: operations/operating-systems/linux/config/extend-lvm-proxmox.md
+           - Extend LVM: operations/operating-systems/linux/config/extend-lvm.md
          - T-shoot:
            - GRUB recovery: operations/operating-systems/linux/tshoot/grub.md 
            - Root password recovery: operations/operating-systems/linux/tshoot/root-password-recovery.md
