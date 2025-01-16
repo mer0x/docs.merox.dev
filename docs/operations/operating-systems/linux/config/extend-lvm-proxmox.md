@@ -1,7 +1,4 @@
 ## Resizing/Extending Logical Volumes (LVM)
-What is LVM?
-
-LVM stands for Logical Volume Management. It is a system of managing logical volumes, or filesystems, that is much more advanced and flexible than the traditional method of partitioning a disk into one or more segments and formatting that partition with a filesystem. - https://wiki.ubuntu.com/Lvm
 
 # Extending an LVM Volume on a Constantly Written Virtual Disk (vmdisk)
 
