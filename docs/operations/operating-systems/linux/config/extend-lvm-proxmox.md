@@ -1,5 +1,3 @@
-## Resizing/Extending Logical Volumes (LVM)
-
 # Extending an LVM Volume on a Constantly Written Virtual Disk (vmdisk)
 
 This guide explains how to safely extend an LVM volume that uses a virtual disk (vmdisk) without affecting existing data.
