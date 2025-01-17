@@ -51,6 +51,16 @@
     proxmox-backup-client backup nodeABC-etc.pxar:/etc --repository 1.2.3.5:xxxx
     ```
 
+## Restore to new PBS
+
+1. On fresh new PBS, if you want to import existing NFS datastore, just go to /etc/proxmox-backup/ and create `datastore.cfg` file with the next content:
+```bash
+datastore: hyperbackup
+   path /mnt/hyperbackup
+```
+2. Do the same steps with squash no mapping - umount - mapping all users to admin
+3. Add PBS again in PVE and add encrypted key if is the case.
+
 ## Notes
 
 @grantph:<br>
