@@ -3184,6 +3184,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#restore-to-new-pbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restore to new PBS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       Notes
@@ -3661,6 +3670,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#restore-to-new-pbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restore to new PBS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       Notes
@@ -3755,6 +3773,15 @@
 </code></pre></div>
 </li>
 </ol>
+<h2 id="restore-to-new-pbs">Restore to new PBS</h2>
+<ol>
+<li>On fresh new PBS, if you want to import existing NFS datastore, just go to /etc/proxmox-backup/ and create <code>datastore.cfg</code> file with the next content:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>datastore:<span class="w"> </span>hyperbackup
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">   </span>path<span class="w"> </span>/mnt/hyperbackup
+</code></pre></div></li>
+<li>Do the same steps with squash no mapping - umount - mapping all users to admin</li>
+<li>Add PBS again in PVE and add encrypted key if is the case.</li>
+</ol>
 <h2 id="notes">Notes</h2>
 <p>@grantph:<br>
 "I suspect this process highlights a bug in PBS datastore creation. It requires <code>backup</code> uid/gid 34:34 to create the <code>.chunks</code> folders but seems to prefer <code>root</code> after creation (for the UI and client backups). It wasn't necessary to create a <code>backup</code> user on Synology; that just led to uid/gid headaches."</p>
@@ -3786,7 +3813,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2025</span>
   </span>
 
     
