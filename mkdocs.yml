@@ -223,7 +223,7 @@ extra:
 
 
   # Custom Homepage Elements
-  home_cover_image: images/docsmeroxd.webp
+  #home_cover_image: images/docsmeroxd.webp
   home_tagline: Merox Docs
   home_description: |
    Welcome to the official documentation portal for all things related to merox.dev. Here, you’ll find comprehensive guides, tutorials, and technical resources to help you explore and understand the infrastructure, tools, and technologies powering merox.dev, from server management to advanced configurations.
@@ -290,5 +290,5 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 copyright: |
-  Copyright &copy; 2024 Robert Melcher | 
+  Copyright &copy; 2025 Robert Melcher | 
   <a href="#__consent">Change cookie settings</a>
