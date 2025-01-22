@@ -4024,17 +4024,35 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span>notification-mode<span class="w"> </span>notification-system
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span>path<span class="w"> </span>/mnt/datastore
 </code></pre></div></li>
-<li>Required datastore structure:</li>
+<li>
+<p>Check /etc/fstab
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">#raidz2</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>/dev/sdb<span class="w"> </span>/mnt/datastore<span class="w"> </span>ext4<span class="w"> </span>defaults<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">2</span>
+</code></pre></div>
+/dev/sdb is <RAIDz2></p>
+</li>
+<li>
+<p>Required datastore structure:</p>
+</li>
 <li><code>.chunks</code></li>
 <li><code>vm</code></li>
 <li><code>.gc-status</code></li>
 <li><code>ct</code></li>
-<li><code>host</code></li>
-<li>Data can be restored from:</li>
+<li>
+<p><code>host</code></p>
+</li>
+<li>
+<p>Data can be restored from:</p>
+</li>
 <li>RAIDz2 array (if drives are intact)</li>
 <li>Hetzner StorageBox (/mnt/storagebox/Storage_1)</li>
-<li>Synology NAS (/volume1/Backup/Proxmox/hyperbackup)</li>
-<li>Import VM/LXC encryption key from KeyPass</li>
+<li>
+<p>Synology NAS (/volume1/Backup/Proxmox/hyperbackup)
+   And need to added in '/mnt/datastore'</p>
+</li>
+<li>
+<p>Import VM/LXC encryption key from KeyPass in PVE.</p>
+</li>
 </ol>
 <h2 id="critical-keys-files">Critical Keys &amp; Files</h2>
 <ul>
