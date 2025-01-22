@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.merox.dev/operations/operating-systems/linux/readme/">
+        <link rel="canonical" href="https://docs.merox.dev/operations/backup/pbs/homelab-disaster-recovery/">
       
       
+        <link rel="prev" href="../pbs-nfs-backup/">
+      
+      
+        <link rel="next" href="../../../UPS/CyberPower/usb-management/">
       
       
       <link rel="icon" href="../../../../images/merox.png">
@@ -18,7 +22,7 @@
     
     
   
-    <title>Readme | Docs - Merox </title>
+    <title>Disaster Recovery | Docs - Merox </title>
   
 
     
@@ -65,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Readme - docs.merox.dev" >
+        <meta  property="og:title"  content="Disaster Recovery - docs.merox.dev" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/operations/operating-systems/linux/readme.png" >
+        <meta  property="og:image"  content="https://docs.merox.dev/assets/images/social/operations/backup/pbs/homelab-disaster-recovery.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -77,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://docs.merox.dev/operations/operating-systems/linux/readme/" >
+        <meta  property="og:url"  content="https://docs.merox.dev/operations/backup/pbs/homelab-disaster-recovery/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Readme - docs.merox.dev" >
+        <meta  name="twitter:title"  content="Disaster Recovery - docs.merox.dev" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/operations/operating-systems/linux/readme.png" >
+        <meta  name="twitter:image"  content="https://docs.merox.dev/assets/images/social/operations/backup/pbs/homelab-disaster-recovery.png" >
       
     
     
@@ -118,6 +122,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#homelab-disaster-recovery-guide" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -167,7 +176,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Readme
+              Disaster Recovery
             
           </span>
         </div>
@@ -321,10 +330,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../../intro/" class="md-tabs__link">
           
   
@@ -696,8 +707,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -728,19 +741,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -751,7 +767,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             The Nerd Box
@@ -795,17 +811,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -920,17 +939,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1047,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install/ubuntu-cloud-init/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/install/ubuntu-cloud-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1122,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../config/ufw/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/config/ufw/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1143,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../config/extend-lvm/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/config/extend-lvm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1220,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tshoot/grub/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/grub/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1241,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tshoot/root-password-recovery/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/root-password-recovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1262,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tshoot/proxmox-e1000/" class="md-nav__link">
+      <a href="../../../operating-systems/linux/tshoot/proxmox-e1000/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1322,17 +1344,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2132,17 +2157,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2257,17 +2285,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2480,17 +2511,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2630,17 +2664,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
         
           
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2828,17 +2865,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2889,8 +2929,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2902,18 +2944,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2924,7 +2969,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             Backup
@@ -2982,7 +3027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backup/clonezilla/clonezilla/" class="md-nav__link">
+      <a href="../../clonezilla/clonezilla/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3008,8 +3053,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -3025,11 +3072,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_10_2" id="__nav_3_10_2_label" tabindex="0">
@@ -3043,7 +3090,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_10_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_10_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_10_2">
             <span class="md-nav__icon md-icon"></span>
             PBS
@@ -3057,7 +3104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backup/pbs/pbs-nfs-backup/" class="md-nav__link">
+      <a href="../pbs-nfs-backup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3075,10 +3122,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../backup/pbs/homelab-disaster-recovery/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Disaster Recovery
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -3087,6 +3154,161 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-flow-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup Flow &amp; Schedule
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-scripts-and-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical Scripts and Configurations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Scripts and Configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbs-to-synology-rsync-on-pbs-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      PBS to Synology Rsync (On PBS Server)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vps-backup-script-backup-pbssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPS Backup Script (backup-pbs.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vps-restore-script-backup-pbs-restoresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPS Restore Script (backup-pbs-restore.sh)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recovery-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recovery Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recovery Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-synology-nas-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Synology NAS Failure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-hetzner-vpsstoragebox-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Hetzner VPS/StorageBox Failure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pbs-server-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. PBS Server Failure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-keys-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical Keys &amp; Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Improvements
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3124,17 +3346,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
         
           
-          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3205,17 +3430,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
         
           
-          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3485,6 +3713,151 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-flow-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup Flow &amp; Schedule
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-scripts-and-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical Scripts and Configurations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Scripts and Configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbs-to-synology-rsync-on-pbs-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      PBS to Synology Rsync (On PBS Server)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vps-backup-script-backup-pbssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPS Backup Script (backup-pbs.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vps-restore-script-backup-pbs-restoresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPS Restore Script (backup-pbs-restore.sh)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recovery-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recovery Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recovery Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-synology-nas-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Synology NAS Failure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-hetzner-vpsstoragebox-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Hetzner VPS/StorageBox Failure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pbs-server-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. PBS Server Failure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-keys-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical Keys &amp; Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Improvements
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3502,9 +3875,186 @@
   
 
 
-  <h1>Readme</h1>
-
-
+<h1 id="homelab-disaster-recovery-guide">Homelab Disaster Recovery Guide</h1>
+<h2 id="infrastructure-overview">Infrastructure Overview</h2>
+<h3 id="components">Components</h3>
+<ul>
+<li>Synology DS223 (2x2TB RAID1)</li>
+<li>Proxmox Backup Server (PBS) with 4x Intel D3-S4510 in RAIDz2</li>
+<li>Hetzner VPS with attached StorageBox</li>
+<li>Local KeyPass on iOS/MacOS containing encryption keys</li>
+</ul>
+<h3 id="backup-flow-schedule">Backup Flow &amp; Schedule</h3>
+<ol>
+<li>VM/LXC backups to PBS: Every Saturday at 02:00</li>
+<li>PBS to Synology rsync: Every Saturday at 06:00</li>
+<li>Synology to Hetzner StorageBox rsync: Every Saturday at 08:00</li>
+</ol>
+<h2 id="critical-scripts-and-configurations">Critical Scripts and Configurations</h2>
+<h3 id="pbs-to-synology-rsync-on-pbs-server">PBS to Synology Rsync (On PBS Server)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="m">0</span><span class="w"> </span><span class="m">6</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="m">6</span><span class="w"> </span>rsync<span class="w"> </span>-av<span class="w"> </span>--delete<span class="w"> </span>--progress<span class="w"> </span>/mnt/datastore/<span class="w"> </span>/mnt/hyperbackup/<span class="w"> </span>&gt;&gt;<span class="w"> </span>/var/log/rsync_backup.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</code></pre></div>
+<h3 id="vps-backup-script-backup-pbssh">VPS Backup Script (backup-pbs.sh)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># 1) Export token secret as &quot;PBS_PASSWORD&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_PASSWORD</span><span class="o">=</span><span class="s1">&#39;token-secret-from-PBS&#39;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># 2) Define user@pbs + token</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_USER_STRING</span><span class="o">=</span><span class="s1">&#39;token-id-from-PBS&#39;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># 3) PBS IP/hostname</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_SERVER</span><span class="o">=</span><span class="s1">&#39;PBS-IP&#39;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># 4) Datastore name</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_DATASTORE</span><span class="o">=</span><span class="s1">&#39;DATASTORE_PBS&#39;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1"># 5) Build complete repository</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_REPOSITORY</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PBS_USER_STRING</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">PBS_SERVER</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">PBS_DATASTORE</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c1"># 6) Get local server shortname</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_HOSTNAME</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c1"># 7) ENCRYPTION KEY</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_KEYFILE</span><span class="o">=</span><span class="s1">&#39;/root/pbscloud_key.json&#39;</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Run pbs backup for </span><span class="nv">$PBS_HOSTNAME</span><span class="s2"> ...&quot;</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>proxmox-backup-client<span class="w"> </span>backup<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">  </span>srv.pxar:/srv<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">  </span>volumes.pxar:/var/lib/docker/volumes<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">  </span>netw.pxar:/var/lib/docker/network<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">  </span>etc.pxar:/etc<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">  </span>scripts.pxar:/usr/local/bin<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">  </span>--keyfile<span class="w"> </span>/root/pbscloud_key.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">  </span>--skip-lost-and-found<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">  </span>--repository<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PBS_REPOSITORY</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="c1"># List existing backups</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>proxmox-backup-client<span class="w"> </span>list<span class="w"> </span>--repository<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PBS_REPOSITORY</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Done.&quot;</span>
+</code></pre></div>
+<h3 id="vps-restore-script-backup-pbs-restoresh">VPS Restore Script (backup-pbs-restore.sh)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Global configs</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_PASSWORD</span><span class="o">=</span><span class="s1">&#39;token-secret-from-PBS&#39;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_USER_STRING</span><span class="o">=</span><span class="s1">&#39;token-id-from-PBS&#39;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_SERVER</span><span class="o">=</span><span class="s1">&#39;PBS_IP&#39;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_DATASTORE</span><span class="o">=</span><span class="s1">&#39;DATASTORE_FROM_PBS&#39;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_KEYFILE</span><span class="o">=</span><span class="s1">&#39;/root/pbscloud_key.json&#39;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PBS_REPOSITORY</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PBS_USER_STRING</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">PBS_SERVER</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">PBS_DATASTORE</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># Input parameters</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nv">SNAPSHOT_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nv">ARCHIVE_NAME</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="nv">RESTORE_DEST</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1"># Parameter validation</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SNAPSHOT_PATH</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ARCHIVE_NAME</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$RESTORE_DEST</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> &lt;snapshot_path&gt; &lt;archive_name&gt; &lt;destination&gt;&quot;</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Example: </span><span class="nv">$0</span><span class="s2"> \&quot;host/cloud/2025-01-22T15:19:17Z\&quot; srv.pxar /root/restore-srv&quot;</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="k">fi</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="c1"># Create destination if needed</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$RESTORE_DEST</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="c1"># Summary display</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== PBS Restore ===&quot;</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Snapshot:      </span><span class="nv">$SNAPSHOT_PATH</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Archive:       </span><span class="nv">$ARCHIVE_NAME</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Destination:   </span><span class="nv">$RESTORE_DEST</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Repository:    </span><span class="nv">$PBS_REPOSITORY</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Encryption key </span><span class="nv">$PBS_KEYFILE</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=====================&quot;</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="c1"># Run restore</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>proxmox-backup-client<span class="w"> </span>restore<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">  </span><span class="s2">&quot;</span><span class="nv">$SNAPSHOT_PATH</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">  </span><span class="s2">&quot;</span><span class="nv">$ARCHIVE_NAME</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">  </span><span class="s2">&quot;</span><span class="nv">$RESTORE_DEST</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">  </span>--repository<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PBS_REPOSITORY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">  </span>--keyfile<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PBS_KEYFILE</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="nv">EXIT_CODE</span><span class="o">=</span><span class="nv">$?</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$EXIT_CODE</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== Restore completed successfully! ===&quot;</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="k">else</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Restore error (code </span><span class="nv">$EXIT_CODE</span><span class="s2">).&quot;</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="k">fi</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="nb">exit</span><span class="w"> </span><span class="nv">$EXIT_CODE</span>
+</code></pre></div>
+<h2 id="recovery-scenarios">Recovery Scenarios</h2>
+<h3 id="1-synology-nas-failure">1. Synology NAS Failure</h3>
+<ul>
+<li>Data remains safe in two locations:</li>
+<li>PBS (4x Intel D3-S4510 in RAIDz2)</li>
+<li>Hetzner StorageBox</li>
+<li>Recovery steps:</li>
+<li>Replace failed hardware</li>
+<li>Reconfigure RAID1</li>
+<li>Restore HyperBackup schedule (Saturday 08:00)</li>
+<li>Verify first backup cycle completion</li>
+</ul>
+<h3 id="2-hetzner-vpsstoragebox-failure">2. Hetzner VPS/StorageBox Failure</h3>
+<ol>
+<li>Provision new VPS</li>
+<li>Install proxmox-backup-client:</li>
+<li>Ubuntu: Follow <a href="https://forum.proxmox.com/threads/install-the-backup-client-on-ubuntu-desktop-24-04.146065/">official guide</a></li>
+<li>Debian: Standard package installation</li>
+<li>Create <code>/root/pbscloud_key.json</code>:</li>
+<li>Get encryption key from KeyPass (iOS/MacOS)</li>
+<li>Deploy backup scripts:</li>
+<li><code>backup-pbs.sh</code></li>
+<li><code>backup-pbs-restore.sh</code></li>
+<li>Test backup and restore functionality</li>
+</ol>
+<h3 id="3-pbs-server-failure">3. PBS Server Failure</h3>
+<ol>
+<li>Get new PBS ISO</li>
+<li>Configure storage:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># /etc/proxmox-backup/datastore.cfg</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>datastore:<span class="w"> </span>raidz2
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span>comment
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span>gc-schedule<span class="w"> </span>sat<span class="w"> </span><span class="m">03</span>:30
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span>notification-mode<span class="w"> </span>notification-system
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span>path<span class="w"> </span>/mnt/datastore
+</code></pre></div></li>
+<li>Required datastore structure:</li>
+<li><code>.chunks</code></li>
+<li><code>vm</code></li>
+<li><code>.gc-status</code></li>
+<li><code>ct</code></li>
+<li><code>host</code></li>
+<li>Data can be restored from:</li>
+<li>RAIDz2 array (if drives are intact)</li>
+<li>Hetzner StorageBox (/mnt/storagebox/Storage_1)</li>
+<li>Synology NAS (/volume1/Backup/Proxmox/hyperbackup)</li>
+<li>Import VM/LXC encryption key from KeyPass</li>
+</ol>
+<h2 id="critical-keys-files">Critical Keys &amp; Files</h2>
+<ul>
+<li>Encryption keys in KeyPass (iOS/MacOS):</li>
+<li><code>/root/pbscloud_key.json</code></li>
+<li>PBS VM/LXC encryption key</li>
+<li>PBS Config: <code>/etc/proxmox-backup/datastore.cfg</code></li>
+<li>Backup locations:</li>
+<li>PBS: <code>/mnt/datastore</code></li>
+<li>Synology: <code>/volume1/Backup/Proxmox/hyperbackup</code></li>
+<li>Hetzner: <code>/mnt/storagebox/Storage_1</code></li>
+</ul>
+<h2 id="recommended-improvements">Recommended Improvements</h2>
+<ol>
+<li>Regular backup verification</li>
+<li>Automated testing of restore procedures</li>
+<li>Monitoring for backup completion</li>
+<li>Alert system for backup failures</li>
+<li>Regular testing of KeyPass accessibility</li>
+</ol>
 
 
 
@@ -3527,7 +4077,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 22, 2025</span>
   </span>
 
     
@@ -3537,11 +4087,39 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 22, 2025</span>
   </span>
 
     
     
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/mer0x" class="md-author" title="@mer0x">
+          
+          <img src="https://avatars.githubusercontent.com/u/35839230?v=4&size=72" alt="mer0x">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
@@ -3571,6 +4149,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../pbs-nfs-backup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NFSonPBS">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                NFSonPBS
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../UPS/CyberPower/usb-management/" class="md-footer__link md-footer__link--next" aria-label="Next: CyberPower">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                CyberPower
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
