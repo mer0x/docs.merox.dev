@@ -153,17 +153,27 @@ datastore: raidz2
         notification-mode notification-system
         path /mnt/datastore
 ```
-3. Required datastore structure:
+3. Check /etc/fstab
+```bash
+#raidz2
+/dev/sdb /mnt/datastore ext4 defaults 0 2
+```
+/dev/sdb is <RAIDz2>
+
+4. Required datastore structure:
    - `.chunks`
    - `vm`
    - `.gc-status`
    - `ct`
    - `host`
-4. Data can be restored from:
+
+5. Data can be restored from:
    - RAIDz2 array (if drives are intact)
    - Hetzner StorageBox (/mnt/storagebox/Storage_1)
    - Synology NAS (/volume1/Backup/Proxmox/hyperbackup)
-5. Import VM/LXC encryption key from KeyPass
+   And need to added in '/mnt/datastore'
+
+6. Import VM/LXC encryption key from KeyPass in PVE.
 
 ## Critical Keys & Files
 - Encryption keys in KeyPass (iOS/MacOS):
