@@ -223,7 +223,7 @@ extra:
 
 
   # Custom Homepage Elements
-  #home_cover_image: images/docsmeroxd.webp
+  home_cover_image: images/docsmeroxd.webp
   home_tagline: Merox Docs
   home_description: |
    Welcome to the official documentation portal for all things related to merox.dev. Here, you’ll find comprehensive guides, tutorials, and technical resources to help you explore and understand the infrastructure, tools, and technologies powering merox.dev, from server management to advanced configurations.
