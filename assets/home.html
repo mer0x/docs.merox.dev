@@ -267,6 +267,25 @@ body[data-theme="dark"] .btn::before {
 }
 </style>
 
+<section class="hero-section">
+    <canvas id="digitalNetworkCanvas"></canvas>
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>{{ config.extra.home_tagline }}</h1>
+            <p>{{ config.extra.home_description }}</p>
+            <a href="{{ config.extra.home_button1_url }}" class="btn"><span>{{ config.extra.home_button1_name }}</span></a>
+            {%- if config.extra.home_button2_name -%}
+            <a href="{{ config.extra.home_button2_url }}" class="btn"><span>{{ config.extra.home_button2_name }}</span></a>
+            {%- endif -%}
+        </div>
+        <div class="hero-image">
+            <div class="custom-image-wrapper">
+                <img src="{{ config.extra.home_cover_image }}" alt="Cover Image" draggable="false">
+            </div>
+        </div>
+    </div>
+</section>
+
 
 {% endblock %}
 {% block content %}{% endblock %}
