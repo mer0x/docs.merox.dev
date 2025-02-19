@@ -5,7 +5,7 @@ repo_name: mer0x/merox.dev
 theme:
   custom_dir: assets
   favicon: images/merox.png
-  logo: images/meroxdev.png
+  logo: images/logo_dark.png
   name: material
   features:
     - header.autohide
