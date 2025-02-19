@@ -1,9 +1,8 @@
 :root {
-  --md-primary-fg-color:        #14151a;
-  --md-primary-fg-color--light: #189191;
-  --md-primary-fg-color--dark:  #0e4d4d;
+  --md-primary-fg-color:        rgba(85, 150, 135, 1);
+  --md-primary-fg-color--light: rgba(115, 180, 165, 1); /* Aproximare pentru o nuanță mai deschisă */
+  --md-primary-fg-color--dark:  rgba(55, 120, 105, 1);  /* Aproximare pentru o nuanță mai închisă */
 }
-
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
     height: 1.7rem;
