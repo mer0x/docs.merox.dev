@@ -142,7 +142,6 @@ nav:
           - Tutorial: operations/backup/clonezilla/clonezilla.md
         - PBS:
           - NFSonPBS: operations/backup/pbs/pbs-nfs-backup.md
-          - Disaster Recovery: operations/backup/pbs/homelab-disaster-recovery.md
     
     - UPS:
       - CyberPower: operations/UPS/CyberPower/usb-management.md
